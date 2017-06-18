@@ -19,6 +19,7 @@
 \newtheorem{ejemplo}[theorem]{Ejemplo}
 \newtheorem{ejercicio}[theorem]{Ejercicio}
 
+
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
@@ -66,9 +67,45 @@ Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un
 \item Si $\alpha$ es un número real y $u$ y $v$ son elementos de $V$, entonces $\alpha (u+v) = \alpha u + \alpha v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
 \item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)u = \alpha u + \beta u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
 \item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta)u = \beta(\alpha u)$.
-\item Si $u$ es un elemento de $V$, entonces $1 \cdot u = u$.
-  
+\item Si $u$ es un elemento de $V$, entonces $1 \odot u = u$.
+
 \end{enumerate}
+
+\textbf{Trabajo autónomo 1}
+Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
+\begin{enumerate}
+\item El elemento neutro $\mathbf{0}_E$ es único.
+\item Para cada $e$ en $E$, el elemento $-e$ es único.
+\item Para cada $e$ en $E$, $\mathbf{0}_E \odot e = 0$.
+\item Para cada $e$ en $E$, $(-1)e = -e$.
+\item Para cada $\lambda$ en $\mathbb{R}$, $\lambda \odot \mathbf{0}_E = \mathbf{0}_E$.
+\item Si $\alpha v = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
+
+\end{enumerate}
+
+\begin{ejemplo}
+\begin{enumerate}
+\item El espacio \rdos \ con las operaciones $(x+y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
+\item El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
+\item El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
+
+\end{enumerate}
+
+\end{ejemplo}
+
+\section{Subespacios Vectoriales}
+\begin{dfn}
+Sea $(E, +, \odot)$ un espacio vectorial real y $S$ un subconjunto no vacío de $E$. Entonces se dice que $S$ es un subespacio vectorial de $E$, si con las operaciones heredadas de $E$, $(S, +, \odot)$ es también un espacio vectorial.
+
+\end{dfn}
+
+\begin{ejemplo}
+\begin{enumerate}
+\item Sea $E = \rtres$ y $S = \llaves{(x, y, z) \in \rtres}{5x + 2y + z = 0}$ entonces $S$ es un subespacio de \rtres.
+\item Sea $E$ el espacio $\mathcal{M_{2 \times 2}}$ \ de todas las matrices cuadradas $2 \times 2$ con las operaciones usuales de suma de matrices y de multiplicación por un escalar y $S$ el conjunto de las matrices diagonales, es decir las matrices de la forma \matrdxd{a & 0}{0 & b} , entonces $S$ es un subespacio de $E$.
+
+\end{enumerate}
+\end{ejemplo}
 
 %%%%%%%% esta seccion son los modelos de comandos para secciones
 %comentalas luego

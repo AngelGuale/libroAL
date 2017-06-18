@@ -1,0 +1,62 @@
+\documentclass[10pt,a4paper]{amsbook}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\RequirePackage{algebraLineal}
+
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\theoremstyle{definition}
+\newtheorem{dfn}[theorem]{Definición}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
+
+%    For a single index; for multiple indexes, see the manual
+%    "Instructions for preparation of papers and monographs:
+%    AMS-LaTeX" (instr-l.pdf in the AMS-LaTeX distribution).
+
+\author{Jorge Vielma, Angel Guale}
+\title{Álgebra Lineal}
+\begin{document}
+\maketitle
+%    Dedication.  If the dedication is longer than a line or two,
+%    remove the centering instructions and the line break.
+%\cleardoublepage
+%\thispagestyle{empty}
+%\vspace*{13.5pc}
+%\begin{center}
+%  Dedication text (use \\[2pt] for line break if necessary)
+%\end{center}
+%\cleardoublepage
+%    Change page number to 7 if a dedication is present.
+\setcounter{page}{4}
+\tableofcontents
+
+
+\chapter{Espacios Vectoriales Reales}
+\begin{dfn}[Espacio vectorial real]
+Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas.
+\end{dfn}
+\subsection*{Axiomas para la suma}
+\begin{enumerate}
+\item Si $u$ y $v$ son elementos de $V$, $u+v$ es un elemento de V.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u+v=v+u$. Es decir, la suma es una operación conmutativa.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u+v)+w=u+(v+w)$. Es decir, la operación es asociativa.
+\end{enumerate}
+
+
+\end{document}

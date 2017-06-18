@@ -1,0 +1,155 @@
+% this is my first package
+% 
+% (c) Buffalo Bill
+%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{algebraLineal}
+  [2011/01/11 v0.01 LaTeX package for my own purpose]
+
+%\RequirePackage{}
+\def\dobler{\ensuremath{\mathbb{R}}}
+\def\dobleK{\ensuremath{\mathbb{K}}}
+\def\doubleK{\ensuremath{\mathbb{K}}}
+
+
+\newcommand{\rdos}{\ensuremath{\mathbb{R}^2}}
+\newcommand{\rtres}{\ensuremath{\mathbb{R}^3}}
+\newcommand{\rcuatro}{\ensuremath{\mathbb{R}^4}}
+\newcommand{\rn}{\ensuremath{\mathbb{R}^n}}
+\newcommand{\rmm}{\ensuremath{\mathbb{R}^m}}
+\newcommand{\puno}{\ensuremath{{\cal P}_1}}
+\newcommand{\pdos}{\ensuremath{{\cal P}_2}}
+\newcommand{\ptres}{\ensuremath{{\cal P}_3}}
+\newcommand{\pn}{\ensuremath{{\cal P}_n}}
+
+\newcommand{\mdosxdos}{\ensuremath{{\cal M}_{2x2}}}
+\newcommand{\mmxn}{\ensuremath{{\cal M}_{mxn}}}
+
+\newcommand{\cerorm}{\ensuremath{\mathbf{0}_{\mathbb{R}^m}}}
+\newcommand{\cerorn}{\ensuremath{\mathbf{0}_{\mathbb{R}^n}}}
+
+\newcommand{\matrdxd}[2]{\ensuremath{
+\left(
+\begin{array}{rr}
+#1\\
+#2
+\end{array}
+\right)
+}}
+\newcommand{\llav}[1]{\ensuremath{
+\left\{#1
+\right\}
+}}
+
+\newcommand{\llaves}[2]{
+\ensuremath{\left\{
+\left.
+#1\right|
+#2
+\right\}}
+}
+
+\newcommand{\kvect}[2]{
+\ensuremath{
+ #1_1, #1_2, \ldots, #1_#2}
+}
+
+\newcommand{\conjvect}[2]{
+\ensuremath{
+\lbrace #1_1, #1_2, \ldots, #1_#2 \rbrace}
+}
+
+
+\newcommand{\av}[2]{
+\ensuremath{
+#1\left(#2\right)
+}
+}
+
+\def\svrdos#1#2#3{
+$W= \left\{\begin{array}{c|c}
+{\left(
+\begin{array}{c}
+#1\\
+#2
+\end{array}\right)
+}&{#3}
+\end{array}
+\right\}$
+}
+%subespacio en r3 nombre, tres variables, condiciones
+\def\svrtres#1#2#3#4#5{
+$#1= \left\{\begin{array}{c|c}
+{\left(
+\begin{array}{c}
+#2\\
+#3\\
+#4
+\end{array}\right)
+}&{#5}
+\end{array}
+\right\}$
+}
+
+\def\doblek{$\mathbb{K}$}
+
+\def\vectrdos#1#2{
+\ensuremath{\begin{pmatrix}[r]
+#1\\
+#2\\
+\end{pmatrix}
+}
+}
+%%%vector r3 es vectrtres
+\def\vectrtres#1#2#3{
+\ensuremath{\left(
+\begin{array}{r}
+#1\\
+#2\\
+#3
+\end{array}
+\right)
+}
+}
+
+%%%vector r3 es vectrtres centrado
+\def\vectrtrescent#1#2#3{
+\ensuremath{\left(
+\begin{array}{c}
+#1\\
+#2\\
+#3
+\end{array}
+\right)
+}
+}
+
+\def\vectr4#1#2#3#4{
+\ensuremath{\left(
+\begin{array}{r}
+#1\\
+#2\\
+#3\\
+#4
+\end{array}
+\right)
+}
+}
+
+\def\imagen#1#2#3#4{
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=#4]{#1}
+  \caption{#2}
+  \label{fig:#3}
+\end{figure}
+
+}
+
+\endinput
+%%
+%% End of file `mypackage.sty'.

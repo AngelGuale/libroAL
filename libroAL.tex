@@ -1,11 +1,12 @@
-\documentclass[10pt,a4paper]{amsbook}
-\usepackage[utf8]{inputenc}
+\documentclass[10pt,a4paper]{book}
 \usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{makeidx}
 
 \RequirePackage{algebraLineal}
 
@@ -15,9 +16,9 @@
 
 
 \theoremstyle{definition}
-\newtheorem{dfn}[theorem]{Definición}
-\newtheorem{ejemplo}[theorem]{Ejemplo}
-\newtheorem{ejercicio}[theorem]{Ejercicio}
+\newtheorem{dfn}{Definición}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\newtheorem{ejercicio}{Ejercicio}[chapter]
 
 
 \theoremstyle{remark}
@@ -26,12 +27,30 @@
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
 
+\newcounter{tacounter}
+\newenvironment{trabajoautonomo}[0]
+    {\begin{center}
+    \refstepcounter{tacounter}
+     \textbf{Trabajo autónomo \thetacounter}\\[1ex]
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+\numberwithin{tacounter}{chapter}
+
 %    For a single index; for multiple indexes, see the manual
 %    "Instructions for preparation of papers and monographs:
 %    AMS-LaTeX" (instr-l.pdf in the AMS-LaTeX distribution).
 
 \author{Jorge Vielma, Angel Guale}
 \title{Álgebra Lineal}
+
+\makeindex
+
 \begin{document}
 \maketitle
 %    Dedication.  If the dedication is longer than a line or two,
@@ -47,21 +66,23 @@
 \setcounter{page}{4}
 \tableofcontents
 
-
+\printindex
 \chapter{Espacios Vectoriales Reales}
 \section{Espacios Vectoriales reales}
 
 \begin{dfn}[Espacio vectorial real]
-Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas.
+Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
+
+
 \end{dfn}
-\subsection*{Axiomas para la suma}
+\subsubsection*{Axiomas para la suma}
 \begin{enumerate}
 \item Si $u$ y $v$ son elementos de $V$, $u+v$ es un elemento de V.
 \item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u+v=v+u$. Es decir, la suma es una operación conmutativa.
 \item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u+v)+w=u+(v+w)$. Es decir, la operación es asociativa.
 \end{enumerate}
 
-\subsection*{Axiomas para la multiplicación por escalares}
+\subsubsection*{Axiomas para la multiplicación por escalares}
 \begin{enumerate}
 \item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha u$ es un elemento de $V$.
 \item Si $\alpha$ es un número real y $u$ y $v$ son elementos de $V$, entonces $\alpha (u+v) = \alpha u + \alpha v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
@@ -71,7 +92,7 @@ Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un
 
 \end{enumerate}
 
-\subsection*{Trabajo autónomo 1}
+\begin{trabajoautonomo}
 Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
 \begin{enumerate}
 \item El elemento neutro $\mathbf{0}_E$ es único.
@@ -82,7 +103,7 @@ Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
 \item Si $\alpha v = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
 
 \end{enumerate}
-
+\end{trabajoautonomo}
 \begin{ejemplo}
 
 El espacio \rdos \ con las operaciones $(x+y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
@@ -123,7 +144,7 @@ Sea $E$ el espacio \ptres \ de todos los polinomios de grado menor o igual a 3, 
 Sea $E$ un espacio vectorial real, $V$ y $W$ dos subespacios vectoriales de $E$, entonces $V + W =\llaves{a+b}{a \in V \, , \, b \in W}$ y $V \cap W = \llaves{a}{a \in V \cap W}$ son también subespacios vectoriales reales.
 \end{ejemplo}
 
-\section{Combinaciones lineales y subespacios generados por un subconjunto}
+\section{Combinaciones lineales y subespacios generados}
 \begin{dfn}
 Sea $(E, +, \odot)$ un espacio vectorial real y sean $B=\conjvect{v}{n}$ un subconjunto de vectores en $E$. Un vector $v$ en $E$ se dice que es una combinación lineal de los vectores en $B$ si existen escalares $\alpha_1$, $\alpha_2$, $\ldots$ , $\alpha_n$ en \dobler , tales que $v=\av{\alpha_1}{v_1} + \av{\alpha_2}{v_2} + \ldots + \av{\alpha_n}{v_n}$.
 
@@ -142,7 +163,8 @@ El vector $(4,5,5)$ puede ser expresado como una combinación lineal de los vect
 Sea $(E, +, \odot)$ un espacio vectorial y $A$ un subconjunto finito de $E$. El conjunto de todas las combinaciones lineales de elementos de $A$ es un subespacio de $E$ y se llama subespacio generado por $A$ y se denota por $CL(A)$.
 \end{theorem}
 
-\textbf{Prueba}\\
+\begin{proof}
+
 $\mathbf{0}_v \in CL(A)$ por el comentario anterior.\\
 Sean $u$, $v$ en $CL(A)$, entonces
 \begin{align*}
@@ -163,8 +185,9 @@ Sea $u \in CL(A)$ y $\alpha \in \dobler$
 \end{align*}
 luego $\alpha u \in CL(A)$\\
 
-$\therefore$ $CL(A)$ es un subespacio vectorial de $V$.\\
+$\therefore$ $CL(A)$ es un subespacio vectorial de $V$. \qedhere \\ %%%%%%%  el \qedhere es el QED
 
+\end{proof}
 El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = CL(A)$ entonces decimos que $A$ genera al espacio $V$ o que $A$ es conjunto generador de $V$.
 
 \begin{ejemplo}

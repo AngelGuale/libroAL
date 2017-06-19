@@ -71,7 +71,7 @@ Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un
 
 \end{enumerate}
 
-\textbf{Trabajo autónomo 1}
+\subsection*{Trabajo autónomo 1}
 Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
 \begin{enumerate}
 \item El elemento neutro $\mathbf{0}_E$ es único.
@@ -84,12 +84,18 @@ Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
 \end{enumerate}
 
 \begin{ejemplo}
-\begin{enumerate}
-\item El espacio \rdos \ con las operaciones $(x+y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
-\item El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
-\item El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
 
-\end{enumerate}
+El espacio \rdos \ con las operaciones $(x+y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
+\end{ejemplo}
+
+\begin{ejemplo}
+El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
+
 
 \end{ejemplo}
 
@@ -100,12 +106,71 @@ Sea $(E, +, \odot)$ un espacio vectorial real y $S$ un subconjunto no vacío de 
 \end{dfn}
 
 \begin{ejemplo}
-\begin{enumerate}
-\item Sea $E = \rtres$ y $S = \llaves{(x, y, z) \in \rtres}{5x + 2y + z = 0}$ entonces $S$ es un subespacio de \rtres.
-\item Sea $E$ el espacio \mdosxdos \ de todas las matrices cuadradas $2 \times 2$ con las operaciones usuales de suma de matrices y de multiplicación por un escalar y $S$ el conjunto de las matrices diagonales, es decir las matrices de la forma \matrdxd{a & 0}{0 & b} , entonces $S$ es un subespacio de $E$.
-\end{enumerate}
+Sea $E = \rtres$ y $S = \llaves{(x, y, z) \in \rtres}{5x + 2y + z = 0}$ entonces $S$ es un subespacio de \rtres.
 \end{ejemplo}
 
+\begin{ejemplo}
+Sea $E$ el espacio \mdosxdos \ de todas las matrices cuadradas $2 \times 2$ con las operaciones usuales de suma de matrices y de multiplicación por un escalar y $S$ el conjunto de las matrices diagonales, es decir las matrices de la forma \matrdxd{a & 0}{0 & b}, entonces $S$ es un subespacio de $E$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $E$ el espacio \ptres \ de todos los polinomios de grado menor o igual a 3, con la suma y multiplicación por un escalar usuales. Sea $S$ el conjunto de los polinomios \pdos \ de grado menor o igual a 2, entonces $S$ es un subespacio de $E$.
+\end{ejemplo}
+
+\begin{ejemplo}
+
+Sea $E$ un espacio vectorial real, $V$ y $W$ dos subespacios vectoriales de $E$, entonces $V + W =\llaves{a+b}{a \in V \, , \, b \in W}$ y $V \cap W = \llaves{a}{a \in V \cap W}$ son también subespacios vectoriales reales.
+\end{ejemplo}
+
+\section{Combinaciones lineales y subespacios generados por un subconjunto}
+\begin{dfn}
+Sea $(E, +, \odot)$ un espacio vectorial real y sean $B=\conjvect{v}{n}$ un subconjunto de vectores en $E$. Un vector $v$ en $E$ se dice que es una combinación lineal de los vectores en $B$ si existen escalares $\alpha_1$, $\alpha_2$, $\ldots$ , $\alpha_n$ en \dobler , tales que $v=\av{\alpha_1}{v_1} + \av{\alpha_2}{v_2} + \ldots + \av{\alpha_n}{v_n}$.
+
+\end{dfn}
+
+\begin{ejemplo}
+Cualquier vector $(a, b, c)$ en \rtres puede ser expresado como una combinación lineal de los vectores  $(1,0,0)$,$(0,1,0)$ y $(0,0,1)$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+El vector $(4,5,5)$ puede ser expresado como una combinación lineal de los vectores $(1,2,3)$, $(-1,1,4)$ y $(3,3,2)$.
+\end{ejemplo}
+
+\begin{theorem}
+Sea $(E, +, \odot)$ un espacio vectorial y $A$ un subconjunto finito de $E$. El conjunto de todas las combinaciones lineales de elementos de $A$ es un subespacio de $E$ y se llama subespacio generado por $A$ y se denota por $CL(A)$.
+\end{theorem}
+
+\textbf{Prueba}\\
+$\mathbf{0}_v \in CL(A)$ por el comentario anterior.\\
+Sean $u$, $v$ en $CL(A)$, entonces
+\begin{align*}
+u &=\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}\\ 
+v&=\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n}
+\end{align*}
+entonces
+\begin{align*}
+u + v &= (\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}) + (\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n})\\
+u + v &=(\alpha_1 + \beta_1)\,v_1 + \ldots + (\alpha_n + \beta_n)\, v_n
+\end{align*}
+Así
+$$u + v \in CL(A)$$
+Sea $u \in CL(A)$ y $\alpha \in \dobler$
+\begin{align*}
+\alpha u &= \alpha(\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n})\\
+\alpha u &= (\alpha \alpha_1)v_1 + \ldots + (\alpha \alpha_n)v_n
+\end{align*}
+luego $\alpha u \in CL(A)$\\
+
+$\therefore$ $CL(A)$ es un subespacio vectorial de $V$.\\
+
+El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = CL(A)$ entonces decimos que $A$ genera al espacio $V$ o que $A$ es conjunto generador de $V$.
+
+\begin{ejemplo}
+Veamos que $A = \llav{(1,2,0),(0,1,-1),(1,1,2)}$ genera a \rtres .\
+En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que
+\end{ejemplo}
 %%%%%%%% esta seccion son los modelos de comandos para secciones
 %%ejercicio
 %\begin{ejercicio}
@@ -132,7 +197,6 @@ Sea $(E, +, \odot)$ un espacio vectorial real y $S$ un subconjunto no vacío de 
 %%%%%%%%%%%%%%%%
 
 
-Trabajo autonomo
 
 
 \end{document}

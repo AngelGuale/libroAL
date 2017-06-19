@@ -169,8 +169,49 @@ El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = C
 
 \begin{ejemplo}
 Veamos que $A = \llav{(1,2,0),(0,1,-1),(1,1,2)}$ genera a \rtres .\
-En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que
+En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que $$(x_0, y_0, z_0) = \alpha (1,2,0) + \beta (0,1,-1) + \lambda (1,1,2)$$
+lo que nos conduce al estudio del sistema 
+
+$$\left\{
+\begin{array}{rcl}
+\alpha + \lambda &=& x_0\\
+2 \alpha + \beta + \lambda &=& y_0\\
+- \beta + 2\alpha &=& z_0 
+\end{array}
+\right.$$
+
+Donde se obtiene que 
+\begin{align*}
+\alpha &= 3x_0 - y_0 -z_0\\
+\beta &=-4 x_0 +2 y_0 +z_0\\
+\lambda &= -2 x_0 + y_0 +z_0 
+\end{align*}
+
 \end{ejemplo}
+
+\section{Conjuntos linealmente independientes}
+El subconjunto $A= \conjvect{v}{n}$ de un espacio vectorial $V$ se dice que es linealmente independiente si la combinación lineal $\lambda_1 v_1 + \lambda v_2 + \ldots + \lambda v_n = 0$ tiene como única solución la trivial, es decir que $\lambda_1 = \lambda_2 = \ldots = \lambda_n = 0$. En caso contrario se dice que $A$ es linealmente independiente.
+
+\begin{ejemplo}
+
+Determinar si el conjunto de vectores $A= \{(1,2,3),(-2,1,1),(8,6,10)\}$ es linealmente independiente o no.\\
+Planteamos la igualdad 
+$$\alpha (1,2,3) + \beta (-2,1,1) + \lambda (8,6,10) = (0,0,0)$$
+de donde se obtiene que 
+$$\left\{
+\begin{array}{rcl}
+\alpha - 2\beta +8 \lambda & = & 0\\
+2 \alpha + \beta + 6\lambda & = & 0\\
+3\alpha + \beta + 10 \lambda & = & 0
+\end{array}
+\right.$$
+Al hacer el análisis del sistema obtenemos que existen infinitas soluciones. Así que el conjunto $A$ es linealmente dependiente.
+\end{ejemplo}
+
+\begin{ejemplo}
+Veamos que el conjunto $A= \{(3,-2,2),(3,-1,4),(1,0,5)\}$ es linealmente independiente.
+\end{ejemplo}
+
 %%%%%%%% esta seccion son los modelos de comandos para secciones
 %%ejercicio
 %\begin{ejercicio}

@@ -234,7 +234,76 @@ Al hacer el análisis del sistema obtenemos que existen infinitas soluciones. As
 \end{ejemplo}
 
 \begin{ejemplo}
-Veamos que el conjunto $A= \{(3,-2,2),(3,-1,4),(1,0,5)\}$ es linealmente independiente.
+Veamos que el conjunto $A= \{(3,-2,2),(3,-1,4),(1,0,5)\}$ es linealmente independiente.\\
+Consideremos $$\alpha (3,-2,2) + \beta (3,-1,4) + \lambda (1,0,5) = (0,0,0)$$
+y obtenemos
+$$\left\{
+\begin{array}{rcl}
+3 \alpha + 3 \beta + \lambda & = & 0\\
+-2 \alpha - \beta & = &0\\
+2 \alpha +4 \beta +5 \lambda & = & 0
+
+\end{array}
+\right.$$
+Al reducir de forma escalonada la matriz
+$$\left(
+\begin{array}{rrr}
+3 & 3 & 1\\
+-2 & -1 & 0\\
+2 & 4 & 5
+\end{array}
+\right)\\
+\sim \\
+\left(
+\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 &0\\
+0 &0 &1
+\end{array}
+\right)\\$$
+Entonces el sistema tiene solución y esta es la trivial $\alpha = \beta = \lambda = 0$.
+\end{ejemplo}
+Recordemos que las matrices reales $2 \times 2$ forman un espacio vectorial.
+
+\begin{ejemplo}
+
+Veamos que $H = \left\{ \matrdxd{-1 & 2}{0 & 1}, \matrdxd{2 & 1}{1 & 1} , \matrdxd{0 & 2}{-1 & 0} \right \}$ es linealmente independiente.\\
+Consideremos la igualdad
+$$\alpha \matrdxd {-1 & 2}{0&1} + \beta \matrdxd {2&1}{1&1} + \lambda \matrdxd {0 & 2}{-1 & 0} = \matrdxd {0&0}{0&0}$$
+de donde se obtiene
+$$\left\{
+\begin{array}{rcl}
+-\alpha + 2\beta &=&0\\
+2\alpha +\beta 2\lambda &=&0\\
+\beta - \lambda &=& 0\\
+\alpha + \beta &=&0
+
+\end{array}
+\right.$$
+y obtenemos que la única solución es $\alpha = \beta = \lambda = 0$.\\
+\end{ejemplo}
+
+\section{Base y dimensión de un espacio vectorial}
+Sea $V$ un espacio vectorial real y $A= \conjvect{v}{n}$ un subconjunto finito de $V$. Diremos que $A$ es una base de $V$, si y solo si, $A$ es linealmente independiente y genera  a $V$.
+
+\begin{ejemplo}
+Determine si la matriz \matrdxd {-1 & 7}{8&-1} se puede escribir como combinación lineal de las matrices \matrdxd{1&0}{2&1} , \matrdxd {2&-3}{0&2} , \matrdxd {0&1}{2&0}. \\
+Necesitamos averiguar si existen números reales $\alpha$, $\beta$, $\gamma$ tales que
+$$\matrdxd {-1&7}{8&-1} = \alpha \matrdxd {1&0}{2&1} + \beta \matrdxd {2&-3}{0&2} + \gamma \matrdxd {0&1}{2&0}$$
+lo cual conduce a resolver el siguiente sistema de ecuaciones
+$$\left\{
+\begin{array}{rcr}
+\alpha + 2\beta &=&-1\\
+-3\beta + \gamma &=&7\\
+2\alpha + 2 \gamma &=& 8\\
+\alpha +2\beta &=& -1
+
+\end{array}
+\right.$$
+
+
+
+
 \end{ejemplo}
 
 %%%%%%%% esta seccion son los modelos de comandos para secciones

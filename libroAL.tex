@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{book}
+\documentclass[10pt,a4paper]{report}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -41,6 +41,15 @@
     \end{center}
     }
 \numberwithin{tacounter}{chapter}
+
+\newenvironment{obsimp}[0]
+    {\noindent$\star$ \textbf{Observación importante}:
+  \itshape
+    }
+    { 
+    \\
+    }
+
 
 %    For a single index; for multiple indexes, see the manual
 %    "Instructions for preparation of papers and monographs:
@@ -303,9 +312,9 @@ $$\left\{
 
 \end{ejemplo}
 
-
-\subsection{Observación importante}
+\begin{obsimp}
 En cualquier espacio vectorial, el vector nulo $\mathbf{0}_v$ es combinación lineal de cualquier familia finita de elementos de $V$ \conjvect {v}{n} por $\mathbf{0}_v = 0 v_1 + 0 v_2 + \ldots + 0 v_n$.\\
+\end{obsimp}
 
 \begin{dfn}
 Un subconjunto $S$ de un espacio vectorial $(V, +, \odot)$ se dice que es un subconjunto linealmente independiente maximal de $V$ si\\
@@ -330,11 +339,13 @@ $$(v)_B = \left( \begin{array}{c}
 \vdots\\
 \alpha_n  \end{array} \right)$$
 
-\subsection{Observación importante}
+\begin{obsimp}
 Sea $V$ un espacio vectorial. Si una base está conformada por $n$ vectores, entonces todas las demás bases tendrán $n$ vectores.
+\end{obsimp}
 
-\subsection{Observación importante}
+\begin{obsimp}
 Sea $V$ un espacio vectorial. Si existe una base con $n$ vectores, diremos que $n$ es la dimensión de $V$ y será denotado como $dim (V) = n$.
+\end{obsimp}
 
 \begin{theorem}
 Si el espacio vectorial $(V , + , \odot)$ tiene un subconjunto linealmente independiente maximal \conjvect{v}{n} entonces es una base para $V$.

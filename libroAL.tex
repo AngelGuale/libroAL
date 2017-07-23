@@ -517,9 +517,58 @@ Sea $n=2$\\
 Entonces si $\lambda_1 \neq \lambda_2$ y $v_1 , v_2$ son los correspondientes vectores característicos, probaremos que son linealmente independientes.\\
 Así, si $\alpha_1 v_1 + \alpha_2 v_2 = 0 \: (*)$ y multiplicamos por $A$ obtenemos 
 \begin{align*}
-A(\alpha_1 v_1) + A(\alpha_2 v_2) &= A 
+A(\alpha_1 v_1) + A(\alpha_2 v_2) &= A \cdot 0 = 0\\
+\alpha_1 A v_1 + \alpha_2 A v_2 &=0\\
+\alpha_1 \lambda_1 v_1 + \alpha_2 \lambda_2 v_2 &= 0
 \end{align*}
+Si multiplicamos las ecuación $(*)$ por $\lambda_1$, obtenemos
+$$\alpha_1 \lambda_1 v_1 + \alpha_2 \lambda_1 v_2 = 0$$
+y si restamos estas dos últimas ecuaciones obtenemos $$\alpha_2 \lambda_2 v_2 - \alpha_2 \lambda_1 v_2 = 0$$
+Es decir tenemos que $$\alpha_2 (\lambda_2 - \lambda_1)v_2 = 0$$
+Por hipótesis $\lambda_2 -\lambda_1 \neq 0$ y $v_2 \neq \mathbf{0}$.\\
+Entonces $\alpha_2 = 0$. Esto último implica que $\alpha_1 v_1 =0$ y como $v_1 \neq \mathbf{0}$ se concluye que $\alpha_1 =0$. Por lo tanto se prueba que $v_1$ y $v_2$ son linealmente independientes.\\
+Supongamos ahora que para $1\leq n \leq k$ el teorema es cierto y veamos que también lo es para $n =k+1$.\\
+Supongamos entonces que 
+$$\beta_1 v_1 +\beta_2 v_2 + \ldots + \beta_k v_k + \beta_{k+1} v_{k+1}= 0\;(**)$$
+y si multiplicamos por $A$ la ecuación $(**)$ obtenemos
+$$\beta_1 A\, v_1 + \beta_2 A\, v_2 + \ldots +\beta_k A\, v_k + \beta_{k+1} A\, v_{k+1}$$
+$$\beta_1 \lambda_1 v_1 + \beta_2 \lambda_2 v_2 + \ldots + \beta_k \lambda_k v_k + \beta_{k+1} \lambda_{k+1} v_{k+1}\; (***)$$
+multipliquemos la ecuación $(**)$ por $\lambda_{k+1}$
+$$\beta_1 \lambda_{k+1} v_1 + \beta_{2} \lambda_{k+1} v_2 + \ldots + \beta_{k} \lambda_{k+1} v_k + \beta_{k+1} \lambda_{k+1} v_{k+1} = 0$$
+Si la última ecuación la restamos de $(***)$ obtenemos
+$$\beta_1 (\lambda_{k+1} - \lambda_1)v_1 + \beta_2(\lambda_{k+1}- \lambda_2)v_2 + \ldots + \beta_k (\lambda{k+1} - \lambda_k)v_k + \beta{k+1}(\lambda_{k+1} - \lambda_{k+1})v_{k+1} =0$$
+el cual queda como
+$$\beta_1(\lambda_{k+1}-\lambda_1)v_1 + \beta_2 (\lambda_{k+1} - \lambda_2)v_2 + \ldots + \beta_k(\lambda_{k+1}-\lambda_k)v_k =0$$
+Por hipótesis inductiva \conjvect{v}{R} son linealmente independientes y como $\lambda_{k+1}-\lambda_j \neq 0$ para $j = 1 \ldots k$. Obtenemos que $\beta_1 = \beta_2 = \ldots = \beta_k =0$.
+La ecuación $(**)$ queda como
+$$\beta_{k+1} v_{k+1} =0$$
+lo cual implica que $\beta_{k+1}=0$ por cuanto $v_{k+1}\neq \mathbf{0}$
 \end{proof}
+
+\section{Multiplicidad algebraica y multiplicidad geométrica de valores característicos}
+\begin{dfn}
+Sea $A$ una matriz $n \times n$ y sea $p(\lambda) = det (A - \lambda I)$ si $p(\lambda) = (\lambda - \lambda_1)^{r_1} (\lambda - \lambda_2)^{r_2} \ldots (\lambda- \lambda_m)^{r_m}$. Entonces los valores $r_i : i : 1, \ldots, m$ se llaman las multiplicidades algebraicas de los valores característicos $\lambda_i : i:1, \ldots, m$.
+\end{dfn}
+
+\begin{dfn}
+Sea $\lambda$ un valor característico de la matriz $A$. Entonces la multiplicidad geométrica de $\lambda$ es la dimensión del espacio $\mathbb{V}_{\lambda}$ el cual es igual a la nulidad de la transformación lineal $T(v) = (A- \lambda I)v$
+\end{dfn}
+
+\begin{theorem}
+Sea $A$ una matriz $n \times n$. A tiene $n$ vectores característicos linealmente independientes si y solo si cada uno de sus valores característicos tiene multiplicidad algebraica igual a 1.
+\end{theorem}
+
+\section{Diagonalización de matrices cuadradas}
+\begin{dfn}
+Sean $A$ y $B$ dos matrices $n \times n$. $A$ y $B$ se dicen que son semejantes si existe una matriz invertible $P$ tal que 
+$$B= P^{-1} AP$$
+\end{dfn}
+
+\begin{dfn}
+Una matriz $A$ $n \times n$ es diagonalizable si es semejante a una matriz diagonal. En otra palabras si existe una matriz diagonal $D$ y una matriz invertible $P$ tal que 
+$$A=P^{-1}DP$$
+\end{dfn}
+
 
 
 %%%%%%%% esta seccion son los modelos de comandos para secciones

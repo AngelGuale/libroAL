@@ -359,7 +359,7 @@ Si el espacio vectorial $(V , +, \odot)$ tiene un subconjunto minimal $B$, enton
 
 \chapter{Valores y Vectores Característicos}
 \begin{dfn}
-Sea $A$ una matriz $n \ times n$. Un escalar $\lambda$ se dice que es un valor característico de $A$ si existe un vector no nulo $x$ en \rn \ tal que
+Sea $A$ una matriz $n\times n$. Un escalar $\lambda$ se dice que es un valor característico de $A$ si existe un vector no nulo $x$ en \rn \ tal que
 $$A X = \lambda X$$
 El vector $x$ se llama vector característico de $A$ correspondiente a $\lambda$.
 \end{dfn}
@@ -424,19 +424,102 @@ Av &= \left( \begin{array}{rrr}
 Entonces $\lambda = 1$ es un valor característico de cualquier vector $v$ y todo vector $v \neq 0$ es un vector característico de $A$.
 \end{ejemplo}
 
-\begin{ejemplo}
-Sea $\lambda$ un valor característico de $A$ correspondiente al vector característico $v \neq 0$. Entonces 
+\noindent Sea $\lambda$ un valor característico de $A$ correspondiente al vector característico $v \neq 0$. Entonces 
 $$Av = \lambda v$$
 Ahora como $\lambda v = \lambda I v$ donde $I$ es la matriz identidad, obtenemos que 
 $$Av = \lambda I v$$
+De donde se obtiene la igualdad 
+$$(A - \lambda I) v = 0$$
+\begin{align*}
+\left[ \left( \begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{array} \right) - \lambda \left( \begin{array}{cccc}
+1 & 0 & \ldots & 0\\
+0 & 1 & \ldots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \ldots & 1
+\end{array} \right) \right] \left( \begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array} \right) &= \left( \begin{array}{c}
+0\\
+0\\
+\vdots\\
+0
+\end{array} \right)\\
+\left( \begin{array}{cccc}
+a_{11} - \lambda & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} - \lambda & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \ldots & a_{nn} - \lambda
+\end{array} \right) \left( \begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array} \right) &= \left( \begin{array}{c}
+0\\
+0\\
+\vdots\\
+0
+\end{array} \right)
+\end{align*}
+$$\left\{ \begin{array}{ccl}
+(a_{11}- \lambda)x_1 + a_{12} x_2 + \ldots + a_{1n} x_n & = & 0\\
+a_{21}x_1 + (a_{22} - \lambda)x_2 + \ldots + a_{2n} x_n & = & 0\\
+\vdots && \vdots\\
+a_{n1} x_1 + a_{n2} x_2 + \ldots + (a_{nn} - \lambda) x_n & = & 0
+\end{array}\right.$$
 
-\end{ejemplo}
+\noindent $An$, si $x = (x_1 , x_2 , \ldots , x_n)$ es un vector característico $\lambda$, se concluye que el sistema homogéneo anterior de $n$ ecuaciones tiene solución no trivial. Entonces $det (A - \lambda I) = 0$.\\
+Recíprocamente, si $det(A- \lambda I)=0$, entonces el sistema homogéneo tiene soluciones no triviales y $\lambda$ es en consecuencia un valor característico.\\
+Los argumentos anteriores son una prueba del siguiente teorema.
+\begin{theorem}
+Sea $A$ una matriz $n \times n$. Entonces $\lambda$ es un valor característico de $A$ si y solo si 
+$$det(A- \lambda I) =0$$
+\end{theorem}
 
+\begin{theorem}
+Sea $A$ una matriz $n \times n$ y $\lambda$ un valor característico de $A$. Entonces el conjunto $V_{\lambda} = \{v \in \rn : Av = \lambda v \} \cup  \{\mathbf{0}_{\rn}\}$ es un subespacio vectorial de \rn .
+\end{theorem}
 
+\begin{proof}
+Por definición $\mathbf{0}_{\rn} \in \mathbb{V}_{\lambda}$.\\
+Sean $v_1$ y $v_2$ $\in V_{\lambda}$, entonces 
+\begin{align*}
+A(v_1 + v_2) &= A v_1 + A v_2\\
+&= \lambda v_1 + \lambda v_2\\
+&= \lambda (v_1 + v_2)
+\end{align*}
+Por lo tanto $v_1 + v_2 \in V_{\lambda}$.
+Sea $\lambda \in \mathbb{R}$ y $v \in \mathbb{V}_{\lambda}$
+\begin{align*}
+A(\alpha V) &= \alpha A v\\
+&= \alpha \lambda V\\
+&=\lambda (\alpha V)
+\end{align*}
+Lo cual implica que $\alpha V \in \mathbb{V}_{\lambda}$.\\
+Por lo tanto $\mathbb{V}_{\lambda}$ es un subespacio vectorial de \rn .
+\end{proof}
 
+\begin{theorem}
+Sea $A$ una matriz $n \times n$, \kvect{\lambda}{k} valores característicos de $A$ distintos. Entonces los vectores característicos \kvect{v}{k} relativos a los valores característícos \kvect{\lambda}{k}, son linealmente independientes.
+\end{theorem}
 
-
-
+\begin{proof}
+Probemos el teorema por inducción.\\
+Sea $n=2$\\
+Entonces si $\lambda_1 \neq \lambda_2$ y $v_1 , v_2$ son los correspondientes vectores característicos, probaremos que son linealmente independientes.\\
+Así, si $\alpha_1 v_1 + \alpha_2 v_2 = 0 \: (*)$ y multiplicamos por $A$ obtenemos 
+\begin{align*}
+A(\alpha_1 v_1) + A(\alpha_2 v_2) &= A 
+\end{align*}
+\end{proof}
 
 
 %%%%%%%% esta seccion son los modelos de comandos para secciones

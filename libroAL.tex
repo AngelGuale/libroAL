@@ -322,7 +322,6 @@ Un subconjunto de $M$ de un espacio vectorial se dice que es un subconjunto gene
 \item Si a $M$ se le quita un elemento $v_0$ entonces $M \setminus \{w\}$ no es un conjunto generador.
 \end{enumerate}
 \end{dfn}
-
 Si $V$ es un subespacio vectorial y $B = \conjvect{v}{n}$ es una base para $V$, entonces los coeficientes de la combinación lineal $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n = v$ se denominan las coordenadas de $v$ respecto a la base $B$ y será representado por 
 $$(v)_B = \left( \begin{array}{c}
 \alpha_1\\
@@ -345,6 +344,89 @@ Si el espacio vectorial $(V , + , \odot)$ tiene un subconjunto linealmente indep
 \begin{theorem}
 Si el espacio vectorial $(V , +, \odot)$ tiene un subconjunto minimal $B$, entonces $B$ es una base para $V$.
 \end{theorem}
+
+
+\chapter{Valores y Vectores Característicos}
+\begin{dfn}
+Sea $A$ una matriz $n \ times n$. Un escalar $\lambda$ se dice que es un valor característico de $A$ si existe un vector no nulo $x$ en \rn \ tal que
+$$A X = \lambda X$$
+El vector $x$ se llama vector característico de $A$ correspondiente a $\lambda$.
+\end{dfn}
+
+\begin{ejemplo}
+Sea $A = \left( \begin{array}{rrr}
+1 & -2 & 1\\
+0 & 0 & 0\\
+0 & 1 & 1
+\end{array} \right)$.\\
+Compruebe que $x= (-3, -1, 1)$ es un vector característico de $A$.\\
+
+\noindent En efecto 
+\begin{align*}
+\left( \begin{array}{rrr}
+1 & -2 &1\\
+0 & 0 & 0\\
+0&1&1
+\end{array} \right)
+\vectrtres {-3}{-1}{1} &=
+\left( \begin{array}{c}
+-3+2+1\\
+0\\
+-1+1
+\end{array} \right)\\
+&= \vectrtres {0}{0}{0}\\
+&= 0 \vectrtres {-3}{-1}{1}
+\end{align*}
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $A =\matrdxd {10 & -18}{6 & -11}$ y $v= \vectrdos{2}{1}$\\
+\begin{align*}
+\matrdxd{10 & -18}{6 & -11} \vectrdos{2}{1} &= \vectrdos {20-18}{12-11}\\
+&= \vectrdos {2}{1}
+\end{align*}
+Así tenemos que 
+$$\matrdxd{10 & -18}{6 & -11} \vectrdos {2}{1} = 1 \vectrdos {2}{1}$$
+Lo cual indica que $\lambda = 1$ es un valor característico correspondiente al vector característico \vectrdos{2}{1}.
+\begin{align*}
+\matrdxd {10 & -18}{6 & -11} \vectrdos {3}{2} &= \vectrdos {30-36}{18-22}\\
+&= \vectrdos {-6}{-4}\\
+&= -2 \vectrdos {3}{2}
+\end{align*}
+De igual forma $\lambda = -2$ es el valor característico correspondiente al vector característico \vectrdos{3}{2}.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $A = \left( \begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} \right)$ y $v = \vectrtres {a}{b}{c}$ un vector cualquiera
+\begin{align*}
+Av &= \left( \begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} \right) \vectrtres{a}{b}{c}\\
+&= \vectrtres{a}{b}{c}
+\end{align*}
+Entonces $\lambda = 1$ es un valor característico de cualquier vector $v$ y todo vector $v \neq 0$ es un vector característico de $A$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $\lambda$ un valor característico de $A$ correspondiente al vector característico $v \neq 0$. Entonces 
+$$Av = \lambda v$$
+Ahora como $\lambda v = \lambda I v$ donde $I$ es la matriz identidad, obtenemos que 
+$$Av = \lambda I v$$
+
+\end{ejemplo}
+
+
+
+
+
+
+
 
 %%%%%%%% esta seccion son los modelos de comandos para secciones
 %%ejercicio

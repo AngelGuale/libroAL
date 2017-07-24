@@ -1,0 +1,69 @@
+
+\chapter{Coordenadas y cambio de base}
+\section{Coordenadas de un vector}
+\begin{dfn} [Coordenadas de un vector]
+
+Sea $B={v_1,v_2,...,v_n}$ una base ordenada del espacio vectorial V sobre un campo K,$v\in V$. Se denominan coordenadas de v con respecto a B a los escalares $\alpha _1,\alpha _2,...\alpha _n$ tales que
+$v=\alpha _1 v_1+\alpha _2 v_2+ ...+\alpha _n v_n$
+Y se define el vector $$[v]_B=\vectr4{\alpha _1}{\alpha _2}{\ldots}{\alpha _n} \in  \rn$$ el cual se denomina vector de coordenadas de v con respecto a B. 
+\end{dfn}
+
+Por ejemplo, en $P_1$, si tenemos la base $B={1+x,1-2x}$, entonces el vector 1+7x se escribe como
+$$1+7x=3(1+x)-2(1-2x)$$
+Entonces, las coordenadas de 1+7x con respecto a B son 3 y -2, el vector de coordenadas de v con respecto a B es $$[v]_B=\vectrdos{3}{-2}$$
+
+Como podemos observar, el vector de coordenadas de v, depende directamente de la base, inclusive, si cambiamos el orden de la base, cambia el vector de coordenadas, de ahí la importancia de la “base ordenada” en la definición.
+
+\section{Matriz de Cambio de Base}
+\begin{dfn} Sea V un espacio vectorial de dimensión n,$ B_1$  y$ B_2$  dos bases ordenadas V, y C una matriz de orden n, se dice que C es la matriz de cambio de base de $B_1$ a $B_2$ si se cumple
+%\alphav\in V    [v]_(B_2 )=C[v]_(B_1 )
+\end{dfn}
+
+\begin{theorem}
+
+
+Sea V un espacio vectorial de dimensión n, $B_1={v_1,v_2,…,v_n }$  y $B_2={u_1,u_2,…,u_n}$  dos bases ordenadas V, y C es la matriz de cambio de base de $B_1$ a $B_2$ entonces:
+\[C_{B_1 \rightarrow B_2}= \left(\begin{array}{cccc}
+\vdots & \vdots & \vdots & \vdots\\
+\left[v_1\right]_{B_2}&\left[v_2\right]_{B_2}& ... & \left[v_n\right]_{(B_2 )}\\
+\vdots & \vdots & \vdots & \vdots\\
+\end{array}
+\right)\]
+\end{theorem}
+
+\begin{theorem}[Corolario]
+Sea V un espacio vectorial de dimensión n, $B_1$ y $B_2$  dos bases ordenadas V, y C es la matriz de cambio de base de $B_1$ a $B_2$ entonces C es inversible, y $C^{-1}$ es la matriz de cambio de base de $B_2$ a $B_1$.
+\[
+C_{B_2\rightarrow B_1 }={C^{-1}}_{B_1 \rightarrow B_2}\]
+\end{theorem}
+
+\begin{ejemplo}
+Sea $V=\pdos$ , y sean $B_1, B_2$ dos bases de V. Determine la matriz de cambio de base de $B_2$ a$ B_1$. $ B_1=\llav{x^2+4x-2,x-3,x^2+1}$  y $B_2=\llav{2x^2+5x-4,x^2+2x+4,-x^2+x-4}$
+~\\
+
+La matriz de cambio de base de $B_2$ a $B_1$, estará formada por las coordenadas de los vectores de la base$ B_2$ con respecto a la base$ B_1$, es decir:
+\[C_{B_2 \rightarrow B_1}= \left(\begin{array}{ccc}
+\vdots & \vdots & \vdots \\
+\left[2x^2+5x-4\right]_{B_1}&\left[x^2+2x+4\right]_{B_1}&  \left[-x^2+x-4\right]_{B_1}\\
+\vdots & \vdots &  \vdots\\
+\end{array}
+\right)\]
+
+Calculando estas coordenadas tenemos:
+\[\left[2x^2+5x-4\right]_{B_1}=\vectrtres{1}{1}{1}\]
+\[\left[x^2+2x+4\right]_{B_1}=\vectrtres{1}{-2}{0}\]
+\[\left[-x^2+x-4\right]_{B_1}=\vectrtres{0}{1}{-1}\]
+
+Por tanto, la matriz que nos pide el ejercicio es:
+
+\[C_{B_2 \rightarrow B_1}= \left(\begin{array}{rrr}
+1 & 1 & 0 \\
+1&-2& 1\\
+1 & 0 &  -1\\
+\end{array}
+\right)\]
+
+
+
+
+\end{ejemplo}

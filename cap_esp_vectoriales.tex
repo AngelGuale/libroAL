@@ -1,0 +1,266 @@
+%espacios vectoriales
+\chapter{Espacios Vectoriales Reales}
+\section{Espacios Vectoriales reales}
+
+\begin{dfn}[Espacio vectorial real]
+Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
+
+
+\end{dfn}
+\subsubsection*{Axiomas para la suma}
+\begin{enumerate}
+\item Si $u$ y $v$ son elementos de $V$, $u+v$ es un elemento de V.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u+v=v+u$. Es decir, la suma es una operación conmutativa.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u+v)+w=u+(v+w)$. Es decir, la operación es asociativa.
+\item Existe un elemento de $V$, llamado elemento nulo y denotado por $\mathbf{0}_v$, tal que para todo $u$ en $V$, $u + \mathbf{0}_v = \mathbf{0}_v +u = u$.
+\item Para cada $u$ en $V$ existe un único elemento en $V$, llamado $-u$, tal que $u+(-u)=\mathbf{0}_v$.
+\end{enumerate}
+
+\subsubsection*{Axiomas para la multiplicación por escalares}
+\begin{enumerate}
+\item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha u$ es un elemento de $V$.
+\item Si $\alpha$ es un número real y $u$ y $v$ son elementos de $V$, entonces $\alpha (u+v) = \alpha u + \alpha v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
+\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)u = \alpha u + \beta u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
+\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta)u = \beta(\alpha u)$.
+\item Si $u$ es un elemento de $V$, entonces $1 \odot u = u$.
+
+\end{enumerate}
+
+\begin{trabajoautonomo}
+Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
+\begin{enumerate}
+\item El elemento neutro $\mathbf{0}_E$ es único.
+\item Para cada $e$ en $E$, el elemento $-e$ es único.
+\item Para cada $e$ en $E$, $\mathbf{0}_E \odot e = 0$.
+\item Para cada $e$ en $E$, $(-1)e = -e$.
+\item Para cada $\lambda$ en $\mathbb{R}$, $\lambda \odot \mathbf{0}_E = \mathbf{0}_E$.
+\item Si $\alpha v = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
+
+\end{enumerate}
+\end{trabajoautonomo}
+\begin{ejemplo}
+
+El espacio \rdos \ con las operaciones $(x,y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
+\end{ejemplo}
+
+\begin{ejemplo}
+El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
+
+
+\end{ejemplo}
+
+
+
+\section{Subespacios Vectoriales}
+\begin{dfn}
+Sea $(E, +, \odot)$ un espacio vectorial real y $S$ un subconjunto no vacío de $E$. Entonces se dice que $S$ es un subespacio vectorial de $E$, si con las operaciones heredadas de $E$, $(S, +, \odot)$ es también un espacio vectorial.
+\index{Subespacio Vectorial}
+\end{dfn}
+
+
+\begin{ejemplo}
+Sea $E = \rtres$ y $S = \llaves{(x, y, z) \in \rtres}{5x + 2y + z = 0}$ entonces $S$ es un subespacio de \rtres.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $E$ el espacio \mdosxdos \ de todas las matrices cuadradas $2 \times 2$ con las operaciones usuales de suma de matrices y de multiplicación por un escalar y $S$ el conjunto de las matrices diagonales, es decir las matrices de la forma \matrdxd{a & 0}{0 & b}, entonces $S$ es un subespacio de $E$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $E$ el espacio \ptres \ de todos los polinomios de grado menor o igual a 3, con la suma y multiplicación por un escalar usuales. Sea $S$ el conjunto de los polinomios \pdos \ de grado menor o igual a 2, entonces $S$ es un subespacio de $E$.
+\end{ejemplo}
+
+\begin{ejemplo}
+
+Sea $E$ un espacio vectorial real, $V$ y $W$ dos subespacios vectoriales de $E$, entonces $V + W =\llaves{a+b}{a \in V \, , \, b \in W}$ y $V \cap W = \llaves{a}{a \in V \cap W}$ son también subespacios vectoriales reales.
+\end{ejemplo}
+
+
+
+\subsubsection{El Subespacio Trivial}
+Si tenemos un espacio Vectorial $V$, elijamos el subconjunto que s\'olo contiene al neutro
+$W=\lbrace n_v\rbrace$:
+~\\	
+\begin{itemize}
+ \item W es un subconjunto no vac\'io de V.
+\item Como mostramos en la sección anterior, $W$ es siempre un espacio Vectorial (Denominado espacio trivial).
+ \end{itemize} 
+Por lo tanto $W$, el conjunto que s\'olo contiene al vector neutro de un espacio vectorial V es siempre un Subespacio Vectorial de $V$.
+\subsubsection{Todo espacio es subespacio de si mismo}
+Ahora, del espacio vectorial V, consideremos al conjunto V (No, no es error de escritura)
+\begin{itemize}
+\item $V$ siempre es un subconjunto no vac\'io de $V$. (Recuerde que todo conjunto A es subconjunto de s\'i mismo).
+\item $V$ es un espacio vectorial.
+\end{itemize}
+
+Por lo tanto cualquier espacio vectorial es subespacio vectorial de s\' mismo.
+
+~\\
+Todo espacio vectorial $V$ SIEMPRE tiene, por lo menos, dos subespacios vectoriales $V$ y $\lbrace n_v\rbrace$. Aquellos subespacios diferentes a los anteriores reciben el nombre de Subespacios Propios.
+~\\
+\subsubsection{Subespacios de $\mathbb{R}^2$}
+En $\mathbb{R}^2$, el espacio vectorial $bidimensional$ sobre el campo real; se distinguen, aparte de los subespacios propios, otros subespacios vectoriales:
+
+
+\begin{itemize}
+\item Toda recta que pasa por el origen es un subespacio vectorial de $\mathbb{R}^2$
+
+\end{itemize}
+\subsubsection{Subespacios de $\mathbb{R}^3$}
+Y en $\mathbb{R}^3$, el espacio vectorial tridimensional sobre el campo real; se distinguen, aparte de los subespacios propios, otros subespacios vectoriales:
+
+\begin{itemize}
+\item Toda recta que pasa por el origen es un subespacio vectorial de $\mathbb{R}^3$
+\item Todo plano que contiene al origen es un subespacio vectorial de $\mathbb{R}^3$
+\end{itemize}
+
+En principio para probar esto se necesitaría probar los 10 axiomas de la definición de espacio vectorial, sin embargo existe un teorema que nos ahorra bastante trabajo.
+
+
+\newpage
+\subsection{El teorema del subespacio}
+
+\begin{theorem}[Caracterizaci\'on de subespacio]
+Sea $\left(V, \oplus, \odot\right)$ un espacio vectorial sobre el campo. Sea $W$ un subconjunto de $V$. $W$ es un subespacio vectorial de $V$ si y solo si:
+	
+	\begin{itemize}
+	\item $W$ no es vac\'io
+	\item $\forall w_1, w_2 \in W: w_1\oplus w_2 \in W$
+	\item $\forall \alpha \in \mathbb{K} \forall w \in W: \alpha \odot w \in W$
+	
+	\end{itemize}
+
+\end{theorem}
+
+La prueba de este theoremrema se la dejamos al lector, indic\'andoles que deben probar que los restantes 8 axiomas de espacios vectoriales se satisfacen a partir de estos axiomas de cerradura y de la hip\'otesis que $W$ es un subconjunto de $V$, con las mismas operaciones de V
+\\
+\\
+Con este theoremrema demostraremos las afirmaciones sobre los subespacios de $\mathbb{R}^2$ y 
+$\mathbb{R}^3$.
+
+\begin{theorem}
+ Toda recta que pasa por el origen es un subespacio vectorial de \rdos
+
+\end{theorem}
+Prueba
+\\
+El enunciado algebraicamente se traduce en que \svrdos{x}{y}{y=mx}
+es un subespacio vectorial de \rdos.
+\begin{enumerate}
+
+
+\item[(i)] \vectrdos{0}{0} $\in W$ ya que $0=m\cdot 0$, por lo tanto $W\neq \phi$ 
+
+\item[(ii)] $\forall w_1, w_2 \in W: w_1=$ 
+\vectrdos{x_1}{y_1} $w_2=$\vectrdos{x_2}{y_2}
+
+\[
+w_1+w_2=\mbox{\vectrdos{x_1}{y_1}}+\mbox{\vectrdos{x_2}{y_2}}=
+\mbox{\vectrdos{x_1+x_2}{y_1+y_2}}
+\]
+
+para que el $vector\ suma$ pertenezca a W debe cumplir la condici{\'o}n de W:
+Por hip{\'o}tesis $w_1 \in W $ por lo que $y_1=mx_1$. Asimismo $w_2 \in W$ implica que
+$y_2=mx_2$
+
+\[
+\begin{array}{c}
+
+y_1+y_2=mx_1+mx_2
+\\
+y_1+y_2=m\left(x_1+x_2\right)
+\end{array}
+\]
+Por lo que el vector suma pertenece a $W$
+
+\item[(iii)] $\forall \alpha \in \mbox{\dobler}, \forall w \in W: w=$\vectrdos{x}{y}
+\[
+\alpha\cdot w=\alpha\mbox{\vectrdos{x}{y}}=
+\mbox{\vectrdos{\alpha x}{\alpha y}}
+\]
+Por hip\'otesis $w\in W$ por lo que $y=mx$
+
+\[\begin{array}{c}
+\alpha y=\alpha\left(mx\right)
+\\
+\alpha y=m\left( \alpha x\right)
+\end{array}
+\]
+
+Por lo que el $vector\ producto\ \alpha w=$\vectrdos{\alpha x}{\alpha y} pertenece a $W$.
+
+
+\end{enumerate}
+Ya que hemos probado $\left( i\right)\, \left(ii\right), \left(iii\right),$ que son las condiciones en el theoremrema de caraterizaci\'on de subespacio, por el mismo theoremrema concluimos que $W$ es un subespacio de \rdos. Lo cual prueba que toda recta que pasa por el origen es un subespacio vectorial de \rdos.
+
+\begin{theorem}
+En \rtres \ toda recta que pasa por el origen es un subespacio vectorial de \rtres.
+\end{theorem}
+~\\
+Prueba:
+
+Esto es equivalente a decir que el subconjunto \svrtres{W}{x}{y}{z}{x=at, y=bt, z=ct ;t\in \mbox{\dobler}} es un subespacio vectorial de \rtres.
+
+\begin{enumerate}
+\item[(i)] \vectrtres{0}{0}{0} $\in W \left( \mbox{cumple las tres condiciones} \right)$
+por tanto $W$ no es vac\'io.
+
+\item[(ii)] $\forall w_1, w_2 \in W$ $w_1=$\vectrtres{x_1}{y_1}{z_1} , $w_2=$\vectrtres{x_2}{y_2}{z_2}
+
+\[
+w_1+w_2=\mbox{\vectrtres{x_1}{y_1}{z_1}}+\mbox{\vectrtres{x_2}{y_2}{z_3}}
+=\mbox{\vectrtres{x_1+x_2}{y_1+y_2}{z_1+z_2}}
+\]
+Tanto $w_1, w_2, w_3$ son elementos de W, por lo que
+\[
+x_1=at_1,\ y_1=bt_1,\ z_1=ct_1
+\]
+\[
+x_2=at_2,\ y_2=bt_2,\ z_2=ct_2
+\]
+De esto se obtiene que:
+\[
+\begin{array}{ccc}
+x_1+x_2=at_1+at_2&y_1+y_2=bt_1+bt_2
+&z_1+z_2=ct_1+ct_2
+\\
+x_1+x_2=a\left(t_1+t_2\right)&
+y_1+y_2=b\left(t_1+t_2\right)&
+z_1+z_2=c\left(t_1+t_2\right)
+\end{array}
+\]
+
+Por tanto el vector $w_1+w_2$ pertenece a $W$.
+
+\item[(iii)] $\forall \alpha \in \mbox{\doblek}
+, \forall w \in W: w=$\vectrtres{x}{y}{z}
+\[
+\alpha w=\alpha \mbox{\vectrtres{x}{y}{z}}=
+\mbox{\vectrtres{\alpha x}{\alpha y}{\alpha z}}\]
+
+Por hip\'otesis, $x=at, y=bt, z=ct$:
+
+\[
+\begin{array}{ccc}
+\alpha x=\alpha \left(at\right)&
+\alpha y=\alpha \left(bt\right)&
+\alpha z=\alpha \left(ct\right)
+\\
+\alpha x=a\left(\alpha t\right)&
+\alpha y=b\left(\alpha t\right)&
+\alpha z=c\left(\alpha t\right)
+\end{array}
+\]
+
+\end{enumerate}
+~\\
+Por el teorema del subespacio, concluimos que $W$ es un subespacio 
+vectorial de \rtres.
+
+~\\

@@ -1,0 +1,69 @@
+%espacio generado combinación lineal
+\chapter{Combinaciones lineales y subespacios generados}
+\section{Combinaciones lineales y subespacios generados}
+\begin{dfn}
+Sea $(E, +, \odot)$ un espacio vectorial real y sean $B=\conjvect{v}{n}$ un subconjunto de vectores en $E$. Un vector $v$ en $E$ se dice que es una combinación lineal de los vectores en $B$ si existen escalares $\alpha_1$, $\alpha_2$, $\ldots$ , $\alpha_n$ en \dobler , tales que $v=\av{\alpha_1}{v_1} + \av{\alpha_2}{v_2} + \ldots + \av{\alpha_n}{v_n}$.
+
+\end{dfn}
+
+\begin{ejemplo}
+Cualquier vector $(a, b, c)$ en \rtres puede ser expresado como una combinación lineal de los vectores  $(1,0,0)$,$(0,1,0)$ y $(0,0,1)$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+El vector $(4,5,5)$ puede ser expresado como una combinación lineal de los vectores $(1,2,3)$, $(-1,1,4)$ y $(3,3,2)$.
+\end{ejemplo}
+
+\begin{theorem}
+Sea $(E, +, \odot)$ un espacio vectorial y $A$ un subconjunto finito de $E$. El conjunto de todas las combinaciones lineales de elementos de $A$ es un subespacio de $E$ y se llama subespacio generado por $A$ y se denota por $CL(A)$.
+\end{theorem}
+
+\begin{proof}
+
+$\mathbf{0}_v \in CL(A)$ por el comentario anterior.\\
+Sean $u$, $v$ en $CL(A)$, entonces
+\begin{align*}
+u &=\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}\\ 
+v&=\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n}
+\end{align*}
+entonces
+\begin{align*}
+u + v &= (\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}) + (\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n})\\
+u + v &=(\alpha_1 + \beta_1)\,v_1 + \ldots + (\alpha_n + \beta_n)\, v_n
+\end{align*}
+Así
+$$u + v \in CL(A)$$
+Sea $u \in CL(A)$ y $\alpha \in \dobler$
+\begin{align*}
+\alpha u &= \alpha(\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n})\\
+\alpha u &= (\alpha \alpha_1)v_1 + \ldots + (\alpha \alpha_n)v_n
+\end{align*}
+luego $\alpha u \in CL(A)$\\
+
+$\therefore$ $CL(A)$ es un subespacio vectorial de $V$. \qedhere \\ %%%%%%%  el \qedhere es el QED
+
+\end{proof}
+El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = CL(A)$ entonces decimos que $A$ genera al espacio $V$ o que $A$ es conjunto generador de $V$.
+
+\begin{ejemplo}
+Veamos que $A = \llav{(1,2,0),(0,1,-1),(1,1,2)}$ genera a \rtres .\
+En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que $$(x_0, y_0, z_0) = \alpha (1,2,0) + \beta (0,1,-1) + \lambda (1,1,2)$$
+lo que nos conduce al estudio del sistema 
+
+$$\left\{
+\begin{array}{rcl}
+\alpha + \lambda &=& x_0\\
+2 \alpha + \beta + \lambda &=& y_0\\
+- \beta + 2\alpha &=& z_0 
+\end{array}
+\right.$$
+
+Donde se obtiene que 
+\begin{align*}
+\alpha &= 3x_0 - y_0 -z_0\\
+\beta &=-4 x_0 +2 y_0 +z_0\\
+\lambda &= -2 x_0 + y_0 +z_0 
+\end{align*}
+
+\end{ejemplo}

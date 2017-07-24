@@ -1,0 +1,71 @@
+%independencia lineal
+\chapter{Conjuntos linealmente independientes}
+
+\section{Conjuntos linealmente independientes}
+El subconjunto $A= \conjvect{v}{n}$ de un espacio vectorial $V$ se dice que es linealmente independiente si la combinación lineal $\lambda_1 v_1 + \lambda v_2 + \ldots + \lambda v_n = 0$ tiene como única solución la trivial, es decir que $\lambda_1 = \lambda_2 = \ldots = \lambda_n = 0$. En caso contrario se dice que $A$ es linealmente dependiente.
+\index{Conjunto linealmente independiente}
+
+\begin{ejemplo}
+Determinar si el conjunto de vectores $A= \{(1,2,3),(-2,1,1),(8,6,10)\}$ es linealmente independiente o no.\\
+Planteamos la igualdad 
+$$\alpha (1,2,3) + \beta (-2,1,1) + \lambda (8,6,10) = (0,0,0)$$
+de donde se obtiene que 
+$$\left\{
+\begin{array}{rcl}
+\alpha - 2\beta +8 \lambda & = & 0\\
+2 \alpha + \beta + 6\lambda & = & 0\\
+3\alpha + \beta + 10 \lambda & = & 0
+\end{array}
+\right.$$
+Al hacer el análisis del sistema obtenemos que existen infinitas soluciones. Así que el conjunto $A$ es linealmente dependiente.
+\end{ejemplo}
+
+\begin{ejemplo}
+Veamos que el conjunto $A= \{(3,-2,2),(3,-1,4),(1,0,5)\}$ es linealmente independiente.\\
+Consideremos $$\alpha (3,-2,2) + \beta (3,-1,4) + \lambda (1,0,5) = (0,0,0)$$
+y obtenemos
+$$\left\{
+\begin{array}{rcl}
+3 \alpha + 3 \beta + \lambda & = & 0\\
+-2 \alpha - \beta & = &0\\
+2 \alpha +4 \beta +5 \lambda & = & 0
+
+\end{array}
+\right.$$
+Al reducir de forma escalonada la matriz
+$$\left(
+\begin{array}{rrr}
+3 & 3 & 1\\
+-2 & -1 & 0\\
+2 & 4 & 5
+\end{array}
+\right)\\
+\sim \\
+\left(
+\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 &0\\
+0 &0 &1
+\end{array}
+\right)\\$$
+Entonces el sistema tiene solución y esta es la trivial $\alpha = \beta = \lambda = 0$.
+\end{ejemplo}
+Recordemos que las matrices reales $2 \times 2$ forman un espacio vectorial.
+
+\begin{ejemplo}
+
+Veamos que $H = \left\{ \matrdxd{-1 & 2}{0 & 1}, \matrdxd{2 & 1}{1 & 1} , \matrdxd{0 & 2}{-1 & 0} \right \}$ es linealmente independiente.\\
+Consideremos la igualdad
+$$\alpha \matrdxd {-1 & 2}{0&1} + \beta \matrdxd {2&1}{1&1} + \lambda \matrdxd {0 & 2}{-1 & 0} = \matrdxd {0&0}{0&0}$$
+de donde se obtiene
+$$\left\{
+\begin{array}{rcl}
+-\alpha + 2\beta &=&0\\
+2\alpha +\beta 2\lambda &=&0\\
+\beta - \lambda &=& 0\\
+\alpha + \beta &=&0
+
+\end{array}
+\right.$$
+y obtenemos que la única solución es $\alpha = \beta = \lambda = 0$.\\
+\end{ejemplo}

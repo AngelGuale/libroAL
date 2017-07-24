@@ -1,0 +1,66 @@
+%bases
+\chapter{Base y Dimensión}
+
+\section{Base y dimensión de un espacio vectorial}
+Sea $V$ un espacio vectorial real y $A= \conjvect{v}{n}$ un subconjunto finito de $V$. Diremos que $A$ es una base de $V$, si y solo si, $A$ es linealmente independiente y genera  a $V$.
+
+\begin{ejemplo}
+Determine si la matriz \matrdxd {-1 & 7}{8&-1} se puede escribir como combinación lineal de las matrices \matrdxd{1&0}{2&1} , \matrdxd {2&-3}{0&2} , \matrdxd {0&1}{2&0}. \\
+Necesitamos averiguar si existen números reales $\alpha$, $\beta$, $\gamma$ tales que
+$$\matrdxd {-1&7}{8&-1} = \alpha \matrdxd {1&0}{2&1} + \beta \matrdxd {2&-3}{0&2} + \gamma \matrdxd {0&1}{2&0}$$
+lo cual conduce a resolver el siguiente sistema de ecuaciones
+$$\left\{
+\begin{array}{rcr}
+\alpha + 2\beta &=&-1\\
+-3\beta + \gamma &=&7\\
+2\alpha + 2 \gamma &=& 8\\
+\alpha +2\beta &=& -1
+
+\end{array}
+\right.$$
+
+\end{ejemplo}
+
+\begin{obsimp}
+En cualquier espacio vectorial, el vector nulo $\mathbf{0}_v$ es combinación lineal de cualquier familia finita de elementos de $V$ \conjvect {v}{n} por $\mathbf{0}_v = 0 v_1 + 0 v_2 + \ldots + 0 v_n$.\\
+\end{obsimp}
+
+\begin{dfn}
+Un subconjunto $S$ de un espacio vectorial $(V, +, \odot)$ se dice que es un subconjunto linealmente independiente maximal de $V$ si\\
+\begin{enumerate}
+\item $S$ es linealmente independiente.
+\item Para cualquier $w \in V$ y $w \notin S$ el subconjunto $S'$ de $V$ formado por $S$ unido con $\{w\}$ es linealmente independiente.
+\end{enumerate}
+\end{dfn}
+
+\begin{dfn}
+Un subconjunto de $M$ de un espacio vectorial se dice que es un subconjunto generador minimal de $V$ si
+\begin{enumerate}
+\item $M$ genera a $V$.
+\item Si a $M$ se le quita un elemento $v_0$ entonces $M \setminus \{w\}$ no es un conjunto generador.
+\end{enumerate}
+\end{dfn}
+Si $V$ es un subespacio vectorial y $B = \conjvect{v}{n}$ es una base para $V$, entonces los coeficientes de la combinación lineal $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n = v$ se denominan las coordenadas de $v$ respecto a la base $B$ y será representado por 
+$$(v)_B = \left( \begin{array}{c}
+\alpha_1\\
+\alpha_2\\
+\vdots\\
+\alpha_n  \end{array} \right)$$
+
+\begin{obsimp}
+Sea $V$ un espacio vectorial. Si una base está conformada por $n$ vectores, entonces todas las demás bases tendrán $n$ vectores.
+\end{obsimp}
+
+\begin{obsimp}
+Sea $V$ un espacio vectorial. Si existe una base con $n$ vectores, diremos que $n$ es la dimensión de $V$ y será denotado como $dim (V) = n$.
+\end{obsimp}
+
+\begin{theorem}
+Si el espacio vectorial $(V , + , \odot)$ tiene un subconjunto linealmente independiente maximal \conjvect{v}{n} entonces es una base para $V$.
+
+\end{theorem}
+
+
+\begin{theorem}
+Si el espacio vectorial $(V , +, \odot)$ tiene un subconjunto minimal $B$, entonces $B$ es una base para $V$.
+\end{theorem}

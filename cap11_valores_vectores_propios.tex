@@ -1,0 +1,222 @@
+%vectores propios
+\chapter{Valores y Vectores Característicos}
+\section{Valores y Vectores Característicos}
+
+\begin{dfn}
+Sea $A$ una matriz $n\times n$. Un escalar $\lambda$ se dice que es un valor característico de $A$ si existe un vector no nulo $x$ en \rn \ tal que
+$$A X = \lambda X$$
+El vector $x$ se llama vector característico de $A$ correspondiente a $\lambda$.
+\end{dfn}
+
+\begin{ejemplo}
+Sea $A = \left( \begin{array}{rrr}
+1 & -2 & 1\\
+0 & 0 & 0\\
+0 & 1 & 1
+\end{array} \right)$.\\
+Compruebe que $x= (-3, -1, 1)$ es un vector característico de $A$.\\
+\noindent En efecto 
+\begin{align*}
+\left( \begin{array}{rrr}
+1 & -2 &1\\
+0 & 0 & 0\\
+0&1&1
+\end{array} \right)
+\vectrtres {-3}{-1}{1} &=
+\left( \begin{array}{c}
+-3+2+1\\
+0\\
+-1+1
+\end{array} \right)\\
+&= \vectrtres {0}{0}{0}\\
+&= 0 \vectrtres {-3}{-1}{1}
+\end{align*}
+\end{ejemplo}
+
+
+\begin{ejemplo}
+Sea $A =\matrdxd {10 & -18}{6 & -11}$ y $v= \vectrdos{2}{1}$\\
+\begin{align*}
+\matrdxd{10 & -18}{6 & -11} \vectrdos{2}{1} &= \vectrdos {20-18}{12-11}\\
+&= \vectrdos {2}{1}
+\end{align*}
+Así tenemos que 
+$$\matrdxd{10 & -18}{6 & -11} \vectrdos {2}{1} = 1 \vectrdos {2}{1}$$
+Lo cual indica que $\lambda = 1$ es un valor característico correspondiente al vector característico \vectrdos{2}{1}.
+\begin{align*}
+\matrdxd {10 & -18}{6 & -11} \vectrdos {3}{2} &= \vectrdos {30-36}{18-22}\\
+&= \vectrdos {-6}{-4}\\
+&= -2 \vectrdos {3}{2}
+\end{align*}
+De igual forma $\lambda = -2$ es el valor característico correspondiente al vector característico \vectrdos{3}{2}.
+\end{ejemplo}
+
+
+\begin{ejemplo}
+Sea $A = \left( \begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} \right)$ y $v = \vectrtres {a}{b}{c}$ un vector cualquiera
+\begin{align*}
+Av &= \left( \begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} \right) \vectrtres{a}{b}{c}\\
+&= \vectrtres{a}{b}{c}
+\end{align*}
+Entonces $\lambda = 1$ es un valor característico de cualquier vector $v$ y todo vector $v \neq 0$ es un vector característico de $A$.
+\end{ejemplo}
+
+
+\noindent Sea $\lambda$ un valor característico de $A$ correspondiente al vector característico $v \neq 0$. Entonces 
+$$Av = \lambda v$$
+Ahora como $\lambda v = \lambda I v$ donde $I$ es la matriz identidad, obtenemos que 
+$$Av = \lambda I v$$
+De donde se obtiene la igualdad 
+$$(A - \lambda I) v = 0$$
+\begin{align*}
+\left[ \left( \begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{array} \right) - \lambda \left( \begin{array}{cccc}
+1 & 0 & \ldots & 0\\
+0 & 1 & \ldots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \ldots & 1
+\end{array} \right) \right] \left( \begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array} \right) &= \left( \begin{array}{c}
+0\\
+0\\
+\vdots\\
+0
+\end{array} \right)\\
+\left( \begin{array}{cccc}
+a_{11} - \lambda & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} - \lambda & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \ldots & a_{nn} - \lambda
+\end{array} \right) \left( \begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array} \right) &= \left( \begin{array}{c}
+0\\
+0\\
+\vdots\\
+0
+\end{array} \right)
+\end{align*}
+$$\left\{ \begin{array}{ccl}
+(a_{11}- \lambda)x_1 + a_{12} x_2 + \ldots + a_{1n} x_n & = & 0\\
+a_{21}x_1 + (a_{22} - \lambda)x_2 + \ldots + a_{2n} x_n & = & 0\\
+\vdots && \vdots\\
+a_{n1} x_1 + a_{n2} x_2 + \ldots + (a_{nn} - \lambda) x_n & = & 0
+\end{array}\right.$$
+
+\noindent $An$, si $x = (x_1 , x_2 , \ldots , x_n)$ es un vector característico $\lambda$, se concluye que el sistema homogéneo anterior de $n$ ecuaciones tiene solución no trivial. Entonces $det (A - \lambda I) = 0$.\\
+Recíprocamente, si $det(A- \lambda I)=0$, entonces el sistema homogéneo tiene soluciones no triviales y $\lambda$ es en consecuencia un valor característico.\\
+Los argumentos anteriores son una prueba del siguiente teorema.
+\begin{theorem}
+Sea $A$ una matriz $n \times n$. Entonces $\lambda$ es un valor característico de $A$ si y solo si 
+$$det(A- \lambda I) =0$$
+\end{theorem}
+
+
+\begin{theorem}
+Sea $A$ una matriz $n \times n$ y $\lambda$ un valor característico de $A$. Entonces el conjunto $V_{\lambda} = \{v \in \rn : Av = \lambda v \} \cup  \{\mathbf{0}_{\rn}\}$ es un subespacio vectorial de \rn .
+\end{theorem}
+
+\begin{proof}
+Por definición $\mathbf{0}_{\rn} \in \mathbb{V}_{\lambda}$.\\
+Sean $v_1$ y $v_2$ $\in V_{\lambda}$, entonces 
+\begin{align*}
+A(v_1 + v_2) &= A v_1 + A v_2\\
+&= \lambda v_1 + \lambda v_2\\
+&= \lambda (v_1 + v_2)
+\end{align*}
+Por lo tanto $v_1 + v_2 \in V_{\lambda}$.
+Sea $\lambda \in \mathbb{R}$ y $v \in \mathbb{V}_{\lambda}$
+\begin{align*}
+A(\alpha V) &= \alpha A v\\
+&= \alpha \lambda V\\
+&=\lambda (\alpha V)
+\end{align*}
+Lo cual implica que $\alpha V \in \mathbb{V}_{\lambda}$.\\
+Por lo tanto $\mathbb{V}_{\lambda}$ es un subespacio vectorial de \rn .
+\end{proof}
+
+
+\begin{theorem}
+Sea $A$ una matriz $n \times n$, \kvect{\lambda}{k} valores característicos de $A$ distintos. Entonces los vectores característicos \kvect{v}{k} relativos a los valores característícos \kvect{\lambda}{k}, son linealmente independientes.
+\end{theorem}
+
+\begin{proof}
+Probemos el teorema por inducción.\\
+Sea $n=2$\\
+Entonces si $\lambda_1 \neq \lambda_2$ y $v_1 , v_2$ son los correspondientes vectores característicos, probaremos que son linealmente independientes.\\
+Así, si $\alpha_1 v_1 + \alpha_2 v_2 = 0 \: (*)$ y multiplicamos por $A$ obtenemos 
+\begin{align*}
+A(\alpha_1 v_1) + A(\alpha_2 v_2) &= A \cdot 0 = 0\\
+\alpha_1 A v_1 + \alpha_2 A v_2 &=0\\
+\alpha_1 \lambda_1 v_1 + \alpha_2 \lambda_2 v_2 &= 0
+\end{align*}
+Si multiplicamos las ecuación $(*)$ por $\lambda_1$, obtenemos
+$$\alpha_1 \lambda_1 v_1 + \alpha_2 \lambda_1 v_2 = 0$$
+y si restamos estas dos últimas ecuaciones obtenemos $$\alpha_2 \lambda_2 v_2 - \alpha_2 \lambda_1 v_2 = 0$$
+Es decir tenemos que $$\alpha_2 (\lambda_2 - \lambda_1)v_2 = 0$$
+Por hipótesis $\lambda_2 -\lambda_1 \neq 0$ y $v_2 \neq \mathbf{0}$.\\
+Entonces $\alpha_2 = 0$. Esto último implica que $\alpha_1 v_1 =0$ y como $v_1 \neq \mathbf{0}$ se concluye que $\alpha_1 =0$. Por lo tanto se prueba que $v_1$ y $v_2$ son linealmente independientes.\\
+Supongamos ahora que para $1\leq n \leq k$ el teorema es cierto y veamos que también lo es para $n =k+1$.\\
+Supongamos entonces que 
+$$\beta_1 v_1 +\beta_2 v_2 + \ldots + \beta_k v_k + \beta_{k+1} v_{k+1}= 0\;(**)$$
+y si multiplicamos por $A$ la ecuación $(**)$ obtenemos
+$$\beta_1 A\, v_1 + \beta_2 A\, v_2 + \ldots +\beta_k A\, v_k + \beta_{k+1} A\, v_{k+1}$$
+$$\beta_1 \lambda_1 v_1 + \beta_2 \lambda_2 v_2 + \ldots + \beta_k \lambda_k v_k + \beta_{k+1} \lambda_{k+1} v_{k+1}\; (***)$$
+multipliquemos la ecuación $(**)$ por $\lambda_{k+1}$
+$$\beta_1 \lambda_{k+1} v_1 + \beta_{2} \lambda_{k+1} v_2 + \ldots + \beta_{k} \lambda_{k+1} v_k + \beta_{k+1} \lambda_{k+1} v_{k+1} = 0$$
+Si la última ecuación la restamos de $(***)$ obtenemos
+$$\beta_1 (\lambda_{k+1} - \lambda_1)v_1 + \beta_2(\lambda_{k+1}- \lambda_2)v_2 + \ldots + \beta_k (\lambda{k+1} - \lambda_k)v_k + \beta{k+1}(\lambda_{k+1} - \lambda_{k+1})v_{k+1} =0$$
+el cual queda como
+$$\beta_1(\lambda_{k+1}-\lambda_1)v_1 + \beta_2 (\lambda_{k+1} - \lambda_2)v_2 + \ldots + \beta_k(\lambda_{k+1}-\lambda_k)v_k =0$$
+Por hipótesis inductiva \conjvect{v}{R} son linealmente independientes y como $\lambda_{k+1}-\lambda_j \neq 0$ para $j = 1 \ldots k$. Obtenemos que $\beta_1 = \beta_2 = \ldots = \beta_k =0$.
+La ecuación $(**)$ queda como
+$$\beta_{k+1} v_{k+1} =0$$
+lo cual implica que $\beta_{k+1}=0$ por cuanto $v_{k+1}\neq \mathbf{0}$
+\end{proof}
+
+
+
+
+\section{Multiplicidad algebraica y multiplicidad geométrica de valores característicos}
+\begin{dfn}
+Sea $A$ una matriz $n \times n$ y sea $p(\lambda) = det (A - \lambda I)$ si $p(\lambda) = (\lambda - \lambda_1)^{r_1} (\lambda - \lambda_2)^{r_2} \ldots (\lambda- \lambda_m)^{r_m}$. Entonces los valores $r_i : i : 1, \ldots, m$ se llaman las multiplicidades algebraicas de los valores característicos $\lambda_i : i:1, \ldots, m$.
+\end{dfn}
+
+\begin{dfn}
+Sea $\lambda$ un valor característico de la matriz $A$. Entonces la multiplicidad geométrica de $\lambda$ es la dimensión del espacio $\mathbb{V}_{\lambda}$ el cual es igual a la nulidad de la transformación lineal $T(v) = (A- \lambda I)v$
+\end{dfn}
+
+\begin{theorem}
+Sea $A$ una matriz $n \times n$. A tiene $n$ vectores característicos linealmente independientes si y solo si cada uno de sus valores característicos tiene multiplicidad algebraica igual a 1.
+\end{theorem}
+
+\section{Diagonalización de matrices cuadradas}
+\begin{dfn}
+Sean $A$ y $B$ dos matrices $n \times n$. $A$ y $B$ se dicen que son semejantes si existe una matriz invertible $P$ tal que 
+$$B= P^{-1} AP$$
+\end{dfn}
+
+\begin{dfn}
+Una matriz $A$ $n \times n$ es diagonalizable si es semejante a una matriz diagonal. En otra palabras si existe una matriz diagonal $D$ y una matriz invertible $P$ tal que 
+$$A=P^{-1}DP$$
+\end{dfn}
+

@@ -1,4 +1,111 @@
 %%transformaciones
 \chapter{Transformaciones Lineales}
 
-TL
+\begin{dfn}
+Sean $V$ y $W$ dos espacios vectoriales sobre un campo $K$. Una función $L: V \to W$ se dice que es lineal si para todo $u$, $v$ en $V$ y todo $\lambda \in K$, se cumple que
+\begin{enumerate}
+\item $L (u+v) = L(u) + L(v)$
+\item $L(\lambda u) = \lambda L(u)$
+\end{enumerate}
+\end{dfn}
+
+\begin{ejemplo}
+Sea $r_0 \in K$ y $V$ un espacio vectorial sobre un campo $\mathbb{K}$. La función 
+\begin{align*}
+L: V &\to V\\
+L(V) &= r_0 v
+\end{align*}
+es una transformación lineal.\\
+En efecto 
+\begin{align*}
+L(u+v) &= r_0 (u+v)\\
+&= r_0 u + r_0 v\\
+&= L(u)+L(v)
+\end{align*}
+Si $\lambda \in \mathbb{K}$
+\begin{align*}
+L(\lambda u) &= r_0 (\lambda u)\\
+&= \lambda (r_0 u)\\
+&=\lambda (u)
+\end{align*}
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $L: \rdos \to \rdos$ definida por
+$$L(x,y) = (x \cos(\theta) - y\, \mathrm{sen} (\theta) ,\, x\, \mathrm{sen}(\theta) + y \cos (\theta))$$
+$L$ es una transformación lineal que consiste en una rotación, de $\theta$ grados, alrededor del origen.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $L: \mathbb{R} \to \mathbb{R}$ definida por 
+$$L(x) = x^2$$
+Claramente $L$ no es una transformación lineal pues
+$$(x+y)^2 \neq x^2 + y^2  \ \ \ \textup{si} \; x\neq 0 ,\; y \neq 0$$
+\end{ejemplo}
+
+\begin{theorem}
+Sean $U$ y $V$ dos espacios vectoriales y $T: U \to V$ una transformación lineal, entonces se cumple que
+\begin{itemize}
+\item[a. ] $T(\mathbf{0}_u) = \mathbf{0}_v$
+\item[b. ] $T(-v) = -T(v)$
+\item[c. ] $T(u - v) = T(u) - T(v)$
+\item[d. ] Si $v = \alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n$, entonces $T(v) = \alpha_1 T(v_1) + \alpha_2 T(v_2) + \ldots + \alpha_n T(v_n)$
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+\begin{itemize}
+\item[a. ] $T(\mathbf{0}_u) = T(\mathbf{0}_u + \mathbf{0}_u) = T(\mathbf{0}_u) + T(\mathbf{0}_u)$, entonces $\mathbf{0}_v = T(\mathbf{0}_u)- T(\mathbf{0}_u) = T(\mathbf{0}_u)$
+\item[b. ] $T(-v) = T((-1)v) = (-1) T(v) = -T(v)$
+\item [c. ] $T(u-v) = T(u+(-1)v) = T(u) + T((-1)v) = T(u) - T(v)$
+\item [d. ] Aplicando $n$ veces la linealidad de $T$ se obtiene la igualdad deseada.
+\end{itemize}
+\end{proof}
+
+\begin{theorem}
+Sean $V$ y $W$ dos espacios vectoriales y $T: V \to W$ una transformación lineal. Si $B = \{v_1, v_2, \ldots , v_n\}$ es una base para $V$ entonces $L$ está unívocamente determinada por los vectores $T(v_1), T(v_2), \ldots , T(v_n)$.
+\end{theorem}
+
+\begin{proof}
+En efecto, probemos que si $L: V \to W$ es una transformación lineal tal que $L(v_i) = T(v_i)$ para $i = 1, 2, \ldots , n$ entonces $L = T$. Necesitamos probar que para todo $v \in V$, $L(v) = T(v)$.
+\\
+
+Como $B$ es una base para $V$, se tiene que, para cualquier $v \in V$, existen escalares $\alpha_1, \alpha_2, \ldots , \alpha_n$ tales que $v = \alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n$.\\
+
+Ahora
+\begin{align*}
+L(v) &= L(\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n)\\
+&= L(\alpha_1 v_1) + L(\alpha_2 v_2) + \ldots + L(\alpha_n v_n)\\
+&=\alpha_1 L(v_1) + \alpha_2 L(v_2) + \ldots + \alpha_n L(v_n)\\ 
+&=\alpha_1 T(v_1) + \alpha_2 T(v_2) + \ldots + \alpha_n T(v_n)\\
+&= T(\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n)\\
+&= T(v) 
+\end{align*}
+\end{proof}
+
+\begin{theorem}
+Sean $V$ y $W$ dos espacios vectoriales y $B = \conjvect{v}{n}$ una base de $V$. Sean \conjvect{w}{n} elementos de $W$. Entonces existe una única transformación lineal $L: V \to W$ tal que 
+$$w_i = L(v_i)\qquad \forall i = 1, 2, \ldots, n$$
+\end{theorem}
+
+\begin{proof}
+En efecto sea $L: V \to W$ la función definida por $L(v) = L(\sum \alpha_i v_i) = \sum \alpha_i L(v_i) = \sum \alpha_i w_i$.
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$L$ es claramente lineal y por el teorema %9.3 
+es única.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\begin{theorem}
+Sea $A$ una matriz $m \times n$ con entradas reales. Entonces la función $L : \rn \to \rmm $ definida por $$L(v)= A v$$
+es una transformación lineal.
+\end{theorem}
+
+\begin{proof}
+Sin pérdida de rigurosidad representamos a un elemento $u$ de \rn \ como un vector columna $n \times 1$ y a los elementos de \rmm \ como vectores columna $m \times 1$.
+\end{proof}
+
+
+
+

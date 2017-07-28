@@ -106,6 +106,61 @@ es una transformación lineal.
 Sin pérdida de rigurosidad representamos a un elemento $u$ de \rn \ como un vector columna $n \times 1$ y a los elementos de \rmm \ como vectores columna $m \times 1$.
 \end{proof}
 
+\section{Isomorfismos entre espacios vectoriales}
+\begin{dfn}
+Sean $V$ y $W$ dos espacios vectoriales. Si existe una transformación lineal $L : V \to W$ que es inyectiva y sobreyectiva, decimos que $V$ y $W$ son isomorfos y que $L$ es un isomorfismo de espacios vectoriales.
+\end{dfn}
 
+\begin{dfn}
+Sea $V$ un espacio vectorial sobre el campo $K$ y sea $B = \conjvect{v}{n}$ una base para $V$, entonces la función $L : V \to \rn$ tal que $L(v) = [v]_B$ es una transformación lineal llamada transformación de coordenadas de $V$ con respecto a la base $B$.
+\end{dfn}
+
+\begin{theorem}
+Sea $V$ un espacio vectorial de dimensión $n$ sobre $\mathbb{R}$. Entonces la transformación de coordenadas respecto a $B$ $L : V \to \rn$ es un isomorfismo.
+\end{theorem}
+
+\begin{proof}
+La prueba sigue fácilmente del hecho de observar que $[v + w]_B = [v]_B + [w]_B$ y que $[\alpha v]_B = \alpha [v]_B$.
+\end{proof}
+
+\section{Núcleo e imagen de una transformación lineal}
+\begin{dfn}
+Sean $V$ y $W$ dos espacios vectoriales y $T : V \to W$ una transformación lineal. Entonces el núcleo de $T$, denotado por $Nu(T) = \{v \in V : T(v) = \mathbf{0}_W\}$ y la imagen de $T$, denotado por $Img(T) = \{w : w \neq T(v) \ para \ v \in V\}$.
+\end{dfn}
+
+\begin{theorem}
+Sean $V$ y $W$ dos espacios vectoriales y $T : V \to W$ una transformación lineal. Entonces $Nu(T)$ y $Img(T)$ son subespacios vectoriales de $V$ y $W$ respectivamente.
+\end{theorem}
+
+\begin{proof}
+Veamos que $Nu(T)$ es un subespacio vectorial de $V$.
+\begin{enumerate}
+\item Como $T(\mathbf{0}_V)=\mathbf{0}_W$ , entonces $\mathbf{0}_V \in Nu(T)$.
+\item Supongamos que $u , v \in Nu(T)$, entonces $T(u+v) = T(u) + T(v) = \mathbf{0}_W + \mathbf{0}_W = \mathbf{0}_w$. Por lo tanto $u+v \in Nu(T)$.
+\item Si $\alpha \in \mathbb{K}$ y $u \in Nu(T)$, se tiene que $T(\alpha u) = \alpha T(u) = \alpha \mathbf{0}_W = \mathbf{0}_W$ lo cual prueba que $\alpha u \in Nu(T)$.
+\end{enumerate}
+Así tenemos que $Nu(T)$ es un subespacio vectorial de $V$. Similarmente se prueba que $Img(T)$ es un subespacio vectorial de $W$.
+\end{proof}
+
+\begin{dfn}
+Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $T$ es una transformación lineal. La nulidad de $T$ se define como la dimensión de $Nu(T)$ y se denota por $\eta (T)$. El rango de $T$ se define como la dimensión de $Img(T)$.
+\end{dfn}
+
+\begin{theorem}
+Una transformación lineal $L : V \to W$ es inyectiva si y solo si $Nu(L) = \{\mathbf{0}_V\}$.
+\end{theorem}
+
+\begin{proof}
+Supongamos que $L$ es inyectiva, entonces si $L(v) = \mathbf{0}_W$ se tiene que $L(v) = L(\mathbf{0}_V)$ y por la inyectividad de $L$ concluimos que $u = \mathbf{0}_V$. Así $Nu(L) = \{\mathbf{0}_V\}$.\\
+Recíprocamente, si $Nu(L) = \{\mathbf{0}_V\}$ y $L(u) = L(v)$ se tiene que $L(u - v) = \mathbf{0_W}$. Entonces $u -v = \mathbf{0}_V$ lo cual implica que $u = v + \mathbf{0}_V = v$. Concluimos entonces que $L$ es inyectiva.
+\end{proof}
+
+\begin{theorem}
+Sea $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $L : V \to W$ una transformación lineal inyectiva. Sea $B$ un subconjunto de $V$ linealmente independiente, entonces $L(B)$ es un subconjunto de $W$ linealmente independiente. 
+\end{theorem}
+
+\begin{proof}
+Sea $B = \conjvect{v}{n}$ un conjunto linealmente independiente y $L(B) = \{L(v_1), L(v_2), \ldots , L(v_k)\}$. Si $\alpha_1 L(v_1) + \ldots + \alpha_k L(v_k) = 0$
+\end{proof}
 
 

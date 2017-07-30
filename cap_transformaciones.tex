@@ -143,7 +143,7 @@ Así tenemos que $Nu(T)$ es un subespacio vectorial de $V$. Similarmente se prue
 \end{proof}
 
 \begin{dfn}
-Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $T$ es una transformación lineal. La nulidad de $T$ se define como la dimensión de $Nu(T)$ y se denota por $\eta (T)$. El rango de $T$ se define como la dimensión de $Img(T)$.
+Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $T$ es una transformación lineal. La nulidad de $T$ se define como la dimensión de $Nu(T)$ y se denota por $\eta (T)$. El $rank$ de $T$ se define como la dimensión de $Img(T)$.
 \end{dfn}
 
 \begin{theorem}
@@ -160,7 +160,60 @@ Sea $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $L : V \to W$ una tr
 \end{theorem}
 
 \begin{proof}
-Sea $B = \conjvect{v}{n}$ un conjunto linealmente independiente y $L(B) = \{L(v_1), L(v_2), \ldots , L(v_k)\}$. Si $\alpha_1 L(v_1) + \ldots + \alpha_k L(v_k) = 0$
+Sea $B = \conjvect{v}{n}$ un conjunto linealmente independiente y $L(B) = \{L(v_1), L(v_2), \ldots , L(v_k)\}$. Si $\alpha_1 L(v_1) + \ldots + \alpha_k L(v_k) = 0$ entonces $L(\alpha_1 v_1 + \ldots +\alpha_k v_k) = \mathbf{0}_W$. Como $L$ es inyectiva se tiene que $\alpha_1 v_1 + \ldots + \alpha_k v_k = \mathbf{0}_V$ y por el hecho de ser $B$ linealmente independiente se tiene que $\alpha_i = 0$ para todo $i = 1, 2, \ldots , k$. Obtenemos entonces que $\{L(v_1), \ldots , L(v_k)\}$ es linealmente independiente.
 \end{proof}
 
+\begin{theorem}
+Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$.Si $B$ es una base para $V$ y $L : V \to W$ es una transformación lineal inyectiva, entonces $L(B)$ es una base para la $Img(L)$ y si $V$ es de dimensión finita $n$ se tiene que $n = rank(L)$.\\
+
+La demostración se deja como ejercicio. %%% :c 
+\end{theorem}
+
+\begin{theorem}
+Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $L : V \to W$ una transformación lineal. Si $B = \conjvect{v}{k}$ es una base para $Nu(L)$, entonces si $\{v_1 , \ldots , v_{k}, \ldots , v_n\}$ es una base para $V$, se tiene que $\{T(v_{k+1}), \ldots , T(v_n)\}$ es una bse para $Img(L)$.
+\end{theorem}
+
+\begin{proof}
+.
+\end{proof}
+
+\section{Operaciones con transformaciones lineales}
+\begin{dfn}
+Sean $V$ y $W$ dos espacios vectoriales sobre un campo $\mathbb{K}$ y $T$ y $L$ dos transformaciones lineales de $V$ en $W$ y $\lambda \in \mathbb{K}$. Entonces 
+\begin{enumerate}
+\item $T + L : V \to W \qquad (T + L)(v) = T(v) + L(v)$
+\item $\lambda T : V \to W \qquad (\lambda T)(v) = \lambda T(v)$
+\end{enumerate}
+Son transformaciones lineales.
+\end{dfn}
+
+\begin{proof}
+\begin{align*}
+(T+L)(u+v) &=T(u+v) + L(u+v)\\
+&= T(u) + T(v) + L(u) + L(v)\\
+&= (T+L)(u) + (T+L)(v)\\
+\\
+(T+L)(\alpha u) &= T(\lambda u) + L(\lambda u)\\
+&= \lambda T(u)+ \lambda L(u)\\
+&= \lambda (T+L)(u) 
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align*}
+\lambda T(u+v) &= \lambda [T(u+v)]\\
+&= \lambda [T(u) + T(v)]\\
+&= (\lambda T)(u) + (\lambda T)(v)\\
+\\
+(\lambda T)(\beta u) &= \lambda T(\beta u)\\
+&=\lambda \beta T(u)\\
+&= \beta (\lambda T)(u)
+\end{align*}
+\end{proof}
+
+\begin{theorem}
+Sean $V$ y $W$ espacios vectoriales y sea $L(V, W) = \{T : V \to W \; ; T \ una \ transformaci\acute{o}n \ lineal\}$. Entonces $L(V, W)$ con las operaciones definidas anteriormente es un espacio vectorial.
+\end{theorem}
+
+\begin{proof}
+.
+\end{proof}
 

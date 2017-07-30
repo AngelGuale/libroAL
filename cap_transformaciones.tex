@@ -10,7 +10,7 @@ Sean $V$ y $W$ dos espacios vectoriales sobre un campo $K$. Una función $L: V \
 \end{dfn}
 
 \begin{ejemplo}
-Sea $r_0 \in K$ y $V$ un espacio vectorial sobre un campo $\mathbb{K}$. La función 
+Sea $r_0 \in K$ y $V$ un espacio vectorial sobre un campo $K$. La función 
 \begin{align*}
 L: V &\to V\\
 L(V) &= r_0 v
@@ -22,7 +22,7 @@ L(u+v) &= r_0 (u+v)\\
 &= r_0 u + r_0 v\\
 &= L(u)+L(v)
 \end{align*}
-Si $\lambda \in \mathbb{K}$
+Si $\lambda \in K$
 \begin{align*}
 L(\lambda u) &= r_0 (\lambda u)\\
 &= \lambda (r_0 u)\\
@@ -63,6 +63,7 @@ Sean $U$ y $V$ dos espacios vectoriales y $T: U \to V$ una transformación linea
 \end{proof}
 
 \begin{theorem}
+\label{th:ag}
 Sean $V$ y $W$ dos espacios vectoriales y $T: V \to W$ una transformación lineal. Si $B = \{v_1, v_2, \ldots , v_n\}$ es una base para $V$ entonces $L$ está unívocamente determinada por los vectores $T(v_1), T(v_2), \ldots , T(v_n)$.
 \end{theorem}
 
@@ -91,9 +92,8 @@ $$w_i = L(v_i)\qquad \forall i = 1, 2, \ldots, n$$
 \begin{proof}
 En efecto sea $L: V \to W$ la función definida por $L(v) = L(\sum \alpha_i v_i) = \sum \alpha_i L(v_i) = \sum \alpha_i w_i$.
 \\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-$L$ es claramente lineal y por el teorema %9.3 
-es única.
+
+$L$ es claramente lineal y por el teorema \ref{th:ag} es única.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{proof}
 
@@ -137,13 +137,13 @@ Veamos que $Nu(T)$ es un subespacio vectorial de $V$.
 \begin{enumerate}
 \item Como $T(\mathbf{0}_V)=\mathbf{0}_W$ , entonces $\mathbf{0}_V \in Nu(T)$.
 \item Supongamos que $u , v \in Nu(T)$, entonces $T(u+v) = T(u) + T(v) = \mathbf{0}_W + \mathbf{0}_W = \mathbf{0}_w$. Por lo tanto $u+v \in Nu(T)$.
-\item Si $\alpha \in \mathbb{K}$ y $u \in Nu(T)$, se tiene que $T(\alpha u) = \alpha T(u) = \alpha \mathbf{0}_W = \mathbf{0}_W$ lo cual prueba que $\alpha u \in Nu(T)$.
+\item Si $\alpha \in K$ y $u \in Nu(T)$, se tiene que $T(\alpha u) = \alpha T(u) = \alpha \mathbf{0}_W = \mathbf{0}_W$ lo cual prueba que $\alpha u \in Nu(T)$.
 \end{enumerate}
 Así tenemos que $Nu(T)$ es un subespacio vectorial de $V$. Similarmente se prueba que $Img(T)$ es un subespacio vectorial de $W$.
 \end{proof}
 
 \begin{dfn}
-Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $T$ es una transformación lineal. La nulidad de $T$ se define como la dimensión de $Nu(T)$ y se denota por $\nu (T)$. El $rango$ de $T$ se define como la dimensión de $Img(T)$.
+Sean $V$ y $W$ dos espacios vectoriales sobre $K$ y $T$ es una transformación lineal. La nulidad de $T$ se define como la dimensión de $Nu(T)$ y se denota por $\nu (T)$. El $rango$ de $T$ se define como la dimensión de $Img(T)$.
 \end{dfn}
 
 \begin{theorem}
@@ -156,7 +156,7 @@ Recíprocamente, si $Nu(L) = \{\mathbf{0}_V\}$ y $L(u) = L(v)$ se tiene que $L(u
 \end{proof}
 
 \begin{theorem}
-Sea $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $L : V \to W$ una transformación lineal inyectiva. Sea $B$ un subconjunto de $V$ linealmente independiente, entonces $L(B)$ es un subconjunto de $W$ linealmente independiente. 
+Sea $V$ y $W$ dos espacios vectoriales sobre $K$ y $L : V \to W$ una transformación lineal inyectiva. Sea $B$ un subconjunto de $V$ linealmente independiente, entonces $L(B)$ es un subconjunto de $W$ linealmente independiente. 
 \end{theorem}
 
 \begin{proof}
@@ -164,13 +164,13 @@ Sea $B = \conjvect{v}{n}$ un conjunto linealmente independiente y $L(B) = \{L(v_
 \end{proof}
 
 \begin{theorem}
-Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$.Si $B$ es una base para $V$ y $L : V \to W$ es una transformación lineal inyectiva, entonces $L(B)$ es una base para la $Img(L)$ y si $V$ es de dimensión finita $n$ se tiene que $n = rango(L)$.\\
+Sean $V$ y $W$ dos espacios vectoriales sobre $K$.Si $B$ es una base para $V$ y $L : V \to W$ es una transformación lineal inyectiva, entonces $L(B)$ es una base para la $Img(L)$ y si $V$ es de dimensión finita $n$ se tiene que $n = rango(L)$.\\
 
 La demostración se deja como ejercicio. %%% :c 
 \end{theorem}
 
 \begin{theorem}
-Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $L : V \to W$ una transformación lineal. Si $B = \conjvect{v}{k}$ es una base para $Nu(L)$, entonces si $\{v_1 , \ldots , v_{k}, \ldots , v_n\}$ es una base para $V$, se tiene que $\{T(v_{k+1}), \ldots , T(v_n)\}$ es una bse para $Img(L)$.
+Sean $V$ y $W$ dos espacios vectoriales sobre $K$ y $L : V \to W$ una transformación lineal. Si $B = \conjvect{v}{k}$ es una base para $Nu(L)$, entonces si $\{v_1 , \ldots , v_{k}, \ldots , v_n\}$ es una base para $V$, se tiene que $\{T(v_{k+1}), \ldots , T(v_n)\}$ es una bse para $Img(L)$.
 \end{theorem}
 
 \begin{proof}
@@ -179,7 +179,7 @@ Sean $V$ y $W$ dos espacios vectoriales sobre $\mathbb{K}$ y $L : V \to W$ una t
 
 \section{Operaciones con transformaciones lineales}
 \begin{dfn}
-Sean $V$ y $W$ dos espacios vectoriales sobre un campo $\mathbb{K}$ y $T$ y $L$ dos transformaciones lineales de $V$ en $W$ y $\lambda \in \mathbb{K}$. Entonces 
+Sean $V$ y $W$ dos espacios vectoriales sobre un campo $K$ y $T$ y $L$ dos transformaciones lineales de $V$ en $W$ y $\lambda \in K$. Entonces 
 \begin{enumerate}
 \item $T + L : V \to W \qquad (T + L)(v) = T(v) + L(v)$
 \item $\lambda T : V \to W \qquad (\lambda T)(v) = \lambda T(v)$

@@ -1,5 +1,71 @@
 %espacios vectoriales
-\chapter{Espacios Vectoriales Reales}
+
+\chapter{Espacios Vectoriales}
+\section{Espacio Vectorial}
+\begin{dfn}
+Sea $V$ un conjunto no vac\'io, en el cual se definen dos operaciones binarias, una binaria interna llamada suma $\oplus$ y otra binaria externa, sobre un campo $\mathbb{K}$, llamada producto por escalar $\odot$. Se dice que $\left( V,\oplus ,\odot \right) $ es un espacio vectorial sobre el campo $\mathbb{K}$ si cumple:
+\end{dfn}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|l|}{Operación suma } \\
+\hline \hline
+$\forall v_1,v_2 \in V:\ (v_1 \oplus v_2 )\in V$ &[Cerradura de la suma] \\ \hline
+$\forall v_1,v_2\in V : v_1\oplus v_2=v_2\oplus v_1  $&[Conmutatividad]  \\ \hline
+$\forall v_1,v_2,v_3\in V:(v_1\oplus v_2 )\oplus v_3=v_1\oplus (v_2\oplus v_3 )$&[Asociativa] \\ 
+\hline
+
+$\exists n_V\in V\ \forall v\in V  :  v\oplus n_V=v$&  [elemento neutro]  \\ \hline
+$\forall v\in V\ \exists v'\in V: v\oplus v'=n_V$&  [elemento inverso]  \\ \hline
+\multicolumn{2}{|l|}{Operación producto escalar } \\
+\hline \hline
+ $\forall v \in V \forall \alpha \in \mathbb{K} :\ (\alpha \odot v )\in V$& [Cerradura de producto] \\ \hline
+$ \forall \alpha \in \mathbb{K}\ \forall v_1,v_2\in V: \alpha \odot (v_1\oplus v_2 )=(\alpha \odot v_1)\oplus (\alpha \odot v_2) $&  [Distributiva]  \\ \hline
+$\forall \alpha ,\beta \in \mathbb{K}\ \forall v\in V : (\alpha +\beta )\odot v=(\alpha \odot v)\oplus(\beta \odot v)  $&  [Distributiva]  \\ \hline
+$\forall \alpha ,\beta \in \mathbb{K}\ \forall  v\in V : (\alpha  \beta )\odot v=\alpha \odot (\beta \odot v) $&  [Distributiva]  \\ \hline
+$\forall  v\in V    :   n_K \odot v=v $&  [Neutro multiplicativo]  \\ \hline
+
+\end{tabular}
+\caption{Axiomas de un espacio vectorial.}
+\label{tabla:sencilla}
+\end{center}
+\end{table}
+
+Veamos algunos ejemplos de espacios vectoriales conocidos:
+~\\
+Consideremos $V=\mathbb{R}^n$ y $\mathbb{K}=\mathbb{R}$, con la suma y producto por escalar usuales $V$ es un espacio vectorial sobre los Reales.
+~\\
+$V=\mathcal{P}_n$
+y $\mathbb{K}=\mathbb{R}$
+Los polinomios con coeficientes reales de grado menor o igual a n, con las
+operaciones usuales de suma y producto por escalar.
+
+~\\
+$V=\mathcal{M}_{mxn}$
+y $\mathbb{K}=\mathbb{R}$
+Las matrices m por n con entradas reales con las operaciones usuales
+de suma y producto por escalar forman un espacio vectorial sobre los reales
+~\\\\
+$V=\mathbb{C}^n$
+y $\mathbb{K}=\mathbb{R}$
+Las n-tuplas con entradas complejas con la suma y el producto por escalar
+usuales en los complejos forman un espacio vectorial sobre el campo de los Complejos.
+~\\\\
+$V=\mathbb{B}^n$
+y $\mathbb{K}=\mathbb{B}$
+Las n-tuplas con entradas binarias con la suma y el producto por escalar
+binarios forman un espacio vectorial sobre el campo binario. Éste es un ejemplo de espacio
+vectorial discreto ya que la cardinalidad del conjunto es
+~\\\\
+$V=\mathcal{C}[a,b]$
+y $\mathbb{K}=\mathbb{R}$
+Las funciones continuas en un intervalo [a, b] con las operaciones
+usuales de suma y producto por escalar de funciones forman un Espacio Vectorial sobre los
+Reales
+
+
 \section{Espacios Vectoriales reales}
 
 \begin{dfn}[Espacio vectorial real]
@@ -138,10 +204,10 @@ Sea $\left(V, \oplus, \odot\right)$ un espacio vectorial sobre el campo. Sea $W$
 
 \end{theorem}
 
-La prueba de este theoremrema se la dejamos al lector, indic\'andoles que deben probar que los restantes 8 axiomas de espacios vectoriales se satisfacen a partir de estos axiomas de cerradura y de la hip\'otesis que $W$ es un subconjunto de $V$, con las mismas operaciones de V
+La prueba de este teorema se la dejamos al lector, indic\'andoles que deben probar que los restantes 8 axiomas de espacios vectoriales se satisfacen a partir de estos axiomas de cerradura y de la hip\'otesis que $W$ es un subconjunto de $V$, con las mismas operaciones de V
 \\
 \\
-Con este theoremrema demostraremos las afirmaciones sobre los subespacios de $\mathbb{R}^2$ y 
+Con este teorema demostraremos las afirmaciones sobre los subespacios de $\mathbb{R}^2$ y 
 $\mathbb{R}^3$.
 
 \begin{theorem}
@@ -195,17 +261,14 @@ Por hip\'otesis $w\in W$ por lo que $y=mx$
 
 Por lo que el $vector\ producto\ \alpha w=$\vectrdos{\alpha x}{\alpha y} pertenece a $W$.
 
-
 \end{enumerate}
-Ya que hemos probado $\left( i\right)\, \left(ii\right), \left(iii\right),$ que son las condiciones en el theoremrema de caraterizaci\'on de subespacio, por el mismo theoremrema concluimos que $W$ es un subespacio de \rdos. Lo cual prueba que toda recta que pasa por el origen es un subespacio vectorial de \rdos.
+Ya que hemos probado $\left( i\right)\, \left(ii\right), \left(iii\right),$ que son las condiciones en el teorema de caraterizaci\'on de subespacio, por el mismo teorema concluimos que $W$ es un subespacio de \rdos. Lo cual prueba que toda recta que pasa por el origen es un subespacio vectorial de \rdos.
 
 \begin{theorem}
 En \rtres \ toda recta que pasa por el origen es un subespacio vectorial de \rtres.
 \end{theorem}
-~\\
-Prueba:
 
-Esto es equivalente a decir que el subconjunto \svrtres{W}{x}{y}{z}{x=at, y=bt, z=ct ;t\in \mbox{\dobler}} es un subespacio vectorial de \rtres.
+Esto es equivalente a decir que el subconjunto $$ \svrtres{W}{x}{y}{z}{x=at, y=bt, z=ct ;t\in \dobler}$$ es un subespacio vectorial de \rtres.
 
 \begin{enumerate}
 \item[(i)] \vectrtres{0}{0}{0} $\in W \left( \mbox{cumple las tres condiciones} \right)$
@@ -262,5 +325,17 @@ Por hip\'otesis, $x=at, y=bt, z=ct$:
 ~\\
 Por el teorema del subespacio, concluimos que $W$ es un subespacio 
 vectorial de \rtres.
+
+\begin{theorem}[Intersección de subespacios vectoriales]
+Sean $V_1$ y $V_2$ dos subespacios vectoriales de un espacio vectorial E, entonces $V_1 \cap V_2$ es un subespacio vectorial
+\end{theorem}
+\begin{proof}
+~\\ \begin{enumerate}[i.]
+\item El cero vector de E pertenece a ambos subespacios, por lo tanto también peertenece a la intersección.
+\item Si $v_1$ y $v_2$ pertenecen a $V_1 \cap V_2$ entonces ambos pertenecen a $V_1$ y $V_2$. Debido a que $V_1$ es un subespacio vectorial, entonces $v_1 +v_2$ pertenece a $V_1$. Por el mismo argumento para $V_2$, se tiene que $v_1+v_2$ pertenece a $V_2$. Por lo tanto $v_1+v_2$ pertenece a $V_1\cap V_2$.
+\item Si $v$ pertenece a  $V_1 \cap V_2$, entonces  pertenece a $V_1$ y a $V_2$.  Considere $\alpha \in \dobler$,  debido a que $V_1 y V_2$ son subespacios vectoriales entonces $\alpha v$ pertenece a $V_1$ y $\alpha v$ pertenece a $V_2$, es decir $\alpha v$ pertenece a $V_1 \cap V_2$.  
+\end{enumerate}
+\end{proof}
+
 
 ~\\

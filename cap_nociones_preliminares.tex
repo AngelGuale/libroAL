@@ -1,0 +1,364 @@
+\chapter{Nociones Preliminares}
+
+\section{Campo Escalar}
+Sea $\mathbf{K}$ un conjunto no vac\'io en el cual se definen dos operaciones binarias. La terna $\left( K,\ast,\bigtriangleup \right)$ es un campo escalar si cumple: 
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|l|}{Operación suma escalar } \\
+\hline \hline
+$\forall a,b\in \doubleK (a*b)\in \doubleK $ &[Cerradura de la suma] \\ \hline
+$ \forall  a,b\in K a*b=b*a $&[Conmutatividad]  \\ \hline
+$\forall  a,b,c\in K (a*b)*c=a*(b*c)$&[Asociativa] \\ 
+\hline
+$\exists n_*\in K \forall  a\in K a*n_*=a$&  [elemento neutro]  \\ \hline
+$\forall  a\in K \exists a'\in K a*a'=n_*$&  [elemento inverso]  \\ \hline
+Operación producto escalar &\\ \hline \hline
+ $\forall  a,b\in K (a\bigtriangleup b)\in K $& [Cerradura de producto] \\ \hline
+$\forall  a,b\in K a\bigtriangleup b=b\bigtriangleup a$&  [Conmutativa]  \\ \hline
+$\forall  a,b,c\in K (a\bigtriangleup b)\bigtriangleup c=a\bigtriangleup (b\bigtriangleup c) $&  [Asociativa]  \\ \hline
+$\exists n'\in K \forall  a\in K  a*n_\bigtriangleup =a $&  [Elemento neutro]  \\ \hline
+$\forall  a\in K a\neq n_*  \exists a''\in K a*a''=n_\bigtriangleup  $&  [Elemento inverso]  \\ \hline
+$\exists n'\in K \forall  a\in K  a*n_\bigtriangleup =a $&  [Elemento neutro]  \\ \hline
+\multicolumn{2}{|c|}{$\forall a,b,c\in K  a\bigtriangleup (b*c)=(a\bigtriangleup b)*(a\bigtriangleup c)
+ $ } \\ \hline
+\end{tabular}
+\caption{Axiomas de un campo escalar.}
+\label{tabla:sencilla}
+\end{center}
+\end{table}
+
+
+\textbf{Ejemplos:}
+
+
+
+
+$\left( \mathbb{N},+ ,\cdot \right) $
+El conjunto de los Naturales con la suma y multiplicación usuales NO es un campo escalar.
+Basta el hecho de no cumplir uno de los axiomas para dejar de ser un campo. En este caso, por ejemplo; no existe un elemento neutro para la adicion (recuerde que el 0 no forma parte del conjunto de los naturales).
+
+~\\
+$\left( \mathbb{Z},+ ,\cdot \right) $ 
+El conjunto de los Enteros con la suma y multiplicación usuales NO es un campo escalar.
+Está claro que en este conjunto con las operaciones usuales, el neutro multiplicativo es el 1. Por tanto ningún elemento de este conjunto tiene inverso multiplicativo.
+
+~\\
+$\left( \mathbb{Q},+ ,\cdot \right) $ 
+El conjunto de los Racionales con la suma y multiplicación usuales ES un CAMPO ESCALAR.
+
+~\\
+$\left( \mathbb{R},+ ,\cdot \right) $ 
+El conjunto de los Reales con la suma y multiplicación usuales ES un CAMPO ESCALAR.
+
+~\\
+$\left( \mathbb{C},+ ,\cdot \right) $ 
+El conjunto de los Complejos con la suma y multiplicación usuales ES un CAMPO ESCALAR.
+
+
+\section{Sistema de ecuaciones lineales}
+
+Una ecuación lineal es una ecuación de la forma
+\begin{align*}
+\alpha_1 x_1+\alpha_2 x_2+...+\alpha_n x_n=\beta_1
+\end{align*} 
+donde las variables $x_1, x_2, .., x_n$ son las incógnitas del sistema y los $\alpha_i, \beta_i$ son elementos del campo real o complejo.
+
+Una solución de una ecuación lineal es una colección de n elementos del campo $(c_1, c_2, ..., c_n)$ de tal manera que al ser sustituídos en la ecuación se obtiene una igualdad. 
+\begin{ejemplo}
+La ecuación 2x+3y=1 es una ecuación lineal en las variables x, y. Una solución del sistema sería la colección de números reales (8, -5) ya que al sustituírlos en la ecuación se obtiene una igualdad
+\begin{align*}
+2x+3y&=1\\
+2(8)+3(-5)&=1\\
+16-15&=1\\
+1&=1
+\end{align*}
+\end{ejemplo}
+Un sistema de ecuaciones lineales es un conjunto de ecuaciones lineales que deben satifacerse simultáneamente.
+\begin{align*}
+\alpha_{11} x_1+\alpha_{12} x_2+...+\alpha_{1n} x_n&=\beta_1\\
+\alpha_{21} x_1+\alpha_{22} x_2+...+\alpha_{2n} x_n&=\beta_2\\
+\alpha_{31} x_1+\alpha_{32} x_2+...+\alpha_{3n} x_n&=\beta_3\\
+\vdots\\
+\alpha_{m1} x_1+\alpha_{m2} x_2+...+\alpha_{mn} x_n&=\beta_m\\
+\end{align*} 
+\begin{ejemplo}
+Considere las incógnitas x, y, z. Entonces el conjunto de ecuaciones
+\begin{align*}
+3x-5y-z=2\\
+4x+y+3z=6\\
+7x-4y+2z=8\\
+\end{align*}
+es un sistema de ecuaciones lineales. La terna (2, 1, -1) forma una solución de este sistema de ecuaciones lineales, ya que satisface todas las ecuaciones lineales del mismo.
+\begin{align*}
+3(2)-5(1)-(-1)=2\\
+4(2)+(1)+3(-1)=6\\
+7(2)-4(1)+2(-1)=8\\
+\end{align*}
+\end{ejemplo}
+
+\section{Representación Matricial de un S.E.L}
+Un sistema de ecuaciones lineales puede representarse por medio de la ecuación matricial AX=B, donde A es la matriz de coeficientes, X es el conjunto de incógnitas y B el conjunto de términos independientes. De esta forma el sistema de ecuaciones lineales
+
+\begin{align*}
+\alpha_{11} x_1+\alpha_{12} x_2+...+\alpha_{1n} x_n&=\beta_1\\
+\alpha_{21} x_1+\alpha_{22} x_2+...+\alpha_{2n} x_n&=\beta_2\\
+\alpha_{31} x_1+\alpha_{32} x_2+...+\alpha_{3n} x_n&=\beta_3\\
+\vdots\\
+\alpha_{m1} x_1+\alpha_{m2} x_2+...+\alpha_{mn} x_n&=\beta_m\\
+\end{align*} 
+se puede representar matricialmente como
+\begin{align*}
+\left(
+\begin{array}{rrrr}
+\alpha_{11} &\alpha_{12} &...&\alpha_{1n} \\
+\alpha_{21} &\alpha_{22} &...&\alpha_{2n} \\
+\alpha_{31} &\alpha_{32} &...&\alpha_{3n} \\
+\vdots&&&\\
+\alpha_{m1} &\alpha_{m2} &...&\alpha_{mn}\\
+\end{array}
+\right)
+\left(
+\begin{array}{r}
+x_1\\x_2\\\vdots\\x_n
+\end{array}
+\right)
+=
+\left(
+\begin{array}{r}
+\beta_1\\\beta_2\\\beta_3\\\vdots\\\beta_m
+\end{array}
+\right)
+\end{align*} 
+\begin{align*}
+AX=B
+\end{align*}
+\subsection{Matriz aumentada}
+La representación matricial mostrada en líneas anteriores tiene una forma abreviada llamada representación mediante matriz aumentada. El mismo sistema puede representarse como:
+\begin{align*}
+\reducir{rrrr|r}{
+\alpha_{11} &\alpha_{12} &...&\alpha_{1n}&\beta_1 \\
+\alpha_{21} &\alpha_{22} &...&\alpha_{2n}&\beta_2 \\
+\alpha_{31} &\alpha_{32} &...&\alpha_{3n}&\beta_3 \\
+\vdots&&&\\
+\alpha_{m1} &\alpha_{m2} &...&\alpha_{mn}&\beta_m\\
+}
+\end{align*}
+
+\section{Tipo de solución de un S.E.L}
+Un sistema de ecuaciones lineales pertenece a sólo uno de los siguientes casos:
+\begin{itemize}
+\item Es inconsistente. (No tiene solución)
+\item Es consistente con solución única. (Solo una n-tupla satisface las ecuaciones)
+\item Es consistente con infinitas soluciones. (Existen infinitas n-tuplas que satisfacen todas las ecuaciones)
+\end{itemize}
+\subsection{S.E.L inconsistente}
+Un sistema de ecuaciones lineales se dice inconsistente si no existe n-tupla que pueda satisfacer todas las ecuaciones a la vez. 
+\begin{ejemplo}
+El sistema 
+\begin{align*}
+2x&-y=2\\
+4x&-2y=1\\
+\end{align*}
+Es un sistema de ecuaciones lineales inconsistente 
+\end{ejemplo}
+Podemos comprobar que el sistema es inconsistente utilizando el método de Gauss, al representar al sistema por medio de una matriz aumentada
+\begin{align*}
+\left(
+\begin{array}{rr|r}
+2& -1 & 2\\
+4& -2 & 1\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rr|r}
+2& -1 & 2\\
+0& 0 & -3\\
+\end{array}
+\right)
+\end{align*}
+La última ecuación del sistema reducido nos indica una ecuación $0x+0y=-3$, es decir, sin importar el valor de x e y, la ecuación resulta ser $0=-3$ lo cual es una inconsistencia. De esto se concluye que el sistema no posee solución.~\\
+
+De manera general se puede afirmar que si al reducir completamente el sistema por Gauss se obtiene una fila de la matriz de coeficientes llena de ceros y su correspondiente valor independiente distinto de cero, entonces el sistema es inconsistente.
+\begin{ejemplo}
+Considere el sistema de ecuaciones lineales
+\begin{align*}
+2x-y+3z=2\\
+x+2y+z=3\\
+x-3y+2z=1\\
+\end{align*}
+La representación en matriz aumentada del sistema anterior es
+\begin{align*}
+\reducir{rrr|r}{
+2&-1&3&2\\
+1&2&1&3\\
+1&-3&2&1\\
+}
+\end{align*}
+Y al reducir tendremos
+\begin{align*}
+\reducir{rrr|r}{
+2&-1&3&2\\
+1&2&1&3\\
+1&-3&2&1\\
+}
+\sim
+\reducir{rrr|r}{
+2&-1&3&2\\
+0&-5&1&-4\\
+0&5&-1&0\\
+}
+\sim
+\reducir{rrr|r}{
+2&-1&3&2\\
+0&-5&1&-4\\
+0&0&0&-4\\
+}
+\end{align*}
+En donde la última fila del sistema reducido muestra ceros en todos los coeficientes de la matriz del sistema y un número distinto de cero (en este caso -4) como término independiente, esto nos indica que el sistema de ecuaciones lineales es inconsistente.
+
+\end{ejemplo}
+
+\subsection{S.E.L Consistentes con solución única}
+Un sistema de ecuaciones lineales se dice que es consistente si tiene al menos una solución. Cuando un sistema consistente tiene exactamente una n-tupla que satisface las ecuaciones, se dice que tiene solución única.
+
+\begin{ejemplo}
+Considere el sistema de ecuaciones lineales
+\begin{align*}
+2x-3y=9\\
+x+y=2\\
+\end{align*}
+Este sistema de ecuaciones posee exactamente una solución, la dupla (3, -1). Podemos obtener este resultado empleando el método de Gauss
+\begin{align*}
+\reducir{rr|r}{
+2&-3&9\\
+1&1&2\\
+}\sim
+\reducir{rr|r}{
+2&-3&9\\
+0&-5&5\\
+}
+\end{align*}
+De la última ecuación se puede obtener $y=-1$ y reemplazando en la primera $2x-3(-1)=9$ se deduce que $x=3$, y el conjunto solución estaría conformado sólo por la dupla (3, -1).
+\end{ejemplo}
+
+
+En términos generales podemos afirmar que un sistema consistente tiene solución única si en el sistema reducido por filas, el número de \textit{filas válidas} - filas que no están completamente llenas de ceros - es igual al número de incógnitas del sistema. 
+
+
+\begin{ejemplo}
+El sisguiente sistema de ecuaciones lineales también posee solución única
+\begin{align*}
+4x-y&=7\\
+x+y&=3\\
+2x-3y&=1
+\end{align*}
+Por el método de Gauss tenemos:
+\begin{align*}
+\reducir{rr|r}{
+4&-1&7\\
+1&1&3\\
+2&-3&1\\
+}\sim
+\reducir{rr|r}{
+4&-1&7\\
+0&-5&-5\\
+0&5&5\\
+}\sim
+\reducir{rr|r}{
+4&-1&7\\
+0&-5&-5\\
+0&0&0\\
+}
+\end{align*}
+De la última ecuación se puede obtener que $y=1$, y reemplazando en la primera ecuación: $4x-(1)=7$, se tiene que $x=2$. Y la única solución del sistema sería $(2, 1)$.
+
+\end{ejemplo}
+
+\subsection{S.E.L Consistentes con infinitas soluciones}
+Cuando un sistema consistente tiene más de una n-tupla que satisface las ecuaciones, se dice que tiene infinitas soluciones.
+
+\begin{ejemplo}
+El sistema de ecuaciones conformado por las siguientes ecuaciones 
+\begin{align*}
+3x-4y+z=1\\
+x-y+2z=4\\
+2x-3y-z=-3\\
+\end{align*}
+Si resolvemos este sistema por Gauss tendremos
+\begin{align*}
+\reducir{rrr|r}{
+3&-4&1&1\\
+1&-1&2&4\\
+2&-3&-1&-3\\
+}\sim
+\reducir{rrr|r}{
+3&-4&1&1\\
+0&-1&-5&-11\\
+0&1&5&11\\
+}\sim
+\reducir{rrr|r}{
+3&-4&1&1\\
+0&-1&-5&-11\\
+0&0&0&0\\
+}\sim
+\end{align*}
+De la última ecuación del sistema reducido podemos despejar 
+\begin{align*}
+y=&-5z+11\\
+\end{align*}
+
+Y de la primera ecuación se obtiene que
+\begin{align*}
+3x=&4y-z+1\\
+3x=&4(-5z+11)-z+1\\
+3x=&-21z+45\\
+x=&-7z+15\\
+\end{align*}
+Aquí no es posible definir un valor único para x, y, z. En estos casos se conviene dejar expresado la solución en función un parámetro, al cual le llamaremos variable libre, en esta ocasión, la variable z. Las demás incógnitas del sistema: x e y quedan condicionadas de acuerdo al valor que tome z, por lo que se denominarán variables condicionadas. El conjunto solución del sistema sería:
+\begin{align*}
+Sol(x,y, z)=\llaves{\vectrtres{x}{y}{z}}{\begin{array}{r}x=-7z+15\\y=-5z+11\\z\in \dobler
+\end{array}}
+\end{align*}
+
+\end{ejemplo}
+
+De forma similar que en los casos anteriores se puede establecer una relación entre el sistema reducido y el tipo de solución. Un sistema de ecuaciones lineales tiene infinitas soluciones si el número de incógnitas es mayor que el número de fílas válidas en el sistema reducido.
+\newpage
+\section{Problemas propuestos}
+
+
+\begin{enumerate}[1.]
+\item Demostrar que el conjunto $\mathbb{Z}_2$ representa un campo con la suma módulo 2.
+\item Demostrar que el conjunto $\mathbb{Z}_3$ representa un campo con la suma módulo 3.
+\item Determinar el tipo de solución de los siguientes sistemas
+
+\begin{enumerate}
+\item $\left\lbrace \begin{aligned}
+2x-y+z=1\\
+x-y+3z=0\\
+-x+2y-8z=1\\
+\end{aligned}\right.$
+\item $\left\lbrace \begin{aligned}
+2x-y+z=1\\
+x-y+3z=0\\
+-x+2y-8z=1\\
+\end{aligned}\right.$
+\item \sisteq{
+3x-y+6z=0\\
+5x+y-6z=1\\
+7x-4y+z=2\\
+}
+
+\end{enumerate}
+\item Demostrar que el conjunto $\mathbb{Z}_5$ representa un campo escalar con la suma módulo 5.
+\item Construya de ser posible un sistema de ecuaciones son 4 incógnitas, 4 ecuaciones, con solución única.
+\item Construya de ser posible un sistema de ecuaciones son 3 incógnitas, 4 ecuaciones, con solución única.
+\item Construya de ser posible un sistema de ecuaciones son 2 incógnitas, 4 ecuaciones, con solución única.
+
+\end{enumerate}

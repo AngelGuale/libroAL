@@ -1,71 +1,318 @@
 %independencia lineal
 \chapter{Conjuntos linealmente independientes}
 
-\section{Conjuntos linealmente independientes}
-El subconjunto $A= \conjvect{v}{n}$ de un espacio vectorial $V$ se dice que es linealmente independiente si la combinación lineal $\lambda_1 v_1 + \lambda v_2 + \ldots + \lambda v_n = 0$ tiene como única solución la trivial, es decir que $\lambda_1 = \lambda_2 = \ldots = \lambda_n = 0$. En caso contrario se dice que $A$ es linealmente dependiente.
-\index{Conjunto linealmente independiente}
+\section{Dependencia e Independencia Lineal}
+\begin{dfn}[Independencia Lineal]
+Sean \kvect{v}{k} vectores de un espacio vectorial $V$. El conjunto $S=\conjvect{v}{k}$\ es linealmente independiente si y s\'olo si la \'UNICA manera de obtener al vector neutro de V como combinaci\'on lineal de los vectores de S es que todos los escalares de la combinaci\'on lineal sean cero.
+\[\alpha_1 v_1+
+\alpha_2 v_2+
+\ldots+
+\alpha_k v_k =
+n_v
+\Rightarrow\ 
+\forall i \leq k
+\ \alpha_i=0
+\] 
+\end{dfn}
+\begin{dfn}[Dependencia Lineal]
+Sean \kvect{v}{k} vectores de un espacio vectorial $V$. El conjunto $S=\conjvect{v}{k}$\ es linealmente dependiente si y s\'olo si se puede obtener al vector neutro de V como combinaci\'on lineal de los vectores de S, y existe un escalar de la combinaci\'on lineal diferente de cero.
+\[\alpha_1 v_1+
+\alpha_2 v_2+
+\ldots+
+\alpha_k v_k =
+n_v
+\wedge\ 
+\exists i \leq k
+\ \alpha_i\neq 0
+\] 
+\end{dfn}
+En otras palabras, un conjunto es linealmente dependiente si y solo si NO  es linealmente independiente.
 
+~\\
+Esta es, quiz\'as, una de las definiciones m\'as confusas o menos inteligibles(pero a la vez una de las m\'as importantes), as\'i que confiamos aclararla en los ejemplos siguientes.
+~\\
 \begin{ejemplo}
-Determinar si el conjunto de vectores $A= \{(1,2,3),(-2,1,1),(8,6,10)\}$ es linealmente independiente o no.\\
-Planteamos la igualdad 
-$$\alpha (1,2,3) + \beta (-2,1,1) + \lambda (8,6,10) = (0,0,0)$$
-de donde se obtiene que 
-$$\left\{
-\begin{array}{rcl}
-\alpha - 2\beta +8 \lambda & = & 0\\
-2 \alpha + \beta + 6\lambda & = & 0\\
-3\alpha + \beta + 10 \lambda & = & 0
-\end{array}
-\right.$$
-Al hacer el análisis del sistema obtenemos que existen infinitas soluciones. Así que el conjunto $A$ es linealmente dependiente.
+Determine si el conjunto de vectores de \rdos\  es linealmente independiente $\left\{
+\vectrdos{1}{2}, \vectrdos{2}{-1}\right\}$.
 \end{ejemplo}
 
-\begin{ejemplo}
-Veamos que el conjunto $A= \{(3,-2,2),(3,-1,4),(1,0,5)\}$ es linealmente independiente.\\
-Consideremos $$\alpha (3,-2,2) + \beta (3,-1,4) + \lambda (1,0,5) = (0,0,0)$$
-y obtenemos
-$$\left\{
-\begin{array}{rcl}
-3 \alpha + 3 \beta + \lambda & = & 0\\
--2 \alpha - \beta & = &0\\
-2 \alpha +4 \beta +5 \lambda & = & 0
+%\sol
+Para determinar si son linealmente independientes analicemos los escalares al hacer la combinaci\'on lineal igualada al neutro de \rdos
+\[c_1\vectrdos{1}{2}+
+c_2\vectrdos{1}{-1}=
+\vectrdos{0}{0}\]
+Esto deriva en un sistema de ecuaciones
+\[
+\left(
+\begin{array}{rr|r}
+1&1&0\\
+2&-1&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rr|r}
+1&1&0\\
+0&-3&0
+\end{array}
+\right)
+\]
+La soluci\'on de este sistema es \'unica $c_1=0,\ c_2=0$. El conjunto $\left\{
+\vectrdos{1}{2}, \vectrdos{2}{-1}\right\}$ es linealmente independiente.
 
+
+\begin{ejemplo}
+Determine si el siguiente conjunto de vectores de \rtres\ es linealmente independiente \llav{
+\vectrtres{2}{4}{1}, \vectrtres{-1}{2}{3}, \vectrtres{3}{2}{-2}
+}
+\end{ejemplo}
+%\sol
+Para determinar si el conjunto es linealmente independiente analicemos los escalares al hacer la combinaci\'on lineal igualada al neutro de \rtres.
+\[
+a_1\vectrtres{2}{4}{1}+
+a_2\vectrtres{-1}{2}{3}+
+a_3\vectrtres{3}{2}{-2}=
+\vectrtres{0}{0}{0}
+\]
+Lo que deriva en un sistema homog\'eneo (Un sistema homog\'eneo es un sistema que est\'a igualado todo a cero).
+
+\[
+\left(
+\begin{array}{rrr|r}
+2&-1&3&0\\
+4&2&2&0\\
+1&3&-2&0
 \end{array}
-\right.$$
-Al reducir de forma escalonada la matriz
-$$\left(
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&-1&3&0\\
+0&4&-4&0\\
+0&-7&7&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&-1&3&0\\
+0&4&-4&0\\
+0&0&0&0
+\end{array}
+\right)
+\]
+
+\obs\ Este es el "Tal\'on de Aquiles" de muchos; es claro que el sistema tiene infinitas soluciones ya que la \'ultima fila se elimin\'o y nos qued\'o un sistema con menos ecuaciones que inc\'ognitas, esto indica claramente que existen infinitas maneras de obtener al vectores neutro como combinaci\'on lineal de esos tres vectores, analice lo sigiuente:
+
+~\\
+\textsl{Razonamiento Incorrecto: 
+Como tiene infinitas soluciones con $a_1=0, a_2=0, a_3=0$\ se obtiene al vector neutro, por lo tanto el conjunto de vectores es linealmente independiente}
+
+~\\
+Lo anterior es err\'oneo en el sentido de afirmar que los vectores son linealmente independientes,
+vayamos a la definici\'on de independencia lineal para notar que lo esencial de la definici\'on est\'a en que DEBE SER LA \'UNICA FORMA DE OBTENER AL NEUTRO CUANDO TODOS LOS ESCALARES SEAN IGUALES A CERO.
+
+~\\
+En el ejemplo anterior no es la \'unica de obtenerlo, hay infinitas, por ejemplo con $a_1=-1, a_2=1, a_3=1$
+\[-1\cdot\vectrtres{2}{4}{2}+
+1\cdot\vectrtres{-1}{2}{-2}+
+1\cdot\vectrtres{3}{2}{-2}=
+\vectrtres{0}{0}{0}
+\]
+No es la \'unica manera cuando todos los escalares son ceros. Luego, el conjunto NO es linealmente independiente, es decir es linealmente dependiente.
+\section{?`No hay una manera m\'as sencilla?: Reducci\'on por filas}
+Es posible determinar si un conjunto es linealmente independiente coloc\'andolos como filas de una matriz y reduciendo la matriz por el m\'etodo de reducci\'on por filas de Gauss.
+
+~\\
+Veamos los siguientes ejemplos:
+~\\
+
+\begin{ejemplo}
+Determine si el subconjunto de \rtres, $S=\llav{\vectrtres{4}{2}{3},\vectrtres{1}{3}{4}, \vectrtres{2}{-4}{-5}}$ es linealmente independiente.
+\end{ejemplo}
+
+
+%\sol
+
+Empleamos el m\'etodo de reducci\'on por filas de Gauss:
+~\\
+Colocamos los vectores como filas de una matriz las cuales vamos a reducir por el m\'etodo de Gauss
+
+\[\left(
 \begin{array}{rrr}
-3 & 3 & 1\\
--2 & -1 & 0\\
-2 & 4 & 5
+4&2&3\\
+1&3&4\\
+2&-4&-5
 \end{array}
-\right)\\
-\sim \\
+\right)\]
+
+\[
 \left(
 \begin{array}{rrr}
-1 & 0 & 0\\
-0 & 1 &0\\
-0 &0 &1
+4&2&3\\
+1&3&4\\
+2&-4&-5
 \end{array}
-\right)\\$$
-Entonces el sistema tiene solución y esta es la trivial $\alpha = \beta = \lambda = 0$.
-\end{ejemplo}
-Recordemos que las matrices reales $2 \times 2$ forman un espacio vectorial.
+\right)
+\sim
+\left(
+\begin{array}{rrr}
+4&2&3\\
+0&-10&-13\\
+0&10&13
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr}
+4&2&3\\
+0&-10&-13\\
+0&0&0
+\end{array}
+\right)
+\]
+
+Debido a que una de las filas, al emplear la reducci\'on, resultó llena de ceros, entonces el vector correspondiente a esa fila $\vectrtres{2}{-4}{-5}$ es combinaci\'on lineal de los vectores anteriores.
+El conjunto es linealmente dependiente.
+
 
 \begin{ejemplo}
-
-Veamos que $H = \left\{ \matrdxd{-1 & 2}{0 & 1}, \matrdxd{2 & 1}{1 & 1} , \matrdxd{0 & 2}{-1 & 0} \right \}$ es linealmente independiente.\\
-Consideremos la igualdad
-$$\alpha \matrdxd {-1 & 2}{0&1} + \beta \matrdxd {2&1}{1&1} + \lambda \matrdxd {0 & 2}{-1 & 0} = \matrdxd {0&0}{0&0}$$
-de donde se obtiene
-$$\left\{
-\begin{array}{rcl}
--\alpha + 2\beta &=&0\\
-2\alpha +\beta 2\lambda &=&0\\
-\beta - \lambda &=& 0\\
-\alpha + \beta &=&0
-
-\end{array}
-\right.$$
-y obtenemos que la única solución es $\alpha = \beta = \lambda = 0$.\\
+Determine la independencia lineal del siguiente conjunto de \ptres, 
+$T=\llav{2+x^3, x^2+4x^3, 1+3x+x^2}$
 \end{ejemplo}
+
+%\sol
+
+De nuevo, debemos colocarlos a cada vector como una fila de una matriz, respetando el orden de los coeficientes:
+
+\[
+\left(
+\begin{array}{rrrr}
+2&0&0&1\\
+0&0&1&4\\
+1&3&1&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrrr}
+2&0&0&1\\
+0&0&1&4\\
+0&-6&-2&1
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrrr}
+2&0&0&1\\
+0&-6&-2&1\\
+0&0&1&4
+\end{array}
+\right)
+\]
+
+Ya con la matriz totalmente reducida, vemos que ninguna fila se anul\'o, por lo tanto el conjunto T es linealmente independiente
+\section{El criterio del determinante}
+A\'un se puede mejorar el m\'etodo de reducción por filas de Gauss, si en la matriz al colocar los vectores como filas(en realidad, aqu\'i funciona inclusive si los coloca como columnas), resulta una matriz cuadrada, entonces es posible determinar la independecia lineal del conjunto por medio del determinante de la matriz
+
+\subsubsection{El criterio del determinante}
+\begin{theorem}
+Sea $A$ la matriz que se forma al colocar los vectores de un conjunto S como filas(o columnas), si $A$ es cuadrada entonces se cumple que 
+\begin{itemize}
+\item S es linealmente independiente si y solo si $det(A)\neq 0$
+\item S es linealmente dependiente si y solo si $det(A)=0$
+\end{itemize}
+
+\end{theorem}
+
+
+\begin{ejemplo}
+Determine si el conjunto de vectores $S$ de \pdos, $S=\llav{1-x, 1+x, x^2+2x-1}$\ es linealmente independiente.
+\end{ejemplo}
+
+%\sol
+Al colocar los vectores como filas, se forma la matriz
+\[A=
+\left(
+\begin{array}{rrr}
+1&-1&0\\
+1&1&0\\
+-1&2&1
+\end{array}
+\right)
+\]
+Ya que la matriz es CUADRADA entonces es posible aplicar el criterio del determinate, asi podemos determinar la independencia lineal:
+\[det(A)=1(1-0)-(-1)(1-0)=1+1=2\neq 0\]
+Debido a que el determinante de la matriz es diferente de cero entonces el conjunto S es linealmente independiente.
+~\\
+~\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Conjuntos linealmente independientes}
+%El subconjunto $A= \conjvect{v}{n}$ de un espacio vectorial $V$ se dice que es linealmente independiente si la combinación lineal $\lambda_1 v_1 + \lambda v_2 + \ldots + \lambda v_n = 0$ tiene como única solución la trivial, es decir que $\lambda_1 = \lambda_2 = \ldots = \lambda_n = 0$. En caso contrario se dice que $A$ es linealmente dependiente.
+%\index{Conjunto linealmente independiente}
+%
+%\begin{ejemplo}
+%Determinar si el conjunto de vectores $A= \{(1,2,3),(-2,1,1),(8,6,10)\}$ es linealmente independiente o no.\\
+%Planteamos la igualdad 
+%$$\alpha (1,2,3) + \beta (-2,1,1) + \lambda (8,6,10) = (0,0,0)$$
+%de donde se obtiene que 
+%$$\left\{
+%\begin{array}{rcl}
+%\alpha - 2\beta +8 \lambda & = & 0\\
+%2 \alpha + \beta + 6\lambda & = & 0\\
+%3\alpha + \beta + 10 \lambda & = & 0
+%\end{array}
+%\right.$$
+%Al hacer el análisis del sistema obtenemos que existen infinitas soluciones. Así que el conjunto $A$ es linealmente dependiente.
+%\end{ejemplo}
+%
+%\begin{ejemplo}
+%Veamos que el conjunto $A= \{(3,-2,2),(3,-1,4),(1,0,5)\}$ es linealmente independiente.\\
+%Consideremos $$\alpha (3,-2,2) + \beta (3,-1,4) + \lambda (1,0,5) = (0,0,0)$$
+%y obtenemos
+%$$\left\{
+%\begin{array}{rcl}
+%3 \alpha + 3 \beta + \lambda & = & 0\\
+%-2 \alpha - \beta & = &0\\
+%2 \alpha +4 \beta +5 \lambda & = & 0
+%
+%\end{array}
+%\right.$$
+%Al reducir de forma escalonada la matriz
+%$$\left(
+%\begin{array}{rrr}
+%3 & 3 & 1\\
+%-2 & -1 & 0\\
+%2 & 4 & 5
+%\end{array}
+%\right)\\
+%\sim \\
+%\left(
+%\begin{array}{rrr}
+%1 & 0 & 0\\
+%0 & 1 &0\\
+%0 &0 &1
+%\end{array}
+%\right)\\$$
+%Entonces el sistema tiene solución y esta es la trivial $\alpha = \beta = \lambda = 0$.
+%\end{ejemplo}
+%Recordemos que las matrices reales $2 \times 2$ forman un espacio vectorial.
+%
+%\begin{ejemplo}
+%
+%Veamos que $H = \left\{ \matrdxd{-1 & 2}{0 & 1}, \matrdxd{2 & 1}{1 & 1} , \matrdxd{0 & 2}{-1 & 0} \right \}$ es linealmente independiente.\\
+%Consideremos la igualdad
+%$$\alpha \matrdxd {-1 & 2}{0&1} + \beta \matrdxd {2&1}{1&1} + \lambda \matrdxd {0 & 2}{-1 & 0} = \matrdxd {0&0}{0&0}$$
+%de donde se obtiene
+%$$\left\{
+%\begin{array}{rcl}
+%-\alpha + 2\beta &=&0\\
+%2\alpha +\beta 2\lambda &=&0\\
+%\beta - \lambda &=& 0\\
+%\alpha + \beta &=&0
+%
+%\end{array}
+%\right.$$
+%y obtenemos que la única solución es $\alpha = \beta = \lambda = 0$.\\
+%\end{ejemplo}

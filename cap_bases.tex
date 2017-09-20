@@ -1,25 +1,217 @@
 %bases
 \chapter{Base y Dimensión}
 
-\section{Base y dimensión de un espacio vectorial}
-Sea $V$ un espacio vectorial real y $A= \conjvect{v}{n}$ un subconjunto finito de $V$. Diremos que $A$ es una base de $V$, si y solo si, $A$ es linealmente independiente y genera  a $V$.
+\section{Base}
+\begin{dfn}[Base]
+Un conjunto $B=\conjvect{v}{n}$\ es una $base$ de un espacio vectorial $V$ si y s\'olo si satisface lo siguiente:
+\begin{itemize}
+\item[$\spadesuit$]B genera a V
+\item[$\spadesuit$]B es linealmente independiente
+\end{itemize}
+
+%Se conviene decir que si $V=\llav{0_v}$, entonces su base es el conjunto vac\'io $B_V=\llav{\ }$
+\end{dfn}
 
 \begin{ejemplo}
-Determine si la matriz \matrdxd {-1 & 7}{8&-1} se puede escribir como combinación lineal de las matrices \matrdxd{1&0}{2&1} , \matrdxd {2&-3}{0&2} , \matrdxd {0&1}{2&0}. \\
-Necesitamos averiguar si existen números reales $\alpha$, $\beta$, $\gamma$ tales que
-$$\matrdxd {-1&7}{8&-1} = \alpha \matrdxd {1&0}{2&1} + \beta \matrdxd {2&-3}{0&2} + \gamma \matrdxd {0&1}{2&0}$$
-lo cual conduce a resolver el siguiente sistema de ecuaciones
-$$\left\{
-\begin{array}{rcr}
-\alpha + 2\beta &=&-1\\
--3\beta + \gamma &=&7\\
-2\alpha + 2 \gamma &=& 8\\
-\alpha +2\beta &=& -1
+Determine si el conjunto $B=\llav{
+1+x, 3x+x^2, x^2+1
+}$\ es una base de \pdos
+\end{ejemplo}
+\sol
+Para determinar si B genera a V debemos comprobar que existen escalares tales:~\\
 
+\[a_0+a_1 x+a_2 x^2=
+\beta_1(1+x)+
+\beta_2(3x+x^2)+
+\beta_3(x^2+1)
+\]
+Lo cual provoca el siguiente sistema de ecuaciones, el cual tendr\'ia que ser consistente:
+\[
+\left(
+\begin{array}{rrr|r}
+1&0&1&a_0\\
+1&3&0&a_1\\
+0&1&1&a_2
 \end{array}
-\right.$$
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&0&1&a_0\\
+0&3&-1&a_1-a_0\\
+0&1&1&a_2
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&0&1&a_0\\
+0&3&-1&a_1-a_0\\
+0&0&-4&a_1-a_0-3a_2
+\end{array}
+\right)
+\]
+Este sistema tiene soluci\'on siempre, por lo que no hay condiciones sobre $a_0, a_1, a_2$
+\[gen(B)=
+\llaves{a_0+a_1 x+a_2 x^2}{
+a_0, a_1, a_2 \in \dobler
+}=\pdos
+\]
+
+Ahora veamos la independencia lineal, debe haber soluci\'0n \'unica para
+
+\[\beta_1(1+x)+
+\beta_2(3x+x^2)+
+\beta_3(x^2+1)=
+0+0x+0x^2\]
+Esto nos conduce a un sistema similar al anterior
+\[
+\left(
+\begin{array}{rrr|r}
+1&0&1&0\\
+1&3&0&0\\
+0&1&1&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&0&1&0\\
+0&3&-1&0\\
+0&1&1&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&0&1&0\\
+0&3&-1&0\\
+0&0&-4&0
+\end{array}
+\right)
+\]
+Como vemos, tiene soluci\'on \'unica para los escalares, la soluci\'on trivial $\beta_1=0, \beta_2=0, \beta_3=0$. El conjunto es linealmente independiente.
+
+
+Por tanto como B genera a V y es linealmente independiente, B es una Base de V.
+
+
+
+\begin{theorem}\label{th_masde_n}
+Sea $B=\conjvect{v}{n}$ una base del espacio vectorial $V$, entonces cualquier conjunto de m\'as de n vectores es linealmente dependiente
+
+\end{theorem}
+
+\begin{proof}
+Por contradicci\'on ~\\
+Sea $S=\conjvect{w}{m}$ un conjunto de vectores de $V$ con $m>n$, supongamos que S es linealmente independiente. Como $B$ es una base entonces cualquier elemento se puede escribir como combinaci\'on lineal de los elementos de $B$
+
+\begin{eqnarray*}
+&w_1=a_{11} v_1+a_{12} v_2 +\ldots +a_{1n} v_n\\
+&w_2=a_{21} v_1+a_{22} v_2 +\ldots +a_{2n} v_n\\
+&\vdots\\
+&w_m=a_{m1} v_1+a_{n2} v_2 +\ldots +a_{mn} v_n\\
+\end{eqnarray*}
+
+Si S es linealmente independiente, entonces al tener una combinaci\'on lineal igualada al vector cero implicar\'ia que todos esos escalares son iguales a cero
+
+\begin{eqnarray*}
+\beta_1 w_1+\beta_2 w_2 +\ldots +\beta_m w_m=0_v
+\end{eqnarray*}
+
+Al combinar estas ecuaciones tenemos
+\begin{eqnarray*}
+\beta_1 (a_{11} v_1+a_{12} v_2 +\ldots +a_{1n} v_n)+
+\beta_2 (a_{21} v_1+a_{22} v_2 +\ldots +a_{2n} v_n) +\ldots \\+
+\beta_m (a_{m1} v_1+a_{n2} v_2 +\ldots +a_{mn} v_n)
+=0_v
+\end{eqnarray*}
+
+Reordenando esta ecuaci\'on tendr\'iamos
+
+
+\begin{eqnarray*}
+(\beta_1 a_{11}+\beta_2 a_{21}+\ldots+\beta_m a_{m1})v1+
+(\beta_1 a_{12}+\beta_2 a_{22}+\ldots+\beta_m a_{m2})v_2+
+\ldots\\+
+(\beta_1 a_{1n}+\beta_2 a_{2n}+\ldots+\beta_m a_{mn})v_n=0_v
+\end{eqnarray*}
+
+Pero $B$ es una base, por tanto es linealmente independiente, de esta manera, los escalares de esta combinaci\'on lineal deben ser igual a cero
+
+\begin{eqnarray*}
+&\beta_1 a_{11}+\beta_2 a_{21}+\ldots+\beta_m a_{m1}=0\\
+&\beta_1 a_{12}+\beta_2 a_{22}+\ldots+\beta_m a_{m2}=0\\
+&\vdots\\
+&\beta_1 a_{1n}+\beta_2 a_{2n}+\ldots+\beta_m a_{mn}=0\\
+\end{eqnarray*}
+
+Este es un sistema homog\'{e}neo (un sistema igualado a todo cero), si m>n habr\'{i}an m\'{a}s inc\'ognitas que ecuaciones y por tanto el sistema tendr\'{i}a infinitas soluciones para $\beta_i$, lo cual contradice la suposici\'on de que S es un conjunto linealmente independiente. Contradicci\'on. Luego, S es dependiente.
+
+\end{proof}
+
+\begin{theorem}
+Sea $V$ un espacio vectorial, entonces cualquier base $B$ de $V$ tiene el mismo n\'umero de elementos
+\end{theorem}
+
+\begin{proof}
+Sean $B_1=\conjvect{v}{n}$ y $B_2=\conjvect{u}{m}$ dos bases de $V$, demostraremos que estos conjuntos tienen igual cantidad de elementos, es decir $m=n$.
+Si $m>n$ entonces por el teorema ~\ref{th_masde_n}, ya que $B_1$ es base de $V$, $B_2$ ser\'ia linealmente dependiente, lo cual es una contradicci\'on a la hip\'otesis de que $B_2$ es una base de $V$.
+
+Si $n>m$ entonces por el mismo teorema ~\ref{th_masde_n}, debido a que $B_2$ es base de $V$, entonces $B_1$ ser\'ia linealmente dependiente, lo cual es una contradicci\'on.
+
+Luego, la \'unica posibilidad es que $m=n$. $\blacksquare$
+\end{proof}
+
+Este resultado anterior nos indica que todas las bases de un mismo espacio vectorial tienen el mismo n\'umero de vectores, esto permite dar una caracter\'istica propia del espacio vectorial, que a continuaci\'on ser\'a definido como dimensi\'on.
+
+~\\
+~\\
+%\begin{quote}
+%\small Un matemático, como un pintor o un poeta, es un fabricante de modelos. Si sus modelos son más duraderos que los de estos últimos, es debido a que están hechos de ideas. Los modelos del matemático, como los del pintor o los del poeta deben ser hermosos. La belleza es la primera prueba; no hay lugar permanente en el mundo para unas matemáticas feas. ~\\-G.H.HARDY
+%\end{quote}
+\newpage
+\section{Dimensión de un espacio vectorial}
+\begin{dfn}[Dimensi\'on]
+Sea $V$ un espacio vectorial sobre un campo \doblek, y $B$ una base de $V$, con un n\'umero finito de vectores. Se define como dimensi\'on de $V$ al n\'umero de elementos de $B$ y se denota por $dimV$.
+~\\
+%Se conviene decir que si $V=\llav{0_v}$ entonces $dimV=0$
+\end{dfn}
+
+Si la base de un espacio vectorial $V$ posee infinitos vectores, entonces se dice que $V$ es de  \textit{dimensi\'on infinita} 
+
+~\\
+Por ejemplo, los espacios clásicos que hemos trabajado tienen dimensiones bien conocidas. El subespacio $\rdos $ posee dimensión 2 ya que $\llav{\vectrdos{1}{0}, \vectrdos{0}{1}}$ es una base de $\rdos$ y posee dos vectores. Además esto nos asegura que cualquier otra base de $ \rdos$ tendrá exactamente 2 vectores.
+~\\
+
+Las dimensiones del resto de espacios conocidos la mostramos a continuación:
+
+\begin{itemize}
+\item $\rtres $ posee dimensión 3
+\item $\rn$ posee dimensión $n$
+\item $\puno$ posee dimensión 2
+\item $\pdos$ posee dimensión 3
+\item $\pn$ posee dimensión $n+1$
+\item $\mdosxdos$ posee  dimensión 4
+\item $\mmxn$ posee  dimensión $m\times n$ 
+\item $S_{nxn}$ posee  dimensión $\frac{n(n+1)}{2}$ 
+
+\end{itemize}
+\begin{ejemplo}
+Calcule la dimensión del subespacio $H=\llaves{\vectrtres{a}{b}{c}}{\begin{array}{r}
+a+b-c=0\\
+b=2c\\
+\end{array}}$
+~\\
+\sol
+Si obtenemos una base del subespacio H tendríamos:
+\[b=2c\]
+\[ a=c-b=c-2c=-c\]
+\[B_H=\llav{\vectrtres{-1}{2}{1}}\]
+Como solo hay un vector en la base, la dimensión de $H$ es igual a 1.
 
 \end{ejemplo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{obsimp}
 En cualquier espacio vectorial, el vector nulo $\mathbf{0}_v$ es combinación lineal de cualquier familia finita de elementos de $V$ \conjvect {v}{n} por $\mathbf{0}_v = 0 v_1 + 0 v_2 + \ldots + 0 v_n$.\\
@@ -33,6 +225,12 @@ Un subconjunto $S$ de un espacio vectorial $(V, +, \odot)$ se dice que es un sub
 \end{enumerate}
 \end{dfn}
 
+\begin{theorem}
+Sea A un subconjunto de un espacio vectorial V. Si A es linealmente independiente maximal, entonces A es una base para V. Recíprocamente si A es una base entonces es un conjunto linealmente independiente maximal.
+\end{theorem}
+\begin{proof}
+Veamos que A genera a V. Sea w $\in V\setminus A$, entonces $\{w\}\cup A$ es un conjunto linealmente dependiente. Así la combinación lineal $\alpha_0 w+\alpha_1v_1+\alpha_2v_2+..\alpha_nv_n=0_V$ donde $A=\llav{v_1, v_2, .., v_n}$ tiene solución no trivial. Si $\alpha_0=0$, entonces algún $\alpha_i;\ i=1, 2.., n$, debe ser diferente de cero. Esto último implica que A no es un conjunto linealmente independiente, por tanto $\alpha_0\neq 0$ y así obtendríamos que $w=\frac{-\alpha_1}{\alpha_0}v_1+\frac{-\alpha_2}{\alpha_0}v_2+..\frac{-\alpha_n}{\alpha_0}v_n$, por lo que A es un conjunto generador de V.
+\end{proof}
 \begin{dfn}
 Un subconjunto de $M$ de un espacio vectorial se dice que es un subconjunto generador minimal de $V$ si
 \begin{enumerate}
@@ -40,27 +238,45 @@ Un subconjunto de $M$ de un espacio vectorial se dice que es un subconjunto gene
 \item Si a $M$ se le quita un elemento $v_0$ entonces $M \setminus \{w\}$ no es un conjunto generador.
 \end{enumerate}
 \end{dfn}
-Si $V$ es un subespacio vectorial y $B = \conjvect{v}{n}$ es una base para $V$, entonces los coeficientes de la combinación lineal $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n = v$ se denominan las coordenadas de $v$ respecto a la base $B$ y será representado por 
-$$(v)_B = \left( \begin{array}{c}
-\alpha_1\\
-\alpha_2\\
-\vdots\\
-\alpha_n  \end{array} \right)$$
-
-\begin{obsimp}
-Sea $V$ un espacio vectorial. Si una base está conformada por $n$ vectores, entonces todas las demás bases tendrán $n$ vectores.
-\end{obsimp}
-
-\begin{obsimp}
-Sea $V$ un espacio vectorial. Si existe una base con $n$ vectores, diremos que $n$ es la dimensión de $V$ y será denotado como $dim (V) = n$.
-\end{obsimp}
 
 \begin{theorem}
-Si el espacio vectorial $(V , + , \odot)$ tiene un subconjunto linealmente independiente maximal \conjvect{v}{n} entonces es una base para $V$.
-
+Si el espacio vectorial $(V , +, \odot)$ tiene un subconjunto generador minimal $B$, entonces $B$ es una base para $V$.
 \end{theorem}
 
 
+\section{Propiedades de las bases}
+%
+%Si $V$ es un subespacio vectorial y $B = \conjvect{v}{n}$ es una base para $V$, entonces los coeficientes de la combinación lineal $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n = v$ se denominan las coordenadas de $v$ respecto a la base $B$ y será representado por 
+%$$(v)_B = \left( \begin{array}{c}
+%\alpha_1\\
+%\alpha_2\\
+%\vdots\\
+%\alpha_n  \end{array} \right)$$
+
+%\begin{obsimp}
+%Sea $V$ un espacio vectorial. Si una base está conformada por $n$ vectores, entonces todas las demás bases tendrán $n$ vectores.
+%\end{obsimp}
+
+%\begin{obsimp}
+%Sea $V$ un espacio vectorial. Si existe una base con $n$ vectores, diremos que $n$ es la dimensión de $V$ y será denotado como $dim (V) = n$.
+%\end{obsimp}
+%
+%\begin{theorem}
+%Si el espacio vectorial $(V , + , \odot)$ tiene un subconjunto linealmente independiente maximal \conjvect{v}{n} entonces es una base para $V$.
+%
+%\end{theorem}
+
 \begin{theorem}
-Si el espacio vectorial $(V , +, \odot)$ tiene un subconjunto minimal $B$, entonces $B$ es una base para $V$.
+Sea A=$\llav{v_1, v_2, .., v_n}$ un subconjunto linealmente independiente de un espacio vectorial V. Sea $w\in V$ y $A'=A\cup\llav{w}$. Entonces A' es linealmente independiente si y solo si w es un elemento de $E\setminus gen(A)$
 \end{theorem}
+
+\begin{proof}
+Si w es un elemento de gen(A), entonces existen escalares $\alpha_1, \alpha_2, ..\alpha_n$ tales que $w=\alpha_1v_1+\alpha_2v_2+..+\alpha_nv_n$. Así $(-1)w+\alpha_1v_1+\alpha_2v_2+..+\alpha_nv_n=0_V$ y esto implica que A' es linealmente dependiente.\\
+Supongamos ahora que A' es linealmente dependiente entonces existen escalares  $\alpha_1, \alpha_2, ..\alpha_n$ no todos iguales a cero tales que $\alpha_0w+\alpha_1v_1+\alpha_2v_2+..+\alpha_nv_n=0_V$. Si $\alpha_0=0$ entonces $\alpha_1v_1+\alpha_2v_2+..+\alpha_nv_n=0_V$ esto implicaría que $\alpha_1= \alpha_2= ..=\alpha_n=0$ ya que A es linealmente independiente, pero esto es imposible ya que A' es linealmente dependiente; por lo tanto $\alpha_0\neq0$ y así w es una combinación lineal de A, por lo tanto $w\in gen(A)$.
+\end{proof}
+\begin{theorem}
+Si  A=$\llav{v_1, v_2, .., v_n}$ es un conjunto generador de un espacio vectorial V y la cardinalidad de E es mayor o igual a 2, entonces existe un conjunto linealmente independiente contenido en A que también genera a V.
+\end{theorem}
+\begin{proof}
+Si A es linealmente independiente no hay nada que demostrar. Supongamos que A no es linealmente independiente. Sea $w_r$ el primer elemento no cero de A. Así $gen\{w_r\}$ es un subespacio de V y $\{w_r\}$ es un conjunto linealmente independiente. Si $gen\{w_r\}=V$ se termina la prueba. Supongamos que $gen\{w_r\}\neq V$, entonces existe un elemento $w_q\subset A$ que no pertenece a $gen\{w_r\}$
+\end{proof}

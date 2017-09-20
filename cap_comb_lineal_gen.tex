@@ -1,69 +1,592 @@
 %espacio generado combinación lineal
-\chapter{Combinaciones lineales y subespacios generados}
-\section{Combinaciones lineales y subespacios generados}
-\begin{dfn}
-Sea $(E, +, \odot)$ un espacio vectorial real y sean $B=\conjvect{v}{n}$ un subconjunto de vectores en $E$. Un vector $v$ en $E$ se dice que es una combinación lineal de los vectores en $B$ si existen escalares $\alpha_1$, $\alpha_2$, $\ldots$ , $\alpha_n$ en \dobler , tales que $v=\av{\alpha_1}{v_1} + \av{\alpha_2}{v_2} + \ldots + \av{\alpha_n}{v_n}$.
+\chapter{Combinaciones lineales}
+
+\section{Combinación lineal}
+\begin{dfn}[Combinaci\'on Lineal]
+Sea $v\in V$, sean $v_1, v_2, v_3, \ldots, v_n$ vectores de un espacio vectorial $V$ sobre el campo \doblek , se dice que $v$ es una combinaci\'on lineal de los vectores $v_1, v_2, v_3, \ldots, v_n$ si y solo si existen los escalares $\alpha_1, \alpha_2, \alpha_2, \ldots, \alpha_n \in$ \doblek tal que
+\[
+v=\left(\alpha_1\odot v_1\right)\oplus
+\left(\alpha_2\odot v_2\right)\oplus
+\left(\alpha_3\odot v_3\right)\oplus
+\ldots
+\left(\alpha_n\odot v_n\right)
+\]
+\end{dfn}
+Nótese que la palabra clave de la definici\'on anterior es EXISTEN, para ilustrar esto considere los
+dos siguientes ejemplos:
+\begin{ejemplo}
+Considere el espacio vectorial \rdos; ?` es el vector \vectrdos{6}{-1} combinaci\'on lineal de los vectores \vectrdos{3}{2}, \vectrdos{1}{-1}?
+\end{ejemplo}
+
+Para resolver este problema debemos verificar si EXISTEN escalares $\alpha$, $\beta$ tales que hagan posible la combinaci\'on lineal:
+\[\mbox{\vectrdos{6}{-1}} =\alpha\mbox{\vectrdos{3}{2}}+\beta\mbox{\vectrdos{1}{-1}}\]
+
+Esto nos llevar\'a a un sistema de ecuaciones
+\[
+\left\{
+\begin{array}{l}
+3\alpha+\beta=\ 6\\
+2\alpha-\beta=-1
+\end{array}
+\right.
+\]
+
+Si el sistema es consistente, entonces los escalares si existen y por lo tanto, dicho vector es combinación lineal de los otros dos, pero; si el sistema es inconsistente, los escalares no existen
+por lo que el vector no sería combinación lineal de los otros dos.
+
+~\\
+Al resolver este sistema llegamos a la soluci\'on:
+$\alpha=1$ y $\beta=3$.
+
+~\\
+Los escalares $\alpha$ y $\beta$ existen, el sistema es consistente con soluci\'on \'unica, luego el vector \vectrdos{6}{-1} es combinaci\'on lineal de los vectores \vectrdos{3}{2}, \vectrdos{1}{-1}. Ver figura ~\ref{fig:figura1}
+
+\imagen{dosvect1}{Combinaci\'on lineal de vectores en \rdos. Método del paralelogramo}{figura1}{0.5}
+
+\begin{ejemplo}
+?`El vector \vectrdos{2}{2} es combinaci\'on lineal de los vectores 
+\vectrdos{-1}{2}, \vectrdos{2}{-4}?
+\end{ejemplo}
+
+
+Para que sea combinación lineal deben existir los escalares
+$\alpha$ y $\beta$ tales que:
+
+\[\mbox{\vectrdos{2}{2}}=\alpha\mbox{\vectrdos{-1}{2}}+
+\beta\mbox{\vectrdos{2}{-4}}\]
+~\\
+Resolviendo el sistema por el metodo de Gauss-Jordan:
+
+\[
+\left(
+\begin{array}{rr|r}
+-1 & 2 & 2\\
+2&-4&2
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rr|r}
+-1 & 2 & 2\\
+0&0&6
+\end{array}
+\right)
+\]
+~\\
+La \'ultima fila indica un absurdo matem\'atico, lo cual implica que el sistema es inconsistente, no
+tiene soluci\'on. Como los escalares no existen, el vector \vectrdos{2}{2} NO es combinaci\'on lineal de los vectores 
+\vectrdos{-1}{2}, \vectrdos{2}{-4}
+
+\newpage
+%\subsection{?`Espacio de colores?}
+%Uno de los m\'etodos de explicar la combinación lineal con un ejemplo inteligible son los colores:
+%
+%~\\
+%Suponga que usted tiene un conjunto de bolitas de plastilina con los colores Azul, Rojo, Amarillo.
+%Tomamos una “bolita” amarilla y otra “bolita” roja y las combinamos (esperamos que el lector conozca qué color se formar\'a), como era de suponerse, tendremos ahora una bolita de color Naranja; es decir, el color Naranja es una Combinación Lineal de los colores Amarillo y Rojo.
+%
+%\imagen{amarillorojo}{Combinaci\'on lineal}{figura2}{0.5}
+%
+%Asimismo si tomamos una bolita de color Azul y una bolita de color Amarillo, obtendremos una
+%de color Verde, luego el color Verde es Combinación Lineal de los colores Azul y Amarillo.
+%
+%\imagen{azulamarillo}{Combinaci\'on lineal}{figura3}{0.5}
+%
+%Ahora suponga que no toma una bolita de Azul, sino TRES bolitas de Azul y una de Amarillo; y las
+%combinamos, ¡por supuesto! Tendremos otra clase de color Verde, pero un poco más oscuro, es
+%decir la cantidad de bolitas son los ESCALARES de la combinación lineal y si los escalares
+%cambian tendremos otro resultado.
+%
+%
+%\imagen{verdeoscuro}{Combinaci\'on lineal}{figura4}{0.4}
+%
+%?`Ahora est\'a más claro el concepto de combinación lineal?
+
+\subsection{M\'as ejemplos de combinaci\'on lineal}
+
+De ahora en adelante trabajaremos sobre espacios vectoriales sobre campo Real y con operaciones usuales, por lo que obviaremos $\oplus$ y $\odot$ por los usuales $+$ y $\cdot$
+
+\begin{ejemplo}
+Considere el espacio vectorial \pdos\ sobre el campo real, determinar si el vector $x^2+x-1$ es combinación lineal de los vectores $x+2, x^2-3, x^2+2x+1$.
+\end{ejemplo}
+~\\
+Soluci\'on
+
+~\\
+Veamos si existen los escalares $\alpha_1, \alpha_2, \alpha_3$ tales que
+\[x^2+x-1=\alpha_1\left(x+2\right)+
+\alpha_2\left(x^2-3\right)+
+\alpha_3\left(x^2+2x+1\right)
+\]
+
+~\\
+Dos polinomios son iguales si y solos si cada uno de sus coeficientes lo son, por tanto:
+
+~\\
+\[x^2+x-1=\left(\alpha_2+\alpha_3\right)x^2+
+\left(\alpha_1+2\alpha_3\right)x+
+\left(2\alpha_2-3\alpha_2+\alpha_3\right)
+\]
+
+Al igualar coeficientes, se origina el siguiente sistema de ecuaciones:
+
+\begin{eqnarray*}
+\alpha_2+\alpha_3=1\\
+\alpha_1+2\alpha_3=1\\
+2\alpha_1-3\alpha_2+\alpha_3=-1\\
+\end{eqnarray*}
+
+Resolvi\'endolo por Gauss:
+
+\[
+\left(
+\begin{array}{rrr|r}
+0 &1 &1 &1\\
+1&0&2&1\\
+2 &-3&1&-1
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1 &0 &2 &1\\
+0&1&1&1\\
+0 &-3&-3&-3
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1 &0 &2 &1\\
+0&1&1&1\\
+0 &0&0&0
+\end{array}
+\right)\]
+
+De la \'ultima fila del sistema inferimos que el sistema tiene infinitas soluciones, es decir; es consistente, que es lo que nos interesa. Como es consistente entonces EXISTEN escalares (en este caso infinitos) que hacen posible la combinaci\'on lineal.
+
+\begin{ejemplo}
+En el espacio vectorial \mdosxdos, determinar si 
+\matrdxd{2&1}{-1&0}
+ es combinaci\'on lineal de los vectores 
+\matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
+\end{ejemplo}
+
+
+\[\matrdxd{2&1}{-1&0}=
+\alpha_1\matrdxd{1&0}{-1&0}
++{\alpha_2}{\matrdxd{-1&2}{0&1}}
++{\alpha_3}{\matrdxd{0&1}{2&-1}}
+\]
+
+Dos matrices son iguales si y solo si cada uno de sus coeficientes
+lo son, por lo que resolver la ecuación anterior es equivalente a resolver el sistema de ecuaciones siguiente:
+\begin{align*}
+\alpha_1+\alpha_2=&2\\
+2\alpha_2+\alpha_3=&1\\
+-\alpha_1+2\alpha_3=&-1\\
+\alpha_2-\alpha_3=&0\\
+\end{align*}
+Por el método de Gauss obtenemos un sistema equivalente por filas
+\[
+\left(
+\begin{array}{rrr|r}
+1 &-1 &0 &2\\
+0&2&1&1\\
+-1&0&2&-1\\
+0&1&-1&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1 &-1 &0 &2\\
+0&2&1&1\\
+0&-1&2&1\\
+0&1&-1&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1 &-1 &0 &2\\
+0&2&1&1\\
+0&0&5&3\\
+0&0&3&1
+\end{array}
+\right)\]
+
+~\\
+En las dos \'ultimas filas se obtiene una inconsistencia matem\'atica, ya que en la tercera tenemos que 
+$\alpha_3=\frac{3}{5}$ 
+pero en la cuarta fila 
+$\alpha_3=\frac{1}{3}$
+lo cual es una contradicci\'on. Por lo tanto el sistema es inconsistente, no existen escalares que satisfagan dicho sistema. Por tanto \matrdxd{2&1}{-1&0} NO
+ es combinaci\'on lineal de los vectores \matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
+
+~\\
+\begin{ejercicio}
+Determinar de ser posible los valores de $k$ para los cuales el vector 
+\vectrtres{1}{1}{k} es una combinaci\'on lineal de los vectores
+ \vectrtres{1}{2}{k}, \vectrtres{k}{-k}{1}.
+\end{ejercicio}
+~\\
+\underline{Soluci\'on}:
+\\
+Analic\'emoslo de la misma manera y planteemos la combinaci\'on lineal
+\[
+\vectrtres{1}{1}{k}=
+ \alpha_1\vectrtres{1}{2}{k}+\alpha_2\vectrtres{k}{-k}{1}
+\]
+Para que la combinaci\'on lineal exista el sistema debe ser consistente. Realizando operaciones elementales tenemos:
+
+\[
+\left(
+\begin{array}{rr|r}
+1 &k&1\\
+2&-k&1\\
+k&1&k
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rr|r}
+1 &k&1\\
+0&-3k&-1\\
+0&1-k^2&0
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rr|r}
+1 &k&1\\
+0&-3k&-1\\
+0&0&k^2-1
+\end{array}
+\right)
+\]
+
+Atenci\'on a las dos \'ultimas filas, para que el sistema sea consistente el valor de $k^2-1$ debe ser igual a cero (si es diferente de cero: $k^2-1=m, m\neq 0$ el sistema es inconsistente ya que quedar\'ia una ecuaci\'on $0\alpha_1+0\alpha_2=m$\, lo cual es un absurdo), es decir es consistente cuando:
+\[k^2-1=0  \longrightarrow  k=-1 \vee k=1\]
+
+Debemos tener en cuenta también que $k\neq 0$
+ya que con eso el sistema es inconsistente en la
+segunda fila, pero esto no afecta los valores obtenidos ya que ninguno de ellos es cero.
+
+
+Por lo tanto para que \vectrtres {1}{1}{k} sea combinaci\'on lineal de \vectrtres{1}{2}{k}, \vectrtres{k}{-k}{1}; $k=-1 \vee k=1$.
+
+\newpage
+\section{Cápsula Lineal}
+\begin{dfn}[C\'apsula Lineal]
+Sean \conjvect{v}{k} k vectores de un espacio vectorial $V$, se denomina C\'apsula Lineal de \conjvect{v}{k} al conjunto de todas las combinaciones lineales posibles de los vectores \conjvect{v}{k}
+\[
+\mathcal{L} \left(\kvect{v}{k}\right)=
+\lbrace v|v=\av{\alpha_1}{v_1}+
+\av{\alpha_2}{v_2}+
+\ldots+
+\av{\alpha_k}{v_k}
+\rbrace
+\]
 
 \end{dfn}
 
-\begin{ejemplo}
-Cualquier vector $(a, b, c)$ en \rtres puede ser expresado como una combinación lineal de los vectores  $(1,0,0)$,$(0,1,0)$ y $(0,0,1)$.
-
-\end{ejemplo}
-
-\begin{ejemplo}
-El vector $(4,5,5)$ puede ser expresado como una combinación lineal de los vectores $(1,2,3)$, $(-1,1,4)$ y $(3,3,2)$.
-\end{ejemplo}
-
 \begin{theorem}
-Sea $(E, +, \odot)$ un espacio vectorial y $A$ un subconjunto finito de $E$. El conjunto de todas las combinaciones lineales de elementos de $A$ es un subespacio de $E$ y se llama subespacio generado por $A$ y se denota por $CL(A)$.
+Sean \conjvect{v}{k} vectores de un espacio vectorial $V$, entonces la c\'apsula lineal de \conjvect{v}{k} es un subespacio vectorial de $V$
 \end{theorem}
-
-\begin{proof}
-
-$\mathbf{0}_v \in CL(A)$ por el comentario anterior.\\
-Sean $u$, $v$ en $CL(A)$, entonces
-\begin{align*}
-u &=\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}\\ 
-v&=\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n}
+\begin{proof}~\\
+\begin{enumerate}
+\item Puesto que $0_V=0 v_1+0 v_2+..0 v_n$ se tiene que $0_V$ es un elemento de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$
+\item Sean $w_1, w_2$ dos elementos de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$, entonces exiten escalares $\alpha_i, \beta_i \in \dobler$ tales que \begin{align*}
+w_1=\alpha_1 v_1+\alpha_2 v_2+..\alpha_n v_n\\
+w_2=\beta_1 v_1+\beta_2 v_2+..\beta_n v_n\\
 \end{align*}
-entonces
+Ahora como
 \begin{align*}
-u + v &= (\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}) + (\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n})\\
-u + v &=(\alpha_1 + \beta_1)\,v_1 + \ldots + (\alpha_n + \beta_n)\, v_n
+w_1+w_2=(\alpha_1+\beta_1) v_1+(\alpha_2+\beta_2) v_2+..(\alpha_n+\beta_n) v_n\\
 \end{align*}
-Así
-$$u + v \in CL(A)$$
-Sea $u \in CL(A)$ y $\alpha \in \dobler$
+Concluimos que $w_1+w_2$ es un elemento de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$.
+\item Sean $c \in \dobler$ y w un elemento de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$. Entonces 
 \begin{align*}
-\alpha u &= \alpha(\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n})\\
-\alpha u &= (\alpha \alpha_1)v_1 + \ldots + (\alpha \alpha_n)v_n
+cw&=c(\alpha_1 v_1+\alpha_2 v_2+..\alpha_n v_n)\\
+cw&=(c\alpha_1) v_1+(c\alpha_2) v_2+..(c\alpha_n) v_n\\
 \end{align*}
-luego $\alpha u \in CL(A)$\\
-
-$\therefore$ $CL(A)$ es un subespacio vectorial de $V$. \qedhere \\ %%%%%%%  el \qedhere es el QED
-
+Y así, $cw $ es un elemento de la cápsula lineal de \llav{v_1, v_2, .., v_n}.
+\end{enumerate}
+Por lo tanto la cápsula lineal es un subespacio de V.
 \end{proof}
-El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = CL(A)$ entonces decimos que $A$ genera al espacio $V$ o que $A$ es conjunto generador de $V$.
+
+
+~\\
+Por esto a la c\'apsula lineal se le denomina espacio generado.
+
+\section{Conjunto Generador y Espacio Generado}(?`Qu\'e?\ ?` no es lo mismo?)
+
+
+\begin{dfn}
+Sea $S=$\conjvect{v}{k} un subconjunto de un espacio vectorial $V$, de denomina Espacio Generado por S al conjunto de todas las combinaciones posibles de los vectores de S. Dado esto, el conjunto S se demonida Conjunto Generador. Se denota:
+\[gen(S)=
+\lbrace v \in V|v=\alpha_1 v_1+
+\alpha_2 v_2+
+\ldots+
+\alpha_k v_k
+\rbrace
+\]
+al espacio generado por S.
+\end{dfn}
 
 \begin{ejemplo}
-Veamos que $A = \llav{(1,2,0),(0,1,-1),(1,1,2)}$ genera a \rtres .\
-En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que $$(x_0, y_0, z_0) = \alpha (1,2,0) + \beta (0,1,-1) + \lambda (1,1,2)$$
-lo que nos conduce al estudio del sistema 
-
-$$\left\{
-\begin{array}{rcl}
-\alpha + \lambda &=& x_0\\
-2 \alpha + \beta + \lambda &=& y_0\\
-- \beta + 2\alpha &=& z_0 
-\end{array}
-\right.$$
-
-Donde se obtiene que 
-\begin{align*}
-\alpha &= 3x_0 - y_0 -z_0\\
-\beta &=-4 x_0 +2 y_0 +z_0\\
-\lambda &= -2 x_0 + y_0 +z_0 
-\end{align*}
-
+Halle el espacio generado por el subconjuto S de \pdos; $S=\lbrace
+x+1, x^2-1, 2x^2+x-1\rbrace$. Luego, determine si 
+\begin{enumerate}
+\item[(a)]$x^2-2x+5 \in gen(S)$
+\item[(b)]$3x^2+4x+1 \in gen(S)$
+\end{enumerate}
 \end{ejemplo}
+
+~\\
+\underline{Soluci\'on}
+~\\
+Por definici\'on $gen(S)=
+\lbrace v\in V|v=
+\beta_1 v_2+
+\beta_2 v_2+
+\ldots+
+\beta_k v_k
+\rbrace
+$
+
+~\\
+Elegimos ahora un vector t\'ipico de \pdos, que es el espacio referencial
+\[p(x)=a_0+a_1 x+a_2 x^2\]
+$$\forall p(x)\in gen(S):\  
+a_0+a_1 x+a_2 x^2=
+\av{\beta_1}{x+1}+
+\av{\beta_2}{x^2-1}+
+\av{\beta_3}{2x^2+x-1}
+$$
+Igualando coeficientes llegamos al sistema de ecuaciones
+\begin{eqnarray*}
+\beta_1+\beta_2-\beta_3=a_0\\
+\beta_1+\beta_3=a_1\\
+\beta_2+2\beta_3=a_2
+\end{eqnarray*}
+
+\[
+\left(
+\begin{array}{rrr|r}
+1&-1&-1&a_0\\
+1&0&1&a_1\\
+0&1&2&a_2
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&-1&-1&a_0\\
+0&1&2&a_1-a_0\\
+0&1&2&a_2
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&-1&-1&a_0\\
+0&1&2&a_1-a_0\\
+0&0&0&a_1-a_0-a_2
+\end{array}
+\right)
+\]
+
+\underline{Observaci\'on}: Atenci\'on aqu\'i, las inc\'ognitas de este sistema por naturaleza ser\'ian $\beta_1, \beta_2, \beta_3$
+; sin embargo cuando vamos a determinar el espacio generado no nos interesa quienes sean los escalares, s\'olo nos interesa que existan, lo que si nos interesa son las condiciones que recaen sobre $a_0, a_1, a_2 $
+para que el sistema sea consistente (en otras palabras, para que los escalares existan).
+
+
+En la \'ultima fila tenemos una fila de llena de ceros pero al final tenemos el factor $a_1-a_0-a_2$
+analic\'emosla, si $a_1-a_0-a_2\neq 0$
+,entonces el sistema no tendría soluci\'on (?`Por qu\'e?), lo cual va
+en contra de la definici\'on de combinaci\'on lineal, que es esencial en la definición de espacio
+generado, por lo que esto es lo que debe ser evitado. Para que el sistema sea consistente debe cumplirse que $a_1-a_0-a_2=0$
+, y ésta será la condición de todos los vectores que est\'en en el
+espacio generado por S.
+\[gen(S)=
+\lbrace
+a_0+a_1 x+a_2 x^2|
+a_1-a_0-a_2=0
+\rbrace
+\]
+\begin{enumerate}
+
+\item[(a)] El vector $x^2-2x+5$ no pertenece a $gen(S)$\ ya que $(-2)-1-5=-8\neq 0$
+\item[(b)] El vector $3x^2+4x+1 \in gen(S)$, ya que $4-3-1=0$
+\end{enumerate}
+
+\begin{ejemplo}
+Determine el espacio generado por los vectores $\left\{ \vectrtres{1}{2}{1}, \vectrtres{3}{0}{2}, \vectrtres{3}{2}{0}\right\}$.
+\end{ejemplo}
+
+~\\
+\underline{Soluci\'on}:
+~\\
+
+Sea $v=\vectrtres{a}{b}{c}; a, b, c, \in \dobler$
+
+\[
+\forall v\in gen(S):\ 
+\vectrtres{a}{b}{c}=
+\beta_1\vectrtres{1}{2}{1}+
+\beta_2\vectrtres{4}{0}{2}+
+\beta_3\vectrtres{3}{2}{0}
+\]
+
+\[
+\left(
+\begin{array}{rrr|r}
+1&3&3&a\\
+2&0&2&b\\
+1&2&0&c
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&3&3&a\\
+0&-6&-4&-2a+b\\
+0&1&3&a-c
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+1&3&3&a\\
+0&-6&-4&-2a+b\\
+0&0&14&4a+b-6c
+\end{array}
+\right)
+\]
+Este sistema siempre ser\'a consistente para cualesquiera que sean los valores de $a, b, c$ por lo
+tanto se dice que no hay condiciones sobre ellos, en otras palabras $a, b, c \in \dobler$; puede ser
+cualquier real.
+\[
+gen(S)=
+\left\{
+\left.
+\vectrtres{a}{b}{c}\right|
+a, b, c \in \dobler
+\right\}=\rtres
+\]
+Se dice que S genera a \rtres.
+
+\begin{ejercicio}
+Determine el valor de $k$ para que el vector $C=\matrdxd{2k&1}{-3&k}$ pertenezca al espacio generado por $S=\left\{\matrdxd{-1&2}{1&2}, \matrdxd{3&-1}{-2&0}, \matrdxd{-2&0}{3&1}\right\}$.
+\end{ejercicio}
+%%\sol
+Hallemos el espacio generado por dichos vectores. Sea $A=\matrdxd{a&b}{c&d} \in gen(S)$.
+
+\[\forall A\in gen(S):\ 
+\matrdxd{a&b}{c&d}=
+\beta_1\matrdxd{-1&2}{1&2}+ \beta_2\matrdxd{3&-1}{-2&0}+ \beta_3\matrdxd{-2&0}{3&1}
+\]
+\[
+\left(
+\begin{array}{rrr|r}
+-1&3&-2&a\\
+2&-1&0&b\\
+1&-2&3&c\\
+2&0&1&d
+\end{array}
+\right)
+\sim
+\ldots
+\sim
+\left(
+\begin{array}{rrr|r}
+-1&3&-2&a\\
+0&5&-4&2a+b\\
+0&0&-9&-3a+b-5c\\
+0&0&0&-5a-5b-5c+5d
+\end{array}
+\right)
+\]
+Para que el sistema sea consistente debe cumplirse que $-5a-5b-5c+5d=0$. Por lo que el espacio generado por S es:
+\[gen(S)=\llaves{
+\matrdxd{a&b}{c&d}
+}{d=a+b+c}
+\]
+Para que $C$\ pertenezca a $gen(S)$, debe cumplirse que
+\[k=2k+1-3\ \rightarrow\ k=2\]
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Combinaciones lineales y subespacios generados}
+%\begin{dfn}
+%Sea $(E, +, \odot)$ un espacio vectorial real y sean $B=\conjvect{v}{n}$ un subconjunto de vectores en $E$. Un vector $v$ en $E$ se dice que es una combinación lineal de los vectores en $B$ si existen escalares $\alpha_1$, $\alpha_2$, $\ldots$ , $\alpha_n$ en \dobler , tales que $v=\av{\alpha_1}{v_1} + \av{\alpha_2}{v_2} + \ldots + \av{\alpha_n}{v_n}$.
+%
+%\end{dfn}
+%
+%\begin{ejemplo}
+%Cualquier vector $(a, b, c)$ en \rtres puede ser expresado como una combinación lineal de los vectores  $(1,0,0)$,$(0,1,0)$ y $(0,0,1)$.
+%
+%\end{ejemplo}
+%
+%\begin{ejemplo}
+%El vector $(4,5,5)$ puede ser expresado como una combinación lineal de los vectores $(1,2,3)$, $(-1,1,4)$ y $(3,3,2)$.
+%\end{ejemplo}
+%
+%\begin{theorem}
+%Sea $(E, +, \odot)$ un espacio vectorial y $A$ un subconjunto finito de $E$. El conjunto de todas las combinaciones lineales de elementos de $A$ es un subespacio de $E$ y se llama subespacio generado por $A$ y se denota por $CL(A)$.
+%\end{theorem}
+%
+%\begin{proof}
+%
+%$\mathbf{0}_v \in CL(A)$ por el comentario anterior.\\
+%Sean $u$, $v$ en $CL(A)$, entonces
+%\begin{align*}
+%u &=\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}\\ 
+%v&=\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n}
+%\end{align*}
+%entonces
+%\begin{align*}
+%u + v &= (\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}) + (\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n})\\
+%u + v &=(\alpha_1 + \beta_1)\,v_1 + \ldots + (\alpha_n + \beta_n)\, v_n
+%\end{align*}
+%Así
+%$$u + v \in CL(A)$$
+%Sea $u \in CL(A)$ y $\alpha \in \dobler$
+%\begin{align*}
+%\alpha u &= \alpha(\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n})\\
+%\alpha u &= (\alpha \alpha_1)v_1 + \ldots + (\alpha \alpha_n)v_n
+%\end{align*}
+%luego $\alpha u \in CL(A)$\\
+%
+%$\therefore$ $CL(A)$ es un subespacio vectorial de $V$. \qedhere \\ %%%%%%%  el \qedhere es el QED
+%
+%\end{proof}
+%El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = CL(A)$ entonces decimos que $A$ genera al espacio $V$ o que $A$ es conjunto generador de $V$.
+%
+%\begin{ejemplo}
+%Veamos que $A = \llav{(1,2,0),(0,1,-1),(1,1,2)}$ genera a \rtres .\
+%En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que $$(x_0, y_0, z_0) = \alpha (1,2,0) + \beta (0,1,-1) + \lambda (1,1,2)$$
+%lo que nos conduce al estudio del sistema 
+%
+%$$\left\{
+%\begin{array}{rcl}
+%\alpha + \lambda &=& x_0\\
+%2 \alpha + \beta + \lambda &=& y_0\\
+%- \beta + 2\alpha &=& z_0 
+%\end{array}
+%\right.$$
+%
+%Donde se obtiene que 
+%\begin{align*}
+%\alpha &= 3x_0 - y_0 -z_0\\
+%\beta &=-4 x_0 +2 y_0 +z_0\\
+%\lambda &= -2 x_0 + y_0 +z_0 
+%\end{align*}
+%
+%\end{ejemplo}

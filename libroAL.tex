@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{report}
+\documentclass[10pt,a4paper]{book}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -7,8 +7,21 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{makeidx}
+\usepackage{enumerate}
 
 \RequirePackage{algebraLineal}
+
+
+
+\newcommand{\sol}{
+~\\
+\underline{SOLUCI\'ON}:
+~\\
+}
+\newcommand{\obs}{
+~\\
+\underline{Observaci\'on}: 
+}
 
 
 \newtheorem{theorem}{Teorema}[chapter]
@@ -76,6 +89,7 @@
 \tableofcontents
 
 \printindex
+\include{cap_nociones_preliminares}
 
 \include{cap_esp_vectoriales}
 
@@ -85,13 +99,13 @@
 
 \include{cap_bases}
 
-\include{cap_cambio_base}
+%\include{cap_cambio_base}
 
-\include{cap_esp_asoc_matriz}
+%\include{cap_esp_asoc_matriz}
 
-\include{cap_transformaciones}
+%\include{cap_transformaciones}
 
-\include{cap11_valores_vectores_propios}
+%\include{cap11_valores_vectores_propios}
 
 %%%%%%%% esta seccion son los modelos de comandos para secciones
 %%ejercicio

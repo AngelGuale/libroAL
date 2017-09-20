@@ -71,7 +71,7 @@
 }
 
 \def\svrdos#1#2#3{
-$W= \left\{\begin{array}{c|c}
+\ensuremath{W= \left\{\begin{array}{c|c}
 {\left(
 \begin{array}{c}
 #1\\
@@ -79,11 +79,11 @@ $W= \left\{\begin{array}{c|c}
 \end{array}\right)
 }&{#3}
 \end{array}
-\right\}$
+\right\}}
 }
 %subespacio en r3 nombre, tres variables, condiciones
 \def\svrtres#1#2#3#4#5{
-$#1= \left\{\begin{array}{c|c}
+\ensuremath{#1= \left\{\begin{array}{c|c}
 {\left(
 \begin{array}{c}
 #2\\
@@ -92,7 +92,7 @@ $#1= \left\{\begin{array}{c|c}
 \end{array}\right)
 }&{#5}
 \end{array}
-\right\}$
+\right\}}
 }
 
 \def\doblek{$\mathbb{K}$}
@@ -140,6 +140,26 @@ $#1= \left\{\begin{array}{c|c}
 }
 }
 
+
+\def\reducir#1#2{
+\ensuremath{\left(
+\begin{array}{#1}
+#2
+\end{array}
+\right)
+}
+}
+
+
+
+\def\sisteq#1{
+\ensuremath{\left\lbrace \begin{aligned}
+#1
+\end{aligned}\right.
+}
+}
+
+
 \def\imagen#1#2#3#4{
 \begin{figure}[h]
   \centering
@@ -149,6 +169,18 @@ $#1= \left\{\begin{array}{c|c}
 \end{figure}
 
 }
+
+\newcounter{saveenumerate}
+\makeatletter
+\newcommand{\enumeratext}[1]{%
+\setcounter{saveenumerate}{\value{enum\romannumeral\the\@enumdepth}}
+\end{enumerate}
+#1
+\begin{enumerate}
+\setcounter{enum\romannumeral\the\@enumdepth}{\value{saveenumerate}}%
+}
+\makeatother
+
 
 \endinput
 %%

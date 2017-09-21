@@ -191,7 +191,7 @@ En principio para probar esto se necesitaría probar los 10 axiomas de la defini
 
 
 \newpage
-\subsection{El teorema del subespacio}
+\subsection{El teorema de caracterización del subespacio}
 
 \begin{theorem}[Caracterizaci\'on de subespacio]
 Sea $\left(V, \oplus, \odot\right)$ un espacio vectorial sobre el campo. Sea $W$ un subconjunto de $V$. $W$ es un subespacio vectorial de $V$ si y solo si:
@@ -215,9 +215,9 @@ $\mathbb{R}^3$.
  Toda recta que pasa por el origen es un subespacio vectorial de \rdos
 
 \end{theorem}
-Prueba
-\\
-El enunciado algebraicamente se traduce en que \svrdos{x}{y}{y=mx}
+\begin{proof}
+
+El enunciado algebraicamente se traduce en que $$\svrdos{x}{y}{y=mx}$$
 es un subespacio vectorial de \rdos.
 \begin{enumerate}
 
@@ -265,9 +265,13 @@ Por lo que el $vector\ producto\ \alpha w=$\vectrdos{\alpha x}{\alpha y} pertene
 \end{enumerate}
 Ya que hemos probado $\left( i\right)\, \left(ii\right), \left(iii\right),$ que son las condiciones en el teorema de caraterizaci\'on de subespacio, por el mismo teorema concluimos que $W$ es un subespacio de \rdos. Lo cual prueba que toda recta que pasa por el origen es un subespacio vectorial de \rdos.
 
+\end{proof}
+
+
 \begin{theorem}
 En \rtres \ toda recta que pasa por el origen es un subespacio vectorial de \rtres.
 \end{theorem}
+\begin{proof}
 
 Esto es equivalente a decir que el subconjunto $$ \svrtres{W}{x}{y}{z}{x=at, y=bt, z=ct ;t\in \dobler}$$ es un subespacio vectorial de \rtres.
 
@@ -327,6 +331,9 @@ Por hip\'otesis, $x=at, y=bt, z=ct$:
 Por el teorema del subespacio, concluimos que $W$ es un subespacio 
 vectorial de \rtres.
 
+\end{proof}
+
+
 \begin{theorem}[Intersección de subespacios vectoriales]
 Sean $V_1$ y $V_2$ dos subespacios vectoriales de un espacio vectorial E, entonces $V_1 \cap V_2$ es un subespacio vectorial
 \end{theorem}
@@ -341,6 +348,14 @@ Sean $V_1$ y $V_2$ dos subespacios vectoriales de un espacio vectorial E, entonc
 \section{Problemas}
 \subsection{Espacio vectorial}
 \begin{enumerate}[1.]
-\item 
-\end{enumerate}
+\item Sea $G=\llav{g}$ un conjunto de un elemento en el cual se definen las siguientes operaciones:
+\begin{align*}
+\forall g \in G\ \  &g+g=g\\
+\forall \alpha\in \dobler\ \ &\alpha g=g \\
+\end{align*}
+Determine si $G$, con las operaciones definidas anteriormente es un espacio vectorial.
 
+\item Muestre que el conjunto de funciones continuas períodicas, con periodo múltiplo entero de $\pi$, forman un espacio vectorial sobre el campo real son la suma y producto por escalar convencionales de las funciones.
+
+\end{enumerate}
+.

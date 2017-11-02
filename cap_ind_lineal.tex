@@ -273,6 +273,75 @@ $\{f1, f2, f3\}$ es linealmente dependiente.
 \item
 Sean $a, b, c$ números reales distintos. Pruebe que los vectores $(1, 1, 1), (a, b, c), (a^2, b^2, c^2)$ forman un conjunto linealmente independiente en \rtres.
 
+
+
+\begin{prob}[]
+Sea V el espacio vectorial definido por:
+\[V=\llaves{\vectrtres{a}{b}{c}}{a>0; b, c\in \dobler}\]
+donde
+\[ \vectrtres{a_1}{b_1}{c_1}\oplus\vectrtres{a_2}{b_2}{c_2}=\left(
+\begin{array}{c}
+a_1a_2\\
+b_1+b_2-3\\
+c_1+c_2+1
+\end{array}
+\right)
+\]
+\[\alpha\odot\vectrtres{a}{b}{c}=\left(
+\begin{array}{c}
+a^\alpha\\
+\alpha b-3\alpha+3\\
+\alpha c+\alpha-1
+\end{array}
+\right)\]
+a) Determine el vector neutro de $V$
+~\\b) Determine el inverso de $\vectrtres{2}{1}{-3}$
+~\\c) Determine si $\vectrtres{4}{-1}{3}, \vectrtres{2}{1}{1}$ forman un conjunto linealmente independiente.
+
+\end{prob}
+
+
+\begin{prop}[]
+
+Determine el valor de c para que el conjunto $$S=\left\lbrace  \vectrtres{1}{1}{c}, \vectrtres{c}{-1}{c}, \vectrtres{c}{1}{1}\right\rbrace $$ sea linealmente dependiente.
+\end{prop}
+~\\
+\sol
+~\\
+Para verificar que un conjunto es linealmente dependiente se puede aplicar la reducción por filas de Gauss, o el criterio del determinante si la matriz es cuadrada.
+~\\~\\
+Aquí usaremos el criterio del determinante para resolver este problema.
+~\\
+Al colocar los vectores en fila obetenemos la matriz:
+~\\
+ $$A=\left(\begin{array}{rrr}
+1&1&c\\
+c&-1&c\\
+c&1&1\\
+\end{array}\right)$$
+Para que los vectores sean linealmente dependientes el determinante de esta matriz debe ser igual a cero. Es decir:~\\
+\[det(A)=0\]
+\[(-1-c)-1\times(c-c^2)+c(c+c)=0\]
+\[(-1-c)-c+c^2+2c^2=0\]
+\[3c^2-2c-1=0\]
+\[(c-1)(3c+1)=0\]
+\[c=1 \vee c=-1/3\]
+
+Para que el conjunto sea linealmente dependiente c debe ser 1 o -1/3
+
+
+\begin{prob}[]
+
+Si $\{v_1, v_2, v_3\} $ es un conjunto linalmente independiente en un espacio vectorial $V$, determine de ser posible el valor de $a$ para que $$\{av_1-v_2, v_1+av_2-3v_3, 3v_1 -4v_2+5v_3 \}$$ sea linealmente dependiente en V.
+\end{prob}
+
+
+\begin{prob}[]
+
+Si $\{v_1, v_2, v_3\} $ es un conjunto linalmente independiente en un espacio vectorial $V$, determine si $$\{v_1-v_2+v_3, v_2-v_3, v_1 +v_3 \}$$ es una base de V.
+\end{prob}
+
+
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

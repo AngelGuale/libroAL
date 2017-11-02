@@ -67,3 +67,92 @@ Por tanto, la matriz que nos pide el ejercicio es:
 
 
 \end{ejemplo}
+
+\begin{ejercicio}
+Sean $B_1=\llav{\vectrtres{1}{0}{2}, \vectrtres{1}{-2}{0}, \vectrtres{0}{1}{2}}$ y $B=\{u_1, u_2, u_3\}$ bases del espacio vectorial \rtres, y 
+
+\[M_{B_1 \rightarrow B}=\left(\begin{array}{rrr}
+1&-1&1\\
+0&-2&1\\
+1&1&1\\
+\end{array}\right)\]
+a)Determine los vectores de la base B
+~\\b) Determine $[v]_{B_1}$ si $v=\vectrtres{1}{2}{3}$
+
+\sol
+Recordemos que las columnas de la matriz son las coordenadas de los vectores de la base de partida con respecto a la base de llegada.~\\
+Por lo tanto, para resolver el literal (a) de nuestro problema necesitaríamos la matriz inversa de $M_{B_1 \rightarrow B}$~\\
+Al calcularla obtenemos:~\\
+
+\[M_{B \rightarrow B_1}=\left(\begin{array}{rrr}
+3/2&-1&-1/2\\
+-1/2&0&1/2\\
+-1&1&1\\
+\end{array}\right)\]
+Las columnas de esta matriz son las coordenadas de los vectores de la base B, con respecto a la base B1:
+~\\
+Para el vector $u_1$~\\
+$$[u_1]_{B_1}=\vectrtres{3/2}{-1/2}{-1}$$
+$$u_1=(3/2)\vectrtres{1}{0}{2}+(-1/2)\vectrtres{1}{-2}{0}+(-1)\vectrtres{0}{1}{2}$$
+$$u_1=\vectrtres{1}{0}{1}$$
+Para el vector $u_2$~\\
+$$[u_2]_{B_1}=\vectrtres{-1}{0}{1}$$
+$$u_1=(-1)\vectrtres{1}{0}{2}+(0)\vectrtres{1}{-2}{0}+(1)\vectrtres{0}{1}{2}$$
+$$u_1=\vectrtres{-1}{1}{0}$$
+Para el vector $u_3$~\\
+$$[u_1]_{B_1}=\vectrtres{-1/2}{1/2}{1}$$
+$$u_1=(-1/2)\vectrtres{1}{0}{2}+(1/2)\vectrtres{1}{-2}{0}+(1)\vectrtres{0}{1}{2}$$
+$$u_1=\vectrtres{0}{0}{1}$$
+~\\
+~\\
+El literal b se reduce a simplemente calcular las coordenadas del vector $v=\vectrtres{1}{2}{3}$ con respecto a los vectores de la base $B_1$ los cuales se los coloca como columnas del sistema:
+\[\left(\begin{array}{rrr|r}
+1&1&0&1\\
+0&-2&1&2\\
+2&0&2&3\\
+\end{array}\right)
+\sim...\sim
+\left(\begin{array}{rrr|r}
+1&1&0&1\\
+0&-2&1&2\\
+0&0&-1&1\\
+\end{array}\right)
+\]
+
+\[\alpha_3=-1, \alpha_2=-3/2, \alpha_1=5/2\]
+Por lo tanto, el vector de coordenadas del vector $v$ con respecto a la base B1 es:
+\[[v]_{B_1}=\vectrtres{5/2}{-3/2}{-1}\]
+
+
+\end{ejercicio}
+
+\section{Problemas}
+\begin{enumerate}
+
+\begin{prob}[]
+
+Sean $B_1=\llav{x^2+x+1, x-1, 1-x^2}$ y $B_2=\{v_1, v_2, v_3\}$ bases del espacio vectorial \pdos, y 
+
+\[M_{B_1 \rightarrow B_2}=\left(\begin{array}{rrr}
+2&0&2\\
+1&1&0\\
+-1&-1&1\\
+\end{array}\right)\]
+a)Determine los vectores de la base $B_2$
+~\\b) Determine $[v]_{B_1}=\vectrtres{1}{2}{3}$ y $[u]_{B_2}=\vectrtres{2}{1}{-1}$, determmine $[2v-3u]_{B_2}$
+\end{prob}
+
+\begin{prob}[(1ra Evaluacion Diciembre 2013)]
+(10 puntos) Sean $B_1=\llav{v_1, v_2, v_3}$ y $B_2=\llav{u_1, u_2, u_3}$ dos bases ordenadas del espacio vectorial funcional V. Se conoce que $V=Gen\llav{senx, cosx, x}$ y que $u_1=v_1+v_3, u_2=v_2+v_3 $ y $u_3= v_1+v_2$.
+a) Calcule la matriz de transición de $B_1$ a $B2$ ~\\
+b) Si $[2x]_{B_2}=\vectrtres{1}{1}{1}, [x-senx]_{B_2}=\vectrtres{1}{0}{0}, [2senx+cosx]_{B_2}=\vectrtres{1}{0}{1}$, determine los vectores de $B_1$
+\end{prob}
+
+
+
+\begin{prob}[(1ra Evaluacion Julio 2013)]
+(10 puntos) Sean $v_1, v_2, v_3 $ vectores de un espacio vectorial $V$. Si $u_1, u_2, u_3 $ son linealmente independientes y son, respectivamente los vectores coordenados de $ v_1, v_2, v_3$ respecto a de una base $ B $ de $V$ entonces $dim V \geq 3 $
+\end{prob}
+
+
+\end{enumerate}

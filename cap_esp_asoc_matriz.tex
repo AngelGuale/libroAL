@@ -241,3 +241,184 @@ c+a-b=0\\
 \]
 
 \end{ejemplo}
+
+\begin{ejercicio}
+
+Sea $A \in M_{nxn} $. Muestre que si $A^2=I$ entonces $Nu(A)=\{n_v\}$
+~\\
+\sol
+~\\
+Si $A^2=I$  entonces tenemos que:~\\
+\[det(A^2)=det(I)=1\]
+\[det(A)det(A)=1\]
+\[(det(A))^2=1\]
+\[det(A)=1 \vee det(A)=-1\]
+~\\
+Esto nos indica que el determinante de A siempre es diferente de cero, por lo cual, A es inversible.~\\
+~\\
+~\\
+Sea $X\in Nu(A)$ entonces 
+\[AX=0_{\rn}\]
+\[A^{-1}AX=A^{-1} 0_{\rn}\]
+\[IX=0_{\rn}\]
+\[X=0_{\rn}\]
+~\\
+Por tanto, el único elemento del núcleo de A es $0_{\rn}$
+~\\
+~\\
+$\therefore$ $Nu(A)=\lbrace 0_{\rn} \rbrace$
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea $A=
+\left(
+\begin{array}{rrr}
+3&1&1\\
+2&2&3\\
+-1&1&2
+\end{array}
+\right)$ una matriz, determinar el espacio columna de A y el espacio Fila de A.
+
+
+\sol
+El espacio columna se define como el espacio generado por las columnas de A.
+\[C_A=gen\{c_1, c_2, c_3\}\]
+~\\
+Es decir
+$$\left(
+\begin{array}{rrr|r}
+3&1&1&a\\
+2&2&3&b\\
+-1&1&2&c
+\end{array}
+\right)$$
+Al reducir este sistema por el método de Gauss tenemos lo siguiente
+$$\left(
+\begin{array}{rrr|r}
+3&1&1&a\\
+2&2&3&b\\
+-1&1&2&c
+\end{array}
+\right)
+\sim ... \sim
+\left(
+\begin{array}{rrr|r}
+-1&1&2&c\\
+0&4&7&2c+b\\
+0&0&0&b-c-a
+\end{array}
+\right)$$
+ Por tanto el espacio columna de A queda definido por:
+ 
+ \[C_A=\left\lbrace  \vectrtres{a}{b}{c} \mid b-c-a=0 \right\rbrace  \]
+~\\
+(b) El espacio fila es el espacio generado por todas las filas de A. 
+\[F_A=gen\{f_1, f_2, f_3\}\]
+Lo cual implica resolver el siguiente sistema generador
+$$\left(
+\begin{array}{rrr|r}
+3&2&-1&a\\
+1&2&1&b\\
+1&3&2&c
+\end{array}
+\right)$$
+Aplicando el método de Gauss tenemos:
+$$\left(
+\begin{array}{rrr|r}
+3&2&-1&a\\
+1&2&1&b\\
+1&3&2&c
+\end{array}
+\right)
+\sim ...\sim
+\left(
+\begin{array}{rrr|r}
+3&2&-1&a\\
+0&-4&-4&a-3b\\
+0&0&0&-3a+21b-12c
+\end{array}
+\right)
+$$
+El espacio fila de A queda definido por:
+ 
+ \[F_A=\left\lbrace  \vectrtres{a}{b}{c} \mid -a+7b-4c=0 \right\rbrace  \]
+
+
+
+\end{ejercicio}
+
+
+\begin{ejercicio}
+Sean $A\in \mathcal{M}_{mxn}, B \in \mathcal{M}_{nxp}$, demuestre que $C_{AB}\subseteq C_A$
+
+
+~\\
+
+\sol
+~\\
+~\\
+Sea Y un elemento de la imagen de $AB$, entonces existe un $X_1$ tal que 
+$$Y=(AB)*X_1$$
+esto es igual a 
+$$Y=A*(BX_1)$$
+Donde $BX_1$ es otro vector, es decir $X_2=BX_1$
+por lo tanto
+$$Y=A*X_2$$
+Lo cual indica por definición que "Y" también pertenece a la imagen de A.
+En conclusión $$Im(AB) \subseteq Im(A)$$
+Por teorema, la imagen es igual al espacio columna, ergo
+$$C_{AB} \subseteq C_A$$
+
+\end{ejercicio}
+
+\newpage
+\section{Problemas}
+\begin{enumerate}
+\begin{prop}[]
+
+~\\Sea $A \in M_{nxn} $, si $A^2=A$ muestre que $Nu(A)\cap Im(A)=\{n_v\}$
+\end{prop}
+
+\begin{prop}[Califique como verdadero o falso]
+
+Si la matriz B se obtiene a partir de la matriz A por medio de un intercambio de filas entonces $\rho(A)=\rho(B)$
+\end{prop}
+
+\begin{prob}[]
+Dada la matriz $A=\left(\begin{array}{rrr}
+2&12&5\\
+1&-5&-3\\
+-1&3&2\\
+4&-2&-3\\
+\end{array}\right)$. ~\\
+a) Encuentre una base y determine la dimensi\'on del Espacio Columna de A~\\
+b) Encuentre una base y determine la dimensi\'on del N\'ucleo de A.
+\end{prob}
+
+
+\begin{prob}[(1ra Evaluacion Marzo 2013)]
+(10 puntos) Sea $A=\left(\begin{matrix}
+1&2&1\\
+2&a&a\\
+2&-1&b\\
+\end{matrix}\right)$. Para qu\'e valores de a y b:~\\
+a) $\rho(A)=2$~\\
+b)$\nu(A)=0$ 
+\end{prob}
+
+
+\begin{prob}[(1ra Evaluacion Septiembre 2013)]
+(20 puntos) Dada la matriz $A=\left(\begin{array}{rrr}
+1&11&4\\
+2&-5&-1\\
+-1&10&3\\
+5&-2&1\\
+\end{array}\right)$. ~\\
+a) Encuentre una base y determine la dimensi\'on del Espacio Columna de A~\\
+b)Encuentre una base y determine la dimensi\'on del N\'ucleo de A.
+\end{prob}
+
+
+
+\end{enumerate}

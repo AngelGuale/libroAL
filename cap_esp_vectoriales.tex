@@ -1,6 +1,72 @@
 %espacios vectoriales
 
 \chapter{Espacios Vectoriales}
+
+
+\section{Espacios Vectoriales reales}
+Previo al estudio de álgebra lineal, conocemos los espacios \rdos\ y \rtres, lo cual es una primera idea al hablar de vectores, los cuales son duplas o ternas de números reales. En estos espacios se pueden identificar dos principales operaciones, la suma entre dos vectores, y el producto de un número real por un vector. En \rtres, tales operaciones son:
+
+\begin{align*}
+\vectrtres{a_1}{a_2}{a_3}+\vectrtres{b_1}{b_2}{b_3}&=\vectrtres{a_1+b_1}{a_2+b_2}{a_3+b_3}\\
+c\vectrtres{a_1}{a_2}{a_3}&=\vectrtres{ca_1}{ca_2}{ca_3}
+\end{align*}
+Estas operaciones hacen que \rtres\ sea un espacio vectorial. 
+\begin{dfn}[Espacio vectorial real]
+Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
+
+
+\end{dfn}
+\subsubsection*{Axiomas para la suma}
+\begin{enumerate}
+\item Si $u$ y $v$ son elementos de $V$, $u+v$ es un elemento de V.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u+v=v+u$. Es decir, la suma es una operación conmutativa.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u+v)+w=u+(v+w)$. Es decir, la operación es asociativa.
+\item Existe un elemento de $V$, llamado elemento nulo y denotado por $\mathbf{0}_v$, tal que para todo $u$ en $V$, $u + \mathbf{0}_v = \mathbf{0}_v +u = u$.
+\item Para cada $u$ en $V$ existe un único elemento en $V$, llamado $u'$, tal que $u+u'=\mathbf{0}_v$.
+\end{enumerate}
+
+\subsubsection*{Axiomas para la multiplicación por escalares}
+\begin{enumerate}
+\item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha u$ es un elemento de $V$.
+\item Si $\alpha$ es un número real y $u$ y $v$ son elementos de $V$, entonces $\alpha (u+v) = \alpha u + \alpha v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
+\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)u = \alpha u + \beta u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
+\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta)u = \beta(\alpha u)$.
+\item Si $u$ es un elemento de $V$, entonces $1 \odot u = u$.
+
+\end{enumerate}
+
+\begin{trabajoautonomo}
+Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
+\begin{enumerate}
+\item El elemento neutro $\mathbf{0}_E$ es único.
+\item Para cada $e$ en $E$, el elemento $e'$ es único.
+\item Para cada $e$ en $E$, $\mathbf{0}_E \odot e = 0$.
+\item Para cada $e$ en $E$, $(-1)e = e'$.
+\item Para cada $\lambda$ en $\mathbb{R}$, $\lambda \odot \mathbf{0}_E = \mathbf{0}_E$.
+\item Si $\alpha v = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
+
+\end{enumerate}
+\end{trabajoautonomo}
+\begin{ejemplo}
+
+El espacio \rdos \ con las operaciones $(x,y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
+
+\end{ejemplo}
+
+\begin{ejemplo}
+El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
+\end{ejemplo}
+
+\begin{ejemplo}
+El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
+
+
+\end{ejemplo}
+
+
+
+
+
 \section{Espacio Vectorial}
 \begin{dfn}
 Sea $V$ un conjunto no vac\'io, en el cual se definen dos operaciones binarias, una binaria interna llamada suma $\oplus$ y otra binaria externa, sobre un campo $\mathbb{K}$, llamada producto por escalar $\odot$. Se dice que $\left( V,\oplus ,\odot \right) $ es un espacio vectorial sobre el campo $\mathbb{K}$ si cumple:
@@ -17,8 +83,8 @@ $\forall v_1,v_2\in V : v_1\oplus v_2=v_2\oplus v_1  $&[Conmutatividad]  \\ \hli
 $\forall v_1,v_2,v_3\in V:(v_1\oplus v_2 )\oplus v_3=v_1\oplus (v_2\oplus v_3 )$&[Asociativa] \\ 
 \hline
 
-$\exists n_V\in V\ \forall v\in V  :  v\oplus n_V=v$&  [elemento neutro]  \\ \hline
-$\forall v\in V\ \exists v'\in V: v\oplus v'=n_V$&  [elemento inverso]  \\ \hline
+$\exists n_V\in V\ \forall v\in V  :  v\oplus n_V=v$&  [Elemento neutro]  \\ \hline
+$\forall v\in V\ \exists v'\in V: v\oplus v'=n_V$&  [Elemento inverso]  \\ \hline
 \multicolumn{2}{|l|}{Operación producto escalar } \\
 \hline \hline
  $\forall v \in V \forall \alpha \in \mathbb{K} :\ (\alpha \odot v )\in V$& [Cerradura de producto] \\ \hline
@@ -64,61 +130,100 @@ y $\mathbb{K}=\mathbb{R}$
 Las funciones continuas en un intervalo [a, b] con las operaciones
 usuales de suma y producto por escalar de funciones forman un Espacio Vectorial sobre los
 Reales
+\subsection{Algunos teoremas elementales sobre espacios vectoriales}
+\begin{theorem}
+Sea $(V,\oplus,\odot)$ un espacio vectorial sobre el campo $K$. Entonces $n_+\odot v=n_v$
+\end{theorem}
+Demostración:
+~\\
+
+Se conoce que $n_+ + n_+=n_+$. Entonces
+\[(n_++n_+ )\odot v=n_+\odot v\]
+\[(n_+\odot v)\oplus (n_+\odot v)=n_+\odot v\]
+No olvidemos que$ (n_+\odot v)$ es un vector, y por lo tanto tiene un inverso aditivo $(n_+\odot v)'$
+Sumando a ambos lados de la ecuación anterior este inverso aditivo tenemos.
+$$((n_+\odot v)\oplus (n_+\odot v))\oplus (n_+\odot v)'=(n_+\odot v)\oplus (n_+\odot v)'$$
+$$(n_+\odot v)\oplus ((n_+\odot v)\oplus (n_+\odot v)' )=(n_+\odot v)\oplus (n_+\odot v)'$$
+$$(n_+\odot v)\oplus n_v=n_v$$
+$$(n_+\odot v)=n_v$$
+
+Si la dificultad de la notación en la demostración anterior influyó negativamente para su comprensión, recuerde que $ n_v$ es el vector neutro de V, y que $n_+$ es el escalar neutro. Para facilidad de comprensión relacione $n_+$ con el 0 de los números reales. Es decir la tesis de este teorema en el campo Real es $0\odot v=n_v$.
 
 
-\section{Espacios Vectoriales reales}
 
-\begin{dfn}[Espacio vectorial real]
-Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
+\begin{theorem}
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo K. Entonces $\forall \alpha \in K,\alpha \odot n_v=n_v$
+\end{theorem}
 
+Por el axioma (iv) de espacios vectoriales tenemos que $n_v\oplus n_v=n_v$. Por lo tanto
+$$\alpha \odot (n_v\oplus n_v )=\alpha \odot n_v$$
+            $$(\alpha \odot n_v )\oplus (\alpha \odot n_v )=\alpha \odot n_v$$
+Sea $ (\alpha \odot n_v )'$ el inverso aditivo de $(\alpha \odot n_v )$. Sumando este vector a ambos lados
+               $$ ((\alpha \odot n_v )\oplus (\alpha \odot n_v ))\oplus (\alpha \odot n_v )'=(\alpha \odot n_v)\oplus (\alpha \odot n_v )'$$
+               $$ (\alpha \odot n_v )\oplus ((\alpha \odot n_v )\oplus (\alpha \odot n_v )' )=(\alpha \odot n_v)\oplus (\alpha \odot n_v )'$$
+                                            $$  (\alpha \odot n_v )\oplus n_v=n_v
+      (\alpha \odot n_v )=n_v$$
 
-\end{dfn}
-\subsubsection*{Axiomas para la suma}
-\begin{enumerate}
-\item Si $u$ y $v$ son elementos de $V$, $u+v$ es un elemento de V.
-\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u+v=v+u$. Es decir, la suma es una operación conmutativa.
-\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u+v)+w=u+(v+w)$. Es decir, la operación es asociativa.
-\item Existe un elemento de $V$, llamado elemento nulo y denotado por $\mathbf{0}_v$, tal que para todo $u$ en $V$, $u + \mathbf{0}_v = \mathbf{0}_v +u = u$.
-\item Para cada $u$ en $V$ existe un único elemento en $V$, llamado $-u$, tal que $u+(-u)=\mathbf{0}_v$.
-\end{enumerate}
-
-\subsubsection*{Axiomas para la multiplicación por escalares}
-\begin{enumerate}
-\item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha u$ es un elemento de $V$.
-\item Si $\alpha$ es un número real y $u$ y $v$ son elementos de $V$, entonces $\alpha (u+v) = \alpha u + \alpha v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
-\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)u = \alpha u + \beta u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
-\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta)u = \beta(\alpha u)$.
-\item Si $u$ es un elemento de $V$, entonces $1 \odot u = u$.
-
-\end{enumerate}
-
-\begin{trabajoautonomo}
-Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
-\begin{enumerate}
-\item El elemento neutro $\mathbf{0}_E$ es único.
-\item Para cada $e$ en $E$, el elemento $-e$ es único.
-\item Para cada $e$ en $E$, $\mathbf{0}_E \odot e = 0$.
-\item Para cada $e$ en $E$, $(-1)e = -e$.
-\item Para cada $\lambda$ en $\mathbb{R}$, $\lambda \odot \mathbf{0}_E = \mathbf{0}_E$.
-\item Si $\alpha v = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
-
-\end{enumerate}
-\end{trabajoautonomo}
-\begin{ejemplo}
-
-El espacio \rdos \ con las operaciones $(x,y)+(w,z) = (x+w,y+z)$ y la multiplicación por un escalar $\lambda$, $\lambda (x,y) = (\lambda x,\lambda y)$.
-
-\end{ejemplo}
-
-\begin{ejemplo}
-El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
-\end{ejemplo}
-
-\begin{ejemplo}
-El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
+\newpage
 
 
-\end{ejemplo}
+\begin{theorem}
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo R,  sea $v$ un vector de V y v su inverso aditivo. 
+Entonces $(-1)\odot v=v'$
+
+\end{theorem}
+$$(1+(-1))\odot v=0\odot v$$
+                                    $$(1\odot v)\oplus ((-1)\odot v)=n_v$$
+Sumando $(1\odot v)'$ el inverso aditivo de $(1\odot v)$ y agrupando
+                 $$ ((1\odot v)'\oplus (1\odot v))\oplus ((-1)\odot v)  =(1\odot v)'\oplus n_v$$
+   $$ n_v\oplus ((-1)\odot v)=(1\odot v)'$$
+      $$  (-1)\odot v=v'$$
+
+\begin{theorem}
+
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campoR. Sea $n_v$ el vector neutro de V.
+$$\alpha \odot v=n_v   \rightarrow  (  \alpha =0   \vee    v=n_v   )$$
+\end{theorem}
+Demostración:~\\
+
+Recordemos que la expresión $ p\rightarrow (q\vee r)$ es lógicamente equivalente a la expresión $(p\wedge \neg q)\rightarrow r$
+$$p\rightarrow(q\vee r)\equiv  \neg p\vee (q\vee r)$$
+               $$ \equiv  (\neg p\vee q)\vee r$$
+              $$     \equiv  \neg (\neg p\vee q)\rightarrow r$$
+               $$  \equiv  (p\wedge \neg q)\rightarrow r$$
+Por lo que el teorema es lógicamente equivalente a 
+$$\alpha \odot v=n_v  \wedge  \alpha \neq 0  \rightarrow   v=n_v $$  
+Luego tenemos que:
+
+$$\alpha \odot v=n_v$$
+Como $ \alpha \neq 0$ entonces existe $1/\alpha$ , el inverso multiplicativo de $\alpha$ . Multiplicando por $1/\alpha $ a ambos lados 
+$$1/\alpha \odot (\alpha \odot v)=1/\alpha \odot n_v$$
+     $$\left(\frac{1}{\alpha} \cdot \alpha \right)\odot v=n_v$$
+    $$ 1\odot v=n_v$$
+     $$   v=n_v  $$
+
+~\\
+~\\
+
+
+\begin{theorem}[El teorema de la unicidad del neutro]
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo $K$. Sea $ n_v$ vector neutro de $V$. Entonces $n_v$ es único en $V$.
+\end{theorem}
+Demostración:
+~\\
+
+Por contradicción. Supongamos que existen dos vectores neutros en V; $n_v$ y $\widetilde{n_v}$ tales que son diferentes $n_v\neq \widetilde{n_v}$
+Por el axioma (iv)
+$$n_v=n_v\oplus \widetilde{n_v} $$
+Por conmutatividad
+$$=\widetilde{n_v} \oplus n_v  $$
+Por el axioma (iv)
+$$=\widetilde{n_v} $$
+Lo cual es una contradicción, de donde se concluye que el neutro es único.
+
+
+
+\newpage
 
 
 

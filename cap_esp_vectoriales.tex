@@ -12,38 +12,38 @@ c\vectrtres{a_1}{a_2}{a_3}&=\vectrtres{ca_1}{ca_2}{ca_3}
 \end{align*}
 Estas operaciones hacen que \rtres\ sea un espacio vectorial. 
 \begin{dfn}[Espacio vectorial real]
-Un espacio vectorial real es una cuarteta $(V, \dobler, +, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, + es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
+Un espacio vectorial real es una cuarteta $(V, \dobler, \oplus, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, $\oplus$ es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
 
 
 \end{dfn}
 \subsubsection*{Axiomas para la suma}
 \begin{enumerate}
-\item Si $u$ y $v$ son elementos de $V$, $u+v$ es un elemento de V.
-\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u+v=v+u$. Es decir, la suma es una operación conmutativa.
-\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u+v)+w=u+(v+w)$. Es decir, la operación es asociativa.
-\item Existe un elemento de $V$, llamado elemento nulo y denotado por $\mathbf{0}_v$, tal que para todo $u$ en $V$, $u + \mathbf{0}_v = \mathbf{0}_v +u = u$.
-\item Para cada $u$ en $V$ existe un único elemento en $V$, llamado $u'$, tal que $u+u'=\mathbf{0}_v$.
+\item Si $u$ y $v$ son elementos de $V$, entonces $u\oplus v$ es un elemento de V.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u\oplus v=v\oplus u$. Es decir, la suma es una operación conmutativa.
+\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u\oplus v)\oplus w=u\oplus(v\oplus w)$. Es decir, la operación es asociativa.
+\item Existe un elemento de $V$, llamado elemento nulo y denotado por $\mathbf{0}_v$, tal que para todo $u$ en $V$, se cumple que $u \oplus \mathbf{0}_v = \mathbf{0}_v \oplus u = u$.
+\item Para cada $u$ en $V$ existe un único elemento en $V$, llamado $u'$, tal que $u\oplus u'=\mathbf{0}_v$.
 \end{enumerate}
 
-\subsubsection*{Axiomas para la multiplicación por escalares}
+\subsubsection*{Axiomas para la multiplicación por escalar}
 \begin{enumerate}
-\item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha u$ es un elemento de $V$.
-\item Si $\alpha$ es un número real y $u$ y $v$ son elementos de $V$, entonces $\alpha (u+v) = \alpha u + \alpha v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
-\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)u = \alpha u + \beta u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
-\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta)u = \beta(\alpha u)$.
+\item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha \odot u$ es un elemento de $V$.
+\item Si $\alpha$ es un número real y $u$, $v$ son elementos de $V$, entonces $\alpha\odot (u\oplus v) = \alpha\odot u \oplus \alpha \odot v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
+\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)\odot u = \alpha \odot u \oplus \beta \odot u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
+\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta) \odot u = \beta\odot(\alpha \odot u)$.
 \item Si $u$ es un elemento de $V$, entonces $1 \odot u = u$.
 
 \end{enumerate}
 
 \begin{trabajoautonomo}
-Sea $(E, +, \odot)$ un espacio vectorial real. Pruebe que
+Sea $(E, \oplus, \odot)$ un espacio vectorial real. Pruebe que
 \begin{enumerate}
 \item El elemento neutro $\mathbf{0}_E$ es único.
 \item Para cada $e$ en $E$, el elemento $e'$ es único.
-\item Para cada $e$ en $E$, $\mathbf{0}_E \odot e = 0$.
-\item Para cada $e$ en $E$, $(-1)e = e'$.
+\item Para cada $e$ en $E$, $0 \odot e = \mathbf{0}_E$.
+\item Para cada $e$ en $E$, $(-1) \odot e = e'$.
 \item Para cada $\lambda$ en $\mathbb{R}$, $\lambda \odot \mathbf{0}_E = \mathbf{0}_E$.
-\item Si $\alpha v = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
+\item Si $\alpha \odot e = \mathbf{0}_E$, entonces $\alpha = 0$ o $v=\mathbf{0}_E$.
 
 \end{enumerate}
 \end{trabajoautonomo}
@@ -54,11 +54,11 @@ El espacio \rdos \ con las operaciones $(x,y)+(w,z) = (x+w,y+z)$ y la multiplica
 \end{ejemplo}
 
 \begin{ejemplo}
-El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con la operación normal de suma de polinomios y la multiplicación usual de un polinomio por un número real.
+El espacio de todos los polinomios de grado menor o igual que $n$, para un número natural $n$ fijo, con las operaciones usuales de suma de polinomios y de multiplicación de un polinomio por un número real.
 \end{ejemplo}
 
 \begin{ejemplo}
-El espacio de todas las matrices $n \times m$ con la operación usual de suma de matrices y multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
+El espacio de todas las matrices $n \times m$ con las operaciones usuales de suma de matrices y de multiplicación de una matriz por un número real.(Aquí $n$ y $m$ son números naturales fijos y distintos de cero).
 
 
 \end{ejemplo}

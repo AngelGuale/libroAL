@@ -11,19 +11,19 @@ Sea $\doubleK$ un conjunto no vacío en el cual se definen dos operaciones binar
 \hline
 \multicolumn{2}{|l|}{Operación Suma Escalar } \\
 \hline \hline
-$\forall a,b\in \doubleK; (a*b)\in \doubleK $ &[Cerradura de la suma] \\ \hline
-$ \forall  a,b\in \doubleK; a*b=b*a $&[Conmutatividad]  \\ \hline
-$\forall  a,b,c\in \doubleK; (a*b)*c=a*(b*c)$&[Asociatividad] \\ 
+$\forall a,b\in \doubleK: (a*b)\in \doubleK $ &[Cerradura de la suma] \\ \hline
+$ \forall  a,b\in \doubleK: a*b=b*a $&[Conmutatividad]  \\ \hline
+$\forall  a,b,c\in \doubleK: (a*b)*c=a*(b*c)$&[Asociatividad] \\ 
 \hline
-$\exists n_* \in \doubleK, \forall  a\in \doubleK; a*n_*=a$&  [elemento neutro]  \\ \hline
-$\forall  a\in \doubleK, \exists a'\in \doubleK; a*a'=n_*$&  [elemento inverso]  \\ \hline\hline 
+$\exists n_* \in \doubleK, \forall  a\in \doubleK: a*n_*=a$&  [elemento neutro]  \\ \hline
+$\forall  a\in \doubleK, \exists a'\in \doubleK: a*a'=n_*$&  [elemento inverso]  \\ \hline\hline 
 \multicolumn{2}{|l|}{Operación Producto Escalar} \\ \hline \hline
- $\forall  a,b\in \doubleK; (a\bigtriangleup b)\in \doubleK $& [Cerradura del producto] \\ \hline
-$\forall  a,b\in \doubleK; a\bigtriangleup b=b\bigtriangleup a$&  [Conmutatividad]  \\ \hline
-$\forall  a,b,c\in \doubleK; (a\bigtriangleup b)\bigtriangleup c=a\bigtriangleup (b\bigtriangleup c) $&  [Asociatividad]  \\ \hline
-$\exists n_\bigtriangleup \in \doubleK, \forall  a\in \doubleK;  a \bigtriangleup n_\bigtriangleup =a $&  [Elemento neutro]  \\ \hline
-$\forall  a\in \doubleK, \exists a' \in \doubleK; a \bigtriangleup a'=n_\bigtriangleup  $&  [Elemento inverso]  \\ \hline \hline
-$\forall a,b,c\in \doubleK;  a\bigtriangleup (b*c)=(a\bigtriangleup b)*(a\bigtriangleup c)$ & [Distributividad]\\ \hline
+ $\forall  a,b\in \doubleK: (a\bigtriangleup b)\in \doubleK $& [Cerradura del producto] \\ \hline
+$\forall  a,b\in \doubleK: a\bigtriangleup b=b\bigtriangleup a$&  [Conmutatividad]  \\ \hline
+$\forall  a,b,c\in \doubleK: (a\bigtriangleup b)\bigtriangleup c=a\bigtriangleup (b\bigtriangleup c) $&  [Asociatividad]  \\ \hline
+$\exists n_\bigtriangleup \in \doubleK, \forall  a\in \doubleK:  a \bigtriangleup n_\bigtriangleup =a $&  [Elemento neutro]  \\ \hline
+$\forall  a\in \doubleK, \exists a' \in \doubleK: a \bigtriangleup a'=n_\bigtriangleup  $&  [Elemento inverso]  \\ \hline \hline
+$\forall a,b,c\in \doubleK:  a\bigtriangleup (b*c)=(a\bigtriangleup b)*(a\bigtriangleup c)$ & [Distributividad]\\ \hline
 \end{tabular}
 \caption{Axiomas de un campo escalar.}
 \label{tabla:sencilla}
@@ -77,11 +77,13 @@ La ecuación 2x+3y=1 es una ecuación lineal en las variables x, y. Una solució
 \end{ejemplo}
 Un sistema de ecuaciones lineales es un conjunto de ecuaciones lineales que deben satisfacerse simultáneamente.
 \begin{align*}
-\alpha_{11} x_1+\alpha_{12} x_2+\hdots+\alpha_{1n} x_n&=\beta_1\\
-\alpha_{21} x_1+\alpha_{22} x_2+\hdots+\alpha_{2n} x_n&=\beta_2\\
-\alpha_{31} x_1+\alpha_{32} x_2+\hdots+\alpha_{3n} x_n&=\beta_3\\
-\vdots\\
-\alpha_{m1} x_1+\alpha_{m2} x_2+\hdots+\alpha_{mn} x_n&=\beta_m\\
+\begin{array}{ccccccccc}
+    \alpha_{11} x_1&+&\alpha_{12} x_2&+&\hdots&+&\alpha_{1n} x_n&=&\beta_1\\
+    \alpha_{21} x_1&+&\alpha_{22} x_2&+&\hdots&+&\alpha_{2n} x_n&=&\beta_2\\
+    \alpha_{31} x_1&+&\alpha_{32} x_2&+&\hdots&+&\alpha_{3n} x_n&=&\beta_3\\
+    \vdots&&\vdots&&\cdots&&\vdots&&\vdots\\
+    \alpha_{m1} x_1&+&\alpha_{m2} x_2&+&\hdots&+&\alpha_{mn} x_n&=&\beta_m\\
+\end{array}
 \end{align*} 
 \begin{ejemplo}
 Considere las incógnitas x, y, z. Entonces el conjunto de ecuaciones
@@ -102,11 +104,13 @@ es un sistema de ecuaciones lineales. La terna (2, 1, -1) forma una solución de
 Un sistema de ecuaciones lineales puede representarse por medio de la ecuación matricial AX=B, donde A es la matriz de coeficientes, X es el conjunto de incógnitas y B el conjunto de términos independientes. De esta forma el sistema de ecuaciones lineales
 
 \begin{align*}
-\alpha_{11} x_1+\alpha_{12} x_2+\hdots+\alpha_{1n} x_n&=\beta_1\\
-\alpha_{21} x_1+\alpha_{22} x_2+\hdots+\alpha_{2n} x_n&=\beta_2\\
-\alpha_{31} x_1+\alpha_{32} x_2+\hdots+\alpha_{3n} x_n&=\beta_3\\
-\vdots\\
-\alpha_{m1} x_1+\alpha_{m2} x_2+\hdots+\alpha_{mn} x_n&=\beta_m\\
+\begin{array}{ccccccccc}
+    \alpha_{11} x_1&+&\alpha_{12} x_2&+&\hdots&+&\alpha_{1n} x_n&=&\beta_1\\
+    \alpha_{21} x_1&+&\alpha_{22} x_2&+&\hdots&+&\alpha_{2n} x_n&=&\beta_2\\
+    \alpha_{31} x_1&+&\alpha_{32} x_2&+&\hdots&+&\alpha_{3n} x_n&=&\beta_3\\
+    \vdots&&\vdots&&\cdots&&\vdots&&\vdots\\
+    \alpha_{m1} x_1&+&\alpha_{m2} x_2&+&\hdots&+&\alpha_{mn} x_n&=&\beta_m\\
+\end{array}
 \end{align*} 
 se puede representar matricialmente como
 \begin{align*}

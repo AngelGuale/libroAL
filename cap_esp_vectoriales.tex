@@ -10,31 +10,39 @@ Previo al estudio de álgebra lineal, conocemos los espacios \rdos\ y \rtres, lo
 \vectrtres{a_1}{a_2}{a_3}+\vectrtres{b_1}{b_2}{b_3}&=\vectrtres{a_1+b_1}{a_2+b_2}{a_3+b_3}\\
 c\vectrtres{a_1}{a_2}{a_3}&=\vectrtres{ca_1}{ca_2}{ca_3}
 \end{align*}
+
 Estas operaciones hacen que \rtres\ sea un espacio vectorial. 
+
 \begin{dfn}[Espacio vectorial real]
-Un espacio vectorial real es una cuarteta $(V, \dobler, \oplus, \odot)$ donde V es un conjunto no vacío , $\dobler$ es el campo de los números reales, $\oplus$ es una operación en V llamada suma o adición y $\odot$ es una operación en V llamada multiplicación por un escalar. Los escalares son los elementos de $\dobler$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
-
-
+Un espacio vectorial real es una cuarteta $(V, \dobleK, \oplus, \odot)$ donde V es un conjunto no vacío en el cual se definen dos operaciones binarias, una binaria interna llamada suma o adición $\oplus$ y otra binaria externa llamada producto por escalar $\odot$, $\dobleK$ es el campo escalar, Los escalares son los elementos de $\dobleK$ y que cumplen con los diferentes axiomas. \index{Espacio Vectorial}
 \end{dfn}
-\subsubsection*{Axiomas para la suma}
-\begin{enumerate}
-\item Si $u$ y $v$ son elementos de $V$, entonces $u\oplus v$ es un elemento de V.
-\item Si $u$, $v$, y $w$ son elementos de $V$, entonces $u\oplus v=v\oplus u$. Es decir, la suma es una operación conmutativa.
-\item Si $u$, $v$, y $w$ son elementos de $V$, entonces  $(u\oplus v)\oplus w=u\oplus(v\oplus w)$. Es decir, la operación es asociativa.
-\item Existe un elemento de $V$, llamado elemento nulo y denotado por $\mathbf{0}_v$, tal que para todo $u$ en $V$, se cumple que $u \oplus \mathbf{0}_v = \mathbf{0}_v \oplus u = u$.
-\item Para cada $u$ en $V$ existe un único elemento en $V$, llamado $u'$, tal que $u\oplus u'=\mathbf{0}_v$.
-\end{enumerate}
 
-\subsubsection*{Axiomas para la multiplicación por escalar}
-\begin{enumerate}
-\item Si $\alpha$ es un número real y $u$ es un elemento de $V$, entonces $\alpha \odot u$ es un elemento de $V$.
-\item Si $\alpha$ es un número real y $u$, $v$ son elementos de $V$, entonces $\alpha\odot (u\oplus v) = \alpha\odot u \oplus \alpha \odot v$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de vectores.
-\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha + \beta)\odot u = \alpha \odot u \oplus \beta \odot u$. Es decir la multiplicación por un escalar es distributiva con respecto a la suma de escalares.
-\item Si $\alpha$ y $\beta$ son números reales y $u$ es un elemento de $V$, entonces $(\alpha \beta) \odot u = \beta\odot(\alpha \odot u)$.
-\item Si $u$ es un elemento de $V$, entonces $1 \odot u = u$.
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            \multicolumn{2}{|l|}{Operación Suma} \\
+            \hline \hline
+            $\forall v_1,v_2 \in V:\ (v_1 \oplus v_2 )\in V$ &[Cerradura de la Suma] \\ \hline
+            $\forall v_1,v_2\in V : v_1\oplus v_2=v_2\oplus v_1  $&[Conmutatividad]  \\ \hline
+            $\forall v_1,v_2,v_3\in V:(v_1\oplus v_2 )\oplus v_3=v_1\oplus (v_2\oplus v_3 )$&[Asociatividad] \\ 
+            \hline
+            $\exists n_V\in V\ ,\forall v\in V  :  v\oplus n_V=v$&  [Elemento neutro]  \\ \hline
+            $\forall v\in V\ ,\exists v'\in V: v\oplus v'=n_V$&  [Elemento inverso]  \\ \hline \hline
+            \multicolumn{2}{|l|}{Operación Producto Escalar} \\
+            \hline \hline
+            $\forall v \in V \ , \forall \alpha \in \mathbb{K} :\ (\alpha \odot v )\in V$& [Cerradura del Producto] \\ \hline
+            $ \forall \alpha \in \mathbb{K}\ , \forall v_1,v_2\in V: \alpha \odot (v_1\oplus v_2 )=(\alpha \odot v_1)\oplus (\alpha \odot v_2) $&  [Distributividad]  \\ \hline
+            $\forall \alpha ,\beta \in \mathbb{K}\ , \forall v\in V : (\alpha +\beta )\odot v=(\alpha \odot v)\oplus(\beta \odot v)  $&  [Distributividad]  \\ \hline
+            $\forall \alpha ,\beta \in \mathbb{K}\ , \forall  v\in V : (\alpha  \beta )\odot v=\alpha \odot (\beta \odot v) $&  [Distributividad]  \\ \hline
+            $\forall  v\in V    :   n_K \odot v=v $&  [Neutro multiplicativo]  \\ \hline
+        \end{tabular}
+        \caption{Axiomas de un Espacio Vectorial.}
+        \label{Tabla: Sencilla}
+    \end{center}
+\end{table}
 
-\end{enumerate}
-
+\newpage
 \begin{trabajoautonomo}
 Sea $(E, \oplus, \odot)$ un espacio vectorial real. Pruebe que
 \begin{enumerate}
@@ -63,76 +71,20 @@ El espacio de todas las matrices $n \times m$ con las operaciones usuales de sum
 
 \end{ejemplo}
 
-
-
-
-
-\section{Espacio Vectorial}
-\begin{dfn}
-Sea $V$ un conjunto no vac\'io, en el cual se definen dos operaciones binarias, una binaria interna llamada suma $\oplus$ y otra binaria externa, sobre un campo $\mathbb{K}$, llamada producto por escalar $\odot$. Se dice que $\left( V,\oplus ,\odot \right) $ es un espacio vectorial sobre el campo $\mathbb{K}$ si cumple:
-\end{dfn}
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|l|}{Operación suma } \\
-\hline \hline
-$\forall v_1,v_2 \in V:\ (v_1 \oplus v_2 )\in V$ &[Cerradura de la suma] \\ \hline
-$\forall v_1,v_2\in V : v_1\oplus v_2=v_2\oplus v_1  $&[Conmutatividad]  \\ \hline
-$\forall v_1,v_2,v_3\in V:(v_1\oplus v_2 )\oplus v_3=v_1\oplus (v_2\oplus v_3 )$&[Asociativa] \\ 
-\hline
-
-$\exists n_V\in V\ \forall v\in V  :  v\oplus n_V=v$&  [Elemento neutro]  \\ \hline
-$\forall v\in V\ \exists v'\in V: v\oplus v'=n_V$&  [Elemento inverso]  \\ \hline
-\multicolumn{2}{|l|}{Operación producto escalar } \\
-\hline \hline
- $\forall v \in V \forall \alpha \in \mathbb{K} :\ (\alpha \odot v )\in V$& [Cerradura de producto] \\ \hline
-$ \forall \alpha \in \mathbb{K}\ \forall v_1,v_2\in V: \alpha \odot (v_1\oplus v_2 )=(\alpha \odot v_1)\oplus (\alpha \odot v_2) $&  [Distributiva]  \\ \hline
-$\forall \alpha ,\beta \in \mathbb{K}\ \forall v\in V : (\alpha +\beta )\odot v=(\alpha \odot v)\oplus(\beta \odot v)  $&  [Distributiva]  \\ \hline
-$\forall \alpha ,\beta \in \mathbb{K}\ \forall  v\in V : (\alpha  \beta )\odot v=\alpha \odot (\beta \odot v) $&  [Distributiva]  \\ \hline
-$\forall  v\in V    :   n_K \odot v=v $&  [Neutro multiplicativo]  \\ \hline
-
-\end{tabular}
-\caption{Axiomas de un espacio vectorial.}
-\label{tabla:sencilla}
-\end{center}
-\end{table}
-
 Veamos algunos ejemplos de espacios vectoriales conocidos:
-~\\
-Consideremos $V=\mathbb{R}^n$ y $\mathbb{K}=\mathbb{R}$, con la suma y producto por escalar usuales $V$ es un espacio vectorial sobre los Reales.
-~\\
-$V=\mathcal{P}_n$
-y $\mathbb{K}=\mathbb{R}$
-Los polinomios con coeficientes reales de grado menor o igual a n, con las
-operaciones usuales de suma y producto por escalar.
+\begin{itemize}
+    \item Consideremos $V=\mathbb{R}^n$ y $\mathbb{K}=\mathbb{R}$, con la suma y producto por escalar usuales $V$ es un espacio vectorial sobre los Reales.
+    \item $V=\mathcal{P}_n$ y $\mathbb{K}=\mathbb{R}$ Los polinomios con coeficientes reales de grado menor o igual a n, con las operaciones usuales de suma y producto por escalar.
+    \item $V=\mathcal{M}_{mxn}$ y $\mathbb{K}=\mathbb{R}$ Las matrices m por n con entradas reales con las operaciones usuales de suma y producto por escalar forman un espacio vectorial sobre los reales
+    \item $V=\mathbb{C}^n$ y $\mathbb{K}=\mathbb{R}$ Las n-tuplas con entradas complejas con la suma y el producto por escalar usuales en los complejos forman un espacio vectorial sobre el campo de los Complejos.
+    \item  $V=\mathbb{B}^n$ y $\mathbb{K}=\mathbb{B}$ Las n-tuplas con entradas binarias con la suma y el producto por escalar binarios forman un espacio vectorial sobre el campo binario. Éste es un ejemplo de espacio vectorial discreto ya que la cardinalidad del conjunto es
+    \item $V=\mathcal{C}[a,b]$ y $\mathbb{K}=\mathbb{R}$ Las funciones continuas en un intervalo [a, b] con las operaciones usuales de suma y producto por escalar de funciones forman un Espacio Vectorial sobre los Reales
+\end{itemize}
 
-~\\
-$V=\mathcal{M}_{mxn}$
-y $\mathbb{K}=\mathbb{R}$
-Las matrices m por n con entradas reales con las operaciones usuales
-de suma y producto por escalar forman un espacio vectorial sobre los reales
-~\\\\
-$V=\mathbb{C}^n$
-y $\mathbb{K}=\mathbb{R}$
-Las n-tuplas con entradas complejas con la suma y el producto por escalar
-usuales en los complejos forman un espacio vectorial sobre el campo de los Complejos.
-~\\\\
-$V=\mathbb{B}^n$
-y $\mathbb{K}=\mathbb{B}$
-Las n-tuplas con entradas binarias con la suma y el producto por escalar
-binarios forman un espacio vectorial sobre el campo binario. Éste es un ejemplo de espacio
-vectorial discreto ya que la cardinalidad del conjunto es
-~\\\\
-$V=\mathcal{C}[a,b]$
-y $\mathbb{K}=\mathbb{R}$
-Las funciones continuas en un intervalo [a, b] con las operaciones
-usuales de suma y producto por escalar de funciones forman un Espacio Vectorial sobre los
-Reales
+
 \subsection{Algunos teoremas elementales sobre espacios vectoriales}
 \begin{theorem}
-Sea $(V,\oplus,\odot)$ un espacio vectorial sobre el campo $K$. Entonces $n_+\odot v=n_v$
+Sea $(V,\oplus,\odot)$ un espacio vectorial sobre el campo $\dobleK$. Entonces $n_+\odot v=n_v$
 \end{theorem}
 Demostración:
 ~\\
@@ -142,77 +94,95 @@ Se conoce que $n_+ + n_+=n_+$. Entonces
 \[(n_+\odot v)\oplus (n_+\odot v)=n_+\odot v\]
 No olvidemos que$ (n_+\odot v)$ es un vector, y por lo tanto tiene un inverso aditivo $(n_+\odot v)'$
 Sumando a ambos lados de la ecuación anterior este inverso aditivo tenemos.
-$$((n_+\odot v)\oplus (n_+\odot v))\oplus (n_+\odot v)'=(n_+\odot v)\oplus (n_+\odot v)'$$
-$$(n_+\odot v)\oplus ((n_+\odot v)\oplus (n_+\odot v)' )=(n_+\odot v)\oplus (n_+\odot v)'$$
-$$(n_+\odot v)\oplus n_v=n_v$$
-$$(n_+\odot v)=n_v$$
+\begin{align*}
+    ((n_+\odot v)\oplus (n_+\odot v))\oplus (n_+\odot v)'&=(n_+\odot v)\oplus (n_+\odot v)'\\
+    (n_+\odot v)\oplus ((n_+\odot v)\oplus (n_+\odot v)' )&=(n_+\odot v)\oplus (n_+\odot v)'\\
+    (n_+\odot v)\oplus n_v&=n_v\\
+    (n_+\odot v)&=n_v
+\end{align*}
+
 
 Si la dificultad de la notación en la demostración anterior influyó negativamente para su comprensión, recuerde que $ n_v$ es el vector neutro de V, y que $n_+$ es el escalar neutro. Para facilidad de comprensión relacione $n_+$ con el 0 de los números reales. Es decir la tesis de este teorema en el campo Real es $0\odot v=n_v$.
 
 
 
 \begin{theorem}
-Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo K. Entonces $\forall \alpha \in K,\alpha \odot n_v=n_v$
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo $\dobleK$. Entonces $\forall \alpha \in K,\alpha \odot n_v=n_v$
 \end{theorem}
 
 Por el axioma (iv) de espacios vectoriales tenemos que $n_v\oplus n_v=n_v$. Por lo tanto
-$$\alpha \odot (n_v\oplus n_v )=\alpha \odot n_v$$
-            $$(\alpha \odot n_v )\oplus (\alpha \odot n_v )=\alpha \odot n_v$$
+\begin{align*}
+    \alpha \odot (n_v\oplus n_v )&=\alpha \odot n_v\\
+    (\alpha \odot n_v )\oplus (\alpha \odot n_v )&=\alpha \odot n_v
+\end{align*}
+
+
 Sea $ (\alpha \odot n_v )'$ el inverso aditivo de $(\alpha \odot n_v )$. Sumando este vector a ambos lados
-               $$ ((\alpha \odot n_v )\oplus (\alpha \odot n_v ))\oplus (\alpha \odot n_v )'=(\alpha \odot n_v)\oplus (\alpha \odot n_v )'$$
-               $$ (\alpha \odot n_v )\oplus ((\alpha \odot n_v )\oplus (\alpha \odot n_v )' )=(\alpha \odot n_v)\oplus (\alpha \odot n_v )'$$
-                                            $$  (\alpha \odot n_v )\oplus n_v=n_v
-      (\alpha \odot n_v )=n_v$$
-
-\newpage
-
+\begin{align*}
+    ((\alpha \odot n_v )\oplus (\alpha \odot n_v ))\oplus (\alpha \odot n_v )'&=(\alpha \odot n_v)\oplus (\alpha \odot n_v )'\\
+    (\alpha \odot n_v )\oplus ((\alpha \odot n_v )\oplus (\alpha \odot n_v )' )&=(\alpha \odot n_v)\oplus (\alpha \odot n_v )'\\
+    (\alpha \odot n_v )\oplus n_v&=n_v\\
+    (\alpha \odot n_v )&=n_v
+\end{align*}
+               
 
 \begin{theorem}
 Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo R,  sea $v$ un vector de V y v su inverso aditivo. 
 Entonces $(-1)\odot v=v'$
-
 \end{theorem}
-$$(1+(-1))\odot v=0\odot v$$
-                                    $$(1\odot v)\oplus ((-1)\odot v)=n_v$$
+
+\begin{align*}
+    (1+(-1))\odot v&=0\odot v\\
+    (1\odot v)\oplus ((-1)\odot v)&=n_v
+\end{align*}
 Sumando $(1\odot v)'$ el inverso aditivo de $(1\odot v)$ y agrupando
-                 $$ ((1\odot v)'\oplus (1\odot v))\oplus ((-1)\odot v)  =(1\odot v)'\oplus n_v$$
-   $$ n_v\oplus ((-1)\odot v)=(1\odot v)'$$
-      $$  (-1)\odot v=v'$$
+\begin{align*}
+    ((1\odot v)'\oplus (1\odot v))\oplus ((-1)\odot v)  &=(1\odot v)'\oplus n_v\\
+    n_v\oplus ((-1)\odot v)&=(1\odot v)'\\
+    (-1)\odot v&=v'
+\end{align*}
+
 
 \begin{theorem}
 
-Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campoR. Sea $n_v$ el vector neutro de V.
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo $\dobler$. Sea $n_v$ el vector neutro de $V$.
 $$\alpha \odot v=n_v   \rightarrow  (  \alpha =0   \vee    v=n_v   )$$
 \end{theorem}
 Demostración:~\\
 
 Recordemos que la expresión $ p\rightarrow (q\vee r)$ es lógicamente equivalente a la expresión $(p\wedge \neg q)\rightarrow r$
-$$p\rightarrow(q\vee r)\equiv  \neg p\vee (q\vee r)$$
-               $$ \equiv  (\neg p\vee q)\vee r$$
-              $$     \equiv  \neg (\neg p\vee q)\rightarrow r$$
-               $$  \equiv  (p\wedge \neg q)\rightarrow r$$
+\begin{align*}
+    p\rightarrow(q\vee r)&\equiv  \neg p\vee (q\vee r)\\
+    &\equiv  (\neg p\vee q)\vee r\\
+    &\equiv  \neg (\neg p\vee q)\rightarrow r\\
+    &\equiv  (p\wedge \neg q)\rightarrow r
+\end{align*}
+
 Por lo que el teorema es lógicamente equivalente a 
 $$\alpha \odot v=n_v  \wedge  \alpha \neq 0  \rightarrow   v=n_v $$  
 Luego tenemos que:
 
 $$\alpha \odot v=n_v$$
 Como $ \alpha \neq 0$ entonces existe $1/\alpha$ , el inverso multiplicativo de $\alpha$ . Multiplicando por $1/\alpha $ a ambos lados 
-$$1/\alpha \odot (\alpha \odot v)=1/\alpha \odot n_v$$
-     $$\left(\frac{1}{\alpha} \cdot \alpha \right)\odot v=n_v$$
-    $$ 1\odot v=n_v$$
-     $$   v=n_v  $$
+\begin{align*}
+    \frac{1}{\alpha} \odot (\alpha \odot v)&=\frac{1}{\alpha} \odot n_v\\
+    \left(\frac{1}{\alpha} \cdot \alpha \right)\odot v&=n_v\\
+    1\odot v&=n_v\\
+    v&=n_v\\
+\end{align*}
+
 
 ~\\
 ~\\
 
 
 \begin{theorem}[El teorema de la unicidad del neutro]
-Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo $K$. Sea $ n_v$ vector neutro de $V$. Entonces $n_v$ es único en $V$.
+Sea $(V,\oplus ,\odot )$ un espacio vectorial sobre el campo $\dobleK$. Sea $ n_v$ vector neutro de $V$. Entonces $n_v$ es único en $V$.
 \end{theorem}
 Demostración:
 ~\\
 
-Por contradicción. Supongamos que existen dos vectores neutros en V; $n_v$ y $\widetilde{n_v}$ tales que son diferentes $n_v\neq \widetilde{n_v}$
+Por contradicción. Supongamos que existen dos vectores neutros en $V$; $n_v$ y $\widetilde{n_v}$ tales que son diferentes $n_v\neq \widetilde{n_v}$
 Por el axioma (iv)
 $$n_v=n_v\oplus \widetilde{n_v} $$
 Por conmutatividad
@@ -224,9 +194,6 @@ Lo cual es una contradicción, de donde se concluye que el neutro es único.
 
 
 \newpage
-
-
-
 \section{Subespacios Vectoriales}
 \begin{dfn}
 Sea $(E, +, \odot)$ un espacio vectorial real y $S$ un subconjunto no vacío de $E$. Entonces se dice que $S$ es un subespacio vectorial de $E$, si con las operaciones heredadas de $E$, $(S, +, \odot)$ es también un espacio vectorial.
@@ -263,7 +230,7 @@ $W=\lbrace n_v\rbrace$:
 \item Como mostramos en la sección anterior, $W$ es siempre un espacio Vectorial (Denominado espacio trivial).
  \end{itemize} 
 Por lo tanto $W$, el conjunto que s\'olo contiene al vector neutro de un espacio vectorial V es siempre un Subespacio Vectorial de $V$.
-\subsubsection{Todo espacio es subespacio de si mismo}
+\subsubsection{Todo espacio es subespacio de sí mismo}
 Ahora, del espacio vectorial V, consideremos al conjunto V (No, no es error de escritura)
 \begin{itemize}
 \item $V$ siempre es un subconjunto no vac\'io de $V$. (Recuerde que todo conjunto A es subconjunto de s\'i mismo).
@@ -327,7 +294,7 @@ es un subespacio vectorial de \rdos.
 \begin{enumerate}
 
 
-\item[(i)] \vectrdos{0}{0} $\in W$ ya que $0=m\cdot 0$, por lo tanto $W\neq \phi$ 
+\item[(i)] \vectrdos{0}{0} $\in W$ ya que $0=m\cdot 0$, por lo tanto $W\neq \emptyset$ 
 
 \item[(ii)] $\forall w_1, w_2 \in W: w_1=$ 
 \vectrdos{x_1}{y_1} $w_2=$\vectrdos{x_2}{y_2}
@@ -390,7 +357,7 @@ por tanto $W$ no es vac\'io.
 w_1+w_2=\mbox{\vectrtres{x_1}{y_1}{z_1}}+\mbox{\vectrtres{x_2}{y_2}{z_3}}
 =\mbox{\vectrtres{x_1+x_2}{y_1+y_2}{z_1+z_2}}
 \]
-Tanto $w_1, w_2, w_3$ son elementos de W, por lo que
+Tanto $w_1$ como $w_2$ son elementos de W, por lo que
 \[
 x_1=at_1,\ y_1=bt_1,\ z_1=ct_1
 \]
@@ -491,10 +458,10 @@ Considere V=$\llaves{A\in M_{2x2}}{A\ es\ invertible}$, determinar si V es un es
 
 
 \begin{prob}
-Considere V el espacio vectorial de las matrices 3x3. Determine si el subconjunto $H=\llaves{A \in M_{3x3}}{tr(A)=0} $ es un subespacio vectorial de V.
+Considere V el espacio vectorial $\mathcal{M}_{3\times 3}$. Determine si el subconjunto $H=\llaves{A \in \mathcal{M}_{3\times 3}}{tr(A)=0} $ es un subespacio vectorial de V.
 \end{prob}
 \begin{prob}
-Considere V el espacio vectorial de las matrices 3x3. Determine si el subconjunto $H=\llaves{A \in M_{3x3}}{tr(A)\neq0} $ es un subespacio vectorial de V.
+Considere V el espacio vectorial $\mathcal{M}_{3\times 3}$. Determine si el subconjunto $H=\llaves{A \in \mathcal{M}_{3\times 3}}{tr(A)\neq0} $ es un subespacio vectorial de V.
 \end{prob}
 \begin{prob}
 Considere V el espacio vectorial \pdos. Determine si el subconjunto $H=\llaves{p(x)\in \pdos}{p(1)=p(-2)} $ es un subespacio vectorial de V.

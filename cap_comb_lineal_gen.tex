@@ -3,22 +3,21 @@
 
 \section{Combinación Lineal}
 \begin{dfn}[Combinación Lineal]
-Sea $v\in V$, sean $\llav{v_1, v_2, v_3, \ldots, v_n}$ vectores de un espacio vectorial $V$ sobre el campo \doblek , se dice que $v$ es una combinación lineal de los vectores $\llav{v_1, v_2, v_3, \ldots, v_n}$ si y solo si existen los escalares $\alpha_1, \alpha_2, \alpha_3, \ldots, \alpha_n \in$ \doblek tal que
+Sea $v\in V$, sean \conjvect{v}{n} vectores de un espacio vectorial $V$ sobre el campo \doblek , se dice que $v$ es una combinación lineal de los vectores \conjvect{v}{n} si y solo si existen los escalares $\alpha_1, \alpha_2, \ldots, \alpha_n \in \dobleK$ tal que 
 \[
 v=\left(\alpha_1\odot v_1\right)\oplus
 \left(\alpha_2\odot v_2\right)\oplus
-\left(\alpha_3\odot v_3\right)\oplus
-\ldots
+\ldots \oplus
 \left(\alpha_n\odot v_n\right)
 \]
 \end{dfn}
-Nótese que la palabra clave de la definici\'on anterior es EXISTEN, para ilustrar esto considere los
+Nótese que la palabra clave de la definición anterior es EXISTEN, para ilustrar esto considere los
 dos siguientes ejemplos:
 \begin{ejemplo}
-Considere el espacio vectorial \rdos; ?` es el vector \vectrdos{6}{-1} combinaci\'on lineal de los vectores \vectrdos{3}{2}, \vectrdos{1}{-1}?
+Considere el espacio vectorial \rdos; ?` es el vector \vectrdos{6}{-1} combinación lineal de los vectores \vectrdos{3}{2}, \vectrdos{1}{-1}?
 \end{ejemplo}
 
-Para resolver este problema debemos verificar si EXISTEN escalares $\alpha$, $\beta$ tales que hagan posible la combinaci\'on lineal:
+Para resolver este problema debemos verificar si EXISTEN escalares $\alpha$, $\beta$ tales que hagan posible la combinación lineal:
 \[\mbox{\vectrdos{6}{-1}} =\alpha\mbox{\vectrdos{3}{2}}+\beta\mbox{\vectrdos{1}{-1}}\]
 
 Esto nos llevar\'a a un sistema de ecuaciones
@@ -35,16 +34,16 @@ Si el sistema es consistente, entonces los escalares si existen y por lo tanto, 
 por lo que el vector no sería combinación lineal de los otros dos.
 
 ~\\
-Al resolver este sistema llegamos a la soluci\'on:
+Al resolver este sistema llegamos a la solución:
 $\alpha=1$ y $\beta=3$.
 
 ~\\
-Los escalares $\alpha$ y $\beta$ existen, el sistema es consistente con soluci\'on \'unica, luego el vector \vectrdos{6}{-1} es combinaci\'on lineal de los vectores \vectrdos{3}{2}, \vectrdos{1}{-1}. Ver figura ~\ref{fig:figura1}
+Los escalares $\alpha$ y $\beta$ existen, el sistema es consistente con solución \'unica, luego el vector \vectrdos{6}{-1} es combinación lineal de los vectores \vectrdos{3}{2}, \vectrdos{1}{-1}. Ver figura ~\ref{fig:figura1}
 
-\imagen{dosvect1}{Combinaci\'on lineal de vectores en \rdos. Método del paralelogramo}{figura1}{0.5}
+\imagen{dosvect1}{combinación lineal de vectores en \rdos. Método del paralelogramo}{figura1}{0.5}
 
 \begin{ejemplo}
-?`El vector \vectrdos{2}{2} es combinaci\'on lineal de los vectores 
+?`El vector \vectrdos{2}{2} es combinación lineal de los vectores 
 \vectrdos{-1}{2}, \vectrdos{2}{-4}?
 \end{ejemplo}
 
@@ -73,8 +72,8 @@ Resolviendo el sistema por el metodo de Gauss-Jordan:
 \right)
 \]
 ~\\
-La \'ultima fila indica un absurdo matem\'atico, lo cual implica que el sistema es inconsistente, no
-tiene soluci\'on. Como los escalares no existen, el vector \vectrdos{2}{2} NO es combinaci\'on lineal de los vectores 
+La última fila indica un absurdo matem\'atico, lo cual implica que el sistema es inconsistente, no
+tiene solución. Como los escalares no existen, el vector \vectrdos{2}{2} NO es combinación lineal de los vectores 
 \vectrdos{-1}{2}, \vectrdos{2}{-4}
 
 \newpage
@@ -85,12 +84,12 @@ tiene soluci\'on. Como los escalares no existen, el vector \vectrdos{2}{2} NO es
 %Suponga que usted tiene un conjunto de bolitas de plastilina con los colores Azul, Rojo, Amarillo.
 %Tomamos una “bolita” amarilla y otra “bolita” roja y las combinamos (esperamos que el lector conozca qué color se formar\'a), como era de suponerse, tendremos ahora una bolita de color Naranja; es decir, el color Naranja es una Combinación Lineal de los colores Amarillo y Rojo.
 %
-%\imagen{amarillorojo}{Combinaci\'on lineal}{figura2}{0.5}
+%\imagen{amarillorojo}{combinación lineal}{figura2}{0.5}
 %
 %Asimismo si tomamos una bolita de color Azul y una bolita de color Amarillo, obtendremos una
 %de color Verde, luego el color Verde es Combinación Lineal de los colores Azul y Amarillo.
 %
-%\imagen{azulamarillo}{Combinaci\'on lineal}{figura3}{0.5}
+%\imagen{azulamarillo}{combinación lineal}{figura3}{0.5}
 %
 %Ahora suponga que no toma una bolita de Azul, sino TRES bolitas de Azul y una de Amarillo; y las
 %combinamos, ¡por supuesto! Tendremos otra clase de color Verde, pero un poco más oscuro, es
@@ -98,11 +97,11 @@ tiene soluci\'on. Como los escalares no existen, el vector \vectrdos{2}{2} NO es
 %cambian tendremos otro resultado.
 %
 %
-%\imagen{verdeoscuro}{Combinaci\'on lineal}{figura4}{0.4}
+%\imagen{verdeoscuro}{combinación lineal}{figura4}{0.4}
 %
 %?`Ahora est\'a más claro el concepto de combinación lineal?
 
-\subsection{M\'as ejemplos de combinaci\'on lineal}
+\subsection{M\'as ejemplos de combinación lineal}
 
 De ahora en adelante trabajaremos sobre espacios vectoriales sobre campo Real y con operaciones usuales, por lo que obviaremos $\oplus$ y $\odot$ por los usuales $+$ y $\cdot$
 
@@ -110,7 +109,7 @@ De ahora en adelante trabajaremos sobre espacios vectoriales sobre campo Real y 
 Considere el espacio vectorial \pdos\ sobre el campo real, determinar si el vector $x^2+x-1$ es combinación lineal de los vectores $x+2, x^2-3, x^2+2x+1$.
 \end{ejemplo}
 ~\\
-Soluci\'on
+solución
 
 ~\\
 Veamos si existen los escalares $\alpha_1, \alpha_2, \alpha_3$ tales que
@@ -163,12 +162,12 @@ Resolvi\'endolo por Gauss:
 \end{array}
 \right)\]
 
-De la \'ultima fila del sistema inferimos que el sistema tiene infinitas soluciones, es decir; es consistente, que es lo que nos interesa. Como es consistente entonces EXISTEN escalares (en este caso infinitos) que hacen posible la combinaci\'on lineal.
+De la última fila del sistema inferimos que el sistema tiene infinitas soluciones, es decir; es consistente, que es lo que nos interesa. Como es consistente entonces EXISTEN escalares (en este caso infinitos) que hacen posible la combinación lineal.
 
 \begin{ejemplo}
 En el espacio vectorial \mdosxdos, determinar si 
 \matrdxd{2&1}{-1&0}
- es combinaci\'on lineal de los vectores 
+ es combinación lineal de los vectores 
 \matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
 \end{ejemplo}
 
@@ -217,28 +216,28 @@ Por el método de Gauss obtenemos un sistema equivalente por filas
 \right)\]
 
 ~\\
-En las dos \'ultimas filas se obtiene una inconsistencia matem\'atica, ya que en la tercera tenemos que 
+En las dos últimas filas se obtiene una inconsistencia matem\'atica, ya que en la tercera tenemos que 
 $\alpha_3=\frac{3}{5}$ 
 pero en la cuarta fila 
 $\alpha_3=\frac{1}{3}$
-lo cual es una contradicci\'on. Por lo tanto el sistema es inconsistente, no existen escalares que satisfagan dicho sistema. Por tanto \matrdxd{2&1}{-1&0} NO
- es combinaci\'on lineal de los vectores \matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
+lo cual es una contradicción. Por lo tanto el sistema es inconsistente, no existen escalares que satisfagan dicho sistema. Por tanto \matrdxd{2&1}{-1&0} NO
+ es combinación lineal de los vectores \matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
 
 ~\\
 \begin{ejercicio}
 Determinar de ser posible los valores de $k$ para los cuales el vector 
-\vectrtres{1}{1}{k} es una combinaci\'on lineal de los vectores
+\vectrtres{1}{1}{k} es una combinación lineal de los vectores
  \vectrtres{1}{2}{k}, \vectrtres{k}{-k}{1}.
 \end{ejercicio}
 ~\\
-\underline{Soluci\'on}:
+\underline{solución}:
 \\
-Analic\'emoslo de la misma manera y planteemos la combinaci\'on lineal
+analicémoslo de la misma manera y planteemos la combinación lineal
 \[
 \vectrtres{1}{1}{k}=
  \alpha_1\vectrtres{1}{2}{k}+\alpha_2\vectrtres{k}{-k}{1}
 \]
-Para que la combinaci\'on lineal exista el sistema debe ser consistente. Realizando operaciones elementales tenemos:
+Para que la combinación lineal exista el sistema debe ser consistente. Realizando operaciones elementales tenemos:
 
 \[
 \left(
@@ -266,7 +265,7 @@ k&1&k
 \right)
 \]
 
-Atenci\'on a las dos \'ultimas filas, para que el sistema sea consistente el valor de $k^2-1$ debe ser igual a cero (si es diferente de cero: $k^2-1=m, m\neq 0$ el sistema es inconsistente ya que quedar\'ia una ecuaci\'on $0\alpha_1+0\alpha_2=m$\, lo cual es un absurdo), es decir es consistente cuando:
+Atención a las dos últimas filas, para que el sistema sea consistente el valor de $k^2-1$ debe ser igual a cero (si es diferente de cero: $k^2-1=m, m\neq 0$ el sistema es inconsistente ya que quedar\'ia una ecuación $0\alpha_1+0\alpha_2=m$\, lo cual es un absurdo), es decir es consistente cuando:
 \[k^2-1=0  \longrightarrow  k=-1 \vee k=1\]
 
 Debemos tener en cuenta también que $k\neq 0$
@@ -274,62 +273,81 @@ ya que con eso el sistema es inconsistente en la
 segunda fila, pero esto no afecta los valores obtenidos ya que ninguno de ellos es cero.
 
 
-Por lo tanto para que \vectrtres {1}{1}{k} sea combinaci\'on lineal de \vectrtres{1}{2}{k}, \vectrtres{k}{-k}{1}; $k=-1 \vee k=1$.
+Por lo tanto para que \vectrtres {1}{1}{k} sea combinación lineal de \vectrtres{1}{2}{k}, \vectrtres{k}{-k}{1}; $k=-1 \vee k=1$.
 
 \newpage
 \section{Cápsula Lineal}
-\begin{dfn}[C\'apsula Lineal]
-Sean \conjvect{v}{k} k vectores de un espacio vectorial $V$, se denomina C\'apsula Lineal de \conjvect{v}{k} al conjunto de todas las combinaciones lineales posibles de los vectores \conjvect{v}{k}
+\begin{dfn}[Cápsula Lineal]
+Sean \conjvect{v}{k} k vectores de un espacio vectorial $(V,\dobleK,\oplus,\odot)$, se denomina Cápsula Lineal de \conjvect{v}{k} al conjunto de todas las combinaciones lineales posibles de los vectores \conjvect{v}{k}
 \[
 \mathcal{L} \left(\kvect{v}{k}\right)=
-\lbrace v|v=\av{\alpha_1}{v_1}+
-\av{\alpha_2}{v_2}+
-\ldots+
-\av{\alpha_k}{v_k}
+\lbrace v \in V|v= \av{}{\alpha_1 \odot v_1} \oplus
+\av{}{\alpha_2 \odot v_2} \oplus 
+\hdots \oplus
+\av{}{\alpha_k \odot v_k}
 \rbrace
 \]
 
 \end{dfn}
 
 \begin{theorem}
-Sean \conjvect{v}{k} vectores de un espacio vectorial $V$, entonces la c\'apsula lineal de \conjvect{v}{k} es un subespacio vectorial de $V$
+Sean \conjvect{v}{k} vectores de un espacio vectorial $(V,\dobleK,\oplus,\odot)$, entonces la cápsula lineal de \conjvect{v}{k} es un subespacio vectorial de $V$
 \end{theorem}
 \begin{proof}~\\
 \begin{enumerate}
-\item Puesto que $0_V=0 v_1+0 v_2+..0 v_n$ se tiene que $0_V$ es un elemento de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$
-\item Sean $w_1, w_2$ dos elementos de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$, entonces exiten escalares $\alpha_i, \beta_i \in \dobler$ tales que \begin{align*}
-w_1=\alpha_1 v_1+\alpha_2 v_2+..\alpha_n v_n\\
-w_2=\beta_1 v_1+\beta_2 v_2+..\beta_n v_n\\
+\item Puesto que $0_V= \av{}{0 \odot v_1} \oplus
+\av{}{0 \odot v_2} \oplus 
+\hdots \oplus
+\av{}{0 \odot v_k}$ se tiene que $0_V$ es un elemento de la cápsula lineal de \conjvect{v}{k}
+\item Sean $w_1, w_2$ dos elementos de la cápsula lineal de \conjvect{v}{k}, entonces existen escalares $\alpha_i, \beta_i \in \dobleK$ tales que \begin{align*}
+w_1=\av{}{\alpha_1 \odot v_1} \oplus
+\av{}{\alpha_2 \odot v_2} \oplus 
+\hdots \oplus
+\av{}{\alpha_k \odot v_k}\\
+w_2=\av{}{\beta_1 \odot v_1} \oplus
+\av{}{\beta_2 \odot v_2} \oplus 
+\hdots \oplus
+\av{}{\beta_k \odot v_k}\\
 \end{align*}
 Ahora como
 \begin{align*}
-w_1+w_2=(\alpha_1+\beta_1) v_1+(\alpha_2+\beta_2) v_2+..(\alpha_n+\beta_n) v_n\\
+w_1\oplus w_2=\av{}{(\alpha_1 + \beta_1) \odot v_1} \oplus
+\av{}{(\alpha_2 + \beta_2) \odot v_2} \oplus 
+\hdots \oplus
+\av{}{(\alpha_k +\beta_k) \odot v_k}
 \end{align*}
-Concluimos que $w_1+w_2$ es un elemento de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$.
-\item Sean $c \in \dobler$ y w un elemento de la cápsula lineal de $\llav{v_1, v_2, .., v_n}$. Entonces 
+Concluimos que $w_1\oplus w_2$ es un elemento de la cápsula lineal de \conjvect{v}{k}.
+
+\item Sean $c \in \dobleK$ y $w$ un elemento de la cápsula lineal de \conjvect{v}{k}. Entonces 
 \begin{align*}
-cw&=c(\alpha_1 v_1+\alpha_2 v_2+..\alpha_n v_n)\\
-cw&=(c\alpha_1) v_1+(c\alpha_2) v_2+..(c\alpha_n) v_n\\
+c\odot w&=c\odot (\av{}{\alpha_1 \odot v_1} \oplus
+\av{}{\alpha_2 \odot v_2} \oplus 
+\hdots \oplus
+\av{}{\alpha_k \odot v_k})\\
+c\odot w&=\av{}{(c\alpha_1) \odot v_1} \oplus
+\av{}{(c\alpha_2) \odot v_2} \oplus 
+\hdots \oplus
+\av{}{(c\alpha_k) \odot v_k}\\
 \end{align*}
-Y así, $cw $ es un elemento de la cápsula lineal de \llav{v_1, v_2, .., v_n}.
+Y así, $c\odot w$ es un elemento de la cápsula lineal de \conjvect{v}{k}.
 \end{enumerate}
 Por lo tanto la cápsula lineal es un subespacio de V.
 \end{proof}
 
 
 ~\\
-Por esto a la c\'apsula lineal se le denomina espacio generado.
+Por esto a la cápsula lineal se le denomina espacio generado.
 
-\section{Conjunto Generador y Espacio Generado}(?`Qu\'e?\ ?` no es lo mismo?)
+\section{Conjunto Generador y Espacio Generado}(?`Qué?\ ?`no es lo mismo?)
 
 
 \begin{dfn}
-Sea $S=$\conjvect{v}{k} un subconjunto de un espacio vectorial $V$, de denomina Espacio Generado por S al conjunto de todas las combinaciones posibles de los vectores de S. Dado esto, el conjunto S se demonida Conjunto Generador. Se denota:
+Sea $S=$\conjvect{v}{k} un subconjunto de un espacio vectorial $V$, se denomina Espacio Generado por S al conjunto de todas las combinaciones posibles de los vectores de S. Dado esto, el conjunto S se denomina Conjunto Generador. Se denota:
 \[gen(S)=
-\lbrace v \in V|v=\alpha_1 v_1+
-\alpha_2 v_2+
-\ldots+
-\alpha_k v_k
+\lbrace v \in V|v=\av{}{\alpha_1 \odot v_1} \oplus
+\av{}{\alpha_2 \odot v_2} \oplus 
+\hdots \oplus
+\av{}{\alpha_k \odot v_k}
 \rbrace
 \]
 al espacio generado por S.
@@ -345,10 +363,10 @@ x+1, x^2-1, 2x^2+x-1\rbrace$. Luego, determine si
 \end{ejemplo}
 
 ~\\
-\underline{Soluci\'on}
+\underline{solución}
 ~\\
-Por definici\'on $gen(S)=
-\lbrace v\in V|v=
+Por definición $gen(S)=
+\lbrace v \in V|v=
 \beta_1 v_2+
 \beta_2 v_2+
 \ldots+
@@ -357,63 +375,63 @@ Por definici\'on $gen(S)=
 $
 
 ~\\
-Elegimos ahora un vector t\'ipico de \pdos, que es el espacio referencial
-\[p(x)=a_0+a_1 x+a_2 x^2\]
+Elegimos ahora un vector típico de \pdos, que es el espacio referencial
+\[p(x)=a+b x+c x^2\]
 $$\forall p(x)\in gen(S):\  
-a_0+a_1 x+a_2 x^2=
+a+b x+c x^2=
 \av{\beta_1}{x+1}+
 \av{\beta_2}{x^2-1}+
 \av{\beta_3}{2x^2+x-1}
 $$
 Igualando coeficientes llegamos al sistema de ecuaciones
 \begin{eqnarray*}
-\beta_1+\beta_2-\beta_3=a_0\\
-\beta_1+\beta_3=a_1\\
-\beta_2+2\beta_3=a_2
+\beta_1-\beta_2-\beta_3=a\\
+\beta_1+\beta_3=b\\
+\beta_2+2\beta_3=c
 \end{eqnarray*}
 
 \[
 \left(
-\begin{array}{rrr|r}
-1&-1&-1&a_0\\
-1&0&1&a_1\\
-0&1&2&a_2
+\begin{array}{rrr|c}
+1&-1&-1&a\\
+1&0&1&b\\
+0&1&2&c
 \end{array}
 \right)
 \sim
 \left(
-\begin{array}{rrr|r}
-1&-1&-1&a_0\\
-0&1&2&a_1-a_0\\
-0&1&2&a_2
+\begin{array}{rrr|c}
+1&-1&-1&a\\
+0&1&2&b-a\\
+0&1&2&c
 \end{array}
 \right)
 \sim
 \left(
-\begin{array}{rrr|r}
-1&-1&-1&a_0\\
-0&1&2&a_1-a_0\\
-0&0&0&a_1-a_0-a_2
+\begin{array}{rrr|c}
+1&-1&-1&a\\
+0&1&2&b-a\\
+0&0&0&b-a-c
 \end{array}
 \right)
 \]
 
-\underline{Observaci\'on}: Atenci\'on aqu\'i, las inc\'ognitas de este sistema por naturaleza ser\'ian $\beta_1, \beta_2, \beta_3$
-; sin embargo cuando vamos a determinar el espacio generado no nos interesa quienes sean los escalares, s\'olo nos interesa que existan, lo que si nos interesa son las condiciones que recaen sobre $a_0, a_1, a_2 $
+\underline{Observación}: Atención aquí, las incógnitas de este sistema por naturaleza serían $\beta_1, \beta_2, \beta_3$
+; sin embargo cuando vamos a determinar el espacio generado no nos interesa quienes sean los escalares, sólo nos interesa que existan, lo que si nos interesa son las condiciones que recaen sobre $a,b,c$
 para que el sistema sea consistente (en otras palabras, para que los escalares existan).
 
 
-En la \'ultima fila tenemos una fila de llena de ceros pero al final tenemos el factor $a_1-a_0-a_2$
-analic\'emosla, si $a_1-a_0-a_2\neq 0$
-,entonces el sistema no tendría soluci\'on (?`Por qu\'e?), lo cual va
-en contra de la definici\'on de combinaci\'on lineal, que es esencial en la definición de espacio
-generado, por lo que esto es lo que debe ser evitado. Para que el sistema sea consistente debe cumplirse que $a_1-a_0-a_2=0$
-, y ésta será la condición de todos los vectores que est\'en en el
+En la última fila tenemos una fila de llena de ceros pero al final tenemos el factor $b-a-c$
+analicémosla, si $b-a-c\neq 0$
+,entonces el sistema no tendría solución (?`Por qué?), lo cual va
+en contra de la definición de combinación lineal, que es esencial en la definición de espacio
+generado, por lo que esto es lo que debe ser evitado. Para que el sistema sea consistente debe cumplirse que $b-a-c=0$
+, y ésta será la condición de todos los vectores que estén en el
 espacio generado por S.
 \[gen(S)=
 \lbrace
-a_0+a_1 x+a_2 x^2|
-a_1-a_0-a_2=0
+a+b x+c x^2 \in \pdos|
+b-a-c=0
 \rbrace
 \]
 \begin{enumerate}
@@ -427,7 +445,7 @@ Determine el espacio generado por los vectores $\left\{ \vectrtres{1}{2}{1}, \ve
 \end{ejemplo}
 
 ~\\
-\underline{Soluci\'on}:
+\underline{solución}:
 ~\\
 
 Sea $v=\vectrtres{a}{b}{c}; a, b, c, \in \dobler$
@@ -436,7 +454,7 @@ Sea $v=\vectrtres{a}{b}{c}; a, b, c, \in \dobler$
 \forall v\in gen(S):\ 
 \vectrtres{a}{b}{c}=
 \beta_1\vectrtres{1}{2}{1}+
-\beta_2\vectrtres{4}{0}{2}+
+\beta_2\vectrtres{3}{0}{2}+
 \beta_3\vectrtres{3}{2}{0}
 \]
 
@@ -472,7 +490,7 @@ cualquier real.
 gen(S)=
 \left\{
 \left.
-\vectrtres{a}{b}{c}\right|
+\vectrtres{a}{b}{c} \in \rtres \right|
 a, b, c \in \dobler
 \right\}=\rtres
 \]
@@ -551,8 +569,8 @@ kf(x)f'(x)-kf(x)f'(x)=0
 
 \begin{prob}[(1er Examen ESPOL 2012)]
 Demuestre:
-\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinaci\'on lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
-tambi\'en es linealmente independiente.
+\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinación lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
+también es linealmente independiente.
 \end{prob}
 
 \sol
@@ -567,7 +585,7 @@ Consideremos que
 \beta x =0_v
 \end{equation}
 Para algunos escalares $ \alpha_i, \beta \in \dobler; i=1...n$
-Al operar esta ecuaci\'on tenemos lo siguiente
+Al operar esta ecuación tenemos lo siguiente
 \begin{equation}\label{eq2}
 \beta x=(-\alpha_1) v_1+
 (-\alpha_2) v_2+
@@ -584,7 +602,7 @@ x=(-\frac{\alpha_1}{\beta}) v_1+
 \ldots+
 (-\frac{\alpha_n}{\beta}) v_n
 \end{equation*} 
-Lo anterior es imposible ya que contradice la hip\'otesis de que x no puede escribirse como combinaci\'on lineal de los vectores de S, as\'i que se concluye que $\beta=0$.
+Lo anterior es imposible ya que contradice la hip\'otesis de que x no puede escribirse como combinación lineal de los vectores de S, as\'i que se concluye que $\beta=0$.
 Ya conociendo que $\beta=0$, en \ref{eq1} reemplazamos y tenemos
 \begin{equation}
 \alpha_1 v_1+
@@ -742,7 +760,7 @@ Por lo que
 
 N\'ucleo:
 
-El n\'ucleo es la soluci\'on del sistema homog\'eneo $AX=0$:
+El n\'ucleo es la solución del sistema homog\'eneo $AX=0$:
 \[
 \left(
 \begin{array}{rrr|r}
@@ -822,7 +840,7 @@ Por tanto, no pertenece a $Im(A)$.
 
 \newpage
 \begin{prob}
-Sea $V=\mathcal{M}_{3x2}$. Sean $W_1$ el conjunto de las matrices que tienen la primera y la \'ultima fila iguales, $W_2$ el conjunto de las matrices que tienen la primera columna igual a su segunda columna.
+Sea $V=\mathcal{M}_{3x2}$. Sean $W_1$ el conjunto de las matrices que tienen la primera y la última fila iguales, $W_2$ el conjunto de las matrices que tienen la primera columna igual a su segunda columna.
 ~\\Determine:~\\
 \begin{enumerate}
 \item[a)] La intersecci\'on entre $W_1, W_2$
@@ -924,7 +942,7 @@ Si colocamos todas estas ecuaciones en un sistema homog\'eneo e igualamos a cero
 \right)
 \]
 
-Donde queda claro que había una ecuaci\'on redundante, por lo tanto
+Donde queda claro que había una ecuación redundante, por lo tanto
 
 
 \[W_1\cap W_2=\llaves{
@@ -1137,7 +1155,7 @@ Sea $V$ un espacio vectorial tal que $H\subseteq V$. Si $H$ es un subespacio vec
 
 \sol
 ~\\
-Debido a que $H$ es un subespacio vectorial(tambi\'en es espacio vectorial), el elemento neutro $0_v$ pertenece a H, pero esto implica que $0_v \notin H^C$.
+Debido a que $H$ es un subespacio vectorial(también es espacio vectorial), el elemento neutro $0_v$ pertenece a H, pero esto implica que $0_v \notin H^C$.
 
 ~\\
 Si $0_v \notin H^C$ entonces $H^C$ no puede ser espacio vectorial, luego, tampoco subespacio vectorial de $ V$. 
@@ -1181,7 +1199,7 @@ Consideremos el siguiente contraejemplo:~\\
 Sea V=\pdos, y $A=\llav{1,x^2}, B=\llav{1,x^2+1}$, entonces,
 \[gen(A)=\llaves{a_0+a_1x+a_2x^2}{a_1=0}\]
 \[gen(B)=\llaves{a_0+a_1x+a_2x^2}{a_1=0}\]
-Aqu\'i es evidente que el espacio generado por B es el mismo que el espacio generado por A, ya que ambos tienen al vector 1, y el segundo vector de B es una combinaci\'on lineal de los dos vectores de A.
+Aqu\'i es evidente que el espacio generado por B es el mismo que el espacio generado por A, ya que ambos tienen al vector 1, y el segundo vector de B es una combinación lineal de los dos vectores de A.
 Si los espacios son iguales, la intersecci\'on entre estos espacios es la misma.
 \[gen(A)\cap gen(B)=\llaves{a_0+a_1x+a_2x^2}{a_1=0}\]
 Ahora, sin embargo, es distinto el espacio generado de la intersecci\'on de A y B:
@@ -1213,7 +1231,7 @@ La proposición es falsa.
 \begin{prob}[]
 En el espacio vectorial \mdosxdos, determinar si 
 \matrdxd{2&1}{-1&0}
- es combinaci\'on lineal de los vectores 
+ es combinación lineal de los vectores 
 \matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
 \end{prob}
 
@@ -1249,8 +1267,8 @@ $\therefore$ La proposición es falsa
 
 \begin{prob}[]
 Demuestre:
-\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinaci\'on lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
-tambi\'en es linealmente independiente.
+\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinación lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
+también es linealmente independiente.
 \end{prob}
 ~\\
 \sol
@@ -1356,7 +1374,7 @@ Se concluye que $S\cup \lbrace x\rbrace$ es linealmente independiente.
 %
 %N\'ucleo:
 %
-%El n\'ucleo es la soluci\'on del sistema homog\'eneo $AX=0$:
+%El n\'ucleo es la solución del sistema homog\'eneo $AX=0$:
 %\[
 %\left(
 %\begin{array}{rrr|r}
@@ -1454,7 +1472,7 @@ Se concluye que $S\cup \lbrace x\rbrace$ es linealmente independiente.
 
 %\begin{prob}
 %
-%Sea $V=\mathcal{M}_{3x2}$. Sean $W_1$ el conjunto de las matrices que tienen la primera y la \'ultima fila iguales, $W_2$ el conjunto de las matrices que tienen la primera columna igual a su segunda columna.
+%Sea $V=\mathcal{M}_{3x2}$. Sean $W_1$ el conjunto de las matrices que tienen la primera y la última fila iguales, $W_2$ el conjunto de las matrices que tienen la primera columna igual a su segunda columna.
 %~\\Determine:~\\
 %\begin{enumerate}
 %\item[a)] La intersecci\'on entre $W_1, W_2$

@@ -1,0 +1,975 @@
+\chapter{Problemas}
+
+\begin{enumerate}
+
+\begin{prob}[(3er Examen ESPOL 2012)]
+Sea $V=C[0,1]$ y $f, g \in V$. Demuestre que si el conjunto \llav{f, g} es linealmente dependiente entonces
+\[W=
+\begin{vmatrix}
+f(x)&g(x)\\
+f'(x)&g'(x)\\
+\end{vmatrix}=0
+\]
+\end{prob}
+\sol
+Si \llav{f, g} es un conjunto linealmente dependiente, entonces existe un escalar $k\in \dobler$ tal que $g(x)=kf(x)$:
+
+\[\Rightarrow\
+W=
+\begin{vmatrix}
+f(x)&g(x)\\
+f'(x)&g'(x)\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+f(x)&kf(x)\\
+f'(x)&kf'(x)\\
+\end{vmatrix}
+=
+kf(x)f'(x)-kf(x)f'(x)=0
+\ \blacksquare\]
+
+\begin{prob}[(1er Examen ESPOL 2012)]
+Demuestre:
+\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinación lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
+también es linealmente independiente.
+\end{prob}
+
+\sol
+Tenemos que demostrar que $\llav{\kvect{v}{n}, x}$ es l.i.
+Consideremos que
+
+\begin{equation}\label{eq1}
+\alpha_1 v_1+
+\alpha_2 v_2+
+\ldots+
+\alpha_n v_n+
+\beta x =0_v
+\end{equation}
+Para algunos escalares $ \alpha_i, \beta \in \dobler; i=1...n$
+Al operar esta ecuación tenemos lo siguiente
+\begin{equation}\label{eq2}
+\beta x=(-\alpha_1) v_1+
+(-\alpha_2) v_2+
+\ldots+
+(-\alpha_n) v_n
+\end{equation}
+Existen dos casos, que $\beta\neq 0$ o que $\beta=0$
+~\\
+\underline{Si $\beta\neq 0$}:\ 
+Si en \ref{eq2}, multiplicamos por $\frac{1}{\beta}$ (estamos seguro de que existe, ya que $\beta$ es diferente de cero) obtendremos lo siguiente:
+\begin{equation*}
+x=(-\frac{\alpha_1}{\beta}) v_1+
+(-\frac{\alpha_2}{\beta}) v_2+
+\ldots+
+(-\frac{\alpha_n}{\beta}) v_n
+\end{equation*} 
+Lo anterior es imposible ya que contradice la hipótesis de que x no puede escribirse como combinación lineal de los vectores de S, as\'i que se concluye que $\beta=0$.
+Ya conociendo que $\beta=0$, en \ref{eq1} reemplazamos y tenemos
+\begin{equation}
+\alpha_1 v_1+
+\alpha_2 v_2+
+\ldots+
+\alpha_n v_n=0_v
+\end{equation}
+Pero como S es un conjunto l.i. implica que $\alpha_i=0; i=1,...n$
+Con esto se concluye que el conjunto $\llav{\kvect{v}{n}, x}$ es l.i.$\blacksquare$
+
+\begin{prob}[(1er Examen ESPOL 2009)]
+Sean $u=\vectrdos{x_1}{y_1}, v=\vectrdos{x_2}{y_2}, w=\vectrdos{x_3}{y_3}$ elementos de $ \rdos$ y sea
+\[A=
+\left(
+\begin{array}{rrr}
+x_1&y_1&1\\
+x_2&y_2&1\\
+x_3&y_3&1
+\end{array}
+\right)
+\]
+\begin{enumerate}
+\item[(a)] Si u, v, w son colineales ?`cuál es el rango de A?
+\item[(b)] Determine una base para el espacio fila de A.
+\end{enumerate}
+\end{prob}
+
+\sol
+(a) Si u, v, w son colineales, entonces deben ser m\'ultiplos
+ $$v=\vectrdos{a x_1}{a y_1}, w=\vectrdos{b x_1}{b y_1}$$
+por lo que la matriz A ser\'ia
+\[A=
+\left(
+\begin{array}{rrr}
+x_1&y_1&1\\
+a x_1&a y_1&1\\
+b x_1&b y_1&1
+\end{array}
+\right)
+\]
+\begin{eqnarray*}
+C_A &=gen\llav{
+\vectrtres{x_1}{ax_1}{b x_1}, 
+\vectrtres{y_1}{a y_1}{b y_1}, 
+\vectrtres{1}{1}{1}
+}\\&=
+gen\llav{
+\vectrtres{1}{a}{b}, 
+\vectrtres{1}{a}{b}, 
+\vectrtres{1}{1}{1}
+}\\&=
+gen\llav{
+\vectrtres{1}{a}{b}, 
+\vectrtres{1}{1}{1}
+}
+\end{eqnarray*}
+De esta manera, es claro que $\rho(A)=1$ si $a=1 \wedge b=1$
+en cualquier otro caso $\rho(A)=2$.
+~\\
+(b) Si $a=1 \wedge b=1$ entonces una base para el espacio fila ser\'ia $$B_{F_A}=\llav{
+\vectrtres{x_1}{ y_1}{ 1}
+}$$
+
+Si $a=1 \wedge b\neq 1$ una base de $F_A$ ser\'ia
+\[B_{F_A}=\llav{
+\vectrtres{x_1}{ y_1}{ 1},
+\vectrtres{b x_1}{b y_1}{1}
+}\]
+
+Si $a\neq 1 \wedge b=1$ una base de $F_A$ ser\'ia
+\[B_{F_A}=\llav{
+\vectrtres{x_1}{ y_1}{ 1},
+\vectrtres{a x_1}{a y_1}{1}
+}\]
+\newpage
+\begin{prob}
+Dada la matriz $A=
+\left(
+\begin{array}{rrr}
+1&10&1\\
+2&2&2\\
+-1&-8&k
+\end{array}
+\right)
+$, determine los valores de $k$ para que la nulidad de $A$ sea cero.
+\end{prob}
+
+\sol
+
+Por el criterio del determinante, la nulidad de A es cero si $det(A)\neq 0$
+\[det(A)\neq 0\]
+\[1(2k+16)-10(2k+2)+1(-16+2)\neq 0\]
+\[-18k-18\neq 0\]
+\[k\neq -1\].
+
+\newpage
+\begin{prob}[(1er Examen ESPOL 2007)]
+Sea $A$ la matriz de coeficientes del sistema lineal
+\begin{eqnarray*}
+2x+y-z=a\\
+x-y+2z=b\\
+x+2y-3z=c
+\end{eqnarray*}
+\begin{enumerate}
+\item[a)] Determine el espacio fila, n\'ucleo y recorrido de $A$
+\item[b)] Si $c=2a+b$, determine si el vector \vectrtres{a}{b}{c} pertenece a $Im(A)$
+\end{enumerate}
+\end{prob}
+
+\sol
+
+De acuerdo al sistema se tiene que
+\[A=
+\left(
+\begin{array}{rrr}
+2&1&-1\\
+1&-1&2\\
+1&2&-3\\
+\end{array}
+\right)
+\]
+Espacio fila:
+\[F_A=gen\llav{
+\vectrtres{2}{1}{-1}, \vectrtres{1}{-1}{2}, \vectrtres{1}{2}{-3}
+}\]
+Lo que conduce al sistema
+
+\[A=
+\left(
+\begin{array}{rrr|r}
+2&1&1&x\\
+1&-1&2&y\\
+-1&2&-3&z\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&1&1&x\\
+0&3&-3&x-2y\\
+0&5&-5&x+2z\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&1&1&x\\
+0&3&-3&x-2y\\
+0&0&0&2x-10y-6z\\
+\end{array}
+\right)
+\]
+Por lo que
+\[F_A=\llaves{\vectrtres{x}{y}{z}}{2x-10y-6z=0}\]
+
+N\'ucleo:
+
+El n\'ucleo es la solución del sistema homog\'eneo $AX=0$:
+\[
+\left(
+\begin{array}{rrr|r}
+2&1&-1&0\\
+1&-1&2&0\\
+1&2&-3&0\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&1&-1&0\\
+0&3&-5&0\\
+0&-3&5&0\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&1&-1&0\\
+0&3&-5&0\\
+0&0&0&0\\
+\end{array}
+\right)
+\]
+
+Por lo que:
+\[Nu(A)=\llaves{\vectrtres{x_1}{x_2}{x_3}}
+{\begin{array}{r}
+2x_1+x_2-x_3=0\\
+3x_2-5x_3=0
+\end{array}}
+\]
+
+Recorrido o Imagen de A:
+
+El recorrido es igual al espacio columna, el espacio generado por las columnas:
+
+\[Rec(A)=Im(A)=C_A\]
+
+\[
+\left(
+\begin{array}{rrr|r}
+2&1&-1&x\\
+1&-1&2&y\\
+1&2&-3&z\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&1&-1&x\\
+0&3&-5&x-2y\\
+0&-3&5&x-2z\\
+\end{array}
+\right)
+\sim
+\left(
+\begin{array}{rrr|r}
+2&1&-1&x\\
+0&3&-5&x-2y\\
+0&0&0&2x-2y-2z\\
+\end{array}
+\right)
+\]
+
+
+Por lo que
+\[C_A=\llaves{\vectrtres{x}{y}{z}}{2x-2y-2z=0}\]
+
+b) Si $c=2a+b$ entonces para que el vector \vectrtres{a}{b}{c} pertenezca a $C_A$ debe cumplirse la condición de exige $C_A$
+\[
+2x-2y-2z=2(a)-2(b)-2(2a+b)=-2a-4b \neq 0
+\]
+
+Por tanto, no pertenece a $Im(A)$.
+
+\newpage
+\begin{prob}
+Sea $V=\mathcal{M}_{3x2}$. Sean $W_1$ el conjunto de las matrices que tienen la primera y la última fila iguales, $W_2$ el conjunto de las matrices que tienen la primera columna igual a su segunda columna.
+~\\Determine:~\\
+\begin{enumerate}
+\item[a)] La intersección entre $W_1, W_2$
+\item[b)] La suma entre $W_1, W_2$
+\item[c)] Una base para los subespacios intersección y suma obtenidos en (a) y (b).
+
+\end{enumerate}
+\end{prob}
+
+\sol
+
+De acuerdo a lo indicado tenemos que
+
+\[W_1=\llaves{
+\left(
+\begin{array}{rr}
+a_{11}&a_{12}\\
+a_{21}&a_{22}\\
+a_{31}&a_{32}
+\end{array}
+\right)
+}{
+\begin{array}{r}
+a_{11}=a_{31}\\
+ a_{12}=a_{32}
+\end{array}}
+\]
+
+
+\[W_2=\llaves{
+\left(
+\begin{array}{rr}
+a_{11}&a_{12}\\
+a_{21}&a_{22}\\
+a_{31}&a_{32}
+\end{array}
+\right)
+}{
+\begin{array}{r}
+a_{11}=a_{12}\\
+a_{21}=a_{22}\\
+a_{31}=a_{32}
+\end{array}
+}
+\]
+Para la intersección tenemos que
+
+\[W_1\cap W_2=\llaves{
+\left(
+\begin{array}{rr}
+a_{11}&a_{12}\\
+a_{21}&a_{22}\\
+a_{31}&a_{32}
+\end{array}
+\right)
+}{\begin{array}{rr}
+a_{11}=a_{12}&a_{11}=a_{31}\\
+a_{21}=a_{22}&a_{12}=a_{32}\\
+a_{31}=a_{32}&
+\end{array}
+}
+\]
+Si colocamos todas estas ecuaciones en un sistema homog\'eneo e igualamos a cero tendr\'iamos
+
+%\[
+%  \begin{blockarray}{rrrrrrrr}
+%&a_{11}&a_{12}&a_{21}&a_{22}&a_{31}&a_{32}&\ \\
+%    \begin{block}{r(rrrrrr|r)}
+%&1    &-1     &0     &0     &0     &0     &0\\
+%&0    &0      &1     &-1    &0     &0     &0\\
+%&0    &0      &0     &0     &1     &-1     &0\\
+%&1    &0      &0     &0     &-1     &0     &0\\
+%&0    &1     &0     &0     &0     &-1     &0\\
+%    \end{block}
+%  \end{blockarray}
+%\]
+
+\[
+\left(
+\begin{array}{rrrrrr|r}
+1    &-1     &0     &0     &0     &0     &0\\
+0    &0      &1     &-1    &0     &0     &0\\
+0    &0      &0     &0     &1     &-1     &0\\
+1    &0      &0     &0     &-1     &0     &0\\
+0    &1     &0     &0     &0     &-1     &0\\
+\end{array}
+\right)
+\sim
+\ldots
+\sim
+\left(
+\begin{array}{rrrrrr|r}
+1    &-1     &0     &0     &0     &0     &0\\
+0    &1     &0     &0     &0     &-1     &0\\
+0    &0      &1     &-1    &0     &0     &0\\
+0    &0      &0     &0     &1     &-1     &0\\
+0    &0      &0     &0     &0     &0     &0\\
+\end{array}
+\right)
+\]
+
+Donde queda claro que había una ecuación redundante, por lo tanto
+
+
+\[W_1\cap W_2=\llaves{
+\left(
+\begin{array}{rr}
+a_{11}&a_{12}\\
+a_{21}&a_{22}\\
+a_{31}&a_{32}
+\end{array}
+\right)
+}{\begin{array}{r}
+a_{11}=a_{32}\\
+a_{21}=a_{22}\\
+a_{12}=a_{32}\\
+a_{31}=a_{32}\\
+\end{array}
+}
+\]
+Para hallar una base:
+\[\left(
+\begin{array}{rr}
+a_{32}&a_{32}\\
+a_{22}&a_{22}\\
+a_{32}&a_{32}
+\end{array}
+\right)
+=a_{22}
+\left(
+\begin{array}{rr}
+0&0\\
+1&1\\
+0&0
+\end{array}
+\right)
++a_{32}
+\left(
+\begin{array}{rr}
+1&1\\
+0&0\\
+1&1
+\end{array}
+\right)
+\]
+
+De esta manera obtenemos una base para la intersección:
+
+
+%
+%\begin{prob}[(1er Examen ESPOL 2012)]
+%Sea $T:\rdos \rightarrow \rdos $ 
+%\end{prob}
+
+\newpage
+\begin{prob}[(3ra Evaluacion Septiembre 2012)]
+(10 puntos)Dado la matriz $A=\left(\begin{matrix}
+1&10&1\\
+2&2&2\\
+-1&-1&k\\
+\end{matrix}\right)$
+, determine los valores de k para que la nulidad sea cero.
+\end{prob}
+
+%
+%\begin{prob}[(3ra Evaluacion Septiembre 2012)]
+%(10 puntos)Sea $V=C[0,1]$ y $fm g \in V$. Demuestre que si el conjunto ${f, g}$ es linealmente dependiente entonces:
+%\[W=\left|\begin{matrix}
+%f(x)&g(x)\\
+%f'(x)&g'(x)\\
+%\end{matrix}\right|=0\]
+%\end{prob}
+%
+
+\newpage
+\begin{prob}[(3ra Evaluacion Febrero 2009)]
+(10 puntos) Califique como V o F:Sea $A=\left(\begin{matrix}
+2a&2b&-c\\
+a&2b&-c\\
+-a&-b&c\\
+\end{matrix}\right)$ con a, b, c diferentes de cero, entonces el rango de A es igual a 3 y la nulidad de A es igual a 0.
+\end{prob}
+
+\newpage
+
+\begin{prob}[(3ra Evaluacion Abril 2011)]
+(10 puntos)Califique como Vo F: Sea $A=\mathcal{M}_{2x3}$. Entonces la nulidad de A es mayor o igual a 3,
+\end{prob}
+
+
+
+\newpage
+\begin{prob}[(1ra Evaluacion Julio 2012)]
+(20 puntos)Sea $V=\ptres$. Considere el conjunto de todos los subespacios de V tal que $$H(a)=gen\llav{1+ax+x^2+x^3, 1+ax+(1-a)x^2+x^3, x+(2a)x^2+2x^3, 1+(1+a)x+(1+a)x^2+3x^3}$$
+a) Determine el valor de $a$ para que $dimH=2$ \\
+b) Halle una base y la dimensión de los subespacios $H(0)\cap H(1)$ y $H(0)+ H(1)$
+\end{prob}
+
+
+\newpage
+
+\newpage
+
+%Megas 2do parcial~\\
+%~\\
+%\begin{prob}[(3ra Evaluacion 14 de febrero 2014)]
+%(10 puntos) 
+%a)Demuestre que $Nu(T)\subseteq Nu(T^{2})$
+%~\\
+%b) Si ademas $\rho(T)=\rho(T^{2})$ , demuestre que $Nu(T)= Nu(T^{2})$
+%\end{prob}
+
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Verdadero o Falso: Sea $L:V->V$ un isomorfismo. Sea $B=\{v_1, v_2, v_3\}$
+% una base del espacio vectorial V. Entonces $B2=\{L(v_1), L(v_2), L(v_3)\}$ es una base de V.
+%\end{prob} 
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(20 puntos) Encuentre de ser posible una matriz diagonal D semejante a:
+%$A=\left(\begin{array}{rrr}
+%-1&2&1\\
+%0&-1&0\\
+%-1&-3&-3\\
+%\end{array}\right)$ 
+%\end{prob} 
+%
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Verdadero o Falso: La matriz $A=\left(\begin{array}{rr}
+%k&0\\
+%1&3\\
+%\end{array}\right)$ es diagonalizable para todo k
+%\end{prob}
+%
+%
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Construya de ser posible un operador lineal L en el espacio vectorial \pdos que cumpla las siguientes condiciones: $L(1+x)=-1-x y E(\lambda=3)=gen{2-x}.$ ¿Es diagonalizable este operador? Justifique su respuesta.
+%\end{prob}
+%
+%
+
+%\begin{prob}[(2da Evaluacion X X)]
+%(15 puntos) Sea ai=(xi,yi) un vector que indica la posición de una partícula sobre un punto al cabo de t periodos, suponga que:
+%$\forall t \in N a_t=\left(\begin{array}{rr}
+%1/2&1\\
+%0&1/3\\
+%\end{array}\right)a_{t-1}$ 
+%Si la posición inicial de la partícula es $a_o=(1,-1)$ Determine:
+%~\\
+%a)La posición de la partícula luego de T=2 periodos
+%B)La posicion luego de t periodos
+%c) La posicion en estado estable, es decir t=inf.
+%
+%\end{prob} 
+%
+
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Sean A,B dos matrices semejantes:
+%~\\a)Muestre que A y B tienen los mismos valores propios
+%~\\b) Tienen los mismos vectores propios? Justifique se respuesta
+%
+%\end{prob} 
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Sea $A=\left(\begin{array}{rrr}
+%1&0&k\\
+%3&3&-3\\
+%1&0&2\\
+%\end{array}\right)$ 
+%~\\a) Determine el valor de k para que $\lambda=5$ sea valor propio de A
+%~\\b) Para k=20 determine si A es diagonalizable
+%\end{prob} 
+%
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Verdadero o Falso:
+%~\\
+%La funcion $f:\pdos x \pdos -> R$, definida por $f(p(x),q(x))=p(1)q(1)$ es un producto interno en \pdos
+%
+%\end{prob} 
+
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(15 puntos) Sea (.,.) el producto interno real estandar en el espacio vectorial \rtres. Sea L un operador linel en \rtres
+%\[L(x,y,x)=(x,x+y,x+y+z)\]
+%Es tambien un producto interno real en \rtres la funcion $(.,.)_{L}$
+%\[(v1,v2)_{L}=(L(v1),L(v2))\]
+%Sea W un subespacio vectorial tal que
+%\[W=gen\{(1,1,1),(-1,0,1)   \}\]
+%a) Encuentre una base y determine el complemento ortogonal de W.
+%~\\b)Expresar el vector (0,1,1) como la suma de un vector de W y un vector de $W*$
+%
+%\end{prob} 
+
+
+%
+%\begin{prob}[(2da Evaluacion X X)]
+%(10 puntos) Aplicando diagonalizacion ortogonal grafique el lugar geométrico $5x^2+4xy+2y^2-24x-12y+29=0$
+%\end{prob} 
+
+\newpage
+\subsubsection{Califique como verdaderas o falsas las siguientes proposiciones}
+\begin{prop}[(1er Examen ESPOL 2012)]
+
+Sea $V$ un espacio vectorial tal que $H\subseteq V$. Si $H$ es un subespacio vectorial de $V$ entonces $H^C$ es subespacio de $V$.
+
+\end{prop}
+
+\sol
+~\\
+Debido a que $H$ es un subespacio vectorial(también es espacio vectorial), el elemento neutro $0_v$ pertenece a H, pero esto implica que $0_v \notin H^C$.
+
+~\\
+Si $0_v \notin H^C$ entonces $H^C$ no puede ser espacio vectorial, luego, tampoco subespacio vectorial de $ V$. 
+$\therefore$ La proposición es FALSA.
+
+~\\
+~\\
+~\\
+\begin{prop}[(1er Examen ESPOL 2009)]
+Si $(V, \oplus, \odot)$ es un espacio vectorial, y sean $H$ y $W$ dos subespacios de V tales que:
+$W=gen\llav{w_1, w_2, w_3}$ y $w_1, w_2  \in H$, entonces es cierto que $dim(H\cap W)=2$
+\end{prop}
+
+\sol
+Considere el siguiente contraejemplo:
+Sea $V={\cal P}_3$ y $W=gen\llav{1, x, x^2}$, y además $H=gen\llav{1, x, x^2}$ (Por supuesto, esto es intencional). Es claro que $1, x \in H$. Pero $dim(W\cap H)=3$.
+$\therefore$ La proposición es FALSA.
+
+\newpage
+\begin{prop}[(1er Examen ESPOL 2007)]
+Si la matriz B se obtiene a partir de la matriz A por medio de un intercambio de filas entonces $\rho(A)=\rho(B)$
+\end{prop}
+
+\sol
+Sean $f_1, f_2, \ldots, f_i, \ldots , f_j, \ldots, f_m$ las filas de A, luego $$F_A=gen\llav{f_1, f_2, \ldots, f_i, \ldots , f_j, \ldots, f_m}$$. Si B se obtiene al intercambiar las filas $f_i, f_j$ entonces, 
+$$F_B=gen\llav{f_1, f_2, \ldots, f_j, \ldots , f_i, \ldots, f_m}$$
+$$F_B=gen\llav{f_1, f_2, \ldots, f_i, \ldots , f_j, \ldots, f_m}$$
+$$F_B=F_A$$
+Por lo tanto, $dimF_A=dim F_B$, esto es lo mismo que $\rho(A)=\rho(B)$.
+$\therefore $ La proposición es VERDADERA.
+~\\
+~\\
+~\\
+
+
+
+\newpage
+
+
+\newpage
+\newpage
+
+
+\begin{prob}[]
+En el espacio vectorial \mdosxdos, determinar si 
+\matrdxd{2&1}{-1&0}
+ es combinación lineal de los vectores 
+\matrdxd{1&0}{-1&0}, \matrdxd{-1&2}{0&1}, \matrdxd{0&1}{2&-1}.
+\end{prob}
+
+\newpage
+
+\begin{prop}[Califique como verdadero o falso]
+Sea $V$ un espacio vectorial. Sean A, B $\subseteq V$, entonces $gen(A\cap B)=gen(A)\cap gen(B)$
+\end{prop}
+\sol
+Por contraejemplo:
+~\\
+Sea $V=\rtres$, además~\\
+\[A=\left\lbrace \vectrtres{1}{0}{0}, \vectrtres{0}{1}{0} \right\rbrace\  ;  B=\left\lbrace \vectrtres{0}{0}{1}, \vectrtres{0}{-1}{0} \right\rbrace\]
+Es evidente que:~\\
+\[H=gen(A)=\llaves{\vectrtres{a}{b}{c}}{c=0}\]
+\[W=gen(B)=\llaves{\vectrtres{a}{b}{c}}{a=0}\]
+
+
+Si calculamos $H\cap W$ tendríamos:
+~\\
+\[H\cap W=\llaves{\vectrtres{a}{b}{c}}{a=0, c=0}\]
+
+Ahora, si calculamos $gen(A \cup B)$, (A y B no tienen elementos en común)~\\
+\[A\cap B=\phi \]
+Con esto se tiene que
+\[gen(A\cap B)=\lbrace n_v \rbrace\]~\\
+Luego
+\[gen(A\cap B)\neq gen(A)\cap gen(B)\]
+
+$\therefore$ La proposición es falsa
+\newpage
+
+
+
+
+
+
+\newpage
+
+%repetido
+%\begin{prob}[]
+%
+%Sea $V=C[0,1]$ y $f, g \in V$. Demuestre que si el conjunto $\{f, g\}$ es linealmente dependiente entonces:
+%\[W=\left|\begin{matrix}
+%f(x)&g(x)\\
+%f'(x)&g'(x)\\
+%\end{matrix}\right|=0\]
+%\end{prob}
+
+\newpage
+
+
+
+\newpage
+
+%
+%\begin{prob}
+%Sea $A$ la matriz de coeficientes del sistema lineal
+%\begin{eqnarray*}
+%2x+y-z=a\\
+%x-y+2z=b\\
+%x+2y-3z=c
+%\end{eqnarray*}
+%\begin{enumerate}
+%\item[a)] Determine el espacio fila, n\'ucleo y recorrido de $A$
+%\item[b)] Si $c=2a+b$, determine si el vector \vectrtres{a}{b}{c} pertenece a $Im(A)$
+%\end{enumerate}
+%\end{prob}
+%
+%\sol
+%
+%De acuerdo al sistema se tiene que
+%\[A=
+%\left(
+%\begin{array}{rrr}
+%2&1&-1\\
+%1&-1&2\\
+%1&2&-3\\
+%\end{array}
+%\right)
+%\]
+%Espacio fila:
+%\[F_A=gen\llav{
+%\vectrtres{2}{1}{-1}, \vectrtres{1}{-1}{2}, \vectrtres{1}{2}{-3}
+%}\]
+%Lo que conduce al sistema
+%
+%\[A=
+%\left(
+%\begin{array}{rrr|r}
+%2&1&1&x\\
+%1&-1&2&y\\
+%-1&2&-3&z\\
+%\end{array}
+%\right)
+%\sim
+%\left(
+%\begin{array}{rrr|r}
+%2&1&1&x\\
+%0&3&-3&x-2y\\
+%0&5&-5&x+2z\\
+%\end{array}
+%\right)
+%\sim
+%\left(
+%\begin{array}{rrr|r}
+%2&1&1&x\\
+%0&3&-3&x-2y\\
+%0&0&0&2x-10y-6z\\
+%\end{array}
+%\right)
+%\]
+%Por lo que
+%\[F_A=\llaves{\vectrtres{x}{y}{z}}{2x-10y-6z=0}\]
+%
+%N\'ucleo:
+%
+%El n\'ucleo es la solución del sistema homog\'eneo $AX=0$:
+%\[
+%\left(
+%\begin{array}{rrr|r}
+%2&1&-1&0\\
+%1&-1&2&0\\
+%1&2&-3&0\\
+%\end{array}
+%\right)
+%\sim
+%\left(
+%\begin{array}{rrr|r}
+%2&1&-1&0\\
+%0&3&-5&0\\
+%0&-3&5&0\\
+%\end{array}
+%\right)
+%\sim
+%\left(
+%\begin{array}{rrr|r}
+%2&1&-1&0\\
+%0&3&-5&0\\
+%0&0&0&0\\
+%\end{array}
+%\right)
+%\]
+%
+%Por lo que:
+%\[Nu(A)=\llaves{\vectrtres{x_1}{x_2}{x_3}}
+%{\begin{array}{r}
+%2x_1+x_2-x_3=0\\
+%3x_2-5x_3=0
+%\end{array}}
+%\]
+%
+%Recorrido o Imagen de A:
+%
+%El recorrido es igual al espacio columna, el espacio generado por las columnas:
+%
+%\[Rec(A)=Im(A)=C_A\]
+%
+%\[
+%\left(
+%\begin{array}{rrr|r}
+%2&1&-1&x\\
+%1&-1&2&y\\
+%1&2&-3&z\\
+%\end{array}
+%\right)
+%\sim
+%\left(
+%\begin{array}{rrr|r}
+%2&1&-1&x\\
+%0&3&-5&x-2y\\
+%0&-3&5&x-2z\\
+%\end{array}
+%\right)
+%\sim
+%\left(
+%\begin{array}{rrr|r}
+%2&1&-1&x\\
+%0&3&-5&x-2y\\
+%0&0&0&2x-2y-2z\\
+%\end{array}
+%\right)
+%\]
+%
+%
+%Por lo que
+%\[C_A=\llaves{\vectrtres{x}{y}{z}}{2x-2y-2z=0}\]
+%
+%b) Si $c=2a+b$ entonces para que el vector \vectrtres{a}{b}{c} pertenezca a $C_A$ debe cumplirse la condición de exige $C_A$
+%\[
+%2x-2y-2z=2(a)-2(b)-2(2a+b)=-2a-4b \neq 0
+%\]
+%
+%Por tanto, no pertenece a $Im(A)$.
+\newpage
+
+%
+%\begin{prob}[]
+%
+%Sean $A\in \mathcal{M}_{mxn}, B \in \mathcal{M}_{nxp}$, demuestre que $C_{AB}\subseteq C_A$
+%
+%\end{prob}
+
+
+
+%
+%\begin{prob}[]
+%
+%Sea $V=\ptres$. Considere el conjunto de todos los subespacios de V tal que $$H(a)=gen\llav{1+ax+x^2+x^3, 1+ax+(1-a)x^2+x^3, x+(2a)x^2+2x^3, 1+(1+a)x+(1+a)x^2+3x^3}$$
+%Halle una base y la dimensión de los subespacios $H(0)\cap H(1)$ y $H(0)+ H(1)$
+%\end{prob}
+
+
+%\begin{prob}
+%
+%Sea $V=\mathcal{M}_{3x2}$. Sean $W_1$ el conjunto de las matrices que tienen la primera y la última fila iguales, $W_2$ el conjunto de las matrices que tienen la primera columna igual a su segunda columna.
+%~\\Determine:~\\
+%\begin{enumerate}
+%\item[a)] La intersección entre $W_1, W_2$
+%\item[b)] La suma entre $W_1, W_2$
+%\item[c)] Una base para los subespacios intersección y suma obtenidos en (a) y (b).
+%
+%\end{enumerate}
+%
+%\end{prob}
+
+
+
+
+
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Combinaciones lineales y subespacios generados}
+%\begin{dfn}
+%Sea $(E, +, \odot)$ un espacio vectorial real y sean $B=\conjvect{v}{n}$ un subconjunto de vectores en $E$. Un vector $v$ en $E$ se dice que es una combinación lineal de los vectores en $B$ si existen escalares $\alpha_1$, $\alpha_2$, $\ldots$ , $\alpha_n$ en \dobler , tales que $v=\av{\alpha_1}{v_1} + \av{\alpha_2}{v_2} + \ldots + \av{\alpha_n}{v_n}$.
+%
+%\end{dfn}
+%
+%\begin{ejemplo}
+%Cualquier vector $(a, b, c)$ en \rtres puede ser expresado como una combinación lineal de los vectores  $(1,0,0)$,$(0,1,0)$ y $(0,0,1)$.
+%
+%\end{ejemplo}
+%
+%\begin{ejemplo}
+%El vector $(4,5,5)$ puede ser expresado como una combinación lineal de los vectores $(1,2,3)$, $(-1,1,4)$ y $(3,3,2)$.
+%\end{ejemplo}
+%
+%\begin{theorem}
+%Sea $(E, +, \odot)$ un espacio vectorial y $A$ un subconjunto finito de $E$. El conjunto de todas las combinaciones lineales de elementos de $A$ es un subespacio de $E$ y se llama subespacio generado por $A$ y se denota por $CL(A)$.
+%\end{theorem}
+%
+%\begin{proof}
+%
+%$\mathbf{0}_v \in CL(A)$ por el comentario anterior.\\
+%Sean $u$, $v$ en $CL(A)$, entonces
+%\begin{align*}
+%u &=\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}\\ 
+%v&=\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n}
+%\end{align*}
+%entonces
+%\begin{align*}
+%u + v &= (\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n}) + (\av{\beta_1}{v_1} + \ldots + \av{\beta_n}{v_n})\\
+%u + v &=(\alpha_1 + \beta_1)\,v_1 + \ldots + (\alpha_n + \beta_n)\, v_n
+%\end{align*}
+%Así
+%$$u + v \in CL(A)$$
+%Sea $u \in CL(A)$ y $\alpha \in \dobler$
+%\begin{align*}
+%\alpha u &= \alpha(\av{\alpha_1}{v_1} + \ldots + \av{\alpha_n}{v_n})\\
+%\alpha u &= (\alpha \alpha_1)v_1 + \ldots + (\alpha \alpha_n)v_n
+%\end{align*}
+%luego $\alpha u \in CL(A)$\\
+%
+%$\therefore$ $CL(A)$ es un subespacio vectorial de $V$. \qedhere \\ %%%%%%%  el \qedhere es el QED
+%
+%\end{proof}
+%El subespacio $CL(A)$ es llamado espacio generado por \conjvect{v}{n}. Si $V = CL(A)$ entonces decimos que $A$ genera al espacio $V$ o que $A$ es conjunto generador de $V$.
+%
+%\begin{ejemplo}
+%Veamos que $A = \llav{(1,2,0),(0,1,-1),(1,1,2)}$ genera a \rtres .\
+%En efecto veamos que cualquier vector $(x,y,z)$ es una combinación lineal de los elementos de $A$. Es decir debemos encontrara escalares $\alpha$, $\beta$ y $\lambda \in \dobler$ tales que $$(x_0, y_0, z_0) = \alpha (1,2,0) + \beta (0,1,-1) + \lambda (1,1,2)$$
+%lo que nos conduce al estudio del sistema 
+%
+%$$\left\{
+%\begin{array}{rcl}
+%\alpha + \lambda &=& x_0\\
+%2 \alpha + \beta + \lambda &=& y_0\\
+%- \beta + 2\alpha &=& z_0 
+%\end{array}
+%\right.$$
+%
+%Donde se obtiene que 
+%\begin{align*}
+%\alpha &= 3x_0 - y_0 -z_0\\
+%\beta &=-4 x_0 +2 y_0 +z_0\\
+%\lambda &= -2 x_0 + y_0 +z_0 
+%\end{align*}
+%
+%\end{ejemplo}
+
+\begin{enumerate}
+\begin{prob}[]
+Demuestre:
+Sea $B=\conjvect{v}{n}$ una base del espacio vectorial $V$, entonces cualquier conjunto de m\'as de n vectores es linealmente dependiente
+\end{prob}
+
+\end{enumerate}

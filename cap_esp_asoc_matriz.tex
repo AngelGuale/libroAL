@@ -1,8 +1,8 @@
-\chapter{Espacios asociados a una matriz}
+\chapter{Espacios Asociados a una Matriz}
 
 \section{Espacio columna}
 \begin{dfn}[Espacio Columna]
-Sea A una matriz $m\times n$, sean $c_1,c_2,\ldots, c_n \in \mathbb{R}^m$ las columnas de la matriz A. Se define el espacio columna de A como el espacio generado por los vectores columnas de A:
+Sea $A$ una matriz $m\times n$, sean $c_1,c_2,\ldots, c_n \in \mathbb{R}^m$ las columnas de la matriz $A$. Se define el espacio columna de $A$ como el espacio generado por los vectores columnas de $A$:
 ~\\
 \[C_A=gen\{c_1, c_2, ..., c_n\}\]
 \end{dfn}
@@ -16,7 +16,7 @@ Sea $A=
 2&2&3\\
 -1&1&2
 \end{array}
-\right)$ una matriz, determinar el espacio columna de A
+\right)$ una matriz, determinar el espacio columna de $A$
  
 De acuerdo a la definición, debemos hallar el espacio generado por los vectores \vectrtres{3}{2}{-1}, \vectrtres{1}{2}{1}, \vectrtres{1}{3}{2} tal como lo vimos secciones anteriores:
 
@@ -58,7 +58,7 @@ c+a-b=0\\
 \newpage
 \section{Espacio fila}
 \begin{dfn}[Espacio Fila]
-Sea A una matriz $m\times n$, sean $f_1,f_2,\ldots, f_m \in \mathbb{R}^n$ las filas de la matriz A. Se define el espacio fila de A como el espacio generado por los vectores filas de A:
+Sea $A$ una matriz $m\times n$, sean $f_1,f_2,\ldots, f_m \in \mathbb{R}^n$ las filas de la matriz $A$. Se define el espacio fila de $A$ como el espacio generado por los vectores filas de $A$:
 
 \[F_A=gen\{f_1, f_2, ..., f_m\}\]
 \end{dfn}
@@ -120,12 +120,32 @@ a-b-c=0\\
 \newpage
 \section{Núcleo de una matriz}
 \begin{dfn}[Núcleo de una matriz]
-Sea A una matriz $m\times n$, el núcleo de A se define como el conjunto dado por:
+Sea $A$ una matriz $m\times n$, el núcleo de $A$ se define como el conjunto dado por:
 ~\\
 \[Nu(A)=\llaves{X \in \rn }{AX=\cerorm}\]
 \end{dfn}
-En palabras más específicas, el núcleo es el conjunto de todas las soluciones del sistema homogéneo de una matriz, es decir, el sistema igualado a ceros.
+En palabras más específicas, el núcleo es el conjunto solución del sistema homogéneo de una matriz, es decir, el sistema igualado a ceros.
 ~\\
+\begin{theorem}
+Sea $A$ una matriz $m \times n$, entonces el núcleo de $A$, es un subespacio vectorial de $\rn$ sobre un campo \dobleK
+\end{theorem}
+\begin{proof}
+    Para esta prueba, utilizaremos la caracterización del subespacio.
+    \begin{itemize}
+        \item el vector neutro de $\rn$ pertenece a $Nu(A)$ ya que es la solución trivial del sistema homogéneo, por lo que $Nu(A)$ es un conjunto no vacío
+        \item $\forall v,w \in Nu(A)$ significa que:
+        $$Av = \mathbf{0}_{\rn}$$
+        $$Aw = \mathbf{0}_{\rn}$$
+        Sumando estas dos ecuaciones, tenemos que:
+        $$Av + Aw = \mathbf{0}_{\rn} \rightarrow A(v+w) = \mathbf{0}_{\rn}$$
+        por lo que el vector $v+w$ también cumple con la condición de estar en $Nu(A)$, por lo que cumple la cerradura bajo la suma
+        \item $\forall v \in Nu(A), \forall \alpha \in \dobleK$, tenemos que:
+        $$Av = \mathbf{0}_{\rn}$$
+        Al multiplicar esta ecuación por $\alpha$:
+        $$\alpha Av = \mathbf{0}_{\rn} \rightarrow A(\alpha v) = \mathbf{0}_{\rn}$$
+        por lo que el vector $\alpha v$ también cumple con la condición de estar en $Nu(A)$, por lo que cumple con la cerradura bajo la multiplicación por escalar
+    \end{itemize}
+\end{proof}
 
 \begin{ejemplo}
 Sea $A=
@@ -178,14 +198,42 @@ Acorde a la definición presentada anteriormente, debemos hallar todas las soluc
 
 Por lo tanto, este sistema posee infinitas soluciones, las cuales serán los vectores del conjunto núcleo de A, el se expresa como:
 %%subespacio r3
-\[Nu(A)=\llaves{\vectrtres{x_1}{x_2}{x_3}}
-{\begin{array}{r}
-3x_1+x_2+x_3=0\\
-4x_2+7x_3=0\\
+\[\svrtres{Nu(A)}{x_1}{x_2}{x_3}{\begin{array}{r}
+    3x_1 + x_2 + x_3 = 0  \\
+    4x_2 + 7x_3 = 0 
 \end{array}}
 \]
 
 \end{ejemplo}
+
+\section{Nulidad de una matriz}
+\begin{dfn}
+Sea $A$ una matriz de orden $m\times n$ y sea $Nu(A)$ un subespacio vectorial de $\rn$, se denomina a la dimensión de $Nu(A)$ como nulidad de $A$ y se denota como $v(A)$ 
+\end{dfn}
+\begin{theorem}[Corolario]
+Al ser $Nu(A)$ un subespacio de $\rn$, entonces $v(A) \leq~n$
+\end{theorem} 
+
+\begin{ejemplo}
+Sea $\svrtres{Nu(A)}{x_1}{x_2}{x_3}{\begin{array}{r}
+    3x_1 + x_2 + x_3 = 0  \\
+    4x_2 + 7x_3 = 0 
+\end{array}}$, determine su dimensión.
+\end{ejemplo}
+\sol 
+Para determinar la dimensión de $Nu(A)$, debemos encontrar una base, para eso tomamos un vector genérico y le reemplazamos las condiciones:
+\begin{align*}
+    4x_2 + 7x_3 = 0 &\rightarrow x_2 = -\frac{7}{4}x_3\\
+    3x_1 + x_2 + x_3 = 0 &\rightarrow x_1 = -\frac{1}{3} x_2 - \frac{1}{3}x_3\\ &\rightarrow x_1 = -\frac{1}{3}\left(-\frac{7}{4}x_3 \right) - \frac{1}{3}x_3\\
+    &\rightarrow x_1 = \frac{1}{4}x_3
+\end{align*}
+al reemplazar, obtenemos:
+\[ \vectrtres{x_1}{x_2}{x_3} = \vectrtres{\frac{1}{4}x_3}{-\frac{7}{4}x_3}{x_3}  = x_3\vectrtres{\frac{1}{4}}{-\frac{7}{4}}{1}\]
+entonces, una base para $Nu(A)$ es :
+$$B_{Nu(A)} = \llav{\vectrtres{1}{-7}{4}}$$
+Como hay un vector en la base, se puede concluir que $v(A) = 1$
+
+
 
 \newpage
 \section{Imagen de una matriz}

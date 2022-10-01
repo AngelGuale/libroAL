@@ -81,7 +81,7 @@ Un sistema de ecuaciones lineales es un conjunto de ecuaciones lineales que debe
     \alpha_{11} x_1&+&\alpha_{12} x_2&+&\hdots&+&\alpha_{1n} x_n&=&\beta_1\\
     \alpha_{21} x_1&+&\alpha_{22} x_2&+&\hdots&+&\alpha_{2n} x_n&=&\beta_2\\
     \alpha_{31} x_1&+&\alpha_{32} x_2&+&\hdots&+&\alpha_{3n} x_n&=&\beta_3\\
-    \vdots&&\vdots&&\cdots&&\vdots&&\vdots\\
+    \vdots&\vdots&\vdots&\vdots&\cdots&\vdots&\vdots&\vdots&\vdots\\
     \alpha_{m1} x_1&+&\alpha_{m2} x_2&+&\hdots&+&\alpha_{mn} x_n&=&\beta_m\\
 \end{array}
 \end{align*} 
@@ -108,7 +108,7 @@ Un sistema de ecuaciones lineales puede representarse por medio de la ecuación 
     \alpha_{11} x_1&+&\alpha_{12} x_2&+&\hdots&+&\alpha_{1n} x_n&=&\beta_1\\
     \alpha_{21} x_1&+&\alpha_{22} x_2&+&\hdots&+&\alpha_{2n} x_n&=&\beta_2\\
     \alpha_{31} x_1&+&\alpha_{32} x_2&+&\hdots&+&\alpha_{3n} x_n&=&\beta_3\\
-    \vdots&&\vdots&&\cdots&&\vdots&&\vdots\\
+    \vdots&\vdots&\vdots&\vdots&\cdots&\vdots&\vdots&\vdots&\vdots\\
     \alpha_{m1} x_1&+&\alpha_{m2} x_2&+&\hdots&+&\alpha_{mn} x_n&=&\beta_m\\
 \end{array}
 \end{align*} 
@@ -165,22 +165,12 @@ El sistema
 Es un sistema de ecuaciones lineales inconsistente 
 \end{ejemplo}
 Podemos comprobar que el sistema es inconsistente utilizando el método de Gauss, al representar al sistema por medio de una matriz aumentada
-\begin{align*}
-\left(
-\begin{array}{rr|r}
-2& -1 & 2\\
-4& -2 & 1\\
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rr|r}
-2& -1 & 2\\
-0& 0 & -3\\
-\end{array}
-\right)
-\end{align*}
-La última ecuación del sistema reducido nos indica una ecuación $0x+0y=-3$, es decir, sin importar el valor de $x$ e $y$, la ecuación resulta ser $0=-3$ lo cual es una inconsistencia. De esto se concluye que el sistema no posee solución.~\\
+
+$$\reducir{rr|r}{2& -1 & 2\\4& -2 & 1\\}
+\underrightarrow{2f_1 - f_2}
+\reducir{rr|r}{2& -1 & 2\\0& 0 & 3\\}$$
+
+La última ecuación del sistema reducido nos indica una ecuación $0x+0y=3$, es decir, sin importar el valor de $x$ e $y$, la ecuación resulta ser $0=3$ lo cual es una inconsistencia. De esto se concluye que el sistema no posee solución.~\\
 
 De manera general se puede afirmar que si al reducir completamente el sistema por Gauss se obtiene una fila de la matriz de coeficientes llena de ceros y su correspondiente valor independiente distinto de cero, entonces el sistema es inconsistente.
 \begin{ejemplo}
@@ -199,25 +189,30 @@ La representación en matriz aumentada del sistema anterior es
 }
 \end{align*}
 Y al reducir tendremos
+
 \begin{align*}
 \reducir{rrr|r}{
 2&-1&3&2\\
 1&2&1&3\\
 1&-3&2&1\\
 }
-\sim
+\underrightarrow{\begin{array}{c}
+    f_1 - 2f_2\\
+    f_1 - 2f_3
+    \end{array}}
 \reducir{rrr|r}{
 2&-1&3&2\\
 0&-5&1&-4\\
 0&5&-1&0\\
 }
-\sim
+\underrightarrow{f_2 + f_3}
 \reducir{rrr|r}{
 2&-1&3&2\\
 0&-5&1&-4\\
 0&0&0&-4\\
 }
 \end{align*}
+
 En donde la última fila del sistema reducido muestra ceros en todos los coeficientes de la matriz del sistema y un número distinto de cero (en este caso -4) como término independiente, esto nos indica que el sistema de ecuaciones lineales es inconsistente.
 
 \end{ejemplo}
@@ -236,7 +231,8 @@ Este sistema de ecuaciones posee exactamente una solución, la dupla (3, -1). Po
 \reducir{rr|r}{
 2&-3&9\\
 1&1&2\\
-}\sim
+}
+\underrightarrow{f_1-2f_2}
 \reducir{rr|r}{
 2&-3&9\\
 0&-5&5\\
@@ -262,12 +258,16 @@ Por el método de Gauss tenemos:
 4&-1&7\\
 1&1&3\\
 2&-3&1\\
-}\sim
+}
+\underrightarrow{\begin{array}{c}
+    f_1 - 4f_2  \\
+    f_1 - 2f_3
+\end{array}}
 \reducir{rr|r}{
 4&-1&7\\
 0&-5&-5\\
 0&5&5\\
-}\sim
+}\underrightarrow{f_2 + f_3}
 \reducir{rr|r}{
 4&-1&7\\
 0&-5&-5\\
@@ -294,12 +294,17 @@ Si resolvemos este sistema por Gauss tendremos
 3&-4&1&1\\
 1&-1&2&4\\
 2&-3&-1&-3\\
-}\sim
+}
+\underrightarrow{\begin{array}{c}
+    f_1 - 3f_2\\
+    2f_1 - 3f_3
+\end{array}}
 \reducir{rrr|r}{
 3&-4&1&1\\
 0&-1&-5&-11\\
 0&1&5&11\\
-}\sim
+}
+\underrightarrow{f_2 + f_3}
 \reducir{rrr|r}{
 3&-4&1&1\\
 0&-1&-5&-11\\

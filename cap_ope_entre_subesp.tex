@@ -1,0 +1,189 @@
+\chapter{Operaciones entre Subespacios Vectoriales}
+Al igual que los conjuntos, los espacios adoptan operaciones que se pueden
+realizar entre ellos, la intersección y la unión, y además, se define una nueva
+operación para subespacios, la suma de subespacios.
+\section{Intersección de Subespacios Vectoriales}
+\begin{dfn}
+Sean $H$ y $W$ dos subespacios vectoriales de un espacio vectorial $V$. Se define la intersección de $H$ y $W$ como:
+$$H \cap W = \left\{ v \in V | v \in H \land v \in W \right\}$$
+\end{dfn}
+
+\begin{theorem}
+Sean $H$ y $W$ dos subespacios vectoriales de un espacio vectorial $V$, entonces $H \cap W$ es un subespacio vectorial de $V$
+\end{theorem}
+\begin{proof}
+Para demostrar que $H \cap W$ es un subespacio vectorial de $V$, utilizaremos el teorema de caracterización de subespacios
+~\\ \begin{enumerate}[i.]
+\item Como $H$ y $W$ son subespacios de $V$, el cero vector de $V$ pertenece a ambos subespacios, por lo tanto también pertenece a la intersección. Probando así que $H \cap W$ es no vacío.
+\item Si $v_1$ y $v_2$ pertenecen a $H \cap W$ entonces ambos pertenecen a $H$ y $W$. Debido a que $H$ es un subespacio vectorial, entonces $v_1 \oplus v_2$ pertenece a $H$. Por el mismo argumento para $W$, se tiene que $v_1\oplus v_2$ pertenece a $W$. Por lo tanto $v_1\oplus v_2$ pertenece a $H\cap W$.
+\item Si $v$ pertenece a  $H \cap W$, entonces  pertenece a $H$ y a $W$.  Considere $\alpha \in \dobleK$,  debido a que $H$ y $W$ son subespacios vectoriales entonces $\alpha \odot v$ pertenece a $H$ y $\alpha \odot v$ pertenece a $W$, es decir $\alpha \odot v$ pertenece a $H \cap W$.  
+\end{enumerate}
+\end{proof}
+
+\begin{ejemplo}
+sean $H = gen\llav{\vectrtres{1}{1}{0},\vectrtres{-2}{0}{1}}$ y \svrtres{W}{a}{b}{c}{\begin{array}{c}
+    b = 3c\\
+    a -c =0
+\end{array}}
+dos subespacios vectoriales de $\rtres$. Determine el espacio $H \cap W$
+\end{ejemplo}
+
+\begin{sol}
+Para determinar la intersección de subespacios necesitamos las condiciones en forma de ecuaciones de $H$ y $W$. Las condiciones de $W$ ya las tenemos, por lo que necesitamos las de $H$, por lo que debemos encontrar el espacio generado por esos 2 vectores, entonces:
+
+$$\vectrtres{a}{b}{c} = \alpha_1 \vectrtres{1}{1}{0}+ \alpha_2 \vectrtres{-2}{0}{1}$$
+
+Por lo que obtenemos lo siguiente:
+
+$$\reducir{rr|l}{1&-2&a\\1&0&b\\0&1&c} 
+\underrightarrow{f_1 - f_2}
+\reducir{rr|l}{1&-2&a\\0&-2&a-b\\0&1&c}
+\underrightarrow{f_2 + 2f_3} 
+\reducir{rr|l}{1&-2&a\\0&-2&a-b\\0&0&a-b+2c}$$
+
+Por lo tanto:
+$$\svrtres{H}{a}{b}{c}{a-b+2c=0}$$
+
+Luego, colocamos las condiciones de ambos subespacios en un mismo sistema, tenemos que:
+$$\svrtres{H \cap W}{a}{b}{c}{\begin{array}{c}
+    a-b+2c=0  \\
+    b=3c\\
+    a-c=0
+\end{array}}$$
+
+Al final, reducimos las condiciones y las parametrizamos
+
+$$\reducir{rrr|c}{1&-1&2&0\\0&1&-3&0\\1&0&-1&0}
+\underrightarrow{f_1 - f_3}
+\reducir{rrr|c}{1&-1&2&0\\0&1&-3&0\\0&-1&3&0}
+\underrightarrow{f_2 + f_3}
+\reducir{rrr|c}{1&-1&2&0\\0&1&-3&0\\0&0&0&0}$$
+
+De la última fila válida obtenemos que: $b - 3c = 0$, entonces $b = 3c$\\
+De la primera fila obtenemos que: $a-b+2c = 0$, con lo obtenido anteriormente: $a-3c +2c = 0 \longrightarrow a-c = 0 \longrightarrow a= c$\\
+
+De donde concluimos que las condiciones de $H \cap W$ son:
+
+$$\svrtres{H \cap W}{a}{b}{c}{\begin{array}{c}
+    b=3c\\
+    a=c
+\end{array}}$$
+\end{sol}
+
+\newpage
+\section{Suma de Subespacios Vectoriales}
+\begin{dfn}
+Sean $H$ y $W$ dos subespacios vectoriales de un espacio vectorial $V$, se define la suma de subespacios, denotada por $H+W$ como el conjunto tal que:
+$$H+W = \llav{v \in V | v = h\oplus w ; h \in H \land w \in W}$$
+\end{dfn}
+
+es decir, la suma de dos subespacios es aquel conjunto que está formado por todos los vectores que se pueden escribir como la suma entre un vector de $H$ y un vector de $W$
+
+\begin{theorem}
+Sean $H$ y $W$ dos subespacios vectoriales de un espacio vectorial $V$ sobre un campo $\dobleK$, entonces $H+W$ es un subespacio vectorial de $V$
+\end{theorem}
+\begin{proof}
+Para esta demostración utilizaremos, de nuevo, el teorema de caracterización de un subespacio
+~\\\begin{enumerate}[i.]
+    \item Probaremos que $H+W$ no es vacío. Dado que $n_v = n_v \oplus n_v$, se puede expresar como la suma de un vector de $H$ y un vector de $W$ donde $n_v \in H$ y $n_v \in W$ ya que son subespacios de $V$, entonces $n_v \in H+W$, por lo tanto es no vacío.
+    
+    \item Sean $v_1, v_2 \in H+W$, entonces existen $h_1 , h_2 \in H$ y $w_1 , w_2 \in W$ tales que:
+    $$u_1 = h_1 \oplus w_1$$ 
+    $$u_2 = h_2 \oplus w_2$$
+    Por tanto, el vector $u_1 \oplus u_2 = (h_1 \oplus h_2) \oplus (h_2 \oplus w_2) = (h_1 \oplus h_2) \oplus (w_1 \oplus w_2)$ se puede expresar como la suma de un vector de $H$ y un vector de $W$, donde por la cerradura del subespacio de $H$, el vector $h_1 \oplus h_2 \in H$ y por la cerradura del subespacio de $W$, el vector $w_1 \oplus w_2 \in W$. Se concluye que $u_1 \oplus u_2 \in H+W$.
+    
+    \item Sean $\alpha \in \dobleK, u \in H+W$, entonces existen vectores $h \in H , w \in W$ tales que $u = h\oplus w$. Luego, el vector $\alpha \odot u = \alpha\odot(h\oplus w) = (\alpha \odot h) \oplus (\alpha \odot w)$ se puede escribir como la suma de un vector de $H$ y un vector de $W$, donde $\alpha \odot h \in H$ y $\alpha \odot w \in W$.
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}
+Sean $H$ y $W$ dos subespacios vectoriales de un espacio vectorial $V$, tales que $H = gen(S_1)$ y $W = gen(S_2)$, entonces $H+W = gen(S_1 \cup S_2)$.
+\end{theorem}
+\begin{proof}
+Para todo elemento $u \in H+W$, se escribe como la suma de un vector de $H$ y un vector de $W, u = h \oplus w$. Sea $S_1 = \conjvect{h}{k}$ el conjunto generador de $H$ y $S_2 = \conjvect{w}{m}$ el conjunto generador de $W$, entonces es cierto que:
+$$h = (\alpha_1 \odot h_1) \oplus (\alpha_2 \odot h_2) \oplus \hdots \oplus (\alpha_k \odot h_k)$$
+$$w = (\beta_1 \odot w_1) \oplus (\beta_2 \odot w_2) \oplus \hdots \oplus (\beta_m \odot w_m)$$
+Por tanto $u$ se puede escribir como $u = (\alpha_1 \odot h_1) \oplus (\alpha_2 \odot h_2) \oplus \hdots \oplus (\alpha_k \odot h_k) \oplus (\beta_1 \odot w_1) \oplus (\beta_2 \odot w_2) \oplus \hdots \oplus (\beta_m \odot w_m)$, es decir $u$ es combinación lineal del conjunto $\llav{h_1, h_2, \hdots, h_k, w_1, w_2, \hdots, w_m}$ que es, precisamente, la unión de $S_1$ y $S_2$. Luego $H+W = gen(S_1 \cup S_2)$
+\end{proof}
+
+\begin{ejemplo}
+Sean \svrtres{H}{a}{b}{c}{a = b -2c}, \svrtres{W}{a}{b}{c}{\begin{array}{c}
+    b = 2c\\
+    a-c = 0
+\end{array}} dos subespacios vectoriales. Determine el subespacio $H+W$
+\end{ejemplo}
+\begin{sol}
+Para determinar la suma de subespacios necesitamos los conjuntos generadores de $H$ y $W$, ya que toda base es un conjunto generador, entonces necesitamos una base de $H$ y $W$.
+
+~\\Para $H$:
+$$\vectrtres{a}{b}{c} = \vectrtrescent{b-2c}{b}{c} = b\vectrtres{1}{1}{0} + c\vectrtres{-2}{0}{1}$$
+$$B_H = \llav{\vectrtres{1}{1}{0},\vectrtres{-2}{0}{1}}$$
+Para $W$:
+$$\vectrtres{a}{b}{c} = \vectrtrescent{c}{2c}{c} = c\vectrtres{1}{2}{1}$$
+$$B_W = \llav{\vectrtres{1}{2}{1}}$$
+
+Luego, por le teorema del generador de la suma, tenemos que:
+$$H+W = gen\llav{\vectrtres{1}{1}{0},\vectrtres{-2}{0}{1},\vectrtres{1}{2}{1}}$$
+
+Para hallar las condiciones en ecuaciones de $H+W$, procedemos a hallar el espacio generado por ese conjunto.
+
+$$\reducir{rrr|l}{1&-2&1&a\\1&0&2&b\\0&1&1&c} 
+\underrightarrow{f_1 - f_2}
+\reducir{rrr|l}{1&-2&1&a\\0&-2&-1&a-b\\0&1&1&c} 
+\underrightarrow{f_2 + 2f_3}
+\reducir{rrr|l}{1&-2&1&a\\0&-2&-1&a-b\\0&0&1&a-b+2c}$$
+
+~\\De donde concluimos que no hay condiciones sobre $a,b,c$; es decir $H+W = \rtres$
+\end{sol}
+
+\newpage
+
+\section{Unión de Espacios Vectoriales}
+La intersección y la suma de subespacios vectoriales siempre da como resultado otro subespacio, sin embargo esto no es así con la unión. No siempre la unión de subespacios es un subespacio, solo en ciertos casos, descrito por el siguiente teorema.
+\begin{theorem}
+Sean $H$ y $W$ dos subespacios vectoriales de un espacio vectorial $V$, se cumple que: $H \cup W$ es un subespacio vectorial si y solo si $H \subseteq W \ \lor \ W \subseteq H$
+\end{theorem}
+
+\begin{ejemplo}
+Sean $H = gen\llav{\vectrtres{1}{1}{0},\vectrtres{-2}{0}{1}}, \svrtres{W}{a}{b}{c}{\begin{array}{c}
+    b = 3c\\
+    a-c=0
+\end{array}}$ dos subespacios vectoriales. Determine si el conjunto $H \cup W$ es un subespacio vectorial de $V$
+\end{ejemplo}
+\begin{sol}
+Para resolver esto, hacemos uso del teorema de unión de subespacios. Necesitaremos tanto las condiciones de $H$ y $W$, como las bases de $H$ y $W$.
+$$\text{Condiciones de }H: a-b+2c = 0$$
+$$\text{Condiciones de }W: \begin{array}{c}
+    b = 3c\\
+    a-c=0
+\end{array}$$
+
+$$\text{Base de }H: B_H = \llav{\vectrtres{1}{1}{0},\vectrtres{-2}{0}{1}}$$
+$$\text{Base de }W: B_W = \llav{\vectrtres{1}{2}{1}}$$
+
+Entonces para probar que $H$ está contenido en $W$, debemos comprobar que todos los vectores de la base de $H$ cumplan todas las condiciones de $W$
+
+$$\text{Condiciones de }W: \begin{array}{c}
+    b = 3c\\
+    a-c=0
+\end{array}$$
+$$\text{Base de }H: B_H = \llav{\vectrtres{1}{1}{0},\vectrtres{-2}{0}{1}}$$
+
+Para el primer vector:
+$$b = 3c \longrightarrow 1 \neq 3(0)$$
+Basta que falle una ecuación para afirmar que $H$ no está contenido en $W$. Es decir, $H \nsubseteq W$, sin embargo aún no podemos afirmar que la unión no es subespacio, antes debemos comprobar también si sucede lo contrario. Para probar que $W$ está contenido en $H$, debemos comprobar que todos los vectores de la base de $W$ cumplan todas las condiciones de $H$.
+
+$$\text{Condiciones de }H: a-b+2c = 0$$
+$$\text{Base de }W: B_W = \llav{\vectrtres{1}{2}{1}}$$
+
+Para el único vector que hay, tenemos que:
+$$a -b +2c=0 \longrightarrow 1-3 +2(1)=0$$
+
+Lo cual es cierto, es decir se cumple que: 
+$$W \subseteq H$$
+Por lo que se concluye que $H \cup W$ es un subespacio vectorial.
+\end{sol}
+
+
+
+

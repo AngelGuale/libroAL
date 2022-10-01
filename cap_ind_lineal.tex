@@ -1,64 +1,52 @@
 %independencia lineal
-\chapter{Conjuntos linealmente independientes}
+\chapter{Conjuntos Linealmente Independientes}
 
 \section{Dependencia e Independencia Lineal}
 \begin{dfn}[Independencia Lineal]
-Sean \kvect{v}{k} vectores de un espacio vectorial $V$. El conjunto $S=\conjvect{v}{k}$\ es linealmente independiente si y s\'olo si la \'UNICA manera de obtener al vector neutro de V como combinaci\'on lineal de los vectores de S es que todos los escalares de la combinaci\'on lineal sean cero.
+Sean \kvect{v}{k} vectores de un espacio vectorial $V$. El conjunto $S=\conjvect{v}{k}$\ es linealmente independiente si y sólo si la ÚNICA manera de obtener al vector neutro de V como combinación lineal de los vectores de S es que todos los escalares de la combinación lineal sean cero.
 \[\alpha_1 v_1+
 \alpha_2 v_2+
 \ldots+
 \alpha_k v_k =
 n_v
 \Rightarrow\ 
-\forall i \leq k
+\forall i \leq k;
 \ \alpha_i=0
 \] 
 \end{dfn}
 \begin{dfn}[Dependencia Lineal]
-Sean \kvect{v}{k} vectores de un espacio vectorial $V$. El conjunto $S=\conjvect{v}{k}$\ es linealmente dependiente si y s\'olo si se puede obtener al vector neutro de V como combinaci\'on lineal de los vectores de S, y existe un escalar de la combinaci\'on lineal diferente de cero.
+Sean \kvect{v}{k} vectores de un espacio vectorial $V$. El conjunto $S=\conjvect{v}{k}$\ es linealmente dependiente si y sólo si se puede obtener al vector neutro de V como combinación lineal de los vectores de S, y existe un escalar de la combinación lineal diferente de cero.
 \[\alpha_1 v_1+
 \alpha_2 v_2+
 \ldots+
 \alpha_k v_k =
 n_v
 \wedge\ 
-\exists i \leq k
+\exists i \leq k;
 \ \alpha_i\neq 0
 \] 
 \end{dfn}
 En otras palabras, un conjunto es linealmente dependiente si y solo si NO  es linealmente independiente.
 
 ~\\
-Esta es, quiz\'as, una de las definiciones m\'as confusas o menos inteligibles(pero a la vez una de las m\'as importantes), as\'i que confiamos aclararla en los ejemplos siguientes.
+Esta es, quiz\'as, una de las definiciones más confusas o menos inteligibles(pero a la vez una de las más importantes), as\'i que confiamos aclararla en los ejemplos siguientes.
 ~\\
 \begin{ejemplo}
 Determine si el conjunto de vectores de \rdos\  es linealmente independiente $\left\{
-\vectrdos{1}{2}, \vectrdos{2}{-1}\right\}$.
+\vectrdos{1}{2}, \vectrdos{1}{-1}\right\}$.
 \end{ejemplo}
 
 %\sol
-Para determinar si son linealmente independientes analicemos los escalares al hacer la combinaci\'on lineal igualada al neutro de \rdos
+Para determinar si son linealmente independientes analicemos los escalares al hacer la combinación lineal igualada al neutro de \rdos
 \[c_1\vectrdos{1}{2}+
 c_2\vectrdos{1}{-1}=
 \vectrdos{0}{0}\]
 Esto deriva en un sistema de ecuaciones
-\[
-\left(
-\begin{array}{rr|r}
-1&1&0\\
-2&-1&0
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rr|r}
-1&1&0\\
-0&-3&0
-\end{array}
-\right)
-\]
-La soluci\'on de este sistema es \'unica $c_1=0,\ c_2=0$. El conjunto $\left\{
-\vectrdos{1}{2}, \vectrdos{2}{-1}\right\}$ es linealmente independiente.
+$$\reducir{rr|c}{1&1&0\\2&-1&0}
+\underrightarrow{2f_1 - f_2}
+\reducir{rr|c}{1&1&0\\0&3&0}$$
+La solución de este sistema es única $c_1=0,\ c_2=0$. El conjunto $\left\{
+\vectrdos{1}{2}, \vectrdos{1}{-1}\right\}$ es linealmente independiente.
 
 
 \begin{ejemplo}
@@ -67,61 +55,43 @@ Determine si el siguiente conjunto de vectores de \rtres\ es linealmente indepen
 }
 \end{ejemplo}
 %\sol
-Para determinar si el conjunto es linealmente independiente analicemos los escalares al hacer la combinaci\'on lineal igualada al neutro de \rtres.
+Para determinar si el conjunto es linealmente independiente analicemos los escalares al hacer la combinación lineal igualada al neutro de \rtres.
 \[
 a_1\vectrtres{2}{4}{1}+
 a_2\vectrtres{-1}{2}{3}+
 a_3\vectrtres{3}{2}{-2}=
 \vectrtres{0}{0}{0}
 \]
-Lo que deriva en un sistema homog\'eneo (Un sistema homog\'eneo es un sistema que est\'a igualado todo a cero).
+Lo que deriva en un sistema homogéneo (Un sistema homogéneo es un sistema que está igualado todo a cero).
+$$\reducir{rrr|r}{2&-1&3&0\\4&2&2&0\\1&3&-2&0}
+\underrightarrow{\begin{array}{r}
+    -2f_1 + f_2\\
+    f_1 - 2f_3
+\end{array}}
+\reducir{rrr|r}{2&-1&3&0\\0&4&-4&0\\0&-7&7&0}
+\underrightarrow{7f_2 + 4f_3}
+\reducir{rrr|r}{2&-1&3&0\\0&4&-4&0\\0&0&0&0}$$
 
-\[
-\left(
-\begin{array}{rrr|r}
-2&-1&3&0\\
-4&2&2&0\\
-1&3&-2&0
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-2&-1&3&0\\
-0&4&-4&0\\
-0&-7&7&0
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-2&-1&3&0\\
-0&4&-4&0\\
-0&0&0&0
-\end{array}
-\right)
-\]
-
-\obs\ Este es el "Tal\'on de Aquiles" de muchos; es claro que el sistema tiene infinitas soluciones ya que la \'ultima fila se elimin\'o y nos qued\'o un sistema con menos ecuaciones que inc\'ognitas, esto indica claramente que existen infinitas maneras de obtener al vectores neutro como combinaci\'on lineal de esos tres vectores, analice lo sigiuente:
+\obs\ Este es el "Talón de Aquiles" de muchos; es claro que el sistema tiene infinitas soluciones ya que la última fila se eliminó y nos quedó un sistema con menos ecuaciones que incógnitas, esto indica claramente que existen infinitas maneras de obtener al vectores neutro como combinación lineal de esos tres vectores, analice lo siguiente:
 
 ~\\
 \textsl{Razonamiento Incorrecto: 
 Como tiene infinitas soluciones con $a_1=0, a_2=0, a_3=0$\ se obtiene al vector neutro, por lo tanto el conjunto de vectores es linealmente independiente}
 
 ~\\
-Lo anterior es err\'oneo en el sentido de afirmar que los vectores son linealmente independientes,
-vayamos a la definici\'on de independencia lineal para notar que lo esencial de la definici\'on est\'a en que DEBE SER LA \'UNICA FORMA DE OBTENER AL NEUTRO CUANDO TODOS LOS ESCALARES SEAN IGUALES A CERO.
+Lo anterior es erróneo en el sentido de afirmar que los vectores son linealmente independientes,
+vayamos a la definición de independencia lineal para notar que lo esencial de la definición está en que DEBE SER LA ÚNICA FORMA DE OBTENER AL NEUTRO CUANDO TODOS LOS ESCALARES SEAN IGUALES A CERO.
 
 ~\\
-En el ejemplo anterior no es la \'unica de obtenerlo, hay infinitas, por ejemplo con $a_1=-1, a_2=1, a_3=1$
+En el ejemplo anterior no es la única de obtenerlo, hay infinitas, por ejemplo con $a_1=-1, a_2=1, a_3=1$
 \[-1\cdot\vectrtres{2}{4}{2}+
 1\cdot\vectrtres{-1}{2}{-2}+
 1\cdot\vectrtres{3}{2}{-2}=
 \vectrtres{0}{0}{0}
 \]
-No es la \'unica manera cuando todos los escalares son ceros. Luego, el conjunto NO es linealmente independiente, es decir es linealmente dependiente.
-\section{?`No hay una manera m\'as sencilla?: Reducci\'on por filas}
-Es posible determinar si un conjunto es linealmente independiente coloc\'andolos como filas de una matriz y reduciendo la matriz por el m\'etodo de reducci\'on por filas de Gauss.
+No es la única manera cuando todos los escalares son ceros. Luego, el conjunto NO es linealmente independiente, es decir es linealmente dependiente.
+\section{?`No hay una manera más sencilla?: Reducción por filas}
+Es posible determinar si un conjunto es linealmente independiente colocándolos como filas de una matriz y reduciendo la matriz por el método de Reducción por filas de Gauss.
 
 ~\\
 Veamos los siguientes ejemplos:
@@ -134,45 +104,40 @@ Determine si el subconjunto de \rtres, $S=\llav{\vectrtres{4}{2}{3},\vectrtres{1
 
 %\sol
 
-Empleamos el m\'etodo de reducci\'on por filas de Gauss:
+Empleamos el método de Reducción por filas de Gauss:
 ~\\
-Colocamos los vectores como filas de una matriz las cuales vamos a reducir por el m\'etodo de Gauss
+Colocamos los vectores como filas de una matriz las cuales vamos a reducir por el método de Gauss
 
-\[\left(
-\begin{array}{rrr}
+\[\reducir{rrr}{
 4&2&3\\
 1&3&4\\
 2&-4&-5
-\end{array}
-\right)\]
-
+}\]
+Reduciendo:
 \[
-\left(
-\begin{array}{rrr}
+\reducir{rrr}{
 4&2&3\\
 1&3&4\\
 2&-4&-5
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr}
+}
+\underrightarrow{\begin{array}{c}
+    f_1 - 4f_2\\
+    f_1 - 2f_3 
+\end{array}}
+\reducir{rrr}{
 4&2&3\\
 0&-10&-13\\
 0&10&13
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr}
+}
+\underrightarrow{f_2 - f_3}
+\reducir{rrr}{
 4&2&3\\
 0&-10&-13\\
 0&0&0
-\end{array}
-\right)
+}
 \]
 
-Debido a que una de las filas, al emplear la reducci\'on, resultó llena de ceros, entonces el vector correspondiente a esa fila $\vectrtres{2}{-4}{-5}$ es combinaci\'on lineal de los vectores anteriores.
+Debido a que una de las filas, al emplear la Reducción, resultó llena de ceros, entonces el vector correspondiente a esa fila $\vectrtres{2}{-4}{-5}$ es combinación lineal de los vectores anteriores.
 El conjunto es linealmente dependiente.
 
 
@@ -186,34 +151,28 @@ $T=\llav{2+x^3, x^2+4x^3, 1+3x+x^2}$
 De nuevo, debemos colocarlos a cada vector como una fila de una matriz, respetando el orden de los coeficientes:
 
 \[
-\left(
-\begin{array}{rrrr}
+\reducir{rrrr}{
 2&0&0&1\\
 0&0&1&4\\
 1&3&1&0
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrrr}
+}
+\underrightarrow{f_1 - 2f_3}
+\reducir{rrrr}{
 2&0&0&1\\
 0&0&1&4\\
 0&-6&-2&1
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrrr}
+}
+\underrightarrow{f_2 \longleftrightarrow f_3}
+\reducir{rrrr}{
 2&0&0&1\\
 0&-6&-2&1\\
 0&0&1&4
-\end{array}
-\right)
+}
 \]
 
 Ya con la matriz totalmente reducida, vemos que ninguna fila se anul\'o, por lo tanto el conjunto T es linealmente independiente
 \section{El criterio del determinante}
-A\'un se puede mejorar el m\'etodo de reducción por filas de Gauss, si en la matriz al colocar los vectores como filas(en realidad, aqu\'i funciona inclusive si los coloca como columnas), resulta una matriz cuadrada, entonces es posible determinar la independecia lineal del conjunto por medio del determinante de la matriz
+A\'un se puede mejorar el método de reducción por filas de Gauss, si en la matriz al colocar los vectores como filas(en realidad, aqu\'i funciona inclusive si los coloca como columnas), resulta una matriz cuadrada, entonces es posible determinar la independecia lineal del conjunto por medio del determinante de la matriz
 
 \subsubsection{El criterio del determinante}
 \begin{theorem}
@@ -241,7 +200,7 @@ Al colocar los vectores como filas, se forma la matriz
 \end{array}
 \right)
 \]
-Ya que la matriz es CUADRADA entonces es posible aplicar el criterio del determinate, asi podemos determinar la independencia lineal:
+Ya que la matriz es CUADRADA entonces es posible aplicar el criterio del determinante, así podemos determinar la independencia lineal:
 \[det(A)=1(1-0)-(-1)(1-0)=1+1=2\neq 0\]
 Debido a que el determinante de la matriz es diferente de cero entonces el conjunto S es linealmente independiente.
 ~\\
@@ -256,18 +215,18 @@ Debido a que el determinante de la matriz es diferente de cero entonces el conju
 \item
 Determine el valor de $k$ para que el conjunto S sea linealmente dependiente, donde $$S=\left\{\matrdxd{-1&2}{1&2}, \matrdxd{3&-1}{-2&0}, \matrdxd{-2&0}{3&1},\matrdxd{2k&1}{-3&k}\right\}$$
 
-\item
-Demuestre:
-\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinaci\'on lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
-tambi\'en es linealmente independiente.
+%\item
+%Demuestre:
+%\\Sea $S=\conjvect{v}{n}$ un subconjunto linealmente independiente de vectores del espacio vectorial $V$ y sea $x$ un vector de $V$ que no puede ser expresado como una combinación lineal de los vectores de S, entonces $\llav{\kvect{v}{n}, x}$
+%también es linealmente independiente.
 
 \item
 Sea $p(x)= x^2+2x-3$, $q(x)=2x^2-3x+4$, y $r(x)=ax^2-1$. El conjunto $\{p, q, r\}$ es
 linealmente dependiente si $a=\_?\_$.
 
 \item
-Sean $f1(x) = sen x$, $f2(x) = cos(x+\pi/6)$, and $f3(x) = sen(x-\pi/4)$ para $0 \leq x \leq 2\pi$. Muestre que 
-$\{f1, f2, f3\}$ es linealmente dependiente.
+Sean $f_1(x) = \sen(x)$, $f_2(x) = \cos(x+\pi/6)$, and $f_3(x) = \sen(x-\pi/4)$ para $0 \leq x \leq 2\pi$. Muestre que 
+$\{f_1, f_2, f_3\}$ es linealmente dependiente.
 
 
 \item
@@ -296,7 +255,7 @@ a^\alpha\\
 \right)\]
 a) Determine el vector neutro de $V$
 ~\\b) Determine el inverso de $\vectrtres{2}{1}{-3}$
-~\\c) Determine si $\vectrtres{4}{-1}{3}, \vectrtres{2}{1}{1}$ forman un conjunto linealmente independiente.
+~\\c) Determine si los vectores $\vectrtres{4}{-1}{3}$ y $\vectrtres{2}{1}{1}$ forman un conjunto linealmente independiente.
 
 \end{prob}
 
@@ -312,7 +271,7 @@ Para verificar que un conjunto es linealmente dependiente se puede aplicar la re
 ~\\~\\
 Aquí usaremos el criterio del determinante para resolver este problema.
 ~\\
-Al colocar los vectores en fila obetenemos la matriz:
+Al colocar los vectores en fila obtenemos la matriz:
 ~\\
  $$A=\left(\begin{array}{rrr}
 1&1&c\\
@@ -332,14 +291,14 @@ Para que el conjunto sea linealmente dependiente c debe ser 1 o -1/3
 
 \begin{prob}[]
 
-Si $\{v_1, v_2, v_3\} $ es un conjunto linalmente independiente en un espacio vectorial $V$, determine de ser posible el valor de $a$ para que $$\{av_1-v_2, v_1+av_2-3v_3, 3v_1 -4v_2+5v_3 \}$$ sea linealmente dependiente en V.
+Si $\{v_1, v_2, v_3\} $ es un conjunto linealmente independiente en un espacio vectorial $V$, determine de ser posible el valor de $a$ para que $$\{av_1-v_2, v_1+av_2-3v_3, 3v_1 -4v_2+5v_3 \}$$ sea linealmente dependiente en V.
 \end{prob}
 
 
-\begin{prob}[]
+%\begin{prob}[]
 
-Si $\{v_1, v_2, v_3\} $ es un conjunto linalmente independiente en un espacio vectorial $V$, determine si $$\{v_1-v_2+v_3, v_2-v_3, v_1 +v_3 \}$$ es una base de V.
-\end{prob}
+%Si $\{v_1, v_2, v_3\} $ es un conjunto linealmente independiente en un espacio vectorial $V$, determine si $$\{v_1-v_2+v_3, v_2-v_3, v_1 +v_3 \}$$ es una base de V.
+%\end{prob}
 
 
 \end{enumerate}

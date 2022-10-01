@@ -1,48 +1,47 @@
 
-\chapter{Coordenadas y cambio de base}
+\chapter{Coordenadas y Cambio de Base}
 \section{Coordenadas de un vector}
 \begin{dfn} [Coordenadas de un vector]
 
-Sea $B={v_1,v_2,...,v_n}$ una base ordenada del espacio vectorial V sobre un campo K,$v\in V$. Se denominan coordenadas de v con respecto a B a los escalares $\alpha _1,\alpha _2,...\alpha _n$ tales que
-$v=\alpha _1 v_1+\alpha _2 v_2+ ...+\alpha _n v_n$
-Y se define el vector $$[v]_B=\vectr4{\alpha _1}{\alpha _2}{\ldots}{\alpha _n} \in  \rn$$ el cual se denomina vector de coordenadas de v con respecto a B. 
+Sea $B=\conjvect{v}{n}$ una base ordenada del espacio vectorial $V$ sobre un campo \dobleK. Se denominan coordenadas de $v$ con respecto a $B; \forall v \in V$ a los escalares $\alpha _1,\alpha_2, \hdots, \alpha _n$ tales que
+$v=\alpha_1 v_1+\alpha_2 v_2+ \hdots + \alpha_n v_n$
+Y se define el vector $$[v]_B = \vectrcuatcent{\alpha_1}{\alpha_2}{\vdots}{\alpha_n} \in  \rn$$ el cual se denomina vector de coordenadas de $v$ con respecto a $B$. 
 \end{dfn}
 
-Por ejemplo, en $P_1$, si tenemos la base $B={1+x,1-2x}$, entonces el vector 1+7x se escribe como
+Por ejemplo, en $P_1$, si tenemos la base $B=\{1+x,1-2x\}$, entonces el vector $1+7x$ se escribe como
 $$1+7x=3(1+x)-2(1-2x)$$
-Entonces, las coordenadas de 1+7x con respecto a B son 3 y -2, el vector de coordenadas de v con respecto a B es $$[v]_B=\vectrdos{3}{-2}$$
+Entonces, las coordenadas de $1+7x$ con respecto a B son 3 y -2, el vector de coordenadas de $v$ con respecto a $B$ es $$[v]_B=\vectrdos{3}{-2}$$
 
-Como podemos observar, el vector de coordenadas de v, depende directamente de la base, inclusive, si cambiamos el orden de la base, cambia el vector de coordenadas, de ahí la importancia de la “base ordenada” en la definición.
+Como podemos observar, el vector de coordenadas de $v$, depende directamente de la base, inclusive, si cambiamos el orden de la base, cambia el vector de coordenadas, de ahí la importancia de la “base ordenada” en la definición.
 
 \section{Matriz de Cambio de Base}
-\begin{dfn} Sea V un espacio vectorial de dimensión n,$ B_1$  y$ B_2$  dos bases ordenadas V, y C una matriz de orden n, se dice que C es la matriz de cambio de base de $B_1$ a $B_2$ si se cumple
-%\alphav\in V    [v]_(B_2 )=C[v]_(B_1 )
+\begin{dfn} Sea $V$ un espacio vectorial de dimensión $n$, $ B_1$  y$ B_2$  dos bases ordenadas $V$, y $C$ una matriz cuadrada de orden $n$, se dice que $C$ es la matriz de cambio de base de $B_1$ a $B_2$ si se cumple que:
+$$\forall v \in V \ ; \ [v]_{B_2}=C[v]_{B_1}$$
 \end{dfn}
 
 \begin{theorem}
 
 
 Sea V un espacio vectorial de dimensión n, $B_1={v_1,v_2,…,v_n }$  y $B_2={u_1,u_2,…,u_n}$  dos bases ordenadas V, y C es la matriz de cambio de base de $B_1$ a $B_2$ entonces:
-\[C_{B_1 \rightarrow B_2}= \left(\begin{array}{cccc}
+\[C_{[B_1 \rightarrow B_2]}= \begin{pmatrix}
 \vdots & \vdots & \vdots & \vdots\\
-\left[v_1\right]_{B_2}&\left[v_2\right]_{B_2}& ... & \left[v_n\right]_{(B_2 )}\\
+\left[v_1\right]_{B_2}&\left[v_2\right]_{B_2}& \hdots & \left[v_n\right]_{B_2}\\
 \vdots & \vdots & \vdots & \vdots\\
-\end{array}
-\right)\]
+\end{pmatrix}\]
 \end{theorem}
 
 \begin{theorem}[Corolario]
-Sea V un espacio vectorial de dimensión n, $B_1$ y $B_2$  dos bases ordenadas V, y C es la matriz de cambio de base de $B_1$ a $B_2$ entonces C es inversible, y $C^{-1}$ es la matriz de cambio de base de $B_2$ a $B_1$.
+Sea V un espacio vectorial de dimensión $n$, $B_1$ y $B_2$  dos bases ordenadas $V$, y $C$ es la matriz de cambio de base de $B_1$ a $B_2$ entonces $C$ es invertible, y $C^{-1}$ es la matriz de cambio de base de $B_2$ a $B_1$.
 \[
-C_{B_2\rightarrow B_1 }={C^{-1}}_{B_1 \rightarrow B_2}\]
+C_{[B_2\rightarrow B_1] }={C^{-1}}_{[B_1 \rightarrow B_2]}\]
 \end{theorem}
 
 \begin{ejemplo}
-Sea $V=\pdos$ , y sean $B_1, B_2$ dos bases de V. Determine la matriz de cambio de base de $B_2$ a$ B_1$. $ B_1=\llav{x^2+4x-2,x-3,x^2+1}$  y $B_2=\llav{2x^2+5x-4,x^2+2x+4,-x^2+x-4}$
+Sea $V=\pdos$ , y sean $B_1, B_2$ dos bases de $V$. Determine la matriz de cambio de base de $B_2$ a $B_1$. $ B_1=\llav{x^2+4x-2,x-3,x^2+1}$  y $B_2=\llav{2x^2+5x-4,x^2+2x+4,-x^2+x-4}$
 ~\\
 
-La matriz de cambio de base de $B_2$ a $B_1$, estará formada por las coordenadas de los vectores de la base$ B_2$ con respecto a la base$ B_1$, es decir:
-\[C_{B_2 \rightarrow B_1}= \left(\begin{array}{ccc}
+La matriz de cambio de base de $B_2$ a $B_1$, estará formada por las coordenadas de los vectores de la base $B_2$ con respecto a la base $B_1$, es decir:
+\[C_{[B_2 \rightarrow B_1]}= \left(\begin{array}{ccc}
 \vdots & \vdots & \vdots \\
 \left[2x^2+5x-4\right]_{B_1}&\left[x^2+2x+4\right]_{B_1}&  \left[-x^2+x-4\right]_{B_1}\\
 \vdots & \vdots &  \vdots\\
@@ -139,20 +138,23 @@ Sean $B_1=\llav{x^2+x+1, x-1, 1-x^2}$ y $B_2=\{v_1, v_2, v_3\}$ bases del espaci
 -1&-1&1\\
 \end{array}\right)\]
 a)Determine los vectores de la base $B_2$
-~\\b) Determine $[v]_{B_1}=\vectrtres{1}{2}{3}$ y $[u]_{B_2}=\vectrtres{2}{1}{-1}$, determmine $[2v-3u]_{B_2}$
+~\\b) Determine $[v]_{B_1}=\vectrtres{1}{2}{3}$ y $[u]_{B_2}=\vectrtres{2}{1}{-1}$, determine $[2v-3u]_{B_2}$
 \end{prob}
 
-\begin{prob}[(1ra Evaluacion Diciembre 2013)]
-(10 puntos) Sean $B_1=\llav{v_1, v_2, v_3}$ y $B_2=\llav{u_1, u_2, u_3}$ dos bases ordenadas del espacio vectorial funcional V. Se conoce que $V=Gen\llav{senx, cosx, x}$ y que $u_1=v_1+v_3, u_2=v_2+v_3 $ y $u_3= v_1+v_2$.
+\begin{prob}[(1ra Evaluación Diciembre 2013)]
+(10 puntos) Sean $B_1=\llav{v_1, v_2, v_3}$ y $B_2=\llav{u_1, u_2, u_3}$ dos bases ordenadas del espacio vectorial funcional V. Se conoce que $V=Gen\llav{\sen(x), \cos(x), x}$ y que $u_1=v_1+v_3, u_2=v_2+v_3 $ y $u_3= v_1+v_2$.
 a) Calcule la matriz de transición de $B_1$ a $B2$ ~\\
-b) Si $[2x]_{B_2}=\vectrtres{1}{1}{1}, [x-senx]_{B_2}=\vectrtres{1}{0}{0}, [2senx+cosx]_{B_2}=\vectrtres{1}{0}{1}$, determine los vectores de $B_1$
+b) Si $[2x]_{B_2}=\vectrtres{1}{1}{1}, [x-\sen(x)]_{B_2}=\vectrtres{1}{0}{0}, [2\sen(x)+\cos(x)]_{B_2}=\vectrtres{1}{0}{1}$, determine los vectores de $B_1$
 \end{prob}
 
 
 
-\begin{prob}[(1ra Evaluacion Julio 2013)]
+\begin{prob}[(1ra Evaluación Julio 2013)]
 (10 puntos) Sean $v_1, v_2, v_3 $ vectores de un espacio vectorial $V$. Si $u_1, u_2, u_3 $ son linealmente independientes y son, respectivamente los vectores coordenados de $ v_1, v_2, v_3$ respecto a de una base $ B $ de $V$ entonces $dim V \geq 3 $
 \end{prob}
-
+\newpage
+\begin{prob}[(1ra Evaluación Julio 2012)]
+(10 puntos)Sean $B_1=\{v_1, v_2, v_3\}$ y $B_2=\{v_1-v_2, v_2+v_3, 2v_1\}$ dos bases de un espacio vectorial $V$. Si $[E]_{B_1}=[F]_{B_2}=\vectrtres{1}{1}{1}$ determine $[5E-2F]_{B_2}$
+\end{prob}
 
 \end{enumerate}

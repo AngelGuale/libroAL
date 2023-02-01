@@ -1,6 +1,6 @@
 \chapter{Espacios Asociados a una Matriz}
 
-\section{Espacio columna}
+\section{Espacio Columna}
 \begin{dfn}[Espacio Columna]
 Sea $A$ una matriz $m\times n$, sean $c_1,c_2,\ldots, c_n \in \mathbb{R}^m$ las columnas de la matriz $A$. Se define el espacio columna de $A$ como el espacio generado por los vectores columnas de $A$:
 ~\\
@@ -18,45 +18,28 @@ Sea $A=
 \end{array}
 \right)$ una matriz, determinar el espacio columna de $A$
  
-De acuerdo a la definición, debemos hallar el espacio generado por los vectores \vectrtres{3}{2}{-1}, \vectrtres{1}{2}{1}, \vectrtres{1}{3}{2} tal como lo vimos secciones anteriores:
+De acuerdo a la definición, debemos hallar el espacio generado por los vectores \llav{\vectrtres{3}{2}{-1}, \vectrtres{1}{2}{1}, \vectrtres{1}{3}{2}} tal como lo vimos secciones anteriores:
 
-\[
-\left(
-\begin{array}{rrr|r}
-3&1&1&a\\
-2&2&3&b\\
--1&1&2&c
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-3&1&1&a\\
-0&4&7&3b-2a\\
-0&4&7&3c+a
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-3&1&1&a\\
-0&4&7&3b-2a\\
-0&0&0&3c+3a-3b
-\end{array}
-\right)
-\]
+$$\reducir{{rrr|l}}{3&1&1&a\\2&2&3&b\\-1&1&2&c}
+\underrightarrow{\begin{array}{r}
+    2f_1 - 3f_2 \\
+    f_1 + 3f_3
+\end{array}}
+\reducir{rrr|l}{3&1&1&a\\0&-4&-7&2a-3b\\0&4&7&a+3c}
+\underrightarrow{f_2 + f_3}
+\reducir{rrr|l}{3&1&1&a\\0&-4&-7&2a-3b\\0&0&0&3a-3b+3c}$$
 
 %%subespacio r3
-\[C_A=\llaves{\vectrtres{a}{b}{c}}
+\[C_A=\llaves{\vectrtres{a}{b}{c} \in \rtres}
 {\begin{array}{r}
-c+a-b=0\\
+a-b+c=0\\
 \end{array}}
 \]
 
 \end{ejemplo}
 
 \newpage
-\section{Espacio fila}
+\section{Espacio Fila}
 \begin{dfn}[Espacio Fila]
 Sea $A$ una matriz $m\times n$, sean $f_1,f_2,\ldots, f_m \in \mathbb{R}^n$ las filas de la matriz $A$. Se define el espacio fila de $A$ como el espacio generado por los vectores filas de $A$:
 
@@ -75,39 +58,32 @@ Sea $A=
 \right)$ una matriz, determinar el espacio fila de A
 
  
-De acuerdo a la definición, debemos hallar el espacio generado por los vectores \vectr4{2}{1}{1}{3}, \vectr4{2}{2}{0}{2}, \vectr4{1}{3}{-2}{-1} tal como lo vimos secciones anteriores:
-
-\[
-\left(
-\begin{array}{rrr|r}
-2&2&1&a\\
+De acuerdo a la definición, debemos hallar el espacio generado por los vectores \llav{\vectr4{2}{1}{1}{3}, \vectr4{2}{2}{0}{2}, \vectr4{1}{3}{-2}{-1}} tal como lo vimos secciones anteriores:
+$$\reducir{rrr|l}{2&2&1&a\\
 1&2&3&b\\
 1&0&-2&c\\
-3&2&-1&d\\
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-2&1&1&a\\
+3&2&-1&d\\}
+\underrightarrow{\begin{array}{r}
+    f_1 - 2f_2\\
+    f_1 - 2f_3\\
+    3f_1 - 2f_4
+\end{array}}
+\reducir{rrr|r}{2&1&1&a\\
 0&-2&-5&a-2b\\
 0&2&5&a-2c\\
-0&2&5&3a-2d\\
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-2&1&1&a\\
+0&2&5&3a-2d\\}
+\underrightarrow{\begin{array}{r}
+    f_2 + f_3\\
+    f_2 + f_4
+\end{array}}
+\reducir{rrr|r}{2&1&1&a\\
 0&-2&-5&a-2b\\
 0&0&0&2a-2b-2c\\
 0&0&0&4a-2b-2d\\
-\end{array}
-\right)
-\]
+}$$
 
 %%subespacio r3
-\[F_A=\llaves{\vectr4{a}{b}{c}{d}}
+\[F_A=\llaves{\vectr4{a}{b}{c}{d} \in \rcuatro}
 {\begin{array}{r}
 a-b-c=0\\
 2a-b-d=0\\
@@ -118,7 +94,7 @@ a-b-c=0\\
 
 
 \newpage
-\section{Núcleo de una matriz}
+\section{Núcleo de una Matriz}
 \begin{dfn}[Núcleo de una matriz]
 Sea $A$ una matriz $m\times n$, el núcleo de $A$ se define como el conjunto dado por:
 ~\\
@@ -158,43 +134,14 @@ Sea $A=
 \right)$ una matriz, determinar el núcleo de A
  
 Acorde a la definición presentada anteriormente, debemos hallar todas las soluciones del sistema homogéneo, en otras palabras, resolver el sistema igualado a ceros.
-\[
-\left(
-\begin{array}{rrr}
-3&1&1\\
-2&2&3\\
--1&1&2
-\end{array}
-\right)
-\vectrtres{x_1}{x_2}{x_3}=
-\vectrtres{0}{0}{0}
-\]
-
-\[
-\left(
-\begin{array}{rrr|r}
-3&1&1&0\\
-2&2&3&0\\
--1&1&2&0
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-3&1&1&0\\
-0&4&7&0\\
-0&4&7&0
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-3&1&1&0\\
-0&4&7&0\\
-0&0&0&0
-\end{array}
-\right)
-\]
+$$\reducir{{rrr|l}}{3&1&1&0\\2&2&3&0\\-1&1&2&0}
+\underrightarrow{\begin{array}{r}
+    2f_1 - 3f_2 \\
+    f_1 + 3f_3
+\end{array}}
+\reducir{rrr|l}{3&1&1&0\\0&-4&-7&0\\0&4&7&0}
+\underrightarrow{f_2 + f_3}
+\reducir{rrr|l}{3&1&1&0\\0&-4&-7&0\\0&0&0&0}$$
 
 Por lo tanto, este sistema posee infinitas soluciones, las cuales serán los vectores del conjunto núcleo de A, el se expresa como:
 %%subespacio r3
@@ -206,7 +153,7 @@ Por lo tanto, este sistema posee infinitas soluciones, las cuales serán los vec
 
 \end{ejemplo}
 
-\section{Nulidad de una matriz}
+\section{Nulidad de una Matriz}
 \begin{dfn}
 Sea $A$ una matriz de orden $m\times n$ y sea $Nu(A)$ un subespacio vectorial de $\rn$, se denomina a la dimensión de $Nu(A)$ como nulidad de $A$ y se denota como $v(A)$ 
 \end{dfn}
@@ -236,14 +183,14 @@ Como hay un vector en la base, se puede concluir que $v(A) = 1$
 
 
 \newpage
-\section{Imagen de una matriz}
+\section{Imagen de una Matriz}
 \begin{dfn}[Imagen de una matriz]
 Sea A una matriz $m\times n$, la imagen de A se define como el conjunto dado por:
 ~\\
 \[Im(A)=\llaves{Y \in \rmm }{\exists X \in \rn,   AX=Y}\]
 \end{dfn}
 
-
+En otras palabras, la imagen es el conjunto de todas los resultados que se obtienen de multiplicar $A$ con algún vector de $\rn$
 \begin{ejemplo}
 Sea $A=
 \left(
@@ -256,36 +203,18 @@ Sea $A=
  
 De acuerdo a la definición, debemos resolver el sistema:
 
-\[
-\left(
-\begin{array}{rrr|r}
-3&1&1&a\\
-2&2&3&b\\
--1&1&2&c
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-3&1&1&a\\
-0&4&7&3b-2a\\
-0&4&7&3c+a
-\end{array}
-\right)
-\sim
-\left(
-\begin{array}{rrr|r}
-3&1&1&a\\
-0&4&7&3b-2a\\
-0&0&0&3c+3a-3b
-\end{array}
-\right)
-\]
-
+$$\reducir{{rrr|l}}{3&1&1&a\\2&2&3&b\\-1&1&2&c}
+\underrightarrow{\begin{array}{r}
+    2f_1 - 3f_2 \\
+    f_1 + 3f_3
+\end{array}}
+\reducir{rrr|l}{3&1&1&a\\0&-4&-7&2a-3b\\0&4&7&a+3c}
+\underrightarrow{f_2 + f_3}
+\reducir{rrr|l}{3&1&1&a\\0&-4&-7&2a-3b\\0&0&0&3a-3b+3c}$$
 %%subespacio r3
-\[Im(A)=\llaves{\vectrtres{a}{b}{c}}
+\[Im(A)=\llaves{\vectrtres{a}{b}{c} \in \rtres}
 {\begin{array}{r}
-c+a-b=0\\
+a-b+c=0\\
 \end{array}}
 \]
 
@@ -421,7 +350,7 @@ $$C_{AB} \subseteq C_A$$
 
 \end{ejercicio}
 
-\section{Rango de una matriz}
+\section{Rango de una Matriz}
 
 \newpage
 \section{Problemas}

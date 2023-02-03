@@ -18,7 +18,7 @@ Determine si el conjunto $B=\llav{
 }$\ es una base de \pdos
 \end{ejemplo}
 \sol
-Para determinar si B genera a V debemos comprobar que existen escalares tales:~\\
+Para determinar si $B$ genera a $V$ debemos comprobar que existen escalares tales:~\\
 
 \[a_0+a_1 x+a_2 x^2=
 \beta_1(1+x)+
@@ -67,7 +67,7 @@ Sea $B=\conjvect{v}{n}$ una base del espacio vectorial $V$, entonces cualquier c
 
 \begin{proof}
 Por contradicción ~\\
-Sea $S=\conjvect{w}{m}$ un conjunto de vectores de $V$ con $m>n$, supongamos que $S$ es linealmente independiente. Como $B$ es una base entonces cualquier elemento se puede escribir como combinación lineal de los elementos de $B$
+Sea $S=\conjvect{w}{m}$ un conjunto de vectores de $V$ con $m>n$, supongamos que $S$ es linealmente independiente. Como $B$ es una base entonces cualquier elemento de $S$ se puede escribir como combinación lineal de los elementos de $B$
 
 \begin{align*}
     \begin{array}{ccccccccc}
@@ -193,12 +193,14 @@ Un subconjunto $S$ de un espacio vectorial $(V, +, \cdot)$ se dice que es un sub
 \item Para cualquier $w \in V$ y $w \notin S$ el subconjunto $S'$ de $V$ formado por $S \cup \{w\}$ es linealmente dependiente.
 \end{enumerate}
 \end{dfn}
-
+\begin{obsimp}
+Un conjunto linealmente independiente maximal de un espacio vectorial $V$ es un conjunto con la misma cantidad de vectores que la dimensión de $V$
+\end{obsimp}
 \begin{theorem}
 Sea A un subconjunto de un espacio vectorial V. Si A es linealmente independiente maximal, entonces A es una base para V. Recíprocamente si A es una base entonces es un conjunto linealmente independiente maximal.
 \end{theorem}
 \begin{proof}
-Veamos que $A$ genera a $V$. Sea $w \in V$ y $w \notin A$, entonces $\{w\}\cup A$ es un conjunto linealmente dependiente. Así la combinación lineal $\alpha_0 w+\alpha_1v_1+\alpha_2v_2+\hdots+\alpha_nv_n=0_V$ donde $A=\conjvect{v}{n}$ tiene solución no trivial. Si $\alpha_0=0$, entonces algún $\alpha_i;\ i=1, 2, \hdots, n$, debe ser diferente de cero. Esto último implica que A no es un conjunto linealmente independiente, por tanto $\alpha_0\neq 0$ y así obtendríamos que $w=\left(\frac{-\alpha_1}{\alpha_0}\right)v_1+\left(\frac{-\alpha_2}{\alpha_0}\right)v_2+\hdots+\left(\frac{-\alpha_n}{\alpha_0}\right)v_n$, por lo que $A$ es un conjunto generador de $V$.
+Veamos que $A$ genera a $V$. Sea $w \in V$ y $w \in gen\{A\}$, entonces $\{w\}\cup A$ es un conjunto linealmente dependiente. Así la combinación lineal $\alpha_0 w+\alpha_1v_1+\alpha_2v_2+\hdots+\alpha_nv_n=0_V$ donde $A=\conjvect{v}{n}$ tiene solución no trivial. Si $\alpha_0=0$, entonces algún $\alpha_i;\ i=1, 2, \hdots, n$, debe ser diferente de cero. Esto último implica que A no es un conjunto linealmente independiente, por tanto $\alpha_0\neq 0$ y así obtendríamos que $w=\left(\frac{-\alpha_1}{\alpha_0}\right)v_1+\left(\frac{-\alpha_2}{\alpha_0}\right)v_2+\hdots+\left(\frac{-\alpha_n}{\alpha_0}\right)v_n$, por lo que $A$ es un conjunto generador de $V$.
 \end{proof}
 \begin{dfn}
 Un subconjunto $M$ de un espacio vectorial se dice que es un subconjunto generador minimal de $V$ si
@@ -208,6 +210,9 @@ Un subconjunto $M$ de un espacio vectorial se dice que es un subconjunto generad
 \end{enumerate}
 \end{dfn}
 
+\begin{obsimp}
+Un conjunto generador minimal de un espacio vectorial $V$ es un conjunto con la mínima cantidad de vectores que generan a $V$
+\end{obsimp}
 \begin{theorem}
 Si el espacio vectorial $(V , + , \cdot)$ tiene un subconjunto generador minimal $B$, entonces $B$ es una base para $V$.
 \end{theorem}
@@ -216,7 +221,7 @@ Veamos que $B$ es linealmente independiente, para eso igualamos una combinación
 $$\alpha_1 v_1 + \alpha_2  v_2 + \hdots + \alpha_n v_n = \mathbf{0}_V $$
 Por contradicción, asumiremos que $B$ es linealmente dependiente, eso implica que: $\exists \alpha_i \neq 0: i \leq n$\\
 Por lo tanto, podemos escribir el vector $v_i$ correspondiente al escalar $\alpha_i$ como combinación lineal de los $n-1$ vectores restantes:
-$$v_i = \left( \frac{-\alpha_1}{\alpha_i} \right)v_1 + \left( \frac{-\alpha_2}{\alpha_i} \right)v_2 + \hdots + \left( \frac{-\alpha_n}{\alpha_i} \right)v_n$$
+$$v_i = \left( \frac{-\alpha_1}{\alpha_i} \right)v_1 + \left( \frac{-\alpha_2}{\alpha_i} \right)v_2 + \hdots + \left( \frac{-\alpha_{n-1}}{\alpha_i} \right)v_{n-1}$$
 Y esto implica que: 
 $$gen\conjvect{v}{n} \subseteq gen\conjvect{v}{{n-1}}$$
 Luego:
@@ -249,7 +254,7 @@ Pero esto contradice la hipótesis de que $B$ es generador minimal, por lo tanto
 %\end{theorem}
 
 \begin{theorem}
-Sea A=$\conjvect{v}{n}$ un subconjunto linealmente independiente de un espacio vectorial V. Sea $w\in V$ y $A'=A\cup\llav{w}$. Entonces A' es linealmente independiente si y solo si $ w \notin gen\{A\}$
+Sea A=$\conjvect{v}{n}$ un subconjunto linealmente independiente de un espacio vectorial V. Sea $w\in V$ y $A'=A\cup\llav{w}$. Entonces $A'$ es linealmente independiente si y solo si $ w \notin gen\{A\}$
 \end{theorem}
  
 \begin{proof}
@@ -257,7 +262,7 @@ Si $w$ es un elemento de $gen\{A\}$, entonces existen escalares $\alpha_1, \alph
 Supongamos ahora que $A'$ es linealmente dependiente entonces existen escalares  $\alpha_1, \alpha_2, \hdots, \alpha_n$ no todos iguales a cero tales que $\alpha_0w+\alpha_1v_1+\alpha_2v_2+\hdots+\alpha_nv_n=0_V$. Si $\alpha_0=0$ entonces $\alpha_1v_1+\alpha_2v_2+\hdots+\alpha_nv_n=0_V$ esto implicaría que $\alpha_1= \alpha_2= \hdots=\alpha_n=0$ ya que $A$ es linealmente independiente, pero esto es imposible ya que $A'$ es linealmente dependiente; por lo tanto $\alpha_0\neq0$ y así $w$ es una combinación lineal de $A$, por lo tanto $w\in gen\{A\}$.
 \end{proof}
 \begin{theorem}
-Si  A=$\conjvect{v}{n}$ es un conjunto generador de un espacio vectorial $V$ y la dimensión de $V$ es mayor o igual a 2, entonces existe un conjunto linealmente independiente contenido en $A$ que también genera a $V$.
+Si  A=$\conjvect{v}{n}$ es un conjunto generador de un espacio vectorial $V$ y la dimensión de $V$ es menor o igual a $n$, entonces existe un conjunto linealmente independiente contenido en $A$ que también genera a $V$.
 \end{theorem}
 
 \begin{proof}

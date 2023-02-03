@@ -15,8 +15,8 @@ Entonces, las coordenadas de $1+7x$ con respecto a B son 3 y -2, el vector de co
 Como podemos observar, el vector de coordenadas de $v$, depende directamente de la base, inclusive, si cambiamos el orden de la base, cambia el vector de coordenadas, de ahí la importancia de la “base ordenada” en la definición.
 
 \section{Matriz de Cambio de Base}
-\begin{dfn} Sea $V$ un espacio vectorial de dimensión $n$, $ B_1$  y$ B_2$  dos bases ordenadas $V$, y $C$ una matriz cuadrada de orden $n$, se dice que $C$ es la matriz de cambio de base de $B_1$ a $B_2$ si se cumple que:
-$$\forall v \in V \ ; \ [v]_{B_2}=C[v]_{B_1}$$
+\begin{dfn} Sea $V$ un espacio vectorial de dimensión $n$, $ B_1$  y$ B_2$  dos bases ordenadas de $V$, y $C$ una matriz cuadrada de orden $n$, se dice que $C$ es la matriz de cambio de base de $B_1$ a $B_2$ si se cumple que:
+$$\forall v \in V \ ; \ C\cdot [v]_{B_1}= [v]_{B_2}$$
 \end{dfn}
 
 \begin{theorem}
@@ -55,7 +55,7 @@ Calculando estas coordenadas tenemos:
 
 Por tanto, la matriz que nos pide el ejercicio es:
 
-\[C_{B_2 \rightarrow B_1}= \left(\begin{array}{rrr}
+\[C_{[B_2 \rightarrow B_1]}= \left(\begin{array}{rrr}
 1 & 1 & 0 \\
 1&-2& 1\\
 1 & 0 &  -1\\
@@ -70,7 +70,7 @@ Por tanto, la matriz que nos pide el ejercicio es:
 \begin{ejercicio}
 Sean $B_1=\llav{\vectrtres{1}{0}{2}, \vectrtres{1}{-2}{0}, \vectrtres{0}{1}{2}}$ y $B=\{u_1, u_2, u_3\}$ bases del espacio vectorial \rtres, y 
 
-\[M_{B_1 \rightarrow B}=\left(\begin{array}{rrr}
+\[M_{[B_1 \rightarrow B]}=\left(\begin{array}{rrr}
 1&-1&1\\
 0&-2&1\\
 1&1&1\\
@@ -83,7 +83,7 @@ Recordemos que las columnas de la matriz son las coordenadas de los vectores de 
 Por lo tanto, para resolver el literal (a) de nuestro problema necesitaríamos la matriz inversa de $M_{B_1 \rightarrow B}$~\\
 Al calcularla obtenemos:~\\
 
-\[M_{B \rightarrow B_1}=\left(\begin{array}{rrr}
+\[M_{[B \rightarrow B_1]}=\left(\begin{array}{rrr}
 3/2&-1&-1/2\\
 -1/2&0&1/2\\
 -1&1&1\\
@@ -105,18 +105,20 @@ $$u_1=\vectrtres{0}{0}{1}$$
 ~\\
 ~\\
 El literal b se reduce a simplemente calcular las coordenadas del vector $v=\vectrtres{1}{2}{3}$ con respecto a los vectores de la base $B_1$ los cuales se los coloca como columnas del sistema:
-\[\left(\begin{array}{rrr|r}
+$$\reducir{rrr|r}{1&1&0&1\\
+0&-2&1&2\\
+2&0&2&3\\}
+\underrightarrow{2f_1 - f_3}
+\reducir{rrr|r}{1&1&0&1\\
+0&-2&1&2\\
+0&2&-2&-1\\}
+\underrightarrow{f_2 + f_3}
+\reducir{rrr|r}{
 1&1&0&1\\
 0&-2&1&2\\
-2&0&2&3\\
-\end{array}\right)
-\sim...\sim
-\left(\begin{array}{rrr|r}
-1&1&0&1\\
-0&-2&1&2\\
-0&0&-1&1\\
-\end{array}\right)
-\]
+0&0&-1&1\\}
+$$
+
 
 \[\alpha_3=-1, \alpha_2=-3/2, \alpha_1=5/2\]
 Por lo tanto, el vector de coordenadas del vector $v$ con respecto a la base B1 es:
@@ -132,7 +134,7 @@ Por lo tanto, el vector de coordenadas del vector $v$ con respecto a la base B1 
 
 Sean $B_1=\llav{x^2+x+1, x-1, 1-x^2}$ y $B_2=\{v_1, v_2, v_3\}$ bases del espacio vectorial \pdos, y 
 
-\[M_{B_1 \rightarrow B_2}=\left(\begin{array}{rrr}
+\[M_{[B_1 \rightarrow B_2]}=\left(\begin{array}{rrr}
 2&0&2\\
 1&1&0\\
 -1&-1&1\\
@@ -150,7 +152,7 @@ b) Si $[2x]_{B_2}=\vectrtres{1}{1}{1}, [x-\sen(x)]_{B_2}=\vectrtres{1}{0}{0}, [2
 
 
 \begin{prob}[(1ra Evaluación Julio 2013)]
-(10 puntos) Sean $v_1, v_2, v_3 $ vectores de un espacio vectorial $V$. Si $u_1, u_2, u_3 $ son linealmente independientes y son, respectivamente los vectores coordenados de $ v_1, v_2, v_3$ respecto a de una base $ B $ de $V$ entonces $dim V \geq 3 $
+(10 puntos) Sean $v_1, v_2, v_3 $ vectores de un espacio vectorial $V$. Si $u_1, u_2, u_3 $ son linealmente independientes y son, respectivamente los vectores coordenados de $ v_1, v_2, v_3$ respecto a una base $ B $ de $V$ entonces $dim V \geq 3 $
 \end{prob}
 \newpage
 \begin{prob}[(1ra Evaluación Julio 2012)]

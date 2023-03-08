@@ -31,11 +31,11 @@ Un espacio vectorial real es una cuarteta $(V, \dobleK, \oplus, \odot)$ donde V 
             $\forall v\in V\ ,\exists v'\in V: v\oplus v'=n_V$&  [Elemento inverso]  \\ \hline \hline
             \multicolumn{2}{|l|}{Operación Producto Escalar} \\
             \hline \hline
-            $\forall v \in V \ , \forall \alpha \in \mathbb{K} :\ (\alpha \odot v )\in V$& [Cerradura del Producto] \\ \hline
-            $ \forall \alpha \in \mathbb{K}\ , \forall v_1,v_2\in V: \alpha \odot (v_1\oplus v_2 )=(\alpha \odot v_1)\oplus (\alpha \odot v_2) $&  [Distributividad]  \\ \hline
-            $\forall \alpha ,\beta \in \mathbb{K}\ , \forall v\in V : (\alpha +\beta )\odot v=(\alpha \odot v)\oplus(\beta \odot v)  $&  [Distributividad]  \\ \hline
-            $\forall \alpha ,\beta \in \mathbb{K}\ , \forall  v\in V : (\alpha  \beta )\odot v=\alpha \odot (\beta \odot v) $&  [Distributividad]  \\ \hline
-            $\forall  v\in V    :   n_K \odot v=v $&  [Neutro multiplicativo]  \\ \hline
+            $\forall v \in V \ , \forall \alpha \in \dobleK :\ (\alpha \odot v )\in V$& [Cerradura del Producto] \\ \hline
+            $ \forall \alpha \in \dobleK\ , \forall v_1,v_2\in V: \alpha \odot (v_1\oplus v_2 )=(\alpha \odot v_1)\oplus (\alpha \odot v_2) $&  [Distributividad]  \\ \hline
+            $\forall \alpha ,\beta \in \dobleK\ , \forall v\in V : (\alpha +\beta )\odot v=(\alpha \odot v)\oplus(\beta \odot v)  $&  [Distributividad]  \\ \hline
+            $\forall \alpha ,\beta \in \dobleK\ , \forall  v\in V : (\alpha  \beta )\odot v=\alpha \odot (\beta \odot v) $&  [Distributividad]  \\ \hline
+            $\forall  v\in V    :   n_\dobleK \odot v=v $&  [Neutro multiplicativo]  \\ \hline
         \end{tabular}
         \caption{Axiomas de un Espacio Vectorial.}
         \label{Tabla: Sencilla}
@@ -73,12 +73,12 @@ El espacio de todas las matrices $n \times m$ con las operaciones usuales de sum
 
 Veamos algunos ejemplos de espacios vectoriales conocidos:
 \begin{itemize}
-    \item Consideremos $V=\mathbb{R}^n$ y $\mathbb{K}=\mathbb{R}$, con la suma y producto por escalar usuales $V$ es un espacio vectorial sobre los Reales.
-    \item $V=\mathcal{P}_n$ y $\mathbb{K}=\mathbb{R}$ Los polinomios con coeficientes reales de grado menor o igual a n, con las operaciones usuales de suma y producto por escalar.
-    \item $V=\mathcal{M}_{mxn}$ y $\mathbb{K}=\mathbb{R}$ Las matrices m por n con entradas reales con las operaciones usuales de suma y producto por escalar forman un espacio vectorial sobre los reales
-    \item $V=\mathbb{C}^n$ y $\mathbb{K}=\mathbb{R}$ Las n-tuplas con entradas complejas con la suma y el producto por escalar usuales en los complejos forman un espacio vectorial sobre el campo de los Complejos.
-    \item  $V=\mathbb{B}^n$ y $\mathbb{K}=\mathbb{B}$ Las n-tuplas con entradas binarias con la suma y el producto por escalar binarios forman un espacio vectorial sobre el campo binario. Éste es un ejemplo de espacio vectorial discreto ya que la cardinalidad del conjunto es
-    \item $V=\mathcal{C}[a,b]$ y $\mathbb{K}=\mathbb{R}$ Las funciones continuas en un intervalo [a, b] con las operaciones usuales de suma y producto por escalar de funciones forman un Espacio Vectorial sobre los Reales
+    \item Consideremos $V=\mathbb{R}^n$ y $\dobleK=\mathbb{R}$, con la suma y producto por escalar usuales $V$ es un espacio vectorial sobre los Reales.
+    \item $V=\mathcal{P}_n$ y $\dobleK=\mathbb{R}$ Los polinomios con coeficientes reales de grado menor o igual a n, con las operaciones usuales de suma y producto por escalar.
+    \item $V=\mathcal{M}_{mxn}$ y $\dobleK=\mathbb{R}$ Las matrices m por n con entradas reales con las operaciones usuales de suma y producto por escalar forman un espacio vectorial sobre los reales
+    \item $V=\mathbb{C}^n$ y $\dobleK=\mathbb{R}$ Las n-tuplas con entradas complejas con la suma y el producto por escalar usuales en los complejos forman un espacio vectorial sobre el campo de los Complejos.
+    \item  $V=\mathbb{B}^n$ y $\dobleK=\mathbb{B}$ Las n-tuplas con entradas binarias con la suma y el producto por escalar binarios forman un espacio vectorial sobre el campo binario. Éste es un ejemplo de espacio vectorial discreto ya que la cardinalidad del conjunto es
+    \item $V=\mathcal{C}[a,b]$ y $\dobleK=\mathbb{R}$ Las funciones continuas en un intervalo [a, b] con las operaciones usuales de suma y producto por escalar de funciones forman un Espacio Vectorial sobre los Reales
 \end{itemize}
 
 
@@ -271,7 +271,7 @@ Sea $\left(V, \oplus, \odot\right)$ un espacio vectorial sobre el campo. Sea $W$
 	\begin{itemize}
 	\item $W$ no es vac\'io
 	\item $\forall w_1, w_2 \in W: w_1\oplus w_2 \in W$
-	\item $\forall \alpha \in \mathbb{K} \forall w \in W: \alpha \odot w \in W$
+	\item $\forall \alpha \in \dobleK \forall w \in W: \alpha \odot w \in W$
 	
 	\end{itemize}
 

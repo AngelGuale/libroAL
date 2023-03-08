@@ -191,6 +191,28 @@ Sea A una matriz $m\times n$, la imagen de A se define como el conjunto dado por
 \end{dfn}
 
 En otras palabras, la imagen es el conjunto de todas los resultados que se obtienen de multiplicar $A$ con algún vector de $\rn$
+
+\begin{theorem}
+Sea $A$ una matriz $m \times n$, entonces la imagen de $A$, es un subes-
+pacio vectorial de \rmm sobre un campo $\mathbb{K}$
+\end{theorem}
+\begin{proof}
+    Para esta prueba, utilizaremos la caracterización del subespacio.
+    \begin{itemize}
+        \item el vector neutro de $\rmm$ pertenece a $Im(A)$ ya que si se multiplica $Ax$, donde $x$ es el vector neutro de \rn, se obtiene al vector neutro de $\rmm$, demostrando que es no vacío.
+        \item $\forall v,w \in Im(A)$ significa que:
+        $$Ax_1 = v$$
+        $$Ax_2 = w$$
+        Sumando estas dos ecuaciones, tenemos que:
+        $$Ax_1 + Ax_2 = v + w \rightarrow A(x_1 + x_2) = (v+w)$$
+        por lo que el vector $v+w$ también cumple con la condición de estar en $Im(A)$, por lo que cumple la cerradura bajo la suma
+        \item $\forall v \in Im(A), \forall \alpha \in \dobleK$, tenemos que:
+        $$Ax = v$$
+        Al multiplicar esta ecuación por $\alpha$:
+        $$\alpha Ax = \alpha v \rightarrow A(\alpha x) = \alpha v$$
+        por lo que el vector $\alpha v$ también cumple con la condición de estar en $Im(A)$, por lo que cumple con la cerradura bajo la multiplicación por escalar
+    \end{itemize}
+\end{proof}
 \begin{ejemplo}
 Sea $A=
 \left(
@@ -326,8 +348,6 @@ El espacio fila de A queda definido por:
 
 \end{ejercicio}
 
-
-\newpage
 \begin{ejercicio}
 Sean $A\in \mathcal{M}_{mxn}, B \in \mathcal{M}_{nxp}$, demuestre que $C_{AB}\subseteq C_A$
 
@@ -378,10 +398,37 @@ entonces, una base para $Im(A)$ es :
 $$B_{Im(A)} = \llav{\vectrtres{-3}{1}{-2}}$$
 Como hay un vector en la base, se puede concluir que $\rho(A) = 1$\\
 
-\begin{obsimp}
-Para cualquier matriz $A_{m\times n}$, $C_A = Im(A)$. Es decir, el espacio columna es igual a la imagen de $A$. Además se cumple que: $$dim(F_A) = dim(C_A) = \rho(A)$$.
-\end{obsimp}
+\begin{theorem}
+Para cualquier matriz $A_{m\times n}$, $C_A = Im(A)$. Es decir, el espacio
+columna es igual a la imagen de $A$.
+\end{theorem}
+\begin{proof}
+    Para demostrar que $C_A = Im(A)$, se debe demostrar que: $Im(A) \subseteq C_A$ y $C_A \subseteq Im(A)$
+    \begin{enumerate}[i.]
+        \item Se quiere probar que $Im(A) \subseteq C_A$. Suponga que $v \in Im(A)$. Entonces existe un vector $x$ tal que $Ax = v$. Pero $Ax$ se puede expresar como una combinación lineal de las columnas de $A$. Por lo tanto, $v \in C_A$, de manera que $Im(A) \subseteq C_A$.
+        
+        \item Se quiere probar que $C_A \subseteq Im(A)$. Suponga que $v \in C_A$. Entonces $v$ se puede expresar como combinación lineal de las columnas de $A$, sea $x$ el vector columna de los coeficientes de esta combinación lineal. Entonces $Ax = v$, así $v \in Im(A)$, probando que $C_A \subseteq Im(A)$
+        
+    \end{enumerate}
+\end{proof}
 
+\begin{theorem}
+Si $A$ y $B$ son dos matrices de orden $m \times n$, equivalentes por filas, entonces $F_A = F_B$
+\end{theorem}
+\begin{proof}
+    Sean $A = \vectrtrescent{A_{1n}}{A_{2n}}{\vdots\\A_{mn}}$ y $B = \vectrtrescent{B_{1n}}{B_{2n}}{\vdots\\B_{mn}}$ dos matrices equivalentes por filas, entonces cada fila $B_{in} \in B$ donde  $1 \leq i \leq m$, se puede obtener mediante una serie de operaciones elementales entre las filas de $A$. Es decir, cada fila en $B$, se puede escribir como combinación lineal de las filas de $A$, entonces $\forall B_{in} \in B \ ; \ B_{in} \in F_A$.
+    Del mismo modo, se pueden obtener las filas de $A$, a partir de una serie de operaciones elementales entre las filas de $B$, llegando a que $\forall A_{in} \in A \ ; \ A_{in} \in F_B$. Finalmente, $F_A = F_B$
+\end{proof}
+\begin{theorem}
+Para cualquier matriz  $A_{m\times n}$, $dimF_A = dimC_A = \rho(A)$. Es
+decir, las dimensiones de los espacios Fila, Columna e Imagen de una matriz $A$
+son iguales.
+\end{theorem}
+\begin{proof}
+    Sea $A$ una matriz de orden $m \times n, A =\left( A_{m1} \  A_{m_2} \ \hdots \ A_{mn}\right)$, para determinar la dimensión de $C_A$, debemos usar la siguiente ecuación:
+    $$\alpha_1 A_{m1} + \alpha_2 A_{m2} + \hdots + \alpha_n A_{mn} = B \ ; \ \text{ donde } \ B = \vectrtrescent{x_1}{x_2}{\vdots\\x_n}$$
+    Donde se analiza la matriz aumentada [A\vline B], resolviéndola por el método de Gauss y llegando a una matriz escalonada reducida por filas. Obteniendo así el rango de la matriz, lo que coincide con el número de filas no nulas de la matriz escalonada reducida por filas equivalente a $A$, lo que significa que también es la dimensión de $F_A$, así entonces $dim C_A = dim F_A$, como $C_A = Im(A)$, entonces $\rho(A) = dim C_A = dim F_A$
+\end{proof}
 \newpage
 \section{Problemas}
 \begin{enumerate}

@@ -1,1 +1,475 @@
 \chapter{Producto Interno}
+
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial. Una función $\prodInt{\cdot}{\cdot}: V\times V \to \dobleK$ es un producto interno sobre $V$ si y solo si, se cumple que:
+\begin{enumerate}
+    \item Para todo $v \in V$,  \prodInt{v}{v} es un número real no negativo, el cual es cero si y solo si $v = 0_V$.  
+    \item $\prodInt{v_1}{v_2} = \overline{\prodInt{v_2}{v_1}}$ para todo $v_1,v_2 \in V$.
+    \item $\prodInt{v_1 + v_2}{v_3} = \prodInt{v_1}{v_3} + \prodInt{v_2}{v_3}$ para todo $v_1, v_2, v_3 \in V$.
+    \item $\prodInt{\alpha v_1}{v_2} = \alpha \prodInt{v_1}{v_2}$ para todo $\alpha \in \dobleK$ y para todo $v_1, v_2 \in V$.
+\end{enumerate}
+\begin{obs}
+    \begin{enumerate}[i.]
+        \item $\overline{\prodInt{v_2}{v_1}}$ es el conjugado de \prodInt{v_2}{v_1}.
+        \item Las propiedades 3 y 4 indican que \prodInt{\cdot}{\cdot} es una función lineal.
+    \end{enumerate}
+    
+    
+\end{obs}
+\end{dfn}
+
+\begin{ejemplo}
+    Sean $v_1 = \vectrdos{a_1}{b_1}$ y $v_2 = \vectrdos{a_2}{b_2}$. Sea $\prodInt{\cdot}{\cdot}: \rdos \times \rdos \to \dobler$ una función definida por: 
+    $$\prodInt{v_1}{v_2} = 3a_1a_2 + 3b_1b_2$$
+    es un producto interno, así:
+    \begin{enumerate}[i.]
+        \item sea $v \in V$, entonces
+        $\prodInt{v}{v} = 3a^2 + 3b^2$, al tener una suma de números elevados al cuadrado y multiplicados por 3, entonces \prodInt{v}{v} es mayor que cero. Por lo que la única manera en la que $\prodInt{v}{v} = 0$ es que $v = 0_V$.
+        \item Sean $v_1, v_2 \in V$, entonces $\prodInt{v_1}{v_2} = 3a_1a_2 + 3b_1b_2 = 3a_2a_1 + 3b_2b_1 = \prodInt{v_2}{v_1}$ esto es posible gracias a la conmutatividad de la multiplicación de números reales y además, el conjugado de un número real, sigue siendo el mismo número real.
+        \item Sean $v_1, v_2, v_3 \in V$, entonces $\prodInt{v_1 + v_2}{v_3} = 3(a_1 + a_2)a_3 + 3(b_1 + b_2)b_3$ aplicando distributividad y conmutatividad, nos queda que\\
+        $\prodInt{v_1 + v_2}{v_3} = 3a_1a_3+ 3b_1b_3+ 3a_2a_3+ 3b_2b_3 = \prodInt{v_1}{v_3} + \prodInt{v_2}{v_3}$.
+        \item Sea $\alpha \in \dobleK$ y sean $v_1, v_2 \in V$, entonces $\prodInt{\alpha v_1}{v_2} = 3(\alpha a_1)a_2 + 3(\alpha b_1)b_2 = \alpha(3a_1a_2 + 3b_1b_2) = \alpha \prodInt{v_1}{v_2}$ 
+    \end{enumerate}
+\end{ejemplo}
+\newpage
+
+\begin{ejemplo}
+    Sean $p(x) = a_1x+b_1$ y $q(x)= a_2x+b_2$ $\prodInt{p(x)}{q(x)}: \puno \times \puno \to \dobler$ una función definida por:
+    $$\prodInt{p(x)}{q(x)} = 2a_1a_2 - 3b_1b_2$$
+    NO es un producto interno sobre \puno, porque:\\
+    Sea $p(x) = x+1$
+    $$\prodInt{p(x)}{p(x)} = 2(1)(1) - 3(1)(1) = -1$$
+    Lo cual no cumple con la primera propiedad de que el producto interno de un vector consigo mismo, debe de ser mayor que cero
+\end{ejemplo}
+
+\begin{theorem}
+Sea $V$ un \dobleK-espacio vectorial y $\prodInt{\cdot}{\cdot}: V \times V \to \dobleK$ un producto interno sobre $V$, entonces se cumple que:
+\begin{enumerate}[a.]
+    \item Sean $v_1, v_2, v_3 \in V$, entonces $\prodInt{v_1}{v_2 + v_3} = \prodInt{v_1}{v_2} + \prodInt{v_1}{v_3}$.
+    \item Sean $v_1, v_2 \in V$ y sea $\alpha \in \dobleK$, entonces $\prodInt{v_1}{\alpha v_2} = \overline{\alpha}\prodInt{v_1}{v_2}$.
+    \item $\forall v \in V$, entonces $\prodInt{0_V}{v} = \prodInt{v}{0_V} = 0$.
+\end{enumerate}
+\end{theorem}
+
+Las siguientes funciones son conocidas como productos internos canónicos de los distintos espacios vectoriales, a continuación:
+\begin{itemize}
+    \item Producto interno canónico en \rn:
+    $$\prodInt{\vectrtrescent{x_1}{x_2\\\vdots}{x_n}}{\vectrtrescent{y_1}{y_2\\\vdots}{y_n}} = x_1y_1 + x_2y_2 + \cdots + x_ny_n$$
+    \item Producto interno canónico en \cn:
+    $$\prodInt{\vectrtrescent{x_1}{x_2\\\vdots}{x_n}}{\vectrtrescent{y_1}{y_2\\\vdots}{y_n}} = x_1\overline{y_1} + x_2\overline{y_2} + \cdots + x_n\overline{y_n}$$
+    \item Producto interno canónico en \mmxn:
+    $$\prodInt{A}{B} = tr(A\cdot B^T)$$
+    \hspace{5,5cm} o
+    $$\prodInt{A}{B} = \prodInt{[A]_B}{[B]_B}$$
+    donde $B$ es la base canónica de \mmxn
+    
+    \item Producto interno canónico en \pn:
+    $$\prodInt{a_0x^n + a_1x^{n-1}+ \cdots + a_{n}}{b_0x^n + b_1x^{n-1} +\cdots + b_{n}} = a_0 b_0 + a_1 b_1 + \cdots + a_n b_n$$
+    
+    \item Producto interno canónico en $C[a,b]$:
+    $$\prodInt{f}{g} = \int_a^b f(x)g(x) dx$$
+\end{itemize}
+
+\begin{dfn}
+A un espacio vectorial sobre un campo \dobleK, que posee un producto interno, se denomina \textit{Espacio Euclídeo}
+\end{dfn}
+
+\section{Norma de un Vector}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno $\prodInt{\cdot}{\cdot}: V \times V \to \dobleK$ y sea $v \in V$. Se define la norma de $v$ como el escalar:
+$$\norm{v} = \sqrt{\prodInt{v}{v}} $$
+\end{dfn}
+
+\begin{theorem}
+ Sea $V$ un \dobleK-espacio vectorial con producto interno $\prodInt{\cdot}{\cdot}: V \times V \to \dobleK$ y sea $v \in V$. entonces se cumple que:
+ \begin{enumerate}[a.]
+     \item Para todo $v \in V$, $\norm{v} \geq 0$,  y $\norm{v} = 0$ si y solo si $v = 0$.
+     \item Sean $\alpha \in \dobleK$ y $v \in V$, entonces $\norm{\alpha v} = |\alpha| \norm{v}$.
+     \item Sean $v_1, v_2 \in V$, entonces $\left|\prodInt{v_1}{v_2}\right| \leq \norm{v_1} \cdot \norm{v_2}$. A esta desigualdad se la conoce como \textbf{Desigualdad de Cauchy-Schwartz}
+     \item Sean $v_1, v_2 \in V$, entonces $\norm{v_1 + v_2} \leq \norm{v_1} + \norm{v_2}$. A esta desigualdad se la conoce como \textbf{Desigualdad Triangular}
+ \end{enumerate}
+\end{theorem}
+
+\begin{ejemplo}
+    Sea $V = \pdos(\dobler)$ con el producto interno canónico, entonces:
+    $$\norm{2x^2 + 3x -1} = \sqrt{(2)^2 + (3)^2 + (-1)^2} = \sqrt{15}$$
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $V = \dobleC^2$ con el producto interno canónico y sea $v = \vectrdos{-i}{i}$, entonces:
+    $$\norm{v} = \sqrt{\prodInt{v}{v}} = \sqrt{(-i)(i) + (i)(-i)} = \sqrt{-(-1) -(-1)} = \sqrt{2}$$
+    
+\end{ejemplo}
+\section{Distancia entre vectores}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno $\prodInt{\cdot}{\cdot}: V \times V \to \dobleK$, la distancia entre dos vectores se denota por $d(v_1, v_2)$ y se define como:
+$$d(v_1,v_2) = \norm{v_1 - v_2}$$
+\end{dfn}
+
+\begin{theorem}
+ Sea $V$ un \dobleK-espacio vectorial con producto interno $\prodInt{\cdot}{\cdot}: V \times V \to \dobleK$ y sea $v \in V$. entonces se cumple que:
+ \begin{enumerate}[a.]
+     \item Para todo $v_1, v_2 \in V$, entonces $d(v_1,v_2) \geq 0$.
+     \item $d(v_1, v_2) = 0$ si y solo si $v_1 = v_2$.
+     \item Para todo $v_1, v_2 \in V$, entonces $d(v_1, v_2) = d(v_2, v_1)$.
+     \item Para todo $v_1, v_2, v_3 \in V$, entonces $(v_1, v_3) \leq d(v_1, v_2) + d(v_2, v_3)$
+ \end{enumerate}
+\end{theorem}
+
+\begin{ejemplo}
+    Sea $V = \pdos$, sean $p(x) = x^2 + 2x + 3$ y $q(x) = x + 2$, la distancia entre $p(x)$ y $q(x)$ se calcula:
+    $$d(p(x),q(x)) = \norm{x^2 + 2x +3 - x -2} = \norm{x^2 +x +1} = \sqrt{1^2 + 1^2 + 1^2}  = \sqrt{3}$$
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $V = \dobleC^2$ y sean $u = \vectrdos{1+i}{i}$ y $v = \vectrdos{1}{2i}$, la distancia entre $u$ y $v$ se calcula:
+    $$d(u,v) = \norm{\vectrdos{1+i}{i} - \vectrdos{1}{2i}} = \norm{\vectrdos{i}{-i}} = \sqrt{(i)(-i) + (-i)(i)} = \sqrt{-(-1) -(-1)} = \sqrt{2}$$
+\end{ejemplo}
+
+\section{Ángulo entre vectores}
+
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno, y sean $v_1,v_2$ dos vectores no nulos de $V$. Se define el ángulo entre $v_1$ y $v_2$ como el único número real $\theta \in [0,\pi]$ tal que: 
+$$\cos(\theta) = \frac{\prodInt{v_1}{v_2}}{\norm{v_1} \cdot \norm{v_2}}$$
+\end{dfn}
+
+\begin{obs}
+    Nótese que si $\prodInt{v_1}{v_2} = 0$, entonces de la expresión anterior, obtenemos que el ángulo entre $v_1$ y $v_2$ es $\theta = \frac{\pi}{2}$, dado el caso, los vectores se dice que son ortogonales con respecto al producto interno definido
+\end{obs}
+
+\begin{ejemplo}
+    Sea $V = \pdos(\dobler)$ con el producto interno canónico. La medida del ángulo entre los vectores $p(x) = x^2 + 2x$ y $q(x) = 2x^2 +1$
+    \begin{align*}
+        \cos(\theta) &= \frac{\prodInt{p(x)}{q(x)}}{\norm{p(x)} \cdot \norm{q(x)}}\\
+        \cos(\theta) &= \frac{(1)(2) + (2)(0) + (0)(1)}{\sqrt{(1)^2 + (2^2)} \cdot \sqrt{(2)^2 + (1)^2}} = \frac{2}{\sqrt{5}\cdot \sqrt{5}} = \frac{2}{5}\\
+        \theta &= \cos^{-1}\left(\frac{2}{5}\right) \approx 66.42^\circ
+    \end{align*}
+
+\end{ejemplo}
+
+\begin{theorem}[Ley del Coseno]
+Si $v_1$ y $v_2$ son dos vectores en un espacio euclídeo, y $\theta$ es la medida del ángulo entre $v_1$ y $v_2$, entonces:
+$$\norm{v_1 \pm v_2}^2 = \norm{v_1}^2 \pm 2\cos(\theta)\norm{v_1}\cdot\norm{v_2}+ \norm{v_2}^2$$
+\end{theorem}
+
+\section{Matriz de un Producto Interno}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno \prodInt{\cdot}{\cdot} y $B = \conjvect{v}{n}$ una base de $V$. Se define la matriz del producto interno o \textbf{Matriz de Gram} en la base $B$ como la matriz $A \in \mathcal{M}_{n\times n}(\dobleK)$ tal que:
+$$A_{ij} = \prodInt{v_i}{v_j}, \forall i,j \  1 \leq i,j \leq n$$
+\end{dfn}
+
+\begin{ejemplo}
+    Sea $V = \rtres$ con el producto interno canónico y sea $B = \llav{\vectrtres{1}{2}{3},\vectrtres{0}{1}{2}, \vectrtres{0}{0}{1}}$ una base de \rtres. La matriz de Gram se constituye:
+    $$A = \reducir{rrr}{
+        \prodInt{v_1}{v_1} & \prodInt{v_1}{v_2} & \prodInt{v_1}{v_3}\\\\
+        \prodInt{v_2}{v_1} & \prodInt{v_2}{v_2} & \prodInt{v_2}{v_3}\\\\
+        \prodInt{v_3}{v_1} & \prodInt{v_3}{v_2} & \prodInt{v_3}{v_3}
+    }
+    \text{Entonces: \ }
+    A = \reducir{ccc}{
+        14 & 8 & 3\\
+        8 & 5 & 2\\
+        3 & 2 & 1
+    }$$
+\end{ejemplo}
+
+\begin{obs}
+    La diagonal principal de la matriz de Gram no puede contener un cero ya que eso significa que $\prodInt{v_i}{v_i} = 0, \forall i, 1 \leq i \leq n$ y por lo tanto que $v = 0_V$, pero eso significaría que el vector neutro está en la base de $V$, lo cual no es posible
+\end{obs}
+
+
+\section{Conjuntos Ortogonales y Ortonormales}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno, dos vectores $v_1, v_2 \in V$ se dicen \textit{ortogonales} si $\prodInt{v_1}{v_2} = 0$
+\end{dfn}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno. Se dice que $\conjvect{v}{k} \subseteq V$ es un conjunto ortogonal si $\prodInt{v_i}{v_j} = 0, \forall i \neq j$ donde $1 \leq i,j \leq k$. 
+\end{dfn}
+
+\begin{ejemplo}
+    En \rdos con el producto interno canónico, el conjunto \llav{\vectrdos{1}{1},\vectrdos{1}{-1}} es un conjunto ortogonal:
+    \begin{align*}
+        \prodInt{\vectrdos{1}{1}}{\vectrdos{1}{-1}} = (1)(1) + (1)(-1) = 0
+    \end{align*}
+\end{ejemplo}
+
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno. Se dice que $\conjvect{v}{k} \subseteq V$ es un conjunto ortonormal si es ortogonal y además $\norm{v_i} = 1, \forall i$ donde $1 \leq i \leq k$ 
+\end{dfn}
+
+\begin{obs}
+    El vector nulo de $V$ es ortogonal a todo vector $v \in V$, ya que $\prodInt{0_V}{v} = 0$
+\end{obs}
+
+\begin{ejemplo}
+    En \rtres con el producto interno canónico, la base canónica es un conjunto ortonormal:
+    $$B = \llav{\vectrtres{1}{0}{0}, \vectrtres{0}{1}{0}, \vectrtres{0}{0}{1}}$$
+    Así entonces:
+    \begin{align*}
+        \prodInt{\vectrtres{1}{0}{0}}{\vectrtres{1}{0}{0}} = 1 &&
+        \prodInt{\vectrtres{1}{0}{0}}{\vectrtres{0}{1}{0}} = 0 && \prodInt{\vectrtres{1}{0}{0}}{\vectrtres{0}{0}{1}} = 0\\
+        \prodInt{\vectrtres{0}{1}{0}}{\vectrtres{0}{1}{0}} = 1 &&
+        \prodInt{\vectrtres{0}{1}{0}}{\vectrtres{1}{0}{0}} = 0 &&
+        \prodInt{\vectrtres{0}{1}{0}}{\vectrtres{0}{0}{1}} = 0\\
+        \prodInt{\vectrtres{0}{0}{1}}{\vectrtres{0}{0}{1}} = 1 &&
+        \prodInt{\vectrtres{0}{0}{1}}{\vectrtres{0}{1}{0}} = 0 &&
+        \prodInt{\vectrtres{0}{0}{1}}{\vectrtres{1}{0}{0}} = 0
+    \end{align*}
+\end{ejemplo}
+
+\begin{theorem}
+Sea $V$ un \dobleK-espacio vectorial con producto interno y $S$ un conjunto ortogonal de vectores no nulos en $V$. Entonces $S$ es un conjunto linealmente independiente
+\end{theorem}
+\begin{proof}
+Sean \conjvect{v}{k} vectores de $S$. Suponga que:
+$$\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k = 0_V$$
+Dado que $\prodInt{0_V}{v_i} = 0$ para cada $1 \leq i \leq k$ y haciendo uso de las propiedades de linealidad del producto interno, se obtiene que:
+\begin{align*}
+    \prodInt{0_v}{v_i} &= 0\\
+    \prodInt{\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k}{v_i} &= 0 \\
+    \alpha_1 \prodInt{v_1}{v_i} + \alpha_2 \prodInt{v_2}{v_i} + \hdots + \alpha_k \prodInt{v_k}{v_i} &= 0
+\end{align*}
+Sabiendo que el conjunto $S$ es ortogonal, lo cual significa que:
+$$\prodInt{v_i}{v_j} = \left\{\begin{array}{cll}
+    \norm{v_i}^2& \forall i,j & i = j\\
+    0 & \forall i,j & i \neq j 
+\end{array}\right.$$
+
+Reemplazando estos valores en la combinación lineal, se obtiene que:
+$$\alpha_j \norm{v_j}^2$$
+Por hipótesis, los vectores de $S$ son no nulos, por lo tanto se concluye que:
+$$\forall j , 1 \leq j \leq k \ ; \ \alpha_j = 0$$
+Así entonces todo conjunto ortogonal es linealmente independiente
+\end{proof}
+\begin{theorem}[Corolario]
+Todo conjunto ortonormal de vectores en un espacio con producto interno es linealmente independiente
+\end{theorem}
+
+\begin{theorem}
+Sea $V$ un espacio con producto interno, y sea $H$ el espacio generado por el conjunto ortonormal de vectores $S = \conjvect{v}{k}$. El vector $u \in V$ pertenece a $H$ si y solo si $u$ puede escribirse como:
+$$u = \prodInt{u}{v_1}v_1 + \prodInt{u}{v_2}v_2 + \cdots + \prodInt{u}{v_k}$$
+\end{theorem}
+\begin{proof}
+Si el vector $u \in V$ se expresa como: 
+$$u = \prodInt{u}{v_1}v_1 + \prodInt{u}{v_2}v_2 + \cdots + \prodInt{u}{v_k}$$
+es obvio que $u \in H$, en tal caso $u$ es una combinación lineal de los vectores de $S$ que generan a $H$.\\
+Suponga entonces que si $u \in H$, entonces exiten escalares tales que:
+$$u = \alpha_1v_1 + \alpha_2v_2 + \cdots + \alpha_k v_k$$
+Al tomar el producto interno del vector $u$ con el vector $v_i \in S$ \prodInt{u}{v_i},  se tiene que :
+$$\prodInt{\alpha_1v_1 + \alpha_2v_2 + \cdots + \alpha_k v_k}{v_i} = \alpha_1\prodInt{v_1}{v_i} + \alpha_2\prodInt{v_2}{v_i} + \cdots + \alpha_k \prodInt{v_k}{v_i}$$
+Ahora, como $S$ es un conjunto ortonormal, entonces 
+$$\prodInt{v_i}{v_j} = \left\{\begin{array}{cll}
+    1 & \forall i,j & i = j\\
+    0 & \forall i,j & i \neq j 
+\end{array}\right.$$
+y por lo tanto $\prodInt{u}{v_i} = \alpha_i$, lo que significa que:
+$$u = \prodInt{u}{v_1}v_1 + \prodInt{u}{v_2}v_2 + \cdots + \prodInt{u}{v_k}$$
+\end{proof}
+
+\section{Bases Ortonormales}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno de dimensión finita.
+\begin{itemize}
+    \item Se dice que la base $B = \conjvect{v}{n}$ de $V$, es una base ortogonal si el conjunto $B$ es un conjunto ortogonal de vectores en $V$
+    \item Se dice que la base $B = \conjvect{v}{n}$ de $V$, es una base ortonormal si el conjunto $B$ es un conjunto ortonormal de vectores en $V$
+\end{itemize}
+\end{dfn}
+\begin{obs}
+    \begin{itemize}
+        \item Un conjunto ortonormal de vectores en $V$ es una base ortonormal si y solo si este conjunto genera a $V$.
+        \item La matriz de Gram asociada a una base ortogonal, es una matriz escalar.
+        \item La matriz de Gram asociada a una base ortonormal, es la matriz identidad.
+    \end{itemize}
+    
+\end{obs}
+\begin{ejemplo}
+    En \rdos con el producto interno canónico, la base canónica es una base ortonormal:
+    $$B = \llav{\vectrdos{1}{0}, \vectrdos{0}{1}}$$
+    Así entonces:
+    \begin{align*}
+        \prodInt{\vectrdos{1}{0}}{\vectrdos{0}{1}} = 0&&
+        \prodInt{\vectrdos{1}{0}}{\vectrdos{1}{0}} = 1&&
+        \prodInt{\vectrdos{0}{1}}{\vectrdos{0}{1}} = 1
+    \end{align*}
+\end{ejemplo}
+
+\begin{theorem}[Proceso de Gram-Schmidt]
+    Sea $B=\conjvect{v}{n}$ una base del espacio $V$ con producto interno \prodInt{\cdot}{\cdot}. Entonces el conjunto $B_{ON} = \conjvect{u}{n}$ en donde los vectores \conjvect{u}{n} son definidos inductivamente como:
+    \begin{align*}
+        u_1 &= \frac{v_1}{\norm{v_1}}\\
+        u_2 &= \frac{v_2 - \prodInt{v_2}{u_1}u_1}{\norm{v_2 - \prodInt{v_2}{u_1}u_1}}\\
+        u_3 &= \frac{v_3 - \prodInt{v_3}{u_2}u_2 - \prodInt{v_3}{u_1}u_1}{\norm{v_3 - \prodInt{v_3}{u_2}u_2 - \prodInt{v_3}{u_1}u_1}}\\
+        & \vdots\\
+        u_n &= \frac{v_n - \displaystyle \sum_{i=1}^{n-1}\prodInt{v_n}{u_i}u_i}{\norm{v_n - \displaystyle \sum_{i=1}^{n-1}\prodInt{v_n}{u_i}u_i}}
+    \end{align*}
+    en donde el conjunto $\conjvect{u}{n}$ es una base ortonormal
+\end{theorem}
+
+\begin{theorem}[corolario]
+    Todo espacio vectorial de dimensión finita con producto interno, posee una base ortonormal
+\end{theorem}
+
+\begin{ejemplo}
+    Sea $V = \rtres$ con el producto interno canónico, sea $B = \llav{\vectrtres{1}{1}{0}, \vectrtres{1}{1}{1},\vectrtres{0}{1}{1}}$ una base de \rtres, determine una base ortonormal $B_{NO}$ de \rtres
+\end{ejemplo}
+\begin{sol}
+Para encontrar una base ortonormal, haremos uso del proceso de ortonormalización de Gram-Schmidt, entonces:
+\begin{align*}
+    v_1 = \vectrtres{1}{1}{0} && v_2 = \vectrtres{1}{1}{1} && v_3 = \vectrtres{0}{1}{1}
+\end{align*}
+Luego: 
+$$u_1 = \frac{v_1}{\norm{v_1}} = \frac{1}{\sqrt{(1)^2 + (1)^2 + (0)^2}}\vectrtres{1}{1}{0} = \frac{1}{\sqrt{2}} \vectrtres{1}{1}{0}$$
+Para determinar $u_2$ se calcula:
+$$u_2 = \frac{w_2}{\norm{w_2}} \text{, donde $w_2 = v_2 - \prodInt{v_2}{u_1}u_1$}$$
+Ahora:
+\begin{align*}
+    w_2 &= \vectrtres{1}{1}{1} - \prodInt{\vectrtres{1}{1}{1}}{\frac{1}{\sqrt{2}}\vectrtres{1}{1}{0}}\frac{1}{\sqrt{2}}\vectrtres{1}{1}{0}\\
+    &= \vectrtres{1}{1}{1} - \prodInt{\vectrtres{1}{1}{1}}{\vectrtres{1}{1}{0}}\left|\frac{1}{\sqrt{2}}\right|\left(\frac{1}{\sqrt{2}}\right) \vectrtres{1}{1}{0}\\
+    &= \vectrtres{1}{1}{1} - (2)\left(\frac{1}{2}\right)\vectrtres{1}{1}{0}\\
+    w_2 &= \vectrtres{0}{0}{1}
+\end{align*}
+y $\norm{w_2} = 1$, entonces el vector $u_2$ nos queda $u_2 = \vectrtres{0}{0}{1}$\\
+Ahora para determinar $u_3$, se calcula:
+$$u_3 = \frac{w_3}{\norm{w_3}} \text{, donde $w_3 = v_3 - \prodInt{v_3}{u_2}u_2 - \prodInt{v_3}{u_1}u_1$}$$
+Ahora:
+
+\begin{align*}
+    w_3 &= \vectrtres{0}{1}{1} - \prodInt{\vectrtres{0}{1}{1}}{\vectrtres{0}{0}{1}}\vectrtres{0}{0}{1} - \prodInt{\vectrtres{0}{1}{1}}{\frac{1}{\sqrt{2}}\vectrtres{1}{1}{0}}\frac{1}{\sqrt{2}}\vectrtres{1}{1}{0}\\
+    &= \vectrtres{0}{1}{1} - (1)\vectrtres{0}{0}{1} - \prodInt{\vectrtres{0}{1}{1}}{\vectrtres{1}{1}{0}} \left|\frac{1}{\sqrt{2}}\right|\left(\frac{1}{\sqrt{2}}\right)\vectrtres{1}{1}{0}\\
+    &= \vectrtres{0}{1}{1} - \vectrtres{0}{0}{1} - (1)\left(\frac{1}{2}\right)\vectrtres{1}{1}{0}\\
+    w_3 &= \vectrtres{-\frac{1}{2}}{\frac{1}{2}}{0}
+\end{align*}
+
+y $\norm{w_3} = \frac{1}{\sqrt{2}}$, entonces el vector $u_3$ nos queda $u_3 =(\sqrt{2}) \vectrtres{-\frac{1}{2}}{\frac{1}{2}}{0}$\\
+
+Así termina el algoritmo de Gram-Schmidt, por lo que una base ortonormal para \rtres es la siguiente:
+$$B_{ON} = \llav{\vectrtres{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}{0} , \vectrtres{0}{0}{1}, \vectrtres{-\frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}}{0}}$$
+\end{sol}
+
+\section{Complemento Ortogonal}
+\begin{dfn}
+Sea $V$ un \dobleK-espacio vectorial con producto interno y sea $W$ un subespacio de $V$. Se define el conjunto:
+$$\subesp{W^\perp}{v \in V}{\prodInt{v}{w} = 0 ; w \in W}$$
+el cual se denomina como el \textit{complemento ortogonal} de $W$
+\end{dfn}
+Es decir, el complemento ortogonal de $W$ está conformado por aquellos vectores de $V$ que son ortogonales a todos los vectores de $W$
+
+\begin{theorem}
+    Sea $V$ un \dobleK-espacio vectorial con producto interno y sea $W$ un subespacio de $V$, entonces $W^\perp$ es un subespacio de $V$
+\end{theorem}
+\begin{proof}
+Veamos que $W^\perp$ es un subespacio vectorial de $V$.
+\begin{enumerate}[i.]
+\item Como el vector $0_V$ es ortogonal a todos los demás vectores, entonces $W^\perp$ es no vacío
+\item Supongamos que $u , u' \in W^\perp$, entonces para cada $v \in V, \prodInt{u}{v} = 0$ y $\prodInt{u'}{v} = 0$, ahora veamos si $\prodInt{u + u'}{v} = 0$, por propiedades del producto interno: $\prodInt{u}{v} + \prodInt{u'}{v} = 0+ 0 =0$, así que $u+u' \in W^\perp$
+\item Si $\alpha \in \mathbb{K}$ y $u \in W^\perp$, se tiene que para cada $v \in V$, se cumple que $\prodInt{\alpha u}{v} = \alpha \prodInt{u}{v} = \alpha \cdot 0 = 0$, así entonces $\alpha u \in W^\perp$ 
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    Sea $V$ un \dobleK-espacio vectorial con producto interno. Si $W$ es un subespacio de $V$ y $B$ es una base de $W$ entonces $v \in W^\perp$ si y solo si $v$ es ortogonal a cada elemento de $B$
+\end{theorem}
+
+\begin{ejemplo}
+    Sea $V = \rtres$ con el producto interno canónico, determine el complemento ortogonal de $W = gen\llav{\vectrtres{1}{0}{1}, \vectrtres{1}{1}{1}}$
+\end{ejemplo}
+\begin{sol}
+Por definición, se tiene que:
+$$\svrtres{W^\perp}{a}{b}{c}{\prodInt{\vectrtres{a}{b}{c}}{\vectrtres{1}{0}{1}} = 0 \land \prodInt{\vectrtres{a}{b}{c}}{\vectrtres{1}{1}{1}} = 0}$$
+Podemos reescribir las condiciones como:
+$$\svrtres{W^\perp}{a}{b}{c}{\begin{array}{rl}
+    a + c &= 0\\ 
+    a+b+c &= 0
+\end{array}}$$
+Así entonces:
+$$W^\perp = gen\llav{\vectrtres{-1}{0}{1}}$$
+\end{sol}
+
+\begin{theorem}
+    Sea $V$ un \dobleK-espacio vectorial con producto interno y sea $W$ un subespacio de $V$, entonces:
+    $$V = W \oplus W^\perp $$
+\end{theorem}
+\begin{obs}
+    La notación $\oplus$ representa que el espacio vectorial $V$ es \textit{suma directa} de $W$ y $W^\perp$.
+\end{obs}
+\begin{theorem}[corolario]
+    Sea $V$ un \dobleK-espacio vectorial con producto interno y sea $W$ un subespacio de $V$, entonces:
+    $$dimV = dimW + dimW^\perp $$
+\end{theorem}
+\begin{theorem}[corolario]
+    Sea $V$ un \dobleK-espacio vectorial con producto interno y sea $W$ un subespacio de $V$, entonces:
+    $$W \cap W^\perp = \llav{0_V}$$
+\end{theorem}
+
+\begin{theorem}
+    Sea $V$ un \dobleK-espacio vectorial con producto interno y sea $W$ un subespacio de $V$, entonces:
+    $$(W^\perp)^\perp = W$$
+\end{theorem}
+
+\section{Proyecciones}
+
+\begin{dfn}
+Sea $V = W \oplus W^\perp$, entonces cada $v \in V$ puede ser expresado de manera única como $v = w + w'$ donde $w \in W$ y $w' \in W^\perp$
+\begin{itemize}
+    \item Se define a $w$ como la proyección de $v$ a lo largo de $W$ y es denotado como $proy_{_W} v$.
+    \item Se define a $w'$ como la proyección de $v$ a lo largo de $W^\perp$ y es denotado por $proy_{_{W^\perp}}v$.
+\end{itemize}
+En particular, si $W = gen\conjvect{w}{n}$, donde \conjvect{w}{n} es un conjunto de vectores ortonormales, entonces:
+$$proy_{_W} v = \prodInt{v}{w_1}w_1 + \prodInt{v}{w_2}w_2 + \hdots + \prodInt{v}{w_n}w_n$$
+
+~\\Además, la proyección de un vector $x$ sobre otro vector $v$, se define como:
+$$proy_v x = \frac{\prodInt{x}{v}v}{\prodInt{v}{v}}$$
+\end{dfn}
+
+\begin{ejemplo}
+    Considere el espacio $V = \rdos$ con el producto interno canónico. Sea 
+    $$W = gen\llav{\vectrdos{1}{2}, \vectrdos{0}{1}}$$
+    Expresar el vector $v = \vectrdos{2}{3} \in \rdos$ como $v = v_1 + v_2$ donde $v_1 \in W$ y $v_2 \in W^\perp$
+\end{ejemplo}
+\begin{sol}
+Primero necesitamos determinar una base ortonormal a partir de $B_W$, entonces:
+\begin{align*}
+    u_1 &= \frac{v_1}{\norm{v_1}} = \frac{1}{\sqrt{(1)^2 + (2)^2}}\vectrdos{1}{2} = \frac{1}{\sqrt{5}}\vectrdos{1}{2}
+\end{align*}
+Luego, para determinar $u_2$ se calcula:
+$$u_2 = \frac{w_2}{\norm{w_2}} \text{, donde $w_2 = v_2 - \prodInt{v_2}{u_1}u_1$}$$
+Ahora:
+$$w_2 = \vectrdos{0}{1} - \prodInt{\vectrdos{0}{1}}{\frac{1}{\sqrt{5}}\vectrdos{1}{2}}\frac{1}{\sqrt{5}}\vectrdos{1}{2}$$
+Entonces:
+\begin{align*}
+    w_2 &= \vectrdos{0}{1} - (2)\left(\frac{1}{5}\right)\vectrdos{1}{2}\\
+    w_2 &= \vectrdos{- 2/5}{1/5}
+\end{align*}
+Y $\norm{w_2} = \frac{\sqrt{5}}{5}$
+Por lo tanto el vector $u_2$ nos queda:
+$$u_2 = \frac{5}{\sqrt{5}}\vectrdos{-2/5}{1/5}$$
+
+Entonces una base ortonormal para \rdos nos queda:
+$$B_W = \llav{ \frac{1}{\sqrt{5}}\vectrdos{1}{2},\frac{5}{\sqrt{5}}\vectrdos{-2/5}{1/5}}$$
+
+Entonces para determinar las proyecciones, tenemos:
+\begin{align*}
+    proy_{_W}v = v_1 &= \prodInt{v}{u_1}u_1 + \prodInt{v}{u_2}u_2\\
+    v_1 &= \prodInt{\vectrdos{2}{3}}{\frac{1}{\sqrt{5}}\vectrdos{1}{2}}\frac{1}{\sqrt{5}}\vectrdos{1}{2} + \prodInt{\vectrdos{2}{3}}{\frac{5}{\sqrt{5}}\vectrdos{-2/5}{1/5}}\frac{5}{\sqrt{5}}\vectrdos{-2/5}{1/5}\\
+    v_1 &= (8) \left( \frac{1}{5} \right) \vectrdos{1}{2} + \left(-\frac{1}{5}\right) (5) \vectrdos{-2/5}{1/5}\\
+    v_1 &= \vectrdos{8/5}{16/5} + \vectrdos{2/5}{-1/5}\\
+    v_1 &= \vectrdos{2}{3}
+\end{align*}
+Ahora para determinar $v_2$, lo podemos despejar de la igualdad $v = v_1 + v_2$, entonces:
+\begin{align*}
+    v_2 &= v - v_1\\
+    v_2 &= \vectrdos{2}{3} - \vectrdos{2}{3}\\
+    v_2 &= \vectrdos{0}{0}
+\end{align*}
+Así entonces el vector $v = \vectrdos{2}{3} \in V$ puede escribirse como:
+$$\vectrdos{2}{3} = \vectrdos{2}{3} + \vectrdos{0}{0}$$
+donde $v_1 = \vectrdos{2}{3} \in W$ y $v_2 = \vectrdos{0}{0} \in W^\perp$
+\end{sol}
+
+\begin{ejemplo}
+    Sea $V = \rtres$, determine la proyección del vector $v = \vectrtres{1}{1}{0}$ sobre el vector $u = \vectrtres{0}{1}{1}$ 
+\end{ejemplo}
+\begin{sol}
+Para esto, sabemos que:
+$$proy_u v = \frac{\prodInt{\vectrtres{1}{1}{0}}{\vectrtres{0}{1}{1}}\vectrtres{0}{1}{1}}{\prodInt{\vectrtres{0}{1}{1}}{\vectrtres{0}{1}{1}}} = \frac{1}{2}\vectrtres{0}{1}{1} = \vectrtrescent{0}{1/2}{1/2}$$
+\end{sol}

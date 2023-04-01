@@ -14,7 +14,7 @@
 %\RequirePackage{}
 \def\dobler{\ensuremath{\mathbb{R}}}
 \def\dobleK{\ensuremath{\mathbb{K}}}
-\def\doubleK{\ensuremath{\mathbb{K}}}
+\def\dobleC{\ensuremath{\mathbb{C}}}
 
 
 \newcommand{\rdos}{\ensuremath{\mathbb{R}^2}}
@@ -22,6 +22,7 @@
 \newcommand{\rcuatro}{\ensuremath{\mathbb{R}^4}}
 \newcommand{\rn}{\ensuremath{\mathbb{R}^n}}
 \newcommand{\rmm}{\ensuremath{\mathbb{R}^m}}
+\newcommand{\cn}{\ensuremath{\mathbb{C}^n}}
 \newcommand{\puno}{\ensuremath{\mathcal{P}_1}}
 \newcommand{\pdos}{\ensuremath{\mathcal{P}_2}}
 \newcommand{\ptres}{\ensuremath{\mathcal{P}_3}}
@@ -33,6 +34,13 @@
 \newcommand{\cerorm}{\ensuremath{\mathbf{0}_{\mathbb{R}^m}}}
 \newcommand{\cerorn}{\ensuremath{\mathbf{0}_{\mathbb{R}^n}}}
 
+\newcommand{\prodInt}[2]{\ensuremath{\left\langle
+\begin{array}{c|c}
+    #1 & #2
+\end{array}\right\rangle}}
+
+\newcommand{\norm}[1]{\ensuremath{\left|\left| #1 \right|\right|}}
+
 \newcommand{\matrdxd}[2]{\ensuremath{
 \left(
 \begin{array}{rr}
@@ -41,6 +49,8 @@
 \end{array}
 \right)
 }}
+
+
 \newcommand{\llav}[1]{\ensuremath{
 \left\{#1
 \right\}
@@ -70,6 +80,18 @@
 #1\left(#2\right)
 }
 }
+
+%Subespacio
+
+\def\subesp#1#2#3{
+\ensuremath{#1= \left\{\begin{array}{c|c}
+{#2
+}&{#3}
+\end{array}
+\right\}}
+}
+
+
 
 \def\svrdos#1#2#3{
 \ensuremath{W= \left\{\begin{array}{c|c}
